@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mixmod_qt" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\mixmod_qt" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\mixmod_qt" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="user32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="..\..\MIXMOD_QT\GUIMAboutUs.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAboutUs.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAbstractModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAbstractModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAction.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAlgoModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAlgoModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAlgoNameModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMAlgoNameModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMChoiceColumnConverter.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMChoiceColumnConverter.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMConverter.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMConverter.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMCriteriaModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMCriteriaModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMCriterionChildModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMCriterionChildModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMDataCreator.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMDataCreator.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMFilenameValidator.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMFilenameValidator.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphic.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphic.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphic2DQuantitative.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphic2DQuantitative.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicDockWidget.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicDockWidget.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicManager.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicManager.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQualitativeDiagram.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQualitativeDiagram.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativeClass.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativeClass.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativeHist.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativeHist.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativePoint.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMGraphicQuantitativePoint.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMInitModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMInitModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMInitParameterModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMInitParameterModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMKnownPartitionModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMKnownPartitionModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMMetaData.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMModelModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMModelModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMNbStrategyTryModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMNbStrategyTryModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMOutputModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMOutputModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMParameterInInitModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMParameterInInitModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMProcessModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMProcessModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMProjectCreator.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMProjectCreator.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMSpinBoxesWidget.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMSpinBoxesWidget.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMStopRuleModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMStopRuleModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMStopRuleValueModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMStopRuleValueModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTextEntryWidget.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTextEntryWidget.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeDelegate.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeDelegate.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeModel.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeModel.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeView.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMTreeView.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMWeightModifier.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMWeightModifier.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMixmod.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIMixmod.h" />
+		<Unit filename="..\..\MIXMOD_QT\GUIUtil.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\GUIUtil.h" />
+		<Unit filename="..\..\MIXMOD_QT\IMAGES\iconMixmod.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="..\..\MIXMOD_QT\MVCMixmod.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\MVCMixmod.h" />
+		<Unit filename="..\..\MIXMOD_QT\MVCRootTreeItem.cpp" />
+		<Unit filename="..\..\MIXMOD_QT\MVCRootTreeItem.h" />
+		<Unit filename="..\..\MIXMOD_QT\XEMMVCDefaultView.h" />
+		<Unit filename="..\..\MIXMOD_QT\XEMMVCEventUser.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

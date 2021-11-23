@@ -1,0 +1,36 @@
+#!/bin/sh
+program=mixmodGUI_exe
+
+current_directory=`dirname "$0"`
+mixmodGUI_lib_directory="/usr/lib/mixmodGUI"
+run_program=$current_directory/$program
+
+# program detection
+#----------------------------------------------
+found=0
+if test -x "$run_program"; then # is $program in the directory
+	#echo "found"
+	found=1
+else
+	echo "$program not found"
+	found=0
+fi
+
+
+# ---------------------------------------
+if test $found -eq 1
+then
+	#update LD_LIBRARY_PATH
+	if test "$LD_LIBRARY_PATH" = ""
+	then
+		LD_LIBRARY_PATH="$mixmodGUI_lib_directory/mixmod/"
+	else
+		LD_LIBRARY_PATH="$mixmodGUI_lib_directory/mixmod/":$LD_LIBRARY_PATH
+	fi
+	export LD_LIBRARY_PATH
+	#echo $LD_LIBRARY_PATH
+	
+	# launch executable
+	#ldd $run_program
+	$run_program
+fi

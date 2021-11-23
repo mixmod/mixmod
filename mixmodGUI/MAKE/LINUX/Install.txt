@@ -1,0 +1,11 @@
+Before building mixmodGUI, tape "./cp_cmake 32 (or 64)" to copy mixmod and thirdparty libraries 
+---------------
+
+To build mixmodGUI in Linux, tape in BUILD directory:
+------------------
+cmake ..
+make install
+
+To create the installation package, after the last instructions, tape:
+cpack
+

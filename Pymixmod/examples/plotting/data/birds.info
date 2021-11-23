@@ -1,0 +1,35 @@
+_Q_u_a_l_i_t_a_t_i_v_e _d_a_t_a : _m_o_r_p_h_o_l_o_g_i_c_a_l _d_e_s_c_r_i_p_t_i_o_n _o_f _b_i_r_d_s
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     The dataset contains details on the morphology of birds (puffins).
+     Each individual (bird) is described by 6 qualitative variables.
+     One variable for the gender and 5 variables giving a morphological
+     description of the birds. There is 69 puffins divided in 2
+     sub-classes: lherminieri (34) and subalaris (35).
+
+_F_o_r_m_a_t:
+
+     A data frame with 69 observations on the following 5 variables.
+
+     ‘gender’ a numeric vector defining the gender (2 modalities, male
+          or female).
+
+     ‘eyebrow’ a numeric vector describing the eyebrow stripe (4
+          modalities).
+
+     ‘collar’ a numeric vector describing the collar (5 modalities).
+
+     ‘sub-caudal’ a numeric vector describing the sub-caudal (5
+          modalities).
+
+     ‘border’ a numeric vector describing the border (3 modalities).
+
+_S_o_u_r_c_e:
+
+     Bretagnolle, V., 2007. Personal communication, source: Museum.
+
+_E_x_a_m_p_l_e_s:
+
+     data(birds)
+     

@@ -1,0 +1,40 @@
+_Q_u_a_l_i_t_a_t_i_v_e _d_a_t_a : _C_a_r _E_v_a_l_u_a_t_i_o_n
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Car Evaluation Database was derived from a simple hierarchical
+     decision model originally developed for the demonstration of DEX,
+     M. Bohanec, V. Rajkovic: Expert system for decision making.
+
+_F_o_r_m_a_t:
+
+     A data frame with 1728 observations on the following 6 variables.
+
+     ‘buying’ the buying price (4 modalities: vhigh, high, med, low).
+
+     ‘maint’ the price of the maintenance (4 modalities: vhigh, high,
+          med, low).
+
+     ‘doors’ the number of doors (4 modalities: 2, 3, 4, 5more).
+
+     ‘persons’ the capacity in terms of persons to carry (3 modalities:
+          2, 4, more).
+
+     ‘lug_boot’ the size of luggage boot (3 modalities: small, med,
+          big).
+
+     ‘safety’ the estimated safety of the car (3 modalities: low, med,
+          high).
+
+     ‘acceptability’ the car acceptability (4 modalities: unacc, acc,
+          good, vgood).
+
+_S_o_u_r_c_e:
+
+     Creator: Marko Bohanec Donors: Marko Bohanec & Blaz Zupan
+     http://archive.ics.uci.edu/ml/datasets/Car+Evaluation
+
+_E_x_a_m_p_l_e_s:
+
+     data(car)
+     

@@ -1,0 +1,35 @@
+package:
+  name: pymixmod  
+  version: "0.1"
+source:
+    #path: ../../../../../../
+    fn: libmixmod_3.2.2_src.tgz
+    url: http://www.mixmod.org/IMG/tgz/libmixmod_3.2.2_src.tgz
+    sha256: bd0fa57c16ec86e45fc08537eab9c85f3b36e9b64a4be9c6d3d6063bf059fd3f  
+
+build:
+    script_env:
+    - CC
+    - CXX
+    - PYMIXMOD_SRC
+requirements:
+  build:
+    - cmake
+    - sphinx
+    - cython    
+    - enum34 # [py27]
+    - python
+    - jupyter
+    - numpy
+    - scipy
+    - pandas
+    - matplotlib
+
+  run:
+    - python
+    - enum34 # [py27]
+    - numpy
+    - scipy
+    - pandas
+    - matplotlib
+   

@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>logo.png</file>
+        <file>branch-closed.png</file>
+        <file>branch-end.png</file>
+        <file>branch-more.png</file>
+        <file>branch-open.png</file>
+        <file>vline.png</file>
+        <file alias="AD.png">ICONES/AD.png</file>
+        <file alias="cancel.png">ICONES/cancel.png</file>
+        <file alias="classification.png">ICONES/classification.png</file>
+        <file alias="close.png">ICONES/close.png</file>
+        <file alias="de.png">ICONES/de.png</file>
+        <file alias="edit.png">ICONES/edit.png</file>
+        <file alias="en.png">ICONES/en.png</file>
+        <file alias="fr.png">ICONES/fr.png</file>
+        <file alias="go.png">ICONES/go.png</file>
+        <file alias="graphics.png">ICONES/graphics.png</file>
+        <file alias="help.png">ICONES/help.png</file>
+        <file alias="info.png">ICONES/info.png</file>
+        <file alias="insert.png">ICONES/insert.png</file>
+        <file alias="it.png">ICONES/it.png</file>
+        <file alias="new.png">ICONES/new.png</file>
+        <file alias="open.png">ICONES/open.png</file>
+        <file alias="other.png">ICONES/other.png</file>
+        <file alias="print.png">ICONES/print.png</file>
+        <file alias="quit.png">ICONES/quit.png</file>
+        <file alias="save.png">ICONES/save.png</file>
+        <file alias="saveas.png">ICONES/saveas.png</file>
+        <file alias="set.png">ICONES/set.png</file>
+        <file alias="settings.png">ICONES/settings.png</file>
+        <file alias="sp.png">ICONES/sp.png</file>
+        <file alias="stats.png">ICONES/stats.png</file>
+        <file alias="toenter.png">ICONES/toenter.png</file>
+        <file>beginMixmod.png</file>
+        <file>iconMixmod.ico</file>
+    </qresource>
+</RCC>

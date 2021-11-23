@@ -1,0 +1,19 @@
+Préambule
+---------
+Mettre à jour le numéro de version
+
+
+Création de l'image 
+-------------------
+- docker build -t mixmodgui:1.2.1 .
+- ou make
+
+Sauvegarde de l'image (pour mise à disposition sur le site mixmod)
+--------------------
+docker save mixmodgui:1.2.1 -o mixmodgui1.2.1_docker_img.tgz
+
+
+Consignes pour l'utilisateur
+----------------------------
+- docker load -i mixmodgui1.2.1_docker_img.tgz
+- docker run -it -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/$USER:/home/$USER -v /etc/group:/etc/group:ro  -v /etc/passwd:/etc/passwd:ro  --user=$(id -u):$(id -g) --workdir="/home/$USER" mixmodgui:1.2.1

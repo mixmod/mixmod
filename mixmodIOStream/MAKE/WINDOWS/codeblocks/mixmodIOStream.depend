@@ -1,0 +1,1852 @@
+# depslib dependency file v1.0
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomclusteringproject.cpp
+	"XEMDomClusteringProject.h"
+	"XEMNodeClusteringInput.h"
+	"XEMNodeClusteringOutput.h"
+	"XEMClusteringMain.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomclusteringproject.h
+	"XEMDomProject.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproject.h
+	"XEMIOStreamUtil.h"
+
+1359552803 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemiostreamutil.h
+	"XEMClusteringInput.h"
+	"XEMClusteringOutput.h"
+	"XEMUtil.h"
+	<typeinfo>
+	<QFile>
+	<QString>
+	<iostream>
+	<QDomDocument>
+	<QXmlSchema>
+	<QXmlSchemaValidator>
+	<QFile>
+	<QtCore>
+	<QtGui>
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringinput.h
+	"XEMInput.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xeminput.h
+	"XEMUtil.h"
+	"XEMDataDescription.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\utilities\xemutil.h
+	"newmatap.h"
+	"newmatio.h"
+	<vector>
+	<fstream>
+	<string>
+	<cstring>
+	<ctype.h>
+	<stdint.h>
+	<memory>
+	<limits>
+	<typeinfo>
+
+1349259869 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmatap.h
+	"newmat.h"
+
+1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmat.h
+	"include.h"
+	"boolean.h"
+	"myexcept.h"
+
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\include.h
+	<cstdlib>
+	<limits>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstring>
+	<ctime>
+	<fstream>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.hpp>
+	<iomanip.hpp>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<values.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+
+1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\boolean.h
+
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\myexcept.h
+	<setjmp.h>
+
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmatio.h
+	"newmat.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdatadescription.h
+	"XEMDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdescription.h
+	"XEMUtil.h"
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringoutput.h
+	"XEMUtil.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfile
+	"qfile.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfile.h
+	"../../src/corelib/io/qfile.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qfile.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstring.h>
+	<stdio.h>
+	<f32file.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qiodevice.h
+	"../../src/corelib/io/qiodevice.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qiodevice.h
+	<QtCore/qobject.h>
+	<QtCore/qobjectdefs.h>
+	<QtCore/qscopedpointer.h>
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qobject.h
+	"../../src/corelib/kernel/qobject.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qobject.h
+	<QtCore/qobjectdefs.h>
+	<QtCore/qstring.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qlist.h>
+	<QtCore/qcoreevent.h>
+	<QtCore/qscopedpointer.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qobjectdefs.h
+	"../../src/corelib/kernel/qobjectdefs.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qobjectdefs.h
+	<QtCore/qnamespace.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qnamespace.h
+	"../../src/corelib/global/qnamespace.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qnamespace.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qglobal.h
+	"../../src/corelib/global/qglobal.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qglobal.h
+	<stddef.h>
+	<QtCore/qconfig.h>
+	<algorithm>
+	<AvailabilityMacros.h>
+	<e32def.h>
+	<QtCore/qfeatures.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qconfig.h
+	"../../src/corelib/global/qconfig.h"
+
+1347951442 c:\qt\4.8.2\src\corelib\global\qconfig.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfeatures.h
+	"../../src/corelib/global/qfeatures.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qfeatures.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstring.h
+	"../../src/corelib/tools/qstring.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qstring.h
+	<QtCore/qchar.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qatomic.h>
+	<QtCore/qnamespace.h>
+	<Qt3Support/q3cstring.h>
+	<string>
+	<stdarg.h>
+	<QtCore/qstringbuilder.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qchar.h
+	"../../src/corelib/tools/qchar.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qchar.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbytearray.h
+	"../../src/corelib/tools/qbytearray.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qbytearray.h
+	<QtCore/qatomic.h>
+	<QtCore/qnamespace.h>
+	<string.h>
+	<stdarg.h>
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic.h
+	"../../src/corelib/thread/qatomic.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qatomic.h
+	<QtCore/qglobal.h>
+	<QtCore/qbasicatomic.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbasicatomic.h
+	"../../src/corelib/thread/qbasicatomic.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qbasicatomic.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic_bootstrap.h>
+	<QtCore/qatomic_arch.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_bootstrap.h
+	"../../src/corelib/arch/qatomic_bootstrap.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_bootstrap.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_arch.h
+	"../../src/corelib/arch/qatomic_arch.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_arch.h
+	"QtCore/qglobal.h"
+	"QtCore/qatomic_integrity.h"
+	"QtCore/qatomic_vxworks.h"
+	"QtCore/qatomic_alpha.h"
+	"QtCore/qatomic_arm.h"
+	"QtCore/qatomic_armv6.h"
+	"QtCore/qatomic_avr32.h"
+	"QtCore/qatomic_bfin.h"
+	"QtCore/qatomic_generic.h"
+	"QtCore/qatomic_i386.h"
+	"QtCore/qatomic_ia64.h"
+	"QtCore/qatomic_macosx.h"
+	"QtCore/qatomic_mips.h"
+	"QtCore/qatomic_parisc.h"
+	"QtCore/qatomic_powerpc.h"
+	"QtCore/qatomic_s390.h"
+	"QtCore/qatomic_sparc.h"
+	"QtCore/qatomic_windows.h"
+	"QtCore/qatomic_windowsce.h"
+	"QtCore/qatomic_x86_64.h"
+	"QtCore/qatomic_symbian.h"
+	"QtCore/qatomic_sh.h"
+	"QtCore/qatomic_sh4a.h"
+	"QtCore/qatomic_generic.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_integrity.h
+	"../../src/corelib/arch/qatomic_integrity.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_integrity.h
+	<INTEGRITY.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_vxworks.h
+	"../../src/corelib/arch/qatomic_vxworks.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_vxworks.h
+	<QtCore/qatomic_powerpc.h>
+	<vxWorksCommon.h>
+	<taskLib.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_powerpc.h
+	"../../src/corelib/arch/qatomic_powerpc.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_powerpc.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_alpha.h
+	"../../src/corelib/arch/qatomic_alpha.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_alpha.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_arm.h
+	"../../src/corelib/arch/qatomic_arm.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_arm.h
+	"QtCore/qatomic_armv7.h"
+	"QtCore/qatomic_armv6.h"
+	"QtCore/qatomic_armv5.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_armv7.h
+	"../../src/corelib/arch/qatomic_armv7.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_armv7.h
+	"QtCore/qatomic_armv6.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_armv6.h
+	"../../src/corelib/arch/qatomic_armv6.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_armv6.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_armv5.h
+	"../../src/corelib/arch/qatomic_armv5.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_armv5.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_avr32.h
+	"../../src/corelib/arch/qatomic_avr32.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_avr32.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_bfin.h
+	"../../src/corelib/arch/qatomic_bfin.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_bfin.h
+	<asm/fixed_code.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_generic.h
+	"../../src/corelib/arch/qatomic_generic.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_generic.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_i386.h
+	"../../src/corelib/arch/qatomic_i386.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_i386.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_ia64.h
+	"../../src/corelib/arch/qatomic_ia64.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_ia64.h
+	<ia64intrin.h>
+	<ia64/sys/inline.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_macosx.h
+	"../../src/corelib/arch/qatomic_macosx.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_macosx.h
+	<QtCore/qatomic_x86_64.h>
+	<QtCore/qatomic_i386.h>
+	<QtCore/qatomic_powerpc.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_x86_64.h
+	"../../src/corelib/arch/qatomic_x86_64.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_x86_64.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_mips.h
+	"../../src/corelib/arch/qatomic_mips.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_mips.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_parisc.h
+	"../../src/corelib/arch/qatomic_parisc.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_parisc.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_s390.h
+	"../../src/corelib/arch/qatomic_s390.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_s390.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_sparc.h
+	"../../src/corelib/arch/qatomic_sparc.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_sparc.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_windows.h
+	"../../src/corelib/arch/qatomic_windows.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_windows.h
+	"QtCore/qatomic_i386.h"
+	"QtCore/qatomic_x86_64.h"
+	<winbase.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_windowsce.h
+	"../../src/corelib/arch/qatomic_windowsce.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_windowsce.h
+	<QtCore/qglobal.h>
+	"QtCore/qatomic_windows.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_symbian.h
+	"../../src/corelib/arch/qatomic_symbian.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_symbian.h
+	<QtCore/qglobal.h>
+	<e32std.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_sh.h
+	"../../src/corelib/arch/qatomic_sh.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_sh.h
+
+1335476750 c:\qt\4.8.2\include\qtcore\qatomic_sh4a.h
+	"../../src/corelib/arch/qatomic_sh4a.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\arch\qatomic_sh4a.h
+
+1335476750 c:\qt\4.8.2\include\qt3support\q3cstring.h
+	"../../src/qt3support/tools/q3cstring.h"
+
+1335476768 c:\qt\4.8.2\src\qt3support\tools\q3cstring.h
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstringbuilder.h
+	"../../src/corelib/tools/qstringbuilder.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qstringbuilder.h
+	<QtCore/qstring.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qmap.h>
+	<string.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmap.h
+	"../../src/corelib/tools/qmap.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qmap.h
+	<QtCore/qatomic.h>
+	<QtCore/qiterator.h>
+	<QtCore/qlist.h>
+	<map>
+	<new>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qiterator.h
+	"../../src/corelib/tools/qiterator.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qiterator.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qlist.h
+	"../../src/corelib/tools/qlist.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qlist.h
+	<QtCore/qiterator.h>
+	<QtCore/qatomic.h>
+	<QtCore/qalgorithms.h>
+	<iterator>
+	<list>
+	<iterator>
+	<initializer_list>
+	<new>
+	<limits.h>
+	<string.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qalgorithms.h
+	"../../src/corelib/tools/qalgorithms.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qalgorithms.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcoreevent.h
+	"../../src/corelib/kernel/qcoreevent.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qcoreevent.h
+	<QtCore/qnamespace.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qobjectdefs.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qscopedpointer.h
+	"../../src/corelib/tools/qscopedpointer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qscopedpointer.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstring
+	"qstring.h"
+
+1335476750 c:\qt\4.8.2\include\qtxml\qdomdocument
+	"qdom.h"
+
+1335476750 c:\qt\4.8.2\include\qtxml\qdom.h
+	"../../src/xml/dom/qdom.h"
+
+1335476772 c:\qt\4.8.2\src\xml\dom\qdom.h
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlschema
+	"qxmlschema.h"
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlschema.h
+	"../../src/xmlpatterns/api/qxmlschema.h"
+
+1335476770 c:\qt\4.8.2\src\xmlpatterns\api\qxmlschema.h
+	<QtCore/QSharedDataPointer>
+	<QtCore/QUrl>
+	<QtXmlPatterns/QXmlNamePool>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qshareddatapointer
+	"qshareddata.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qshareddata.h
+	"../../src/corelib/tools/qshareddata.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qshareddata.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qurl
+	"qurl.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qurl.h
+	"../../src/corelib/io/qurl.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qurl.h
+	<QtCore/qbytearray.h>
+	<QtCore/qobjectdefs.h>
+	<QtCore/qpair.h>
+	<QtCore/qstring.h>
+	<QtCore/qhash.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpair.h
+	"../../src/corelib/tools/qpair.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qpair.h
+	<QtCore/qdatastream.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdatastream.h
+	"../../src/corelib/io/qdatastream.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qdatastream.h
+	<QtCore/qscopedpointer.h>
+	<QtCore/qiodevice.h>
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qhash.h
+	"../../src/corelib/tools/qhash.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qhash.h
+	<QtCore/qatomic.h>
+	<QtCore/qchar.h>
+	<QtCore/qiterator.h>
+	<QtCore/qlist.h>
+	<QtCore/qpair.h>
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlnamepool
+	"qxmlnamepool.h"
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlnamepool.h
+	"../../src/xmlpatterns/api/qxmlnamepool.h"
+
+1335476770 c:\qt\4.8.2\src\xmlpatterns\api\qxmlnamepool.h
+	<QtCore/QSharedData>
+	<QtCore/QString>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qshareddata
+	"qshareddata.h"
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlschemavalidator
+	"qxmlschemavalidator.h"
+
+1335476750 c:\qt\4.8.2\include\qtxmlpatterns\qxmlschemavalidator.h
+	"../../src/xmlpatterns/api/qxmlschemavalidator.h"
+
+1335476770 c:\qt\4.8.2\src\xmlpatterns\api\qxmlschemavalidator.h
+	<QtCore/QUrl>
+	<QtXmlPatterns/QXmlNamePool>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtcore
+	"qalgorithms.h"
+	"qbitarray.h"
+	"qbytearray.h"
+	"qbytearraymatcher.h"
+	"qcache.h"
+	"qchar.h"
+	"qcontainerfwd.h"
+	"qcontiguouscache.h"
+	"qcryptographichash.h"
+	"qdatetime.h"
+	"qeasingcurve.h"
+	"qelapsedtimer.h"
+	"qhash.h"
+	"qiterator.h"
+	"qline.h"
+	"qlinkedlist.h"
+	"qlist.h"
+	"qlocale.h"
+	"qmap.h"
+	"qmargins.h"
+	"qpair.h"
+	"qpoint.h"
+	"qqueue.h"
+	"qrect.h"
+	"qregexp.h"
+	"qscopedpointer.h"
+	"qscopedvaluerollback.h"
+	"qset.h"
+	"qshareddata.h"
+	"qsharedpointer.h"
+	"qsize.h"
+	"qstack.h"
+	"qstring.h"
+	"qstringbuilder.h"
+	"qstringlist.h"
+	"qstringmatcher.h"
+	"qtextboundaryfinder.h"
+	"qtimeline.h"
+	"qvarlengtharray.h"
+	"qvector.h"
+	"qfuture.h"
+	"qfutureinterface.h"
+	"qfuturesynchronizer.h"
+	"qfuturewatcher.h"
+	"qrunnable.h"
+	"qtconcurrentcompilertest.h"
+	"qtconcurrentexception.h"
+	"qtconcurrentfilter.h"
+	"qtconcurrentfilterkernel.h"
+	"qtconcurrentfunctionwrappers.h"
+	"qtconcurrentiteratekernel.h"
+	"qtconcurrentmap.h"
+	"qtconcurrentmapkernel.h"
+	"qtconcurrentmedian.h"
+	"qtconcurrentreducekernel.h"
+	"qtconcurrentresultstore.h"
+	"qtconcurrentrun.h"
+	"qtconcurrentrunbase.h"
+	"qtconcurrentstoredfunctioncall.h"
+	"qtconcurrentthreadengine.h"
+	"qthreadpool.h"
+	"qabstractfileengine.h"
+	"qbuffer.h"
+	"qdatastream.h"
+	"qdebug.h"
+	"qdir.h"
+	"qdiriterator.h"
+	"qfile.h"
+	"qfileinfo.h"
+	"qfilesystemwatcher.h"
+	"qfsfileengine.h"
+	"qiodevice.h"
+	"qprocess.h"
+	"qresource.h"
+	"qsettings.h"
+	"qtemporaryfile.h"
+	"qtextstream.h"
+	"qurl.h"
+	"qtextcodec.h"
+	"qtextcodecplugin.h"
+	"qabstractanimation.h"
+	"qanimationgroup.h"
+	"qparallelanimationgroup.h"
+	"qpauseanimation.h"
+	"qpropertyanimation.h"
+	"qsequentialanimationgroup.h"
+	"qvariantanimation.h"
+	"qabstractstate.h"
+	"qabstracttransition.h"
+	"qeventtransition.h"
+	"qfinalstate.h"
+	"qhistorystate.h"
+	"qsignaltransition.h"
+	"qstate.h"
+	"qstatemachine.h"
+	"qabstracteventdispatcher.h"
+	"qabstractitemmodel.h"
+	"qbasictimer.h"
+	"qcoreapplication.h"
+	"qcoreevent.h"
+	"qeventloop.h"
+	"qmath.h"
+	"qmetaobject.h"
+	"qmetatype.h"
+	"qmimedata.h"
+	"qobject.h"
+	"qobjectcleanuphandler.h"
+	"qobjectdefs.h"
+	"qpointer.h"
+	"qsharedmemory.h"
+	"qsignalmapper.h"
+	"qsocketnotifier.h"
+	"qsystemsemaphore.h"
+	"qtimer.h"
+	"qtranslator.h"
+	"qvariant.h"
+	"qfactoryinterface.h"
+	"qlibrary.h"
+	"qplugin.h"
+	"qpluginloader.h"
+	"quuid.h"
+	"qatomic.h"
+	"qbasicatomic.h"
+	"qmutex.h"
+	"qreadwritelock.h"
+	"qsemaphore.h"
+	"qthread.h"
+	"qthreadstorage.h"
+	"qwaitcondition.h"
+	"qxmlstream.h"
+	"qendian.h"
+	"qfeatures.h"
+	"qglobal.h"
+	"qlibraryinfo.h"
+	"qnamespace.h"
+	"qnumeric.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbitarray.h
+	"../../src/corelib/tools/qbitarray.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qbitarray.h
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbytearraymatcher.h
+	"../../src/corelib/tools/qbytearraymatcher.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qbytearraymatcher.h
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcache.h
+	"../../src/corelib/tools/qcache.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qcache.h
+	<QtCore/qhash.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcontainerfwd.h
+	"../../src/corelib/tools/qcontainerfwd.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qcontainerfwd.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcontiguouscache.h
+	"../../src/corelib/tools/qcontiguouscache.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qcontiguouscache.h
+	<QtCore/qatomic.h>
+	<limits.h>
+	<new>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcryptographichash.h
+	"../../src/corelib/tools/qcryptographichash.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qcryptographichash.h
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdatetime.h
+	"../../src/corelib/tools/qdatetime.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qdatetime.h
+	<QtCore/qstring.h>
+	<QtCore/qnamespace.h>
+	<QtCore/qsharedpointer.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsharedpointer.h
+	"../../src/corelib/tools/qsharedpointer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qsharedpointer.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<QtCore/qshareddata.h>
+	<QtCore/qsharedpointer_impl.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsharedpointer_impl.h
+	"../../src/corelib/tools/qsharedpointer_impl.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qsharedpointer_impl.h
+	<new>
+	<QtCore/qatomic.h>
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qeasingcurve.h
+	"../../src/corelib/tools/qeasingcurve.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qeasingcurve.h
+	<QtCore/qglobal.h>
+	<QtCore/qobjectdefs.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qelapsedtimer.h
+	"../../src/corelib/tools/qelapsedtimer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qelapsedtimer.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qline.h
+	"../../src/corelib/tools/qline.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qline.h
+	<QtCore/qpoint.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpoint.h
+	"../../src/corelib/tools/qpoint.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qpoint.h
+	<QtCore/qnamespace.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qlinkedlist.h
+	"../../src/corelib/tools/qlinkedlist.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qlinkedlist.h
+	<QtCore/qiterator.h>
+	<QtCore/qatomic.h>
+	<iterator>
+	<list>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qlocale.h
+	"../../src/corelib/tools/qlocale.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qlocale.h
+	<QtCore/qvariant.h>
+	<QtCore/qstring.h>
+	<QtCore/qobjectdefs.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qvariant.h
+	"../../src/corelib/kernel/qvariant.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qvariant.h
+	<QtCore/qatomic.h>
+	<QtCore/qbytearray.h>
+	<QtCore/qlist.h>
+	<QtCore/qmetatype.h>
+	<QtCore/qmap.h>
+	<QtCore/qhash.h>
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmetatype.h
+	"../../src/corelib/kernel/qmetatype.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qmetatype.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<QtCore/qdatastream.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmargins.h
+	"../../src/corelib/tools/qmargins.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qmargins.h
+	<QtCore/qnamespace.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qqueue.h
+	"../../src/corelib/tools/qqueue.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qqueue.h
+	<QtCore/qlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qrect.h
+	"../../src/corelib/tools/qrect.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qrect.h
+	<QtCore/qsize.h>
+	<QtCore/qpoint.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsize.h
+	"../../src/corelib/tools/qsize.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qsize.h
+	<QtCore/qnamespace.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qregexp.h
+	"../../src/corelib/tools/qregexp.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qregexp.h
+	<QtCore/qstring.h>
+	<new>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qscopedvaluerollback.h
+	"../../src/corelib/tools/qscopedvaluerollback.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qscopedvaluerollback.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qset.h
+	"../../src/corelib/tools/qset.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qset.h
+	<QtCore/qhash.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstack.h
+	"../../src/corelib/tools/qstack.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qstack.h
+	<QtCore/qvector.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qvector.h
+	"../../src/corelib/tools/qvector.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qvector.h
+	<QtCore/qiterator.h>
+	<QtCore/qatomic.h>
+	<QtCore/qalgorithms.h>
+	<QtCore/qlist.h>
+	<iterator>
+	<vector>
+	<stdlib.h>
+	<string.h>
+	<initializer_list>
+	<QtCore/QPointF>
+	<QtCore/QPoint>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpointf
+	"qpoint.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpoint
+	"qpoint.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstringlist.h
+	"../../src/corelib/tools/qstringlist.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qstringlist.h
+	<QtCore/qalgorithms.h>
+	<QtCore/qdatastream.h>
+	<QtCore/qlist.h>
+	<QtCore/qregexp.h>
+	<QtCore/qstring.h>
+	<QtCore/qstringmatcher.h>
+	<Qt3Support/q3valuelist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstringmatcher.h
+	"../../src/corelib/tools/qstringmatcher.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qstringmatcher.h
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qt3support\q3valuelist.h
+	"../../src/qt3support/tools/q3valuelist.h"
+
+1335476768 c:\qt\4.8.2\src\qt3support\tools\q3valuelist.h
+	<QtCore/qalgorithms.h>
+	<QtCore/qdatastream.h>
+	<QtCore/qlinkedlist.h>
+	<QtCore/qlist.h>
+	<iterator>
+	<list>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtextboundaryfinder.h
+	"../../src/corelib/tools/qtextboundaryfinder.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qtextboundaryfinder.h
+	<QtCore/qchar.h>
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtimeline.h
+	"../../src/corelib/tools/qtimeline.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qtimeline.h
+	<QtCore/qeasingcurve.h>
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qvarlengtharray.h
+	"../../src/corelib/tools/qvarlengtharray.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\tools\qvarlengtharray.h
+	<QtCore/qcontainerfwd.h>
+	<QtCore/qglobal.h>
+	<QtCore/qalgorithms.h>
+	<new>
+	<string.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfuture.h
+	"../../src/corelib/concurrent/qfuture.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qfuture.h
+	<QtCore/qglobal.h>
+	<QtCore/qfutureinterface.h>
+	<QtCore/qstring.h>
+	<QtCore/qtconcurrentcompilertest.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfutureinterface.h
+	"../../src/corelib/concurrent/qfutureinterface.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qfutureinterface.h
+	<QtCore/qglobal.h>
+	<QtCore/qrunnable.h>
+	<QtCore/qmutex.h>
+	<QtCore/qtconcurrentexception.h>
+	<QtCore/qtconcurrentresultstore.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qrunnable.h
+	"../../src/corelib/concurrent/qrunnable.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qrunnable.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmutex.h
+	"../../src/corelib/thread/qmutex.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qmutex.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<new>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentexception.h
+	"../../src/corelib/concurrent/qtconcurrentexception.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentexception.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<exception>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentresultstore.h
+	"../../src/corelib/concurrent/qtconcurrentresultstore.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentresultstore.h
+	<QtCore/qglobal.h>
+	<QtCore/qmap.h>
+	<QtCore/qdebug.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdebug.h
+	"../../src/corelib/io/qdebug.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qdebug.h
+	<QtCore/qalgorithms.h>
+	<QtCore/qhash.h>
+	<QtCore/qlist.h>
+	<QtCore/qmap.h>
+	<QtCore/qpair.h>
+	<QtCore/qtextstream.h>
+	<QtCore/qstring.h>
+	<QtCore/qvector.h>
+	<QtCore/qset.h>
+	<QtCore/qcontiguouscache.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtextstream.h
+	"../../src/corelib/io/qtextstream.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qtextstream.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstring.h>
+	<QtCore/qchar.h>
+	<QtCore/qlocale.h>
+	<QtCore/qscopedpointer.h>
+	<QtCore/qtextcodec.h>
+	<stdio.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtextcodec.h
+	"../../src/corelib/codecs/qtextcodec.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\codecs\qtextcodec.h
+	<QtCore/qstring.h>
+	<QtCore/qlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentcompilertest.h
+	"../../src/corelib/concurrent/qtconcurrentcompilertest.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentcompilertest.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfuturesynchronizer.h
+	"../../src/corelib/concurrent/qfuturesynchronizer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qfuturesynchronizer.h
+	<QtCore/qfuture.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfuturewatcher.h
+	"../../src/corelib/concurrent/qfuturewatcher.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qfuturewatcher.h
+	<QtCore/qfuture.h>
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentfilter.h
+	"../../src/corelib/concurrent/qtconcurrentfilter.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentfilter.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentfilterkernel.h>
+	<QtCore/qtconcurrentfunctionwrappers.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentfilterkernel.h
+	"../../src/corelib/concurrent/qtconcurrentfilterkernel.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentfilterkernel.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentiteratekernel.h>
+	<QtCore/qtconcurrentmapkernel.h>
+	<QtCore/qtconcurrentreducekernel.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentiteratekernel.h
+	"../../src/corelib/concurrent/qtconcurrentiteratekernel.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentiteratekernel.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<QtCore/qtconcurrentmedian.h>
+	<QtCore/qtconcurrentthreadengine.h>
+	<iterator>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentmedian.h
+	"../../src/corelib/concurrent/qtconcurrentmedian.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentmedian.h
+	<QtCore/qglobal.h>
+	<QtCore/qvector.h>
+	<QtCore/qalgorithms.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentthreadengine.h
+	"../../src/corelib/concurrent/qtconcurrentthreadengine.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentthreadengine.h
+	<QtCore/qglobal.h>
+	<QtCore/qthreadpool.h>
+	<QtCore/qfuture.h>
+	<QtCore/qdebug.h>
+	<QtCore/qtconcurrentexception.h>
+	<QtCore/qwaitcondition.h>
+	<QtCore/qatomic.h>
+	<QtCore/qsemaphore.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qthreadpool.h
+	"../../src/corelib/concurrent/qthreadpool.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qthreadpool.h
+	<QtCore/qglobal.h>
+	<QtCore/qthread.h>
+	<QtCore/qrunnable.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qthread.h
+	"../../src/corelib/thread/qthread.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qthread.h
+	<QtCore/qobject.h>
+	<limits.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qwaitcondition.h
+	"../../src/corelib/thread/qwaitcondition.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qwaitcondition.h
+	<QtCore/qglobal.h>
+	<limits.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsemaphore.h
+	"../../src/corelib/thread/qsemaphore.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qsemaphore.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentmapkernel.h
+	"../../src/corelib/concurrent/qtconcurrentmapkernel.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentmapkernel.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentiteratekernel.h>
+	<QtCore/qtconcurrentreducekernel.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentreducekernel.h
+	"../../src/corelib/concurrent/qtconcurrentreducekernel.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentreducekernel.h
+	<QtCore/qglobal.h>
+	<QtCore/qatomic.h>
+	<QtCore/qlist.h>
+	<QtCore/qmap.h>
+	<QtCore/qmutex.h>
+	<QtCore/qthread.h>
+	<QtCore/qthreadpool.h>
+	<QtCore/qvector.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentfunctionwrappers.h
+	"../../src/corelib/concurrent/qtconcurrentfunctionwrappers.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentfunctionwrappers.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentmap.h
+	"../../src/corelib/concurrent/qtconcurrentmap.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentmap.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentmapkernel.h>
+	<QtCore/qtconcurrentreducekernel.h>
+	<QtCore/qtconcurrentfunctionwrappers.h>
+	<QtCore/qstringlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentrun.h
+	"../../src/corelib/concurrent/qtconcurrentrun.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentrun.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentrunbase.h>
+	<QtCore/qtconcurrentstoredfunctioncall.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentrunbase.h
+	"../../src/corelib/concurrent/qtconcurrentrunbase.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentrunbase.h
+	<QtCore/qglobal.h>
+	<QtCore/qfuture.h>
+	<QtCore/qrunnable.h>
+	<QtCore/qthreadpool.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtconcurrentstoredfunctioncall.h
+	"../../src/corelib/concurrent/qtconcurrentstoredfunctioncall.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\concurrent\qtconcurrentstoredfunctioncall.h
+	<QtCore/qglobal.h>
+	<QtCore/qtconcurrentrunbase.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstractfileengine.h
+	"../../src/corelib/io/qabstractfileengine.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qabstractfileengine.h
+	<QtCore/qdir.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdir.h
+	"../../src/corelib/io/qdir.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qdir.h
+	<QtCore/qstring.h>
+	<QtCore/qfileinfo.h>
+	<QtCore/qstringlist.h>
+	<QtCore/qshareddata.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfileinfo.h
+	"../../src/corelib/io/qfileinfo.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qfileinfo.h
+	<QtCore/qfile.h>
+	<QtCore/qlist.h>
+	<QtCore/qshareddata.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbuffer.h
+	"../../src/corelib/io/qbuffer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qbuffer.h
+	<QtCore/qiodevice.h>
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdiriterator.h
+	"../../src/corelib/io/qdiriterator.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qdiriterator.h
+	<QtCore/qdir.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfilesystemwatcher.h
+	"../../src/corelib/io/qfilesystemwatcher.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qfilesystemwatcher.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfsfileengine.h
+	"../../src/corelib/io/qfsfileengine.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qfsfileengine.h
+	<QtCore/qabstractfileengine.h>
+	<f32file.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qprocess.h
+	"../../src/corelib/io/qprocess.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qprocess.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstringlist.h>
+	<QtCore/qshareddata.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qresource.h
+	"../../src/corelib/io/qresource.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qresource.h
+	<QtCore/qstring.h>
+	<QtCore/qlocale.h>
+	<QtCore/qstringlist.h>
+	<QtCore/qlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsettings.h
+	"../../src/corelib/io/qsettings.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qsettings.h
+	<QtCore/qobject.h>
+	<QtCore/qvariant.h>
+	<QtCore/qstring.h>
+	<QtCore/qstringlist.h>
+	<ctype.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtemporaryfile.h
+	"../../src/corelib/io/qtemporaryfile.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\io\qtemporaryfile.h
+	<QtCore/qiodevice.h>
+	<QtCore/qfile.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtextcodecplugin.h
+	"../../src/corelib/codecs/qtextcodecplugin.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\codecs\qtextcodecplugin.h
+	<QtCore/qplugin.h>
+	<QtCore/qfactoryinterface.h>
+	<QtCore/qlist.h>
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qplugin.h
+	"../../src/corelib/plugin/qplugin.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\plugin\qplugin.h
+	<QtCore/qobject.h>
+	<QtCore/qpointer.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpointer.h
+	"../../src/corelib/kernel/qpointer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qpointer.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfactoryinterface.h
+	"../../src/corelib/plugin/qfactoryinterface.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\plugin\qfactoryinterface.h
+	<QtCore/qobject.h>
+	<QtCore/qstringlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstractanimation.h
+	"../../src/corelib/animation/qabstractanimation.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qabstractanimation.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qanimationgroup.h
+	"../../src/corelib/animation/qanimationgroup.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qanimationgroup.h
+	<QtCore/qabstractanimation.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qparallelanimationgroup.h
+	"../../src/corelib/animation/qparallelanimationgroup.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qparallelanimationgroup.h
+	<QtCore/qanimationgroup.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpauseanimation.h
+	"../../src/corelib/animation/qpauseanimation.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qpauseanimation.h
+	<QtCore/qanimationgroup.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpropertyanimation.h
+	"../../src/corelib/animation/qpropertyanimation.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qpropertyanimation.h
+	<QtCore/qvariantanimation.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qvariantanimation.h
+	"../../src/corelib/animation/qvariantanimation.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qvariantanimation.h
+	<QtCore/qeasingcurve.h>
+	<QtCore/qabstractanimation.h>
+	<QtCore/qvector.h>
+	<QtCore/qvariant.h>
+	<QtCore/qpair.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsequentialanimationgroup.h
+	"../../src/corelib/animation/qsequentialanimationgroup.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\animation\qsequentialanimationgroup.h
+	<QtCore/qanimationgroup.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstractstate.h
+	"../../src/corelib/statemachine/qabstractstate.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qabstractstate.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstracttransition.h
+	"../../src/corelib/statemachine/qabstracttransition.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qabstracttransition.h
+	<QtCore/qobject.h>
+	<QtCore/qlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qeventtransition.h
+	"../../src/corelib/statemachine/qeventtransition.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qeventtransition.h
+	<QtCore/qabstracttransition.h>
+	<QtCore/qcoreevent.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qfinalstate.h
+	"../../src/corelib/statemachine/qfinalstate.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qfinalstate.h
+	<QtCore/qabstractstate.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qhistorystate.h
+	"../../src/corelib/statemachine/qhistorystate.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qhistorystate.h
+	<QtCore/qabstractstate.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsignaltransition.h
+	"../../src/corelib/statemachine/qsignaltransition.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qsignaltransition.h
+	<QtCore/qabstracttransition.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstate.h
+	"../../src/corelib/statemachine/qstate.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qstate.h
+	<QtCore/qabstractstate.h>
+	<QtCore/qlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qstatemachine.h
+	"../../src/corelib/statemachine/qstatemachine.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\statemachine\qstatemachine.h
+	<QtCore/qstate.h>
+	<QtCore/qcoreevent.h>
+	<QtCore/qlist.h>
+	<QtCore/qobject.h>
+	<QtCore/qset.h>
+	<QtCore/qvariant.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstracteventdispatcher.h
+	"../../src/corelib/kernel/qabstracteventdispatcher.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qabstracteventdispatcher.h
+	<QtCore/qobject.h>
+	<QtCore/qeventloop.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qeventloop.h
+	"../../src/corelib/kernel/qeventloop.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qeventloop.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qabstractitemmodel.h
+	"../../src/corelib/kernel/qabstractitemmodel.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qabstractitemmodel.h
+	<QtCore/qvariant.h>
+	<QtCore/qobject.h>
+	<QtCore/qhash.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qbasictimer.h
+	"../../src/corelib/kernel/qbasictimer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qbasictimer.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qcoreapplication.h
+	"../../src/corelib/kernel/qcoreapplication.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qcoreapplication.h
+	<QtCore/qobject.h>
+	<QtCore/qcoreevent.h>
+	<QtCore/qeventloop.h>
+	<QtCore/qstringlist.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmath.h
+	"../../src/corelib/kernel/qmath.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qmath.h
+	<math.h>
+	<QtCore/qglobal.h>
+	<e32math.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmetaobject.h
+	"../../src/corelib/kernel/qmetaobject.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qmetaobject.h
+	<QtCore/qobjectdefs.h>
+	<QtCore/qvariant.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qmimedata.h
+	"../../src/corelib/kernel/qmimedata.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qmimedata.h
+	<QtCore/qvariant.h>
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qobjectcleanuphandler.h
+	"../../src/corelib/kernel/qobjectcleanuphandler.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qobjectcleanuphandler.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsharedmemory.h
+	"../../src/corelib/kernel/qsharedmemory.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qsharedmemory.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsignalmapper.h
+	"../../src/corelib/kernel/qsignalmapper.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qsignalmapper.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsocketnotifier.h
+	"../../src/corelib/kernel/qsocketnotifier.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qsocketnotifier.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qsystemsemaphore.h
+	"../../src/corelib/kernel/qsystemsemaphore.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qsystemsemaphore.h
+	<QtCore/qstring.h>
+	<QtCore/qscopedpointer.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtimer.h
+	"../../src/corelib/kernel/qtimer.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qtimer.h
+	<QtCore/qbasictimer.h>
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtranslator.h
+	"../../src/corelib/kernel/qtranslator.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\kernel\qtranslator.h
+	<QtCore/qobject.h>
+	<QtCore/qbytearray.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qlibrary.h
+	"../../src/corelib/plugin/qlibrary.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\plugin\qlibrary.h
+	<QtCore/qobject.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qpluginloader.h
+	"../../src/corelib/plugin/qpluginloader.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\plugin\qpluginloader.h
+	<QtCore/qlibrary.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\quuid.h
+	"../../src/corelib/plugin/quuid.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\plugin\quuid.h
+	<QtCore/qstring.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qreadwritelock.h
+	"../../src/corelib/thread/qreadwritelock.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qreadwritelock.h
+	<QtCore/qglobal.h>
+	<limits.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qthreadstorage.h
+	"../../src/corelib/thread/qthreadstorage.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\thread\qthreadstorage.h
+	<QtCore/qglobal.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qxmlstream.h
+	"../../src/corelib/xml/qxmlstream.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\xml\qxmlstream.h
+	<QtCore/qiodevice.h>
+	<QtCore/qstring.h>
+	<QtCore/qvector.h>
+	<QtCore/qscopedpointer.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qendian.h
+	"../../src/corelib/global/qendian.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qendian.h
+	<QtCore/qglobal.h>
+	<stdlib.h>
+	<byteswap.h>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qlibraryinfo.h
+	"../../src/corelib/global/qlibraryinfo.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qlibraryinfo.h
+	<QtCore/qstring.h>
+	<QtCore/QDate>
+
+1335476750 c:\qt\4.8.2\include\qtcore\qdate
+	"qdatetime.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qnumeric.h
+	"../../src/corelib/global/qnumeric.h"
+
+1335476768 c:\qt\4.8.2\src\corelib\global\qnumeric.h
+	<QtCore/qglobal.h>
+
+1347951287 c:\qt\4.8.2\include\qtgui
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringinput.h
+	"XEMNodeInput.h"
+	"XEMClusteringStrategy.h"
+	"XEMAlgo.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeinput.h
+	"XEMIOStreamUtil.h"
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringstrategy.h
+	"XEMUtil.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\algo\xemalgo.h
+	"XEMUtil.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringoutput.h
+	"XEMNodeOutput.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeoutput.h
+	"XEMIOStreamUtil.h"
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringmain.h
+	<vector>
+	"XEMUtil.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomdaproject.cpp
+	"XEMDomDAProject.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomdaproject.h
+	"XEMDomProject.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomdata.cpp
+	<QTextStream>
+	"XEMDomData.h"
+	"XEMBinaryData.h"
+	"XEMQualitativeColumnDescription.h"
+	"XEMQuantitativeColumnDescription.h"
+	"XEMColumnDescription.h"
+	"XEMIndividualColumnDescription.h"
+	"XEMWeightColumnDescription.h"
+
+1335476750 c:\qt\4.8.2\include\qtcore\qtextstream
+	"qtextstream.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomdata.h
+	<QDomDocument>
+	<QXmlSchema>
+	<QXmlSchemaValidator>
+	<QFile>
+	"XEMIOStreamUtil.h"
+	"XEMDataDescription.h"
+	"XEMClusteringInput.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xembinarydata.h
+	"XEMData.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdata.h
+	"XEMUtil.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemqualitativecolumndescription.h
+	"XEMColumnDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemcolumndescription.h
+	"XEMUtil.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemquantitativecolumndescription.h
+	"XEMColumnDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemindividualcolumndescription.h
+	"XEMColumnDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemweightcolumndescription.h
+	"XEMColumnDescription.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomlabel.cpp
+	<QTextStream>
+	"XEMPartition.h"
+	"XEMDomLabel.h"
+	"XEMIOStreamUtil.h"
+	"XEMQualitativeColumnDescription.h"
+	"XEMIndividualColumnDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xempartition.h
+	"XEMUtil.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomlabel.h
+	<QDomDocument>
+	<QXmlSchema>
+	<QXmlSchemaValidator>
+	<QFile>
+	"XEMClusteringInput.h"
+	"XEMLabelDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemlabeldescription.h
+	"XEMDescription.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomparameter.cpp
+	<QTextStream>
+	"XEMDomParameter.h"
+	"XEMBinaryData.h"
+	"XEMModelType.h"
+	"XEMIOStreamUtil.h"
+	"XEMParameterDescription.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomparameter.h
+	<QDomDocument>
+	<QXmlSchema>
+	<QXmlSchemaValidator>
+	<QFile>
+	"XEMBinaryParameter.h"
+	"XEMGaussianParameter.h"
+	"XEMClusteringInput.h"
+	"XEMNodeClusteringOutput.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xembinaryparameter.h
+	"XEMUtil.h"
+	"XEMParameter.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xemparameter.h
+	"XEMUtil.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xemgaussianparameter.h
+	"XEMUtil.h"
+	"XEMParameter.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\model\xemmodeltype.h
+	"XEMUtil.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemparameterdescription.h
+	"XEMUtil.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproba.cpp
+	"XEMDomProba.h"
+	"XEMIOStreamUtil.h"
+	"XEMColumnDescription.h"
+
+1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproba.h
+	"XEMClusteringInput.h"
+	"XEMProbaDescription.h"
+	<QFile>
+	<QDomDocument>
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemprobadescription.h
+	"XEMDescription.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproject.cpp
+	"XEMDomProject.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemiostreamutil.cpp
+	"XEMIOStreamUtil.h"
+	"XEMBinaryData.h"
+	"XEMGaussianData.h"
+	"XEMClusteringInput.h"
+	"XEMClusteringMain.h"
+	"XEMClusteringOutput.h"
+	"XEMNodeClusteringInput.h"
+	"XEMNodeClusteringOutput.h"
+	"XEMClusteringModelOutput.h"
+	"XEMDomClusteringProject.h"
+	"XEMDomDAProject.h"
+	"XEMQualitativeColumnDescription.h"
+	"XEMQuantitativeColumnDescription.h"
+	"XEMModelType.h"
+	"XEMClusteringModelOutput.h"
+	"XEMClusteringOutput.h"
+	"XEMInput.h"
+	"XEMModel.h"
+	"XEMParameter.h"
+	"XEMProba.h"
+	"XEMProbaDescription.h"
+	"XEMLabel.h"
+	"XEMLabelDescription.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemgaussiandata.h
+	"XEMData.h"
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringmodeloutput.h
+	"XEMModelOutput.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemmodeloutput.h
+	"XEMUtil.h"
+	"XEMModelType.h"
+	"XEMCriterionOutput.h"
+	"XEMParameter.h"
+	"XEMParameterDescription.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\criterion\xemcriterionoutput.h
+	"XEMUtil.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\model\xemmodel.h
+	"XEMUtil.h"
+	"XEMError.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\utilities\xemerror.h
+	"XEMUtil.h"
+
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemproba.h
+	<vector>
+	<iostream>
+	<stdint.h>
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemlabel.h
+	<iostream>
+	<vector>
+	<stdint.h>
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringinput.cpp
+	"XEMNodeClusteringInput.h"
+	"XEMIOStreamUtil.h"
+	<XEMEMAlgo.h>
+	<algorithm>
+	"XEMBinaryData.h"
+	"XEMDomLabel.h"
+	"XEMDomParameter.h"
+	"XEMClusteringInput.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+	"XEMAlgo.h"
+	"XEMModelType.h"
+	<XEMCriterion.h>
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\algo\xememalgo.h
+	"XEMAlgo.h"
+
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringstrategyinit.h
+	"XEMUtil.h"
+
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\criterion\xemcriterion.h
+	"XEMUtil.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringoutput.cpp
+	"XEMNodeClusteringOutput.h"
+	"XEMDomParameter.h"
+	"XEMDomLabel.h"
+	"XEMDomProba.h"
+	"XEMModelType.h"
+	"XEMCriterionOutput.h"
+	"XEMClusteringModelOutput.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeinput.cpp
+	"XEMNodeInput.h"
+	"XEMDomData.h"
+	<stdint.h>
+	<algorithm>
+	"XEMBinaryData.h"
+	"XEMGaussianData.h"
+
+1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeoutput.cpp
+	"XEMNodeOutput.h"
+	"XEMDomData.h"
+	<stdint.h>
+	<algorithm>
+

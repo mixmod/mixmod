@@ -1,0 +1,17 @@
+=============
+= libmixmod =
+=============
+
+Core MIXMOD library: MIXture of (gaussian or multinomial) MODels.
+Main features:
+ > clustering (unsupervised classification)
+ > supervised classification
+
+----------------------------------------------------------------------
+
+To build Mixmod on UNIX system, type in BUILD directory:
+cmake ..
+make install
+
+To create the installation package, after the last instructions, type:
+cpack

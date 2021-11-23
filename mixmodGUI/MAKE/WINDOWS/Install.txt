@@ -1,0 +1,6 @@
+To build Mixmod in Windows, tape in BUILD directory:
+cmake .. 
+mingw32-make install
+
+To create the installation package, after the last instructions, tape:
+cpack

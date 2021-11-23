@@ -1,0 +1,1041 @@
+# depslib dependency file v1.0
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvccontroler.cpp
+	"XEMMVCControler.h"
+	"XEMModelType.h"
+	"XEMClusteringInput.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+	"XEMAlgo.h"
+	<sstream>
+	<stdint.h>
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvccontroler.h
+	"XEMMVCView.h"
+	"XEMMVCModel.h"
+	"XEMMVCEvent.h"
+	<exception>
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcview.h
+	"XEMMVCTreeItem.h"
+	<iostream>
+	<ostream>
+	<exception>
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvctreeitem.h
+	<cstddef>
+	<string>
+	<deque>
+	"XEMMVCStore.h"
+	"XEMMVCUtil.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcstore.h
+	<string>
+	<sstream>
+	<iostream>
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcutil.h
+	"XEMUtil.h"
+	"XEMInput.h"
+	"XEMData.h"
+	"XEMPartition.h"
+	"XEMBinarySample.h"
+	"XEMGaussianSample.h"
+	"XEMGaussianData.h"
+	"XEMBinaryData.h"
+	"XEMBinaryParameter.h"
+	"XEMGaussianParameter.h"
+	"XEMMatrix.h"
+	"XEMGaussianHDDAParameter.h"
+	"XEMGaussianEDDAParameter.h"
+	"XEMBinaryEkjhParameter.h"
+	"XEMClusteringMain.h"
+	"XEMClusteringOutput.h"
+	"../MIXMOD_IOSTREAM/XEMIOStreamUtil.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodel.h
+	<cstddef>
+	"XEMMVCModelItemCriterion.h"
+	"XEMMVCModelItemModel.h"
+	"XEMMVCModelItemSubDim.h"
+	"XEMMVCModelItemKnownPartition.h"
+	"XEMMVCModelItemInitPartition.h"
+	"XEMMVCModelItemKnownPartitionSample.h"
+	"XEMMVCModelItemWeight.h"
+	"XEMMVCModelItemAlgo.h"
+	"XEMMVCModelItemAlgoName.h"
+	"XEMMVCModelItemAlgoStopValue.h"
+	"XEMMVCModelItemAlgoStopRule.h"
+	"XEMMVCModelItemNbStrategyTry.h"
+	"XEMMVCModelItemParamInInit.h"
+	"XEMMVCModelItemInitName.h"
+	"XEMMVCModelItemInitParam.h"
+	"XEMMVCModelItemInitParamChild.h"
+	"XEMMVCModelItemInitParamChildBinary.h"
+	"XEMMVCModelItemInitParamChildHD.h"
+	"XEMMVCModelItemInitProportion.h"
+	"XEMMVCModelItemInitCenter.h"
+	"XEMMVCModelItemInitDispersion.h"
+	"XEMMVCModelItemScatter.h"
+	"XEMMVCModelItemInitDimension.h"
+	"XEMMVCModelItemAkj.h"
+	"XEMMVCModelItemOrientation.h"
+	"XEMMVCModelItemStopRuleInit.h"
+	"XEMMVCNoTemplate.h"
+	"XEMMVCUtil.h"
+	"XEMIOStreamUtil.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemcriterion.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitem.h
+	"XEMMVCEvent.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcevent.h
+	<string>
+	"XEMMVCUtil.h"
+	"XEMMVCTreeItem.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplay.h
+	<sstream>
+	"XEMMVCVector.h"
+	"XEMMVCMatrix.h"
+	"XEMMVCScatter.h"
+	"XEMMVCUtil.h"
+	"XEMMVCEvent.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcvector.h
+	<cstddef>
+	<string>
+	<ostream>
+	<stdint.h>
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmatrix.h
+	<cstddef>
+	<string>
+	<ostream>
+	<stdint.h>
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcscatter.h
+	<cstddef>
+	<string>
+	<ostream>
+	"XEMMVCMatrix.h"
+	<stdint.h>
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemmodel.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemsubdim.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemknownpartition.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+	"../MIXMOD_IOSTREAM/XEMDomLabel.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitpartition.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemknownpartitionsample.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplayKnownPartitionSample.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayknownpartitionsample.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemweight.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgo.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgoname.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgostopvalue.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgostoprule.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemnbstrategytry.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplayNbStrategyTry.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbstrategytry.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemparamininit.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitname.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparam.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchild.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchildbinary.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchildhd.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitproportion.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitcenter.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitdispersion.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemscatter.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitdimension.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemakj.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemorientation.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemstopruleinit.h
+	"XEMMVCModelItem.h"
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcnotemplate.h
+	<iostream>
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcevent.cpp
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplay.cpp
+	"XEMMVCEventMixmodDisplay.h"
+	"XEMMVCControler.h"
+
+1359557080 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaycenter.cpp
+	"XEMMVCEventMixmodDisplayCenter.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaycenter.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaydispersion.cpp
+	"XEMMVCEventMixmodDisplayDispersion.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaydispersion.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaydispersiondata.cpp
+	"XEMMVCEventMixmodDisplayDispersionData.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaydispersiondata.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayepsilon.cpp
+	"XEMMVCEventMixmodDisplayEpsilon.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayepsilon.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayepsiloninit.cpp
+	"XEMMVCEventMixmodDisplayEpsilonInit.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayepsiloninit.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinitparam.cpp
+	"XEMMVCEventMixmodDisplayInitParam.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinitparam.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinitpart.cpp
+	"XEMMVCEventMixmodDisplayInitPart.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinitpart.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinsertedalgoname.cpp
+	"XEMMVCEventMixmodDisplayInsertedAlgoName.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayinsertedalgoname.h
+	<sstream>
+	"XEMMVCVector.h"
+	"XEMMVCMatrix.h"
+	"XEMMVCScatter.h"
+	"XEMMVCUtil.h"
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayiteration.cpp
+	"XEMMVCEventMixmodDisplayIteration.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayiteration.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayknownpartition.cpp
+	"XEMMVCEventMixmodDisplayKnownPartition.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayknownpartition.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayknownpartitionsample.cpp
+	"XEMMVCEventMixmodDisplayKnownPartitionSample.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbiterationinit.cpp
+	"XEMMVCEventMixmodDisplayNbIterationInit.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbiterationinit.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbstrategytry.cpp
+	"XEMMVCEventMixmodDisplayNbStrategyTry.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbtryinit.cpp
+	"XEMMVCEventMixmodDisplayNbTryInit.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaynbtryinit.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayproportion.cpp
+	"XEMMVCEventMixmodDisplayProportion.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayproportion.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayscatter.cpp
+	"XEMMVCEventMixmodDisplayScatter.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayscatter.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaysubdim.cpp
+	"XEMMVCEventMixmodDisplaySubDim.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplaysubdim.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayweight.cpp
+	"XEMMVCEventMixmodDisplayWeight.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayweight.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayweightchild.cpp
+	"XEMMVCEventMixmodDisplayWeightChild.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoddisplayweightchild.h
+	"XEMMVCEventMixmodDisplay.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderror.cpp
+	"XEMMVCEventMixmodError.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderror.h
+	<sstream>
+	"XEMMVCVector.h"
+	"XEMMVCMatrix.h"
+	"XEMMVCScatter.h"
+	"XEMMVCUtil.h"
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorinitpart.cpp
+	"XEMMVCEventMixmodErrorInitPart.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorinitpart.h
+	"XEMMVCEventMixmodError.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorknownpartition.cpp
+	"XEMMVCEventMixmodErrorKnownPartition.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorknownpartition.h
+	"XEMMVCEventMixmodError.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorweight.cpp
+	"XEMMVCEventMixmodErrorWeight.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmoderrorweight.h
+	"XEMMVCEventMixmodError.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertakj.cpp
+	"XEMMVCEventMixmodInsertAkj.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertakj.h
+	"XEMMVCControler.h"
+	"XEMMVCEvent.h"
+	"XEMMVCUtil.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertalgo.cpp
+	"XEMMVCEventMixmodInsertAlgo.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertalgo.h
+	"XEMMVCUtil.h"
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertbk.cpp
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertdimension.cpp
+	"XEMMVCEventMixmodInsertDimension.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertdimension.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertdispersion.cpp
+	"XEMMVCEventMixmodInsertDispersion.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertdispersion.h
+	"XEMMVCEvent.h"
+
+1359557080 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparam.cpp
+	"XEMMVCEventMixmodInsertInitParam.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparam.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparambinary.cpp
+	"XEMMVCEventMixmodInsertInitParamBinary.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparambinary.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparamchild.cpp
+	"XEMMVCEventMixmodInsertInitParamChild.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparamchild.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparamhd.cpp
+	"XEMMVCEventMixmodInsertInitParamHD.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitparamhd.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitpartition.cpp
+	"XEMMVCEventMixmodInsertInitPartition.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitpartition.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitpartitionsample.cpp
+	"XEMMVCEventMixmodInsertInitPartitionSample.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertinitpartitionsample.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertknownpartition.cpp
+	"XEMMVCEventMixmodInsertKnownPartition.h"
+	"XEMMVCControler.h"
+	"XEMMVCModel.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertknownpartition.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertmodel.cpp
+	"XEMMVCEventMixmodInsertModel.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertmodel.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertorientation.cpp
+	"XEMMVCEventMixmodInsertOrientation.h"
+	"XEMMVCControler.h"
+	"XEMGeneralMatrix.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertorientation.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertproportion.cpp
+	"XEMMVCEventMixmodInsertProportion.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertproportion.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertstopruleinit.cpp
+	"XEMMVCEventMixmodInsertStopRuleInit.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertstopruleinit.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertstoprulevalue.cpp
+	"XEMMVCEventMixmodInsertStopRuleValue.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertstoprulevalue.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertsubdim.cpp
+	"XEMMVCEventMixmodInsertSubDim.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertsubdim.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetinitname.cpp
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetinitname.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetmodelchild.cpp
+	"XEMMVCEventMixmodSetModelChild.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetmodelchild.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetstoprulevalue.cpp
+	"XEMMVCEventMixmodSetStopRuleValue.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodsetstoprulevalue.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertalgo.cpp
+	"XEMMVCEventUserInsertAlgo.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertalgo.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertcriterion.cpp
+	"XEMMVCEventUserInsertCriterion.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertcriterion.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertknownpartition.cpp
+	"XEMMVCEventUserInsertKnownPartition.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertknownpartition.h
+	"XEMMVCEvent.h"
+	<string>
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertmodel.cpp
+	"XEMMVCEventUserInsertModel.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertmodel.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertnbstrategytry.cpp
+	"XEMMVCEventUserInsertNbStrategyTry.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertnbstrategytry.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertparamininit.cpp
+	"XEMMVCEventUserInsertParamInInit.h"
+	"XEMMVCControler.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertparamininit.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertstoprule.cpp
+	"XEMMVCEventUserInsertStopRule.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertstoprule.h
+	"XEMMVCEvent.h"
+
+1359557080 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertweight.cpp
+	"XEMMVCEventUserInsertWeight.h"
+	"XEMMVCControler.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserinsertweight.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovealgo.cpp
+	"XEMMVCEventUserRemoveAlgo.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovealgo.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovecriterion.cpp
+	"XEMMVCEventUserRemoveCriterion.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovecriterion.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveepsilon.cpp
+	"XEMMVCEventUserRemoveEpsilon.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveepsilon.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveknownpartition.cpp
+	"XEMMVCEventUserRemoveKnownPartition.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveknownpartition.h
+	<string>
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovemodel.cpp
+	"XEMMVCEventUserRemoveModel.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovemodel.h
+	"XEMMVCEvent.h"
+
+1359557080 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovenbiteration.cpp
+	"XEMMVCEventUserRemoveNbIteration.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovenbiteration.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovenbstrategytry.cpp
+	"XEMMVCEventUserRemoveNbStrategyTry.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremovenbstrategytry.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveparamininit.cpp
+	"XEMMVCEventUserRemoveParamInInit.h"
+	"XEMMVCControler.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveparamininit.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveweight.cpp
+	"XEMMVCEventUserRemoveWeight.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventuserremoveweight.h
+	<string>
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetalgoname.cpp
+	"XEMMVCEventUserSetAlgoName.h"
+	"XEMMVCControler.h"
+	"XEMClusteringStrategy.h"
+	"XEMAlgo.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetalgoname.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetalgostopname.cpp
+	"XEMMVCEventUserSetAlgoStopName.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetalgostopname.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetcriterionchild.cpp
+	"XEMMVCEventUserSetCriterionChild.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetcriterionchild.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetepsilon.cpp
+	"XEMMVCEventUserSetEpsilon.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetepsilon.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitname.cpp
+	"XEMMVCEventUserSetInitName.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitname.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitparam.cpp
+	"XEMMVCEventUserSetInitParam.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitparam.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitpart.cpp
+	"XEMMVCEventUserSetInitPart.h"
+	"XEMMVCControler.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetinitpart.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetknownpartition.cpp
+	"XEMMVCEventUserSetKnownPartition.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetknownpartition.h
+	<string>
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetmodelchild.cpp
+	"XEMMVCEventUserSetModelChild.h"
+	"XEMMVCControler.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetmodelchild.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbiteration.cpp
+	"XEMMVCEventUserSetNbIteration.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbiteration.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbiterationinit.cpp
+	"XEMMVCEventUserSetNbIterationInit.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbiterationinit.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbstrategytry.cpp
+	"XEMMVCEventUserSetNbStrategyTry.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbstrategytry.h
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbtryinit.cpp
+	"XEMMVCEventUserSetNbTryInit.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetnbtryinit.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetstopruleinit.cpp
+	"XEMMVCEventUserSetStopRuleInit.h"
+	"XEMMVCControler.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetstopruleinit.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetsubdim.cpp
+	"XEMMVCEventUserSetSubDim.h"
+	"XEMMVCControler.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetsubdim.h
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetweight.cpp
+	"XEMMVCEventUserSetWeight.h"
+	"XEMMVCControler.h"
+
+1359557081 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventusersetweight.h
+	<string>
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmatrix.cpp
+	"XEMMVCMatrix.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodel.cpp
+	"XEMMVCModel.h"
+	"XEMQuantitativeColumnDescription.h"
+	"XEMQualitativeColumnDescription.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitem.cpp
+	"XEMMVCModelItem.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemakj.cpp
+	"XEMMVCModelItemAkj.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayCenter.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgo.cpp
+	"XEMMVCModelItemAlgoName.h"
+	"XEMMVCEventMixmodInsertAlgo.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCModelItemAlgo.h"
+	"XEMAlgo.h"
+	"XEMClusteringStrategy.h"
+
+1359557080 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcnoevent.h
+	<string>
+	"XEMMVCEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgoname.cpp
+	"XEMMVCModelItemAlgo.h"
+	"XEMMVCModelItemAlgoName.h"
+	"XEMMVCEventMixmodInsertAlgo.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodDisplayInsertedAlgoName.h"
+	"XEMClusteringStrategy.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgostoprule.cpp
+	"XEMMVCModelItemAlgoStopRule.h"
+	"XEMMVCEventMixmodInsertStopRuleValue.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodDisplayEpsilon.h"
+	"XEMMVCEventMixmodDisplayIteration.h"
+	"XEMClusteringStrategy.h"
+	"XEMAlgo.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemalgostopvalue.cpp
+	"XEMMVCModelItemAlgoStopValue.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodDisplayIteration.h"
+	"XEMMVCEventMixmodDisplayEpsilon.h"
+	"XEMClusteringStrategy.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemcriterion.cpp
+	"XEMMVCModelItemCriterion.h"
+	"XEMMVCNoEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitcenter.cpp
+	"XEMMVCModelItemInitCenter.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayCenter.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitdimension.cpp
+	"XEMMVCModelItemInitDimension.h"
+	"XEMMVCEventMixmodInsertSubDim.h"
+	"XEMMVCEventMixmodSetModelChild.h"
+	"XEMMVCEventMixmodDisplaySubDim.h"
+	"XEMMVCNoEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitdispersion.cpp
+	"XEMMVCModelItemInitDispersion.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayDispersion.h"
+	"XEMMVCEventMixmodDisplayDispersionData.h"
+	"XEMMVCNoEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitname.cpp
+	"XEMMVCModelItemInitName.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCNoEvent.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparam.cpp
+	"XEMMVCModelItemInitParam.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodInsertInitParamChild.h"
+	"XEMMVCEventMixmodInsertInitParamBinary.h"
+	"XEMMVCEventMixmodInsertInitParamHD.h"
+	"XEMMVCEventMixmodDisplayInitParam.h"
+	"XEMMVCUtil.h"
+	"XEMClusteringStrategy.h"
+	"XEMModelType.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchild.cpp
+	"XEMMVCModelItemInitParamChild.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodInsertProportion.h"
+	"XEMMVCEventMixmodInsertCenter.h"
+	"XEMMVCEventMixmodInsertDispersion.h"
+	"XEMMVCEventMixmodDisplayInitParam.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+	"XEMGaussianEDDAParameter.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvceventmixmodinsertcenter.h
+	"XEMMVCControler.h"
+	"XEMMVCEvent.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchildbinary.cpp
+	"XEMMVCModelItemInitParamChildBinary.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodInsertProportion.h"
+	"XEMMVCEventMixmodInsertCenter.h"
+	"XEMMVCEventMixmodInsertDispersion.h"
+	"XEMMVCEventMixmodDisplayInitParam.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+	"XEMBinaryEkjhParameter.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitparamchildhd.cpp
+	"XEMMVCModelItemInitParamChildHD.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodInsertProportion.h"
+	"XEMMVCEventMixmodInsertCenter.h"
+	"XEMMVCEventMixmodInsertDimension.h"
+	"XEMMVCEventMixmodInsertAkj.h"
+	"XEMMVCEventMixmodInsertOrientation.h"
+	"XEMMVCUtil.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitpartition.cpp
+	"XEMMVCModelItemInitPartition.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCModel.h"
+	"XEMMVCEventMixmodDisplayInitPart.h"
+	"XEMMVCEventMixmodErrorInitPart.h"
+	"XEMClusteringStrategy.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodeliteminitproportion.cpp
+	"XEMMVCModelItemInitProportion.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayProportion.h"
+	"XEMMVCEventMixmodInsertProportion.h"
+
+1359557080 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemknownpartition.cpp
+	"XEMMVCModelItemKnownPartition.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodInsertKnownPartition.h"
+	"XEMMVCEventMixmodInsertInitPartitionSample.h"
+	"XEMMVCEventMixmodDisplayKnownPartition.h"
+	"XEMMVCEventMixmodErrorKnownPartition.h"
+	"XEMMVCModel.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemknownpartitionsample.cpp
+	"XEMMVCModelItemKnownPartitionSample.h"
+	"XEMMVCEventMixmodSetModelChild.h"
+	"XEMMVCEventMixmodDisplaySubDim.h"
+	"XEMMVCNoEvent.h"
+	"XEMLabelDescription.h"
+	"XEMLabel.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemmodel.cpp
+	"XEMMVCModelItemModel.h"
+	"XEMMVCEventMixmodInsertSubDim.h"
+	"XEMMVCEventMixmodSetModelChild.h"
+	"XEMMVCEventMixmodInsertModel.h"
+	"XEMMVCNoEvent.h"
+	"XEMModelType.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemnbstrategytry.cpp
+	"XEMMVCModelItemNbStrategyTry.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodDisplayNbStrategyTry.h"
+	"XEMClusteringStrategy.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemorientation.cpp
+	"XEMMVCModelItemOrientation.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayScatter.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemparamininit.cpp
+	"XEMMVCModelItemParamInInit.h"
+	"XEMMVCEventMixmodInsertStopRuleInit.h"
+	"XEMMVCEventMixmodDisplayNbTryInit.h"
+	"XEMMVCEventMixmodDisplayNbIterationInit.h"
+	"XEMMVCEventMixmodDisplayEpsilonInit.h"
+	"XEMMVCView.h"
+	"XEMMVCNoEvent.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemscatter.cpp
+	"XEMMVCModelItemScatter.h"
+	"XEMMVCEventMixmodSetInitName.h"
+	"XEMMVCEventMixmodDisplayScatter.h"
+	"XEMMVCUtil.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemstopruleinit.cpp
+	"XEMMVCModelItemStopRuleInit.h"
+	"XEMMVCNoEvent.h"
+	"XEMClusteringStrategy.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemsubdim.cpp
+	"XEMMVCModelItemSubDim.h"
+	"XEMMVCEventMixmodInsertSubDim.h"
+	"XEMMVCEventMixmodSetModelChild.h"
+	"XEMMVCEventMixmodDisplaySubDim.h"
+	"XEMMVCNoEvent.h"
+	"XEMModelType.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmodelitemweight.cpp
+	"XEMMVCModelItemWeight.h"
+	"XEMMVCNoEvent.h"
+	"XEMMVCEventMixmodDisplayWeight.h"
+	"XEMMVCEventMixmodDisplayWeightChild.h"
+	"XEMMVCEventMixmodErrorWeight.h"
+	"XEMMVCModel.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmyview.cpp
+	"XEMMVCMyView.h"
+
+1359557082 c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcmyview.h
+	"XEMMVCView.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcnoevent.cpp
+	"XEMMVCNoEvent.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcscatter.cpp
+	"XEMMVCScatter.h"
+
+1359557081 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcstore.cpp
+	"XEMMVCStore.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvctreeitem.cpp
+	"XEMMVCTreeItem.h"
+	<algorithm>
+	<sstream>
+	<cassert>
+	"XEMMVCNoTemplate.h"
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcvector.cpp
+
+1359557082 source:c:\documents and settings\flangrognet\mes documents\mixmod_mvc\xemmvcview.cpp
+	"XEMMVCView.h"
+	"XEMMVCEventMixmodDisplayScatter.h"
+	"XEMMVCEventMixmodDisplayCenter.h"
+	"XEMMVCEventMixmodDisplayDispersion.h"
+	"XEMMVCEventMixmodDisplayDispersionData.h"
+	"XEMClusteringModelOutput.h"
+	"XEMParameterDescription.h"
+	"XEMLabel.h"
+	"XEMProbaDescription.h"
+	"XEMLabelDescription.h"
+	"XEMProba.h"
+	"XEMGeneralMatrix.h"
+	<algorithm>
+

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Parameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Quantitative"><Name>Parameter</Name><NbVariable>4</NbVariable><NbCluster>3</NbCluster><Format>txt</Format><ParameterFilename>param.txt</ParameterFilename><Model>Gaussian_pk_Lk_Ck</Model></Parameter>

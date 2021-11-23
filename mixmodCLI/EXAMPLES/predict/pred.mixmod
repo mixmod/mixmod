@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Predict">
+  <Input>
+    <Data>iristest.mxd</Data>
+    <SelectVariable>
+      <Variable>1</Variable>
+      <Variable>2</Variable>
+      <Variable>3</Variable>
+      <Variable>4</Variable>
+    </SelectVariable>
+    <Parameter>param.mxp</Parameter>    
+  </Input>
+</Project>

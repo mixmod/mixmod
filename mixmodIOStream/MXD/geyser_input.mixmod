@@ -1,0 +1,38 @@
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Clustering">
+ <Input>
+  <Data>/home/flangrognet/mixmod_svn/mixmod/dev/components/mixmodIOStream/trunk/MXD/mixmod_geyser.mxd</Data>
+  <SelectVariable>
+   <Variable>1</Variable>
+   <Variable>2</Variable>
+  </SelectVariable>
+  <ListModel>
+   <EDDAModel>
+    <Model>Gaussian_pk_Lk_C</Model>
+   </EDDAModel>
+  </ListModel>
+  <ListNbCluster>
+   <NbCluster>2</NbCluster>
+  </ListNbCluster>
+  <Strategy>
+   <NbTry>1</NbTry>
+   <Init xsi:type="SMALL_EM">
+    <NbTry>10</NbTry>
+    <StopRule>
+     <NbIteration>5</NbIteration>
+     <Epsilon>0.001</Epsilon>
+    </StopRule>
+   </Init>
+   <ListAlgo>
+    <Algo xsi:type="EM">
+     <StopRule>
+      <NbIteration>200</NbIteration>
+      <Epsilon>0.001</Epsilon>
+     </StopRule>
+    </Algo>
+   </ListAlgo>
+  </Strategy>
+  <ListCriterion>
+   <Criterion>BIC</Criterion>
+  </ListCriterion>
+ </Input>
+</Project>

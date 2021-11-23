@@ -1,0 +1,792 @@
+# depslib dependency file v1.0
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimaboutus.cpp
+	"GUIMAboutUs.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimaboutus.h
+	"GUIUtil.h"
+	<QtGui>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiutil.h
+	"XEMMVCTreeItem.h"
+	<QModelIndex>
+	<QString>
+	<QDir>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimabstractmodifier.cpp
+	"GUIMAbstractModifier.h"
+	<QKeySequence>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimabstractmodifier.h
+	<QWidget>
+	<QVariant>
+	<QPushButton>
+	<QFrame>
+	"GUIMAction.h"
+	"MVCRootTreeItem.h"
+	"GUIMProcessModifier.h"
+	"XEMMVCUtil.h"
+	"GUIMixmod.h"
+	<QKeyEvent>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimaction.h
+	<QModelIndex>
+	<QVariant>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\mvcroottreeitem.h
+	"XEMMVCTreeItem.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimprocessmodifier.h
+	<QList>
+	<QObject>
+	<QVariant>
+	<QHash>
+	<QModelIndex>
+	"GUIMAction.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimixmod.h
+	<QtGui>
+	<QTranslator>
+	<QTreeView>
+	"GUIUtil.h"
+	"GUIMTreeModel.h"
+	"GUIMTreeDelegate.h"
+	"XEMMVCTreeItem.h"
+	"GUIMProjectCreator.h"
+	"GUIMMetaData.h"
+	"XEMIOStreamUtil.h"
+	"GUIMConverter.h"
+	"GUIMAboutUs.h"
+	"GUIMGraphicManager.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreemodel.h
+	<vector>
+	<QObject>
+	<QAbstractItemModel>
+	"GUIMProjectCreator.h"
+	"MVCMixmod.h"
+	"MVCRootTreeItem.h"
+	"XEMInput.h"
+	"GUIUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimprojectcreator.h
+	<QWizard>
+	"GUIMDataCreator.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimdatacreator.h
+	<QVector>
+	<QWidget>
+	<QScrollArea>
+	<QWizardPage>
+	<QGridLayout>
+	<QLabel>
+	<QButtonGroup>
+	<QAbstractButton>
+	<QLineEdit>
+	<QSpinBox>
+	<QResizeEvent>
+	<QWizardPage>
+	<QWizard>
+	"GUIMFilenameValidator.h"
+	"GUIMSpinBoxesWidget.h"
+	"MVCRootTreeItem.h"
+	"XEMDomData.h"
+	"XEMUtil.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimfilenamevalidator.h
+	<QValidator>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimspinboxeswidget.h
+	<QWidget>
+	<QScrollArea>
+	<QWizardPage>
+	<QGridLayout>
+	<QSpinBox>
+	"XEMUtil.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimmetadata.h
+	"XEMInput.h"
+	"XEMData.h"
+	"XEMPartition.h"
+	"XEMUtil.h"
+	"XEMClusteringStrategy.h"
+	"XEMClusteringStrategyInit.h"
+	"MVCMixmod.h"
+	<QSpinBox>
+	<QMetaType>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\mvcmixmod.h
+	<QVariant>
+	"XEMMVCModel.h"
+	"XEMMVCView.h"
+	"XEMMVCControler.h"
+	"MVCRootTreeItem.h"
+	"XEMMVCEvent.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreedelegate.h
+	<QItemDelegate>
+	<QModelIndex>
+	"GUIMAction.h"
+	"GUIMMetaData.h"
+	"GUIUtil.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimconverter.h
+	"GUIUtil.h"
+	"GUIMChoiceColumnConverter.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimchoicecolumnconverter.h
+	<QtGui>
+	<vector>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicmanager.h
+	<QObject>
+	<QMainWindow>
+	"qwt_plot_marker.h"
+	"qwt_text.h"
+	"qwt_plot_grid.h"
+	"qwt_symbol.h"
+	"GUIMGraphicQuantitativeClass.h"
+	"GUIMGraphicQuantitativePoint.h"
+	"GUIMGraphicQuantitativeHist.h"
+	"GUIMGraphicQualitativeDiagram.h"
+	"XEMInput.h"
+	"MVCRootTreeItem.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativeclass.h
+	"GUIMGraphic2DQuantitative.h"
+	"qwt_plot_zoomer.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphic2dquantitative.h
+	"GUIMGraphic.h"
+	<QHBoxLayout>
+	<QCheckBox>
+	<QPushButton>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphic.h
+	<QObject>
+	<QMainWindow>
+	<limits>
+	<cmath>
+	<qwt_plot.h>
+	<qwt_plot_marker.h>
+	<qwt_text.h>
+	<qwt_plot_grid.h>
+	<qwt_symbol.h>
+	<qwt_series_data.h>
+	"XEMInput.h"
+	"XEMClusteringMain.h"
+	"XEMClusteringOutput.h"
+	"GUIMGraphicDockWidget.h"
+	"qwt_plot_zoomer.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicdockwidget.h
+	<QDockWidget>
+	<QCloseEvent>
+	<QObject>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativepoint.h
+	"GUIMGraphic2DQuantitative.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativehist.h
+	"GUIMGraphic.h"
+	<QHBoxLayout>
+	<QSlider>
+	<QLabel>
+	"qwt_plot_histogram.h"
+	"qwt_plot_curve.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicqualitativediagram.h
+	"GUIMGraphic.h"
+	<QHBoxLayout>
+	"qwt_plot_curve.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimalgomodifier.cpp
+	"GUIMAlgoModifier.h"
+	<XEMMVCView.h>
+	"GUIMMetaData.h"
+	<QCursor>
+	<QtGui/QtGui>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimalgomodifier.h
+	"GUIMAbstractModifier.h"
+	<QGridLayout>
+	<QGroupBox>
+	<QVBoxLayout>
+	<QButtonGroup>
+	<QLabel>
+	<QCheckBox>
+	<QRadioButton>
+	<QVector>
+	<QSpinBox>
+	<QDialogButtonBox>
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimalgonamemodifier.cpp
+	"GUIMAlgoNameModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimalgonamemodifier.h
+	<QGridLayout>
+	<QScrollArea>
+	<QGroupBox>
+	<QRadioButton>
+	<QPushButton>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimchoicecolumnconverter.cpp
+	"GUIMChoiceColumnConverter.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimconverter.cpp
+	"XEMIndividualColumnDescription.h"
+	"XEMQualitativeColumnDescription.h"
+	"XEMQuantitativeColumnDescription.h"
+	"XEMWeightColumnDescription.h"
+	"GUIMConverter.h"
+	"GUIMFilenameValidator.h"
+	"../MIXMOD_IOSTREAM/XEMDomData.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimcriteriamodifier.cpp
+	"GUIMCriteriaModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimcriteriamodifier.h
+	<QGridLayout>
+	<QScrollArea>
+	<QGroupBox>
+	<QCheckBox>
+	<QPushButton>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimcriterionchildmodifier.cpp
+	"GUIMCriterionChildModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimcriterionchildmodifier.h
+	<QGridLayout>
+	<QScrollArea>
+	<QGroupBox>
+	<QRadioButton>
+	<QPushButton>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimdatacreator.cpp
+	"GUIMDataCreator.h"
+	"GUIUtil.h"
+	<QDebug>
+	<sstream>
+	<QFileInfo>
+	<QRadioButton>
+	<QPushButton>
+	<QFileDialog>
+	<QScrollBar>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimfilenamevalidator.cpp
+	"GUIMFilenameValidator.h"
+	<QFileInfo>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphic.cpp
+	"GUIMGraphic.h"
+	"XEMData.h"
+	"XEMGaussianSample.h"
+	"XEMClusteringOutput.h"
+	"XEMClusteringInput.h"
+	<qcoreevent.h>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphic2dquantitative.cpp
+	"XEMClusteringInput.h"
+	"GUIMGraphic2DQuantitative.h"
+	<QButtonGroup>
+	<QLabel>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicdockwidget.cpp
+	"GUIMGraphicDockWidget.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicmanager.cpp
+	"GUIMGraphicManager.h"
+	"GUIUtil.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicqualitativediagram.cpp
+	"XEMClusteringInput.h"
+	"GUIMGraphicQualitativeDiagram.h"
+	<QLabel>
+	<QListWidget>
+	"qwt_legend_item.h"
+	"qwt_plot_layout.h"
+	"XEMBinarySample.h"
+	"XEMBinaryData.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativeclass.cpp
+	"XEMClusteringInput.h"
+	"XEMClusteringModelOutput.h"
+	"XEMLabelDescription.h"
+	"XEMLabel.h"
+	"GUIMGraphicQuantitativeClass.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativehist.cpp
+	"XEMClusteringInput.h"
+	"XEMClusteringModelOutput.h"
+	"XEMMatrix.h"
+	"XEMData.h"
+	"XEMParameterDescription.h"
+	"GUIMGraphicQuantitativeHist.h"
+	<QListWidgetItem>
+	"qwt_plot_layout.h"
+	"qwt_legend.h"
+	"XEMGaussianSample.h"
+	"XEMGaussianEDDAParameter.h"
+	<algorithm>
+	"qwt_legend.h"
+	"qwt_legend_item.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimgraphicquantitativepoint.cpp
+	"XEMClusteringInput.h"
+	"GUIMGraphicQuantitativePoint.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiminitmodifier.cpp
+	"GUIMInitModifier.h"
+	<XEMMVCView.h>
+	"GUIMMetaData.h"
+	"GUIMTreeModel.h"
+	<QCursor>
+	<QtGui/QtGui>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiminitmodifier.h
+	"GUIMAbstractModifier.h"
+	<QGridLayout>
+	<QGroupBox>
+	<QVBoxLayout>
+	<QButtonGroup>
+	<QLabel>
+	<QRadioButton>
+	<QLineEdit>
+	<QScrollArea>
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+	"GUIMFilenameValidator.h"
+	"GUIMTextEntryWidget.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtextentrywidget.h
+	<QGridLayout>
+	<QLabel>
+	<QLineEdit>
+	<QAbstractButton>
+	<QString>
+	"GUIMAbstractModifier.h"
+	"GUIMFilenameValidator.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiminitparametermodifier.cpp
+	"GUIMInitParameterModifier.h"
+	<sstream>
+	<QCursor>
+	<QString>
+	<QFileDialog>
+	"GUIMMetaData.h"
+	"XEMMVCView.h"
+	"XEMMVCModel.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiminitparametermodifier.h
+	<QGridLayout>
+	<QLineEdit>
+	<QLabel>
+	"GUIMAbstractModifier.h"
+	"GUIMFilenameValidator.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimknownpartitionmodifier.cpp
+	"GUIMKnownPartitionModifier.h"
+	<sstream>
+	<QMessageBox>
+	<QCursor>
+	<QString>
+	<QPushButton>
+	"GUIMMetaData.h"
+	"XEMMVCView.h"
+	"XEMMVCModel.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimknownpartitionmodifier.h
+	<QGridLayout>
+	"GUIMAbstractModifier.h"
+	"GUIMTextEntryWidget.h"
+	"GUIMFilenameValidator.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimmodelmodifier.cpp
+	"GUIMModelModifier.h"
+	"GUIMMetaData.h"
+	<QCursor>
+	<QDesktopWidget>
+	<QtGui/QtGui>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimmodelmodifier.h
+	"GUIMAbstractModifier.h"
+	<QResizeEvent>
+	<QGridLayout>
+	<QGroupBox>
+	<QVBoxLayout>
+	<QButtonGroup>
+	<QLabel>
+	<QCheckBox>
+	<QVector>
+	<QScrollArea>
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimnbstrategytrymodifier.cpp
+	"GUIMNbStrategyTryModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimnbstrategytrymodifier.h
+	<QGridLayout>
+	<QPushButton>
+	<QLabel>
+	<QLineEdit>
+	<QIntValidator>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimoutputmodifier.cpp
+	"GUIMOutputModifier.h"
+	"GUIMTreeModel.h"
+	<QCursor>
+	"XEMUtil.h"
+	"XEMClusteringModelOutput.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimoutputmodifier.h
+	<QGridLayout>
+	<QGroupBox>
+	<QRadioButton>
+	<QPushButton>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimparameterininitmodifier.cpp
+	"GUIMParameterInInitModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimparameterininitmodifier.h
+	<QGridLayout>
+	<QPushButton>
+	<QLabel>
+	<QLineEdit>
+	<QIntValidator>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimprocessmodifier.cpp
+	"GUIMProcessModifier.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimprojectcreator.cpp
+	"GUIMProjectCreator.h"
+	<QFileInfo>
+	<QVariant>
+	<QMessageBox>
+	"GUIMDataCreator.h"
+	"GUIMMetaData.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimspinboxeswidget.cpp
+	"GUIMSpinBoxesWidget.h"
+	<sstream>
+	<QFileInfo>
+	<QRadioButton>
+	<QPushButton>
+	<QFileDialog>
+	<QScrollBar>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimstoprulemodifier.cpp
+	"GUIMStopRuleModifier.h"
+	<QCursor>
+	<qmessagebox.h>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimstoprulemodifier.h
+	<QGridLayout>
+	<QScrollArea>
+	<QGroupBox>
+	<QCheckBox>
+	<QPushButton>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimstoprulevaluemodifier.cpp
+	"GUIMStopRuleValueModifier.h"
+	<QCursor>
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimstoprulevaluemodifier.h
+	<QGridLayout>
+	<QPushButton>
+	<QLabel>
+	<QLineEdit>
+	<QIntValidator>
+	"GUIMAbstractModifier.h"
+	"XEMUtil.h"
+	"MVCRootTreeItem.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtextentrywidget.cpp
+	"GUIMTextEntryWidget.h"
+	<QFileDialog>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreedelegate.cpp
+	"GUIMTreeDelegate.h"
+	"XEMMVCTreeItem.h"
+	"GUIMTreeModel.h"
+	"GUIMAlgoNameModifier.h"
+	"GUIMAbstractModifier.h"
+	"GUIMCriteriaModifier.h"
+	"GUIMInitModifier.h"
+	"GUIMCriterionChildModifier.h"
+	"GUIMKnownPartitionModifier.h"
+	"GUIMNbStrategyTryModifier.h"
+	"GUIMModelModifier.h"
+	"GUIMStopRuleModifier.h"
+	"GUIMStopRuleValueModifier.h"
+	"GUIMAlgoModifier.h"
+	"GUIMWeightModifier.h"
+	"GUIMOutputModifier.h"
+	"GUIMInitParameterModifier.h"
+	"GUIMParameterInInitModifier.h"
+	"GUIMTreeModel.h"
+	"XEMError.h"
+	<QStyleOption>
+	<QtGui>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimweightmodifier.h
+	<QGridLayout>
+	"GUIMAbstractModifier.h"
+	"GUIMTextEntryWidget.h"
+	"GUIMFilenameValidator.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreemodel.cpp
+	"GUIMTreeModel.h"
+	<QtGui/QtGui>
+	"XEMGaussianData.h"
+	"XEMBinaryData.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreeview.cpp
+	"GUIMTreeView.h"
+	<QCursor>
+	"GUIMTreeDelegate.h"
+	"GUIMTreeModel.h"
+	<QItemSelectionRange>
+	<QMessageBox>
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimtreeview.h
+	<QTreeView>
+	<QMouseEvent>
+	<QMenu>
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimweightmodifier.cpp
+	"GUIMWeightModifier.h"
+	<sstream>
+	<QCursor>
+	<QString>
+	<QPushButton>
+	<QFileDialog>
+	"GUIMMetaData.h"
+	"XEMMVCView.h"
+	"XEMMVCModel.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guimixmod.cpp
+	"GUIMixmod.h"
+	<iostream>
+	<cstdlib>
+	<QtGui>
+	<QDir>
+	<QStringList>
+	<QString>
+	<QDataStream>
+	<algorithm>
+	"GUIMProjectCreator.h"
+	"GUIMTreeView.h"
+	"XEMRandom.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\guiutil.cpp
+	"GUIUtil.h"
+	"GUIMixmod.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\images\iconmixmod.rc
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\mvcmixmod.cpp
+	"MVCMixmod.h"
+	"XEMMVCDefaultView.h"
+	"XEMMVCEventUser.h"
+	"XEMGaussianData.h"
+	"XEMBinaryData.h"
+	"XEMAlgo.h"
+	"XEMUtil.h"
+	"GUIMMetaData.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\xemmvcdefaultview.h
+	"XEMMVCView.h"
+
+1359557089 c:\documents and settings\flangrognet\mes documents\mixmod_qt\xemmvceventuser.h
+	"XEMMVCEventUserInsertAlgo.h"
+	"XEMMVCEventUserInsertCriterion.h"
+	"XEMMVCEventUserInsertStopRule.h"
+	"XEMMVCEventUserInsertKnownPartition.h"
+	"XEMMVCEventUserInsertModel.h"
+	"XEMMVCEventUserInsertNbStrategyTry.h"
+	"XEMMVCEventUserInsertParamInInit.h"
+	"XEMMVCEventUserInsertWeight.h"
+	"XEMMVCEventUserRemoveAlgo.h"
+	"XEMMVCEventUserRemoveCriterion.h"
+	"XEMMVCEventUserRemoveEpsilon.h"
+	"XEMMVCEventUserRemoveNbIteration.h"
+	"XEMMVCEventUserRemoveKnownPartition.h"
+	"XEMMVCEventUserRemoveModel.h"
+	"XEMMVCEventUserRemoveNbStrategyTry.h"
+	"XEMMVCEventUserRemoveParamInInit.h"
+	"XEMMVCEventUserRemoveWeight.h"
+	"XEMMVCEventUserSetAlgoName.h"
+	"XEMMVCEventUserSetInitName.h"
+	"XEMMVCEventUserSetAlgoStopName.h"
+	"XEMMVCEventUserSetCriterionChild.h"
+	"XEMMVCEventUserSetEpsilon.h"
+	"XEMMVCEventUserSetKnownPartition.h"
+	"XEMMVCEventUserSetInitPart.h"
+	"XEMMVCEventUserSetInitParam.h"
+	"XEMMVCEventUserSetWeight.h"
+	"XEMMVCEventUserSetNbStrategyTry.h"
+	"XEMMVCEventUserSetNbTryInit.h"
+	"XEMMVCEventUserSetModelChild.h"
+	"XEMMVCEventUserSetNbIteration.h"
+	"XEMMVCEventUserSetSubDim.h"
+	"XEMMVCEventUserSetStopRuleInit.h"
+
+1359557089 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\mvcroottreeitem.cpp
+	"MVCRootTreeItem.h"
+
+1359627484 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimaboutus.cpp
+	"GUIMAboutUs.h"
+
+1359627761 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimabstractmodifier.cpp
+	"GUIMAbstractModifier.h"
+
+1359627951 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimalgomodifier.cpp
+	"GUIMAlgoModifier.h"
+
+1359628039 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimalgonamemodifier.cpp
+	"GUIMAlgoNameModifier.h"
+
+1359628308 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimchoicecolumnconverter.cpp
+	"GUIMChoiceColumnConverter.h"
+
+1359628291 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimconverter.cpp
+	"GUIMConverter.h"
+
+1359628150 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimcriteriamodifier.cpp
+	"GUIMCriteriaModifier.h"
+
+1359628207 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimcriterionchildmodifier.cpp
+	"GUIMCriterionChildModifier.h"
+
+1359628250 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimdatacreator.cpp
+	"GUIMDataCreator.h"
+
+1359627799 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphic.cpp
+	"GUIMGraphic.h"
+
+1359627839 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphic2dquantitative.cpp
+	"GUIMGraphic2DQuantitative.h"
+
+1359628324 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicdockwidget.cpp
+	"GUIMGraphicDockWidget.h"
+
+1359627781 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicmanager.cpp
+	"GUIMGraphicManager.h"
+
+1359627857 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicqualitativediagram.cpp
+	"GUIMGraphicQualitativeDiagram.h"
+
+1359627898 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicquantitativeclass.cpp
+	"GUIMGraphicQuantitativeClass.h"
+
+1359627816 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicquantitativehist.cpp
+	"GUIMGraphicQuantitativeHist.h"
+
+1359627879 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimgraphicquantitativepoint.cpp
+	"GUIMGraphicQuantitativePoint.h"
+
+1359627971 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guiminitmodifier.cpp
+	"GUIMInitModifier.h"
+
+1359628060 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guiminitparametermodifier.cpp
+	"GUIMInitParameterModifier.h"
+
+1359628162 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimknownpartitionmodifier.cpp
+	"GUIMKnownPartitionModifier.h"
+
+1359628221 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimmodelmodifier.cpp
+	"GUIMModelModifier.h"
+
+1359628266 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimnbstrategytrymodifier.cpp
+	"GUIMNbStrategyTryModifier.h"
+
+1359627917 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimoutputmodifier.cpp
+	"GUIMOutputModifier.h"
+
+1359628002 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimparameterininitmodifier.cpp
+	"GUIMParameterInInitModifier.h"
+
+1359628073 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimprocessmodifier.cpp
+	"GUIMProcessModifier.h"
+
+1359628118 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimprojectcreator.cpp
+	"GUIMProjectCreator.h"
+
+1359628176 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimspinboxeswidget.cpp
+	"GUIMSpinBoxesWidget.h"
+
+1359628236 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimstoprulemodifier.cpp
+	"GUIMStopRuleModifier.h"
+
+1359628279 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimstoprulevaluemodifier.cpp
+	"GUIMStopRuleValueModifier.h"
+
+1359627934 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimtextentrywidget.cpp
+	"GUIMTextEntryWidget.h"
+
+1359628086 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimtreemodel.cpp
+	"GUIMTreeModel.h"
+
+1359628136 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimtreeview.cpp
+	"GUIMTreeView.h"
+
+1359628195 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimweightmodifier.cpp
+	"GUIMWeightModifier.h"
+
+1359628103 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimixmod.cpp
+	"GUIMixmod.h"
+
+1359628022 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\moc_guimtreedelegate.cpp
+	"GUIMTreeDelegate.h"
+
+1359636537 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\images\qrc_images.cpp
+	<QtCore/qglobal.h>
+
+1359636561 source:c:\documents and settings\flangrognet\mes documents\mixmod_qt\languages\qrc_languages.cpp
+	<QtCore/qglobal.h>
+

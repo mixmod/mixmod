@@ -1,0 +1,11 @@
+Pour construire la lib libnewmat.a, taper "./build_libnewmat.a"
+
+Pour construire xem et test, taper "./buildxem"
+
+Création de :
+- LIB/libnewmat.a
+- LIB/libxem.a
+- BIN/xem
+- BIN/test
+
+Pour plus d'info sur le build de Newmat, se reporter au répertoire UTIL/NEWMAT

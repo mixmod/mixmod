@@ -1,0 +1,26 @@
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <NbSample>153</NbSample>
+ <Format>txt</Format>
+ <DataFilename>/usr/share/mixmodGUI/examples/mixmod_oiseaux.dat</DataFilename>
+ <ListColumn>
+  <Column Num="1" xsi:type="Individual"/>
+  <Column Num="2" xsi:type="Qualitative">
+   <NbFactor>2</NbFactor>
+  </Column>
+  <Column Num="3" xsi:type="Qualitative">
+   <NbFactor>5</NbFactor>
+  </Column>
+  <Column Num="4" xsi:type="Qualitative">
+   <NbFactor>6</NbFactor>
+  </Column>
+  <Column Num="5" xsi:type="Qualitative">
+   <NbFactor>3</NbFactor>
+  </Column>
+  <Column Num="6" xsi:type="Qualitative">
+   <NbFactor>5</NbFactor>
+  </Column>
+  <Column Num="7" xsi:type="Qualitative">
+   <NbFactor>4</NbFactor>
+  </Column>
+ </ListColumn>
+</Data>

@@ -1,0 +1,61 @@
+#http://stackoverflow.com/questions/4134725/installrequiredsystemlibraries-purpose
+include(InstallRequiredSystemLibraries)
+
+#--------------------
+#General description 
+#--------------------
+
+#set(CPACK_PACKAGE_VERSION_MAJOR "3")
+#set(CPACK_PACKAGE_VERSION_MINOR "2")
+#set(CPACK_PACKAGE_VERSION_PATCH "1")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Mixmod core library")
+set(CPACK_PACKAGE_VENDOR "MIXMOD")
+set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/../../UTIL/images/icon_mixmod.ico")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
+set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README")
+set(CPACK_PACKAGE_CONTACT "contact@mixmod.org")
+set(CPACK_PACKAGE_NAME "libmixmod")
+set(CPACK_PACKAGE_FILE_NAME 
+ "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}") 
+
+set(CPACK_COMPONENT_RUNTIME_DISPLAY_NAME "Mixmod libraries (runtime)")
+set(CPACK_COMPONENT_RUNTIME_DESCRIPTION "Mixmod shared library")
+set(CPACK_COMPONENT_RUNTIME_GROUP "runtime")
+
+set(CPACK_COMPONENT_DEV_DISPLAY_NAME "Mixmod Dev (headers)")
+set(CPACK_COMPONENT_DEV_DESCRIPTION "Mixmod header files")
+set(CPACK_COMPONENT_DEV_GROUP "dev")
+
+#--------------------------
+# system-specific variables
+#--------------------------
+
+set(CPACK_DEB_COMPONENT_INSTALL ON)
+set(CPACK_RPM_COMPONENT_INSTALL ON)
+set(CPACK_WIX_COMPONENT_INSTALL OFF)
+#TODO: MacOSX ?!
+
+#Deb
+#genere automatiquement la liste des dépendances
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+#on ajoute manuellement une dépendance
+set(CPACK_DEBIAN_DEV_PACKAGE_DEPENDS "libmixmod-runtime (>=3.1.0)")
+#SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.15), libstdc++6 (>= 4.6.3), libgcc1 (>=1:4.6.3)")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE http://www.mixmod.org)
+
+#RPM
+#see also http://fedoraproject.org/wiki/Packaging:Guidelines
+set(CPACK_RPM_PACKAGE_GROUP "Development/Libraries/C and C++")
+set(CPACK_RPM_PACKAGE_LICENSE "GPLv3+")
+#set(CPACK_RPM_PACKAGE_REQUIRES "libc, libstdc++")
+set(CPACK_RPM_PACKAGE_URL http://www.mixmod.org)
+
+#Windows
+#icon already set ? (CPACK_PACKAGE_ICON)
+#set(CPACK_WIX_PRODUCT_ICON "${CMAKE_SOURCE_DIR}/../../UTIL/images/icon_mixmod.ico")
+set(CPACK_WIX_UI_BANNER "${CMAKE_SOURCE_DIR}/../../UTIL/images/banner_mixmod.bmp")
+
+#OSX (a bundle could gather all MIXMOD modules ?)
+#set(CPACK_BUNDLE_ICON "${CMAKE_SOURCE_DIR}/../../UTIL/images/icon_mixmod.ico")
+#set(CPACK_BUNDLE_NAME "mixmodLib")
+#set(CPACK_BUNDLE_PLIST ???)

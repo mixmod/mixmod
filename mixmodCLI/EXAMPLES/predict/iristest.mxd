@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NbSample>4</NbSample>
+  <Format>txt</Format>
+  <DataFilename>../data/iris.test</DataFilename>
+  <ListColumn>
+    <Column Num="1" xsi:type="Quantitative"/>
+    <Column Num="2" xsi:type="Quantitative"/>
+    <Column Num="3" xsi:type="Quantitative"/>
+    <Column Num="4" xsi:type="Quantitative"/>
+  </ListColumn>
+</Data>

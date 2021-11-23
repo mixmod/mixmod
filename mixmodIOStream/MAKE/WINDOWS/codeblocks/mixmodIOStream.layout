@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomClusteringProject.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomClusteringProject.h" open="0" top="0" tabpos="0">
+		<Cursor position="626" topLine="34" />
+	</File>
+	<File name="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMIOStreamUtil.h" open="1" top="0" tabpos="1">
+		<Cursor position="1506" topLine="25" />
+	</File>
+</CodeBlocks_layout_file>

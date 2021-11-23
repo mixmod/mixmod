@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mixmodIOStream" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\mixmodIOStream" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DBUILD_DLL" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Clustering" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Learn" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Predict" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Algo" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Criterion" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\IO" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Model" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Parameter" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Matrix" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Utilities" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\NEWMAT" />
+					<Add directory="C:\Qt\4.8.2\include\Qt" />
+					<Add directory="C:\Qt\4.8.2\include\QtCore" />
+					<Add directory="C:\Qt\4.8.2\include" />
+					<Add directory="C:\Qt\4.8.2\include\QtXml" />
+					<Add directory="C:\Qt\4.8.2\include\QtXmlPatterns" />
+					<Add directory="C:\Qt\4.8.2\include\QtGui" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add directory="C:\Qt\4.8.2\bin" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\mixmodIOStream" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-DBUILD_DLL" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Clustering" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Learn" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Predict" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Algo" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Criterion" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\IO" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Model" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Parameter" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Matrix" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Utilities" />
+					<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\NEWMAT" />
+					<Add directory="C:\Qt\4.8.2\include\Qt" />
+					<Add directory="C:\Qt\4.8.2\include\QtCore" />
+					<Add directory="C:\Qt\4.8.2\include" />
+					<Add directory="C:\Qt\4.8.2\include\QtXml" />
+					<Add directory="C:\Qt\4.8.2\include\QtXmlPatterns" />
+					<Add directory="C:\Qt\4.8.2\include\QtGui" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="user32" />
+					<Add directory="C:\Qt\4.8.2\bin" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Clustering" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Learn" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\DiscriminantAnalysis\Predict" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Algo" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Criterion" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\IO" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Model" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Kernel\Parameter" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Matrix" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\MIXMOD\Utilities" />
+			<Add directory="C:\Documents and Settings\flangrognet\Mes documents\mixmodLib\trunk\SRC\NEWMAT" />
+			<Add directory="C:\Qt\4.8.2\include\Qt" />
+			<Add directory="C:\Qt\4.8.2\include\QtCore" />
+			<Add directory="C:\Qt\4.8.2\include" />
+			<Add directory="C:\Qt\4.8.2\include\QtXml" />
+			<Add directory="C:\Qt\4.8.2\include\QtXmlPatterns" />
+			<Add directory="C:\Qt\4.8.2\include\QtGui" />
+		</Compiler>
+		<Linker>
+			<Add library="QtCore4" />
+			<Add library="QtGui4" />
+			<Add library="QtXml4" />
+			<Add library="..\mixmod_newmat\bin\Release\libmixmod_newmat.dll.a" />
+			<Add library="C:\Documents and Settings\flangrognet\Mes documents\codeblocks\mixmod\bin\Release\libmixmod.dll.a" />
+			<Add library="C:\Qt\4.8.2\bin\QtXmlPatterns4.dll" />
+		</Linker>
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomClusteringProject.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomClusteringProject.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomDAProject.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomDAProject.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomData.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomData.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomLabel.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomLabel.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomParameter.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomParameter.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomProba.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomProba.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomProject.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMDomProject.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMIOStreamUtil.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMIOStreamUtil.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeClusteringInput.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeClusteringInput.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeClusteringOutput.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeClusteringOutput.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeInput.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeInput.h" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeOutput.cpp" />
+		<Unit filename="..\..\mixmodIOStream\SRC\MIXMOD_IOSTREAM\XEMNodeOutput.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

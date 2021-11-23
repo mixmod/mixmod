@@ -1,0 +1,51 @@
+This directory contains some EXAMPLES for using the mixmod library (see licence at http://www.mixmod.org)/
+
+Clustering
+----------
+- clustering/clustering_1 : a simple example :
+    - on quantitative data (iris)
+    - with default options
+- clustering/clustering_2 : the same example than clustering_1 with :
+    - several criteria
+    - several model types
+- clustering/clustering_3 : the same example than clustering_1 with :
+    - chained algorithms (SEM and EM) and nbTry>1
+- clustering/clustering_4 to 9 : the same example than clustering_1 with other initialisations
+   - clustering/clustering_4 : SMALL_EM initialisation
+   - clustering/clustering_5 : RANDOM initialisation
+   - clustering/clustering_6 : CEM_INIT initialisation 
+   - clustering/clustering_7 : SEM_MAX initialisation
+   - clustering/clustering_8 : USER initialisation (with a parameter)
+   - clustering/clustering_9 : USER_PARTITION initialisation (with a partition)
+- clustering/clustering_10 : a clustering example with qualitative data
+- clustering/clustering_11 : same as clustering_10, default options
+- clustering/clustering_12 : quantitative data, (almost?) all models
+- clustering/clustering_13 : heterogeneous clustering, (almost?) all models
+
+Discriminant Analysis
+---------------------
+- discriminant_analysis/discriminant_analysis_1 : a discriminant analysis example with quantitative data
+- discriminant_analysis/discriminant_analysis_2 : same as example above, with much more models
+- discriminant_analysis/discriminant_analysis_3 : same as example above, with HD models
+- discriminant_analysis/discriminant_analysis_4 : heterogeneous classification, many models
+
+=====================
+
+To build (cleanly):
+
+1) Install mixmod library (from source, or using a precompiled package).
+
+2) Type in a terminal (UNIX systems)
+> mkdir build
+> cd build
+> cmake .. [-DCMAKE_INSTALL_PREFIX=<optional installation path; default is /usr/local>]
+> make
+> make install
+
+3) Examples are now run by calling
+> mixmod_example <example type ('c' for clustering or 'da' for discriminant analysis)><example number>
+That is to say, "mixmod_example c2" runs the second clustering example, 
+and "mixmod_example da3" runs the third discriminant analysis example.
+
+NOTE: examples should be run from a folder at the same level as "data".
+      Running them from build/ directory is OK, for example. (Or from data/ itself).

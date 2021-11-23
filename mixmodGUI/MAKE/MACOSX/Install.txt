@@ -1,0 +1,7 @@
+To build Mixmod in MAC OS X, tape in BUILD directory:
+cmake ..
+make install
+
+To create the installation package, after the last instructions, tape:
+cpack
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Label_or_Partition>
+  <NbSample>150</NbSample>
+  <NbCluster>3</NbCluster>
+  <Format>txt</Format>
+  <Type>partition</Type>
+  <Filename>../data/iris.part</Filename>
+</Label_or_Partition>
