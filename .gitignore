@@ -1,1 +1,4 @@
 Rmixmod_*
+Rmixmod/autom4te.cache/
+*.so
+*.o
