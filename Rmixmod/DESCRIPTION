@@ -19,7 +19,7 @@ Authors@R: c(
     person("Quentin", "Grimonprez", role = "cre", email = "quentingrim@yahoo.fr"))
 SystemRequirements: GNU make
 Copyright: Authors, and Mixmod use Eigen3 C++ library
-Contact: contact@mixmod.org
+BugReports: https://github.com/mixmod/mixmod/issues
 License: GPL-3
 LinkingTo: Rcpp, RcppEigen
 Imports:
