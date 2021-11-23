@@ -72,6 +72,7 @@ jobs:
           cp -r ../../mixmodLib/SRC/mixmod src/mixmod
           cp -r ../../mixmodIOStream/SRC/mixmod_iostream src/mixmod_iostream
           cp -r ../../mixmodIOStream/SRC/XML_specs inst/XML_specs
+          ls src/mixmod
 
       - name: Generate configure script
         working-directory: Rmixmod_build/Rmixmod
