@@ -49,7 +49,7 @@ jobs:
             
       - name: Create directory
         run: |
-          mkdir -p Rmixmod_build/Rmixmod/
+          mkdir -p Rmixmod_build/
           cp -r Rmixmod/ Rmixmod_build/
 
       - name: Copy files
@@ -77,6 +77,3 @@ jobs:
         uses: r-lib/actions/check-r-package@v2
         with:
           working-directory: Rmixmod_build/Rmixmod
-          
-          
-
