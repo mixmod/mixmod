@@ -23,19 +23,5 @@ INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/SRC/mixmod
 	FILES_MATCHING
 		PATTERN "*.h"
 		#Cleanly exclude Utilities/mixmod.h
-		PATTERN "mixmod.h" EXCLUDE
-		#HACK which should NOT be needed (cmake bug ???)
-		PATTERN ".svn" EXCLUDE)
+		PATTERN "mixmod.h" EXCLUDE)
 
-
-#EXAMPLES
-## INSTALLATION
-install(FILES "${CMAKE_SOURCE_DIR}/EXAMPLES/main.cpp" "${CMAKE_SOURCE_DIR}/EXAMPLES/README" "${CMAKE_SOURCE_DIR}/EXAMPLES/CMakeLists.txt" DESTINATION share/mixmod/EXAMPLES COMPONENT dev)
-install(
-	DIRECTORY 
-		${CMAKE_SOURCE_DIR}/EXAMPLES/data 
-		${CMAKE_SOURCE_DIR}/EXAMPLES/clustering 
-		${CMAKE_SOURCE_DIR}/EXAMPLES/discriminant_analysis
-	DESTINATION 
-		share/mixmod/EXAMPLES
-	COMPONENT dev)
