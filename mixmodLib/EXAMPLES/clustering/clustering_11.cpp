@@ -43,7 +43,7 @@ void clustering_11_example() {
 
     // if mximod_example is installed in the /usr/local/bin folder, data files are in /usr/local/share/mixmod/EXAMPLES folder
     //otherwise, change the following line
-    string filename ("/usr/local/share/mixmod/EXAMPLES/data/birds.dat");
+    string filename ("data/birds.dat");
 
     
     // 1. create XEM::ClusteringInput

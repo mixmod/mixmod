@@ -43,7 +43,7 @@ void clustering_7_example() {
 
     // if mximod_example is installed in the /usr/local/bin folder, data files are in /usr/local/share/mixmod/EXAMPLES folder
     //otherwise, change the following line
-    string filename ("/usr/local/share/mixmod/EXAMPLES/data/iris.train");
+    string filename ("data/iris.train");
 
     
     // 1. create XEM::ClusteringInput
