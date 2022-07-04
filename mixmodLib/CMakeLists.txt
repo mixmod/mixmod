@@ -1,18 +1,15 @@
 # Configuration
 #--------------
-cmake_minimum_required(VERSION 2.8.5)
+cmake_minimum_required(VERSION 3.2)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 PROJECT(mixmod)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../UTIL/cmake/")
 
 #Eigen stuff
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
-IF(EIGEN3_FOUND)
-	include_directories(${EIGEN3_INCLUDE_DIRS})
-	message("libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
-ELSEIF(NOT EIGEN3_FOUND)
-  message("libeigen not found")
-ENDIF()
+include_directories(${EIGEN3_INCLUDE_DIRS})
+message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
 
 #GSL stuff
 find_package(GSL)
@@ -20,29 +17,29 @@ find_package(BLAS)
 IF(GSL_FOUND AND BLAS_FOUND)
   include_directories(${GSL_INCLUDES})
   include_directories(${BLAS_INCLUDES})
-  message("libgsl found here : "  ${GSL_INCLUDES})
+  message(STATUS "libgsl found here : "  ${GSL_INCLUDES})
 ELSEIF(NOT GSL_FOUND AND BLAS_FOUND)
-  message("libgsl not found")
+  message(STATUS "libgsl not found")
 ELSEIF(NOT BLAS_FOUND)
-  message("libblas not found")
+  message(STATUS "libblas not found")
 ENDIF()
 
 #Armadillo stuff
 find_package(Armadillo)
 IF(ARMADILLO_FOUND)
   include_directories(${ARMADILLO_INCLUDE_DIRS})
-  message("libarmadillo found here : "  ${ARMADILLO_INCLUDE_DIRS})
+  message(STATUS "libarmadillo found here : "  ${ARMADILLO_INCLUDE_DIRS})
 ELSEIF(NOT ARMADILLO_FOUND)
-  message("libarmadillo not found")
+  message(STATUS "libarmadillo not found")
 ENDIF()
 
 #ITpp stuff
 find_package(ITpp)
 IF(ITPP_FOUND)
   include_directories(${ITPP_INCLUDE_DIR})
-  message("libitpp found here : "  ${ITPP_INCLUDE_DIR})
+  message(STATUS "libitpp found here : "  ${ITPP_INCLUDE_DIR})
 ELSEIF(NOT ITPP_FOUND)
-  message("libitpp not found")
+  message(STATUS "libitpp not found")
 ENDIF()
 
 #usage "cmake . " + Options :
@@ -64,36 +61,25 @@ set(CPACK_PACKAGE_VERSION_PATCH "2")
 
 # Installation prefix, packaging prefix
 #--------------------------------------
-if (NOT DEFINED CMAKE_INSTALL_PREFIX)
-	set(CMAKE_INSTALL_PREFIX "/usr/local")
-endif ()
-message("CMAKE_INSTALL_PREFIX :"  ${CMAKE_INSTALL_PREFIX})
+message(STATUS "CMAKE_INSTALL_PREFIX :"  ${CMAKE_INSTALL_PREFIX})
 
 if (NOT DEFINED CPACK_PACKAGING_INSTALL_PREFIX)
 	set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
 endif ()
-message("CPACK_PACKAGING_INSTALL_PREFIX : " ${CPACK_PACKAGING_INSTALL_PREFIX})
+message(STATUS "CPACK_PACKAGING_INSTALL_PREFIX : " ${CPACK_PACKAGING_INSTALL_PREFIX})
 
 # Release/Debug
 #--------------
-IF(NOT  CMAKE_BUILD_TYPE STREQUAL "Debug")
-	set(CMAKE_BUILD_TYPE "Release")
-endif ()
-message("CMAKE_BUILD_TYPE : " ${CMAKE_BUILD_TYPE})
+message(STATUS "CMAKE_BUILD_TYPE : " ${CMAKE_BUILD_TYPE})
 
 # Compiler settings
 #-------------------
-set(CMAKE_CXX_FLAGS "-std=c++11")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -Wno-deprecated")
-set(CMAKE_CXX_FLAGS_DEBUG "-g3 -Wno-deprecated")
+set (CMAKE_CXX_STANDARD 11)
 find_package(OpenMP)
 if (OPENMP_FOUND)
-  set (CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ${OpenMP_CXX_FLAGS}")
-  set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${OpenMP_CXX_FLAGS}")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
-message("CMAKE_CXX_FLAGS_RELEASE : " ${CMAKE_CXX_FLAGS_RELEASE})
-message("CMAKE_CXX_FLAGS_DEBUG : " ${CMAKE_CXX_FLAGS_DEBUG})
-message("CMAKE_CXX_FLAGS : " ${CMAKE_CXX_FLAGS})
+message(STATUS "CMAKE_CXX_FLAGS : " ${CMAKE_CXX_FLAGS})
 
 #fix related to CMP0009. See cmake --help-policy CMP0009
 #NOTE: we should not need it if required cmake VERSION >= 2.8.X... (?!)
@@ -118,3 +104,8 @@ install(FILES "README" "LICENSE"
 #-----
 include(${CMAKE_SOURCE_DIR}/CPackLists.txt)
 include(CPack)
+
+option(MIXMOD_BUILD_EXAMPLES "build examples" OFF)
+if (MIXMOD_BUILD_EXAMPLES)
+  add_subdirectory(EXAMPLES)
+endif ()

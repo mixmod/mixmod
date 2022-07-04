@@ -42,7 +42,7 @@ void discriminant_analysis_1_example() {
 
     // if mximod_example is installed in the /usr/local/bin folder, data files are in /usr/local/share/mixmod/EXAMPLES folder
     //otherwise, change the following line
-    string basePath ("/usr/local/share/mixmod/EXAMPLES/data/");
+    string basePath ("data/");
     string learnFile("iris.train");
     string predictFile("iris.test");
 
