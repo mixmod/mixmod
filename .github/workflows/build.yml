@@ -12,6 +12,6 @@ jobs:
         sudo apt install -y cmake libeigen3-dev
     - name: Build
       run: |
-        cmake -DCMAKE_INSTALL_PREFIX=~/.local mixmodLib -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" -DMIXMOD_BUILD_EXAMPLES=ON
+        cmake -DCMAKE_INSTALL_PREFIX=~/.local -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" -DMIXMOD_BUILD_EXAMPLES=ON .
         make install -j2
         ctest -j2 --output-on-failure
