@@ -41,7 +41,7 @@
 #' probabilities.
 #'
 #' In both cases, the models and the number of clusters can be chosen by different criteria:
-#' BIC (Bayesian Informastion Criterion), ICL (Integrated Completed Likelihood, a classification version of BIC),
+#' BIC (Bayesian Information Criterion), ICL (Integrated Completed Likelihood, a classification version of BIC),
 #' NEC (Entropy Criterion), or Cross-Validation (CV).
 #'
 #'
@@ -64,42 +64,47 @@
 #' Software, 67(6), 1–29. https://doi.org/10.18637/jss.v067.i06
 #'
 #' @examples
-#'   \dontrun{
-#'   ## Clustering Analysis
-#'   # load quantitative data set
-#'   data(geyser)
-#'   # Clustering in gaussian case
-#'   xem1<-mixmodCluster(geyser,3)
-#'   summary(xem1)
-#'   plot(xem1)
-#'   hist(xem1)
+#' \dontrun{
+#' ## Clustering Analysis
+#' # load quantitative data set
+#' data(geyser)
+#' # Clustering in gaussian case
+#' xem1 <- mixmodCluster(geyser, 3)
+#' summary(xem1)
+#' plot(xem1)
+#' hist(xem1)
 #'
-#'   # load qualitative data set
-#'   data(birds)
-#'   # Clustering in multinomial case
-#'   xem2<-mixmodCluster(birds, 2)
-#'   summary(xem2)
-#'   barplot(xem2)
+#' # load qualitative data set
+#' data(birds)
+#' # Clustering in multinomial case
+#' xem2 <- mixmodCluster(birds, 2)
+#' summary(xem2)
+#' barplot(xem2)
 #'
-#'   # load heterogeneous data set
-#'   data(finance)
-#'   # Clustering in composite case
-#'   xem3<-mixmodCluster(finance,2:6)
-#'   summary(xem3)
+#' # load heterogeneous data set
+#' data(finance)
+#' # Clustering in composite case
+#' xem3 <- mixmodCluster(finance, 2:6)
+#' summary(xem3)
 #'
-#'   ## Discriminant Analysis
-#'   # start by extract 10 observations from iris data set
-#'   remaining.obs<-sample(1:nrow(iris),10)
-#'   # then run a mixmodLearn() analysis without those 10 observations
-#'   learn<-mixmodLearn(iris[-remaining.obs,1:4], iris$Species[-remaining.obs])
-#'   # create a MixmodPredict to predict those 10 observations
-#'   prediction <- mixmodPredict(data=iris[remaining.obs,1:4], classificationRule=learn["bestResult"])
-#'   # show results
-#'   prediction
-#'   # compare prediction with real results
-#'   paste("accuracy= ",mean(as.integer(iris$Species[remaining.obs]) == prediction["partition"])*100
-#'      	,"%",sep="")
-#'   }
+#' ## Discriminant Analysis
+#' # start by extract 10 observations from iris data set
+#' remaining.obs <- sample(1:nrow(iris), 10)
+#' # then run a mixmodLearn() analysis without those 10 observations
+#' learn <- mixmodLearn(iris[-remaining.obs, 1:4], iris$Species[-remaining.obs])
+#' # create a MixmodPredict to predict those 10 observations
+#' prediction <- mixmodPredict(
+#'   data = iris[remaining.obs, 1:4],
+#'   classificationRule = learn["bestResult"]
+#' )
+#' # show results
+#' prediction
+#' # compare prediction with real results
+#' paste("accuracy= ", mean(as.integer(iris$Species[remaining.obs]) == prediction["partition"]) * 100,
+#'   "%",
+#'   sep = ""
+#' )
+#' }
 #'
 NULL
 
@@ -111,7 +116,7 @@ NULL
 #'
 #' Old Faithful erupts more frequently than any other big geyser, although it is not the largest nor the most regular
 #' geyser in the park. Its average interval between two eruptions is about 76 minutes, varying from 45 - 110 minutes.
-#' An eruption lasts from 1.1/2 to 5 minutes, expels 3,700 - 8,400 gallons (14,000 - 32,000 liters) of boiling water,
+#' An eruption lasts from 1.1/2 to 5 minutes, expels 3,700 - 8,400 gallons (14,000 - 32,000 litres) of boiling water,
 #' and reaches heights of 106 - 184 feet (30 - 55m). It was named for its consistent performance by members of the Washburn
 #' Expedition in 1870. Old Faithful is still as spectacular and predictable as it was a century ago.
 #'
@@ -137,7 +142,7 @@ NULL
 #' @keywords datasets
 #'
 #' @examples
-#'   data(geyser)
+#' data(geyser)
 NULL
 
 #' Qualitative data: Survival of passengers on the Titanic
@@ -183,7 +188,7 @@ NULL
 #' @keywords datasets
 #'
 #' @examples
-#'   data(titanic)
+#' data(titanic)
 NULL
 
 #' Qualitative data: morphological description of birds
@@ -216,7 +221,7 @@ NULL
 #' @keywords datasets
 #'
 #' @examples
-#'   data(birds)
+#' data(birds)
 NULL
 
 
@@ -254,7 +259,7 @@ NULL
 #' @keywords datasets
 #'
 #' @examples
-#'   data(car)
+#' data(car)
 NULL
 
 
@@ -288,7 +293,7 @@ NULL
 #' for Understanding Companies Financial Health.} Case Studies in Business, Industry and Government Statistics, 4(2), 73-82.
 #'
 #' Du Jardin P, S\'everin E (2010). \emph{Dynamic analysis of the business failure process: a study of bankruptcy
-#' trajectories.} In Portuguese Finance Network. Ponte Delgada, Portugual.
+#' trajectories.} In Portuguese Finance Network. Ponte Delgada, Portugal.
 #'
 #' @name finance
 #' @docType data
