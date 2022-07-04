@@ -31,8 +31,8 @@ using namespace std;
 // print program usage
 void showExamplesHelp() {
     cout << "Usage: './example_exe <function_name_shortcut>' where shortcuts are defined as follow.\n";
-    cout << "    cX --> clustering_X_example with X in (integer) range [1,13]\n";
-    cout << "    daX --> discriminant_analysis_X_example with X in (integer) range [1,3]\n";
+    cout << "    cX --> clustering_X_example with X in (integer) range [1,14]\n";
+    cout << "    daX --> discriminant_analysis_X_example with X in (integer) range [1,5]\n";
 }
 
 // (example) function type
@@ -103,8 +103,9 @@ int main ( int argc, char* argv[] ) {
     try {
         example();
     }
-	catch ( XEM::Exception& e ) {
+    catch (const XEM::Exception & e) {
         e.run();
+        return 1;
     }
     return 0;
 }

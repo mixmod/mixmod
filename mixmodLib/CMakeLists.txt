@@ -105,6 +105,8 @@ install(FILES "README" "LICENSE"
 include(${CMAKE_SOURCE_DIR}/CPackLists.txt)
 include(CPack)
 
+enable_testing()
+
 option(MIXMOD_BUILD_EXAMPLES "build examples" OFF)
 if (MIXMOD_BUILD_EXAMPLES)
   add_subdirectory(EXAMPLES)
