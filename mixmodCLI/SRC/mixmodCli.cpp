@@ -11,7 +11,7 @@ void showTestsHelp() {
   cout << "Usage: './mixmod-cli -m {c|l|p} -i <xml-file-in> -o <dirOut/prefix> [optional args] '."<<endl;
   cout << "Usage: './mixmod-cli -m {c|l|p} -i <xml-file-in> -t [optional args] '."<<endl;  
   cout << "MANDATORY ARGS:"<<endl;
-  cout << "-m, --mode : should be 'c' (as clustering), 'l' (as learn) or 'p' (as predict)"<<endl;    
+  cout << "-m, --mode : should be 'c' (as clustering), 'l' (as learn) or 'p' (as predict)"<<endl;
   cout << "-i, --in : an input XML file"<<endl;
   cout << "-o, --out : <dirOut/prefix> dirOut is an existing dir, all output files generated in dirOut will start with 'prefix'"<<endl;  
   cout << "-t, --test : when set, the input XML file is interpreted as a regresion test (i.e. input parameter+reference result). In this case -o become optional"<<endl;
@@ -116,29 +116,29 @@ void showTestsHelp() {
    };
    if(!mode.empty()){
      cerr<<"mode argument is obsolete, it isn't necessary anymore!" <<endl;
-     //exit(1);
+     return 1;
    }
    
    /*
    if(mode.empty()){
      cerr<<"mode argument is mandatory" <<endl;
-     exit(1);
+     return 1;
    }
    if(mode!="C" && mode!="L" && mode!="P" && mode!="c" && mode!="l" && mode!="p"){
      cerr<<"invalid mode (should be C[lustering], L[earn] or P[redict])" <<endl;
-     exit(1);
+     return 1;
      }*/
    if(datasetIn.empty()){
      cerr<<"the input dataset is mandatory" <<endl;
-     exit(1);
+     return 1;
    }
    if(datasetOut.empty() && ioModeOut == XEM::IoMode::BINARY){
      cerr<<"-B (binaryOutput) option is invalid when an output dataset is not provided" <<endl;
-     exit(1);
+     return 1;
    }
    if(datasetOut.empty() && !nrTest){
      cerr<<"-Out is mandatory unless -t[est] is set" <<endl;
-     exit(1);
+     return 1;
    }
    if(ioModeOut == XEM::IoMode::NUMERIC){
      ioModeOut = ioModeIn; //when -B is not set, ioModeOut follows ioModeIn
@@ -178,6 +178,7 @@ void showTestsHelp() {
             cout << "Everything is fine for " << datasetIn << endl;
           } else {
             cout << "Unexpected output in " << datasetIn << endl;
+            return 1;
           }
           delete cRefOutput;  
         }
@@ -211,6 +212,7 @@ void showTestsHelp() {
           cout << "Everything is fine for " << datasetIn << endl;
         } else {
           cout << "Unexpected output in " << datasetIn << endl;
+          return 1;
         }
         delete lRefOutput;  
       }
@@ -243,6 +245,7 @@ void showTestsHelp() {
           cout << "Everything is fine for " << datasetIn << endl;
         } else {
           cout << "Unexpected output in " << datasetIn << endl;
+          return 1;
         }
         delete pRefOutput;  
       }
@@ -253,7 +256,7 @@ void showTestsHelp() {
 	}
    case XEM::ProjectType::Unknown:
      cerr<<"Unknown project type" <<endl;
-     exit(1);
+     return 1;
      
    }//end switch
 

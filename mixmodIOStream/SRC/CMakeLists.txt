@@ -1,26 +1,12 @@
-#for headers from mixmodIOStream
-include_directories(${CMAKE_SOURCE_DIR}/SRC)
-#for headers from other modules
-include_directories(${CMAKE_INSTALL_PREFIX}/include)
-#NEWMAT (current mathematical library)
-#TODO: shouldn't be needed, since mixmodIOStream doesn't call its methods
-include_directories(${CMAKE_INSTALL_PREFIX}/include/NEWMAT)
-
-#Include Eigen files
-include_directories(${CMAKE_SOURCE_DIR}/../../mixmodLib/trunk/SRC/Eigen)
 
 # libxml++ stuff
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../../cmake/")
 find_package(LibXML++ REQUIRED)
-include_directories(${LibXML++_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${LibXML++_LIBRARIES})
-add_definitions("-DXEM_RESOURCES_PATH=\"${CMAKE_INSTALL_PREFIX}/share/mixmod/resources/\"")
 # that is because of auto_ptr deprecation warnings in libxml++2.6. To be removed ASAP
-SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 
 #find libraries from other modules
-find_library(libmixmod mixmod PATHS ${CPACK_PACKAGING_INSTALL_PREFIX}/lib ${CMAKE_INSTALL_PREFIX}/lib NO_DEFAULT_PATH)
-message("libmixmod found here : "  ${libmixmod})
+# find_library(libmixmod mixmod PATHS ${CPACK_PACKAGING_INSTALL_PREFIX}/lib ${CMAKE_INSTALL_PREFIX}/lib NO_DEFAULT_PATH)
+# message("libmixmod found here : "  ${libmixmod})
 
 #QT
 #FIND_PACKAGE( Qt4 REQUIRED )
@@ -35,12 +21,21 @@ message("libmixmod found here : "  ${libmixmod})
 #set(XML_resource ${resource_schemas})
 
 #Generation de la liste des fichiers sources
-FILE(GLOB mixmod_iostream_src ${CMAKE_SOURCE_DIR}/SRC/mixmod_iostream/*.cpp)
-FILE(GLOB mixmod_iostream_h ${CMAKE_SOURCE_DIR}/SRC/mixmod_iostream/*.h)
+FILE(GLOB mixmod_iostream_src ${CMAKE_CURRENT_SOURCE_DIR}/mixmod_iostream/*.cpp)
+FILE(GLOB mixmod_iostream_h ${CMAKE_CURRENT_SOURCE_DIR}/mixmod_iostream/*.h)
 
-ADD_LIBRARY(mixmod_iostream SHARED ${mixmod_iostream_src}) # ${XML_resource})
+ADD_LIBRARY(mixmod_iostream ${mixmod_iostream_src}) # ${XML_resource})
+
+target_include_directories (mixmod_iostream PUBLIC
+  $<INSTALL_INTERFACE:include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  ${LibXML++_INCLUDE_DIRS})
+
+target_compile_definitions(mixmod_iostream PUBLIC "-DXEM_RESOURCES_PATH=\"${CMAKE_INSTALL_PREFIX}/share/mixmod/resources/\"")
+
 #TARGET_LINK_LIBRARIES(mixmod_iostream ${QT_LIBRARIES} ${mixmodLib})
-TARGET_LINK_LIBRARIES(mixmod_iostream ${LibXML++_LIBRARIES}  ${libmixmod})
+TARGET_LINK_LIBRARIES(mixmod_iostream PUBLIC ${LibXML++_LIBRARIES} mixmod)
+
 
 SET_TARGET_PROPERTIES(mixmod_iostream 
 	PROPERTIES VERSION "2.4.0")

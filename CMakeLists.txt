@@ -4,7 +4,9 @@ cmake_minimum_required(VERSION 3.2)
 set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 PROJECT(mixmod)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../UTIL/cmake/")
+list (APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/UTIL/cmake/")
+
+option (BUILD_SHARED_LIBS "shared/static libs" ON)
 
 #Eigen stuff
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
@@ -90,3 +92,15 @@ endif(POLICY CMP0009)
 enable_testing()
 
 add_subdirectory(mixmodLib)
+
+option (MIXMOD_BUILD_IOSTREAM "build iostream" OFF)
+if (MIXMOD_BUILD_IOSTREAM)
+  add_subdirectory (mixmodIOStream)
+endif ()
+
+option (MIXMOD_BUILD_CLI "build cli" OFF)
+if (MIXMOD_BUILD_CLI AND MIXMOD_BUILD_IOSTREAM)
+  add_subdirectory (mixmodCLI)
+endif ()
+
+
