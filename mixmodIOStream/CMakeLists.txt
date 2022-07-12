@@ -1,44 +1,9 @@
-# Configuration
-#--------------
-cmake_minimum_required(VERSION 2.8.5)
-project(mixmod_iostream)
-
-# Installation prefix, packaging prefix
-#--------------------------------------
-if (NOT DEFINED CMAKE_INSTALL_PREFIX)
-	set(CMAKE_INSTALL_PREFIX "/usr/local")
-endif ()
-message("CMAKE_INSTALL_PREFIX :"  ${CMAKE_INSTALL_PREFIX})
-if (NOT DEFINED CPACK_PACKAGING_INSTALL_PREFIX)
-	set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
-endif ()
-message("CPACK_PACKAGING_INSTALL_PREFIX : " ${CPACK_PACKAGING_INSTALL_PREFIX})
-
-
-# Release/Debug
-#--------------
-IF(NOT  CMAKE_BUILD_TYPE STREQUAL "Debug")
-	set(CMAKE_BUILD_TYPE "Release")
-endif ()
-message("CMAKE_BUILD_TYPE : " ${CMAKE_BUILD_TYPE})
-
-# Compiler settings
-#-------------------
-set(CMAKE_CXX_FLAGS "-std=c++11")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
-message("CMAKE_CXX_FLAGS_RELEASE : " ${CMAKE_CXX_FLAGS_RELEASE})
-set(CMAKE_CXX_FLAGS_DEBUG "-g3")
-message("CMAKE_CXX_FLAGS_DEBUG : " ${CMAKE_CXX_FLAGS_DEBUG})
-message("CMAKE_CXX_FLAGS : " ${CMAKE_CXX_FLAGS})
-
-#include(${CMAKE_SOURCE_DIR}/../../../../cmake_shared_config.txt)
-
 #
 # Resources without QT
 #
 
 FILE(GLOB xml_resources 
-  ${CMAKE_SOURCE_DIR}/SRC/XML_specs/*.xsd)
+  ${CMAKE_CURRENT_SOURCE_DIR}/SRC/XML_specs/*.xsd)
 INSTALL(FILES ${xml_resources}
 	DESTINATION share/mixmod/resources
 	COMPONENT applications)

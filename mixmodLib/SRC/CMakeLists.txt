@@ -1,23 +1,27 @@
 #only one headers include directory (at root)
-include_directories(${CMAKE_SOURCE_DIR}/SRC)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 #Generation de la liste des fichiers sources
-FILE(GLOB_RECURSE mixmod_src ${CMAKE_SOURCE_DIR}/SRC/mixmod/*.cpp)
-ADD_LIBRARY(mixmod SHARED ${mixmod_src})
+FILE(GLOB_RECURSE mixmod_src ${CMAKE_CURRENT_SOURCE_DIR}/mixmod/*.cpp)
+ADD_LIBRARY(mixmod ${mixmod_src})
 
 SET_TARGET_PROPERTIES(mixmod PROPERTIES VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}" )
+target_include_directories (mixmod PUBLIC
+  $<INSTALL_INTERFACE:include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mixmod/Utilities>)
 
 INSTALL(TARGETS mixmod 
 	LIBRARY DESTINATION lib
 	COMPONENT runtime)
 
 #to allow #include <mixmod.h>
-INSTALL(FILES ${CMAKE_SOURCE_DIR}/SRC/mixmod/Utilities/mixmod.h 
+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mixmod/Utilities/mixmod.h
 	DESTINATION include
 	COMPONENT dev)
 
 #installed headers have same structure as in source folder
-INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/SRC/mixmod
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/mixmod
 	DESTINATION include
 	COMPONENT dev
 	FILES_MATCHING
