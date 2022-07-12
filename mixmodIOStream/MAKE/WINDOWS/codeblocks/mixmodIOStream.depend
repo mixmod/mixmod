@@ -26,14 +26,14 @@
 	<QtCore>
 	<QtGui>
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringinput.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringinput.h
 	"XEMInput.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xeminput.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xeminput.h
 	"XEMUtil.h"
 	"XEMDataDescription.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\utilities\xemutil.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\utilities\xemutil.h
 	"newmatap.h"
 	"newmatio.h"
 	<vector>
@@ -46,15 +46,15 @@
 	<limits>
 	<typeinfo>
 
-1349259869 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmatap.h
+1349259869 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\newmatap.h
 	"newmat.h"
 
-1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmat.h
+1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\newmat.h
 	"include.h"
 	"boolean.h"
 	"myexcept.h"
 
-1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\include.h
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\include.h
 	<cstdlib>
 	<limits>
 	<iostream>
@@ -128,21 +128,21 @@
 	<time.h>
 	<fstream.h>
 
-1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\boolean.h
+1349259870 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\boolean.h
 
-1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\myexcept.h
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\myexcept.h
 	<setjmp.h>
 
-1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\newmat\newmatio.h
+1349259871 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\newmat\newmatio.h
 	"newmat.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdatadescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemdatadescription.h
 	"XEMDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemdescription.h
 	"XEMUtil.h"
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringoutput.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringoutput.h
 	"XEMUtil.h"
 
 1335476750 c:\qt\4.8.2\include\qtcore\qfile
@@ -1606,10 +1606,10 @@
 1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeinput.h
 	"XEMIOStreamUtil.h"
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringstrategy.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringstrategy.h
 	"XEMUtil.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\algo\xemalgo.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\algo\xemalgo.h
 	"XEMUtil.h"
 
 1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringoutput.h
@@ -1618,7 +1618,7 @@
 1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeoutput.h
 	"XEMIOStreamUtil.h"
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringmain.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringmain.h
 	<vector>
 	"XEMUtil.h"
 
@@ -1650,25 +1650,25 @@
 	"XEMDataDescription.h"
 	"XEMClusteringInput.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xembinarydata.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xembinarydata.h
 	"XEMData.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemdata.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemdata.h
 	"XEMUtil.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemqualitativecolumndescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemqualitativecolumndescription.h
 	"XEMColumnDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemcolumndescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemcolumndescription.h
 	"XEMUtil.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemquantitativecolumndescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemquantitativecolumndescription.h
 	"XEMColumnDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemindividualcolumndescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemindividualcolumndescription.h
 	"XEMColumnDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemweightcolumndescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemweightcolumndescription.h
 	"XEMColumnDescription.h"
 
 1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomlabel.cpp
@@ -1679,7 +1679,7 @@
 	"XEMQualitativeColumnDescription.h"
 	"XEMIndividualColumnDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xempartition.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xempartition.h
 	"XEMUtil.h"
 
 1359540879 c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomlabel.h
@@ -1690,7 +1690,7 @@
 	"XEMClusteringInput.h"
 	"XEMLabelDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemlabeldescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemlabeldescription.h
 	"XEMDescription.h"
 
 1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomparameter.cpp
@@ -1711,21 +1711,21 @@
 	"XEMClusteringInput.h"
 	"XEMNodeClusteringOutput.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xembinaryparameter.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\parameter\xembinaryparameter.h
 	"XEMUtil.h"
 	"XEMParameter.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xemparameter.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\parameter\xemparameter.h
 	"XEMUtil.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\parameter\xemgaussianparameter.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\parameter\xemgaussianparameter.h
 	"XEMUtil.h"
 	"XEMParameter.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\model\xemmodeltype.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\model\xemmodeltype.h
 	"XEMUtil.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemparameterdescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemparameterdescription.h
 	"XEMUtil.h"
 
 1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproba.cpp
@@ -1739,7 +1739,7 @@
 	<QFile>
 	<QDomDocument>
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemprobadescription.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemprobadescription.h
 	"XEMDescription.h"
 
 1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemdomproject.cpp
@@ -1770,35 +1770,35 @@
 	"XEMLabel.h"
 	"XEMLabelDescription.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemgaussiandata.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemgaussiandata.h
 	"XEMData.h"
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringmodeloutput.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringmodeloutput.h
 	"XEMModelOutput.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemmodeloutput.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemmodeloutput.h
 	"XEMUtil.h"
 	"XEMModelType.h"
 	"XEMCriterionOutput.h"
 	"XEMParameter.h"
 	"XEMParameterDescription.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\criterion\xemcriterionoutput.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\criterion\xemcriterionoutput.h
 	"XEMUtil.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\model\xemmodel.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\model\xemmodel.h
 	"XEMUtil.h"
 	"XEMError.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\utilities\xemerror.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\utilities\xemerror.h
 	"XEMUtil.h"
 
-1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemproba.h
+1349259867 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemproba.h
 	<vector>
 	<iostream>
 	<stdint.h>
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\io\xemlabel.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\io\xemlabel.h
 	<iostream>
 	<vector>
 	<stdint.h>
@@ -1818,13 +1818,13 @@
 	"XEMModelType.h"
 	<XEMCriterion.h>
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\algo\xememalgo.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\algo\xememalgo.h
 	"XEMAlgo.h"
 
-1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\clustering\xemclusteringstrategyinit.h
+1349259868 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\clustering\xemclusteringstrategyinit.h
 	"XEMUtil.h"
 
-1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\trunk\src\mixmod\kernel\criterion\xemcriterion.h
+1349259866 c:\documents and settings\flangrognet\mes documents\mixmodlib\src\mixmod\kernel\criterion\xemcriterion.h
 	"XEMUtil.h"
 
 1359540879 source:c:\documents and settings\flangrognet\mes documents\mixmodiostream\src\mixmod_iostream\xemnodeclusteringoutput.cpp
@@ -1849,4 +1849,3 @@
 	"XEMDomData.h"
 	<stdint.h>
 	<algorithm>
-

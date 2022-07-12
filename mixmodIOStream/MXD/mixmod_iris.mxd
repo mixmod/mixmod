@@ -1,7 +1,7 @@
 <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <NbSample>150</NbSample>
  <Format>txt</Format>
- <DataFilename>/home/flangrognet/mixmod_svn/mixmod/dev/components/mixmodIOStream/trunk/MXD/mixmod_iris.dat</DataFilename>
+ <DataFilename>/home/flangrognet/mixmod_svn/mixmod/mixmodIOStream/MXD/mixmod_iris.dat</DataFilename>
  <ListColumn>
   <Column Num="1" xsi:type="Individual"/>
   <Column Num="2" xsi:type="Quantitative"/>

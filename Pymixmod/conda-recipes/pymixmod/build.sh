@@ -23,7 +23,7 @@ function build_component
 	    printf "${RED}${new_dir} does not exist.abort...${NC}\n"
 	    exit 1
 	fi
-	cd "$new_dir"	
+	cd "$new_dir"
 	if [ $CLEAN -ne 0 ] || [ ! -e "$new_dir/Makefile" ]; then
 	    /bin/rm -rf "$new_dir"/*
 	    cmake -DCMAKE_BUILD_TYPE="$BTYPE" \
@@ -38,9 +38,9 @@ cp -r "$PYMIXMOD_SRC"  "$SRC_DIR"
 #build_component "$SRC_DIR/dev/UTIL/NEWMAT"
 #exit
 #mixmodLib
-#build_component "$SRC_DIR/dev/components/mixmodLib/trunk"
+#build_component "$SRC_DIR/mixmodLib/"
 build_component "$SRC_DIR"
-PYMIXMOD_SRC_DIR="$SRC_DIR/Pymixmod/trunk"
+PYMIXMOD_SRC_DIR="$SRC_DIR/Pymixmod/"
 cd "$PYMIXMOD_SRC_DIR"
 $PYTHON  setup.py build_ext --inplace
 $PYTHON  setup.py install
@@ -48,7 +48,7 @@ export PYTHONPATH="$PYMIXMOD_SRC_DIR:$PYTHONPATH"
 cd "$PYMIXMOD_SRC_DIR/doc/api"
 MIXMOD_SHARE="$PREFIX/share/mixmod/"
 PYMIXMOD_SHARE="$PREFIX/share/pymixmod/"
-export DYLD_FALLBACK_LIBRARY_PATH="$SRC_DIR/../../conda-bld/work/dev/components/mixmodLib/trunk/BUILD/Release/SRC"
+export DYLD_FALLBACK_LIBRARY_PATH="$SRC_DIR/../../conda-bld/work/mixmodLib/BUILD/Release/SRC"
 make clean
 make html BUILDDIR="$PYMIXMOD_SHARE/doc"
 mkdir -p "$PYMIXMOD_SHARE/examples/clustering/"

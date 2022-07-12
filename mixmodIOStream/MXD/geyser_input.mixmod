@@ -1,6 +1,6 @@
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Clustering">
  <Input>
-  <Data>/home/flangrognet/mixmod_svn/mixmod/dev/components/mixmodIOStream/trunk/MXD/mixmod_geyser.mxd</Data>
+  <Data>/home/flangrognet/mixmod_svn/mixmod/mixmodIOStream/MXD/mixmod_geyser.mxd</Data>
   <SelectVariable>
    <Variable>1</Variable>
    <Variable>2</Variable>
