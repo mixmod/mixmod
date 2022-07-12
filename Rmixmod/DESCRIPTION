@@ -48,6 +48,5 @@ Collate:
     'MixmodXml.R'
     'Rmixmod.R'
     'zzz.R'
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 Encoding: UTF-8
-
