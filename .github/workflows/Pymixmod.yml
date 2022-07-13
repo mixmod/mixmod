@@ -6,7 +6,7 @@ on:
 name: Test PyMixmod
 
 env:
-  LD_LIBRARY_PATH: ~/.local
+  LD_LIBRARY_PATH: ~/.local/lib
 
 jobs:
   linux:
