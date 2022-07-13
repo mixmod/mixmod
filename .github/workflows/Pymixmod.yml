@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install
+    - name: Install Dependencies
       run: |
-        sudo apt install -y cmake libeigen3-dev libxml++2.6-dev
+        sudo apt install -y cmake libeigen3-dev
     - name: Build mixmod
       run: |
         cmake -DCMAKE_INSTALL_PREFIX=~/.local -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" .
@@ -31,6 +31,10 @@ jobs:
       working-directory: Pymixmod
       run: |
         pip install -r requirements.txt
+    - name: Install Pymixmod
+      working-directory: Pymixmod
+      run: |
+        pip install -e .
     - name: Lint with flake8
       working-directory: Pymixmod
       run: |
