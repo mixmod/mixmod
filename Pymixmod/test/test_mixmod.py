@@ -1,12 +1,12 @@
-#import mixmod as mymod
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
+# import mixmod as mymod
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import unittest
+
+import pandas as pnd
 
 import mixmod
 from mixmod import gm
-import unittest
-import pandas as pnd
-
 
 # mixmodGaussianModel()
 raw_gaussian_all = """Gaussian_pk_L_I Gaussian_pk_Lk_I Gaussian_pk_L_B Gaussian_pk_Lk_B Gaussian_pk_L_Bk Gaussian_pk_Lk_Bk Gaussian_pk_L_C Gaussian_pk_Lk_C Gaussian_pk_L_D_Ak_D Gaussian_pk_Lk_D_Ak_D Gaussian_pk_L_Dk_A_Dk Gaussian_pk_Lk_Dk_A_Dk Gaussian_pk_L_Ck Gaussian_pk_Lk_Ck Gaussian_p_L_I Gaussian_p_Lk_I Gaussian_p_L_B Gaussian_p_Lk_B Gaussian_p_L_Bk Gaussian_p_Lk_Bk Gaussian_p_L_C Gaussian_p_Lk_C Gaussian_p_L_D_Ak_D Gaussian_p_Lk_D_Ak_D Gaussian_p_L_Dk_A_Dk Gaussian_p_Lk_Dk_A_Dk Gaussian_p_L_Ck Gaussian_p_Lk_Ck"""
@@ -111,8 +111,6 @@ raw_composite_eqp_t_frp_f = """Heterogeneous_p_E_L_B Heterogeneous_p_E_Lk_B Hete
 raw_composite_eqp_f_frp_t = """Heterogeneous_pk_E_L_B Heterogeneous_pk_E_Lk_B Heterogeneous_pk_E_L_Bk Heterogeneous_pk_E_Lk_Bk Heterogeneous_pk_Ekj_L_B Heterogeneous_pk_Ekj_Lk_B Heterogeneous_pk_Ekj_L_Bk Heterogeneous_pk_Ekj_Lk_Bk Heterogeneous_pk_Ekjh_L_B Heterogeneous_pk_Ekjh_Lk_B Heterogeneous_pk_Ekjh_L_Bk Heterogeneous_pk_Ekjh_Lk_Bk Heterogeneous_pk_Ej_L_B Heterogeneous_pk_Ej_Lk_B Heterogeneous_pk_Ej_L_Bk Heterogeneous_pk_Ej_Lk_Bk Heterogeneous_pk_Ek_L_B Heterogeneous_pk_Ek_Lk_B Heterogeneous_pk_Ek_L_Bk Heterogeneous_pk_Ek_Lk_Bk"""
 
 
-
-
 def to_set(models):
     return set([m.name for m in models])
 
@@ -122,13 +120,11 @@ class TestGaussianModels(unittest.TestCase):
         self.all = set(raw_gaussian_all.split())
         self.spherical = set(raw_gaussian_spherical.split())
         self.diagonal = set(raw_gaussian_diagonal.split())
-        self.spherical_diagonal = set(raw_gaussian_spherical_diagonal.
-                                               split())
+        self.spherical_diagonal = set(raw_gaussian_spherical_diagonal.split())
         self.general = set(raw_gaussian_general.split())
         self.equal_proportions = set(raw_gaussian_equal_proportions.split())
-        self.free_proportions = set(raw_gaussian_free_proportions.split())                        
+        self.free_proportions = set(raw_gaussian_free_proportions.split())
 
-        
     def test_gaussian_default(self):
         model = mixmod.gaussian_model()
         self.assertTrue(model == [gm.ModelName.Gaussian_pk_Lk_C])
@@ -161,11 +157,12 @@ class TestGaussianModels(unittest.TestCase):
         models = mixmod.gaussian_model(equal_proportions=False)
         self.assertTrue(to_set(models) == self.free_proportions)
 
+
 class TestMultinomialModels(unittest.TestCase):
     def setUp(self):
         self.all = set(raw_multinomial_all.split())
         self.equal_proportions = set(raw_multinomial_equal_proportions.split())
-        self.free_proportions = set(raw_multinomial_free_proportions.split())                        
+        self.free_proportions = set(raw_multinomial_free_proportions.split())
         self.var_indep_true = set(raw_multinomial_var_indep_true.split())
         self.var_indep_false = set(raw_multinomial_var_indep_false.split())
         self.comp_indep_true = set(raw_multinomial_comp_indep_true.split())
@@ -177,14 +174,14 @@ class TestMultinomialModels(unittest.TestCase):
         self.eqp_t_frp_f = set(raw_multinomial_eqp_t_frp_f.split())
         self.eqp_f_frp_t = set(raw_multinomial_eqp_f_frp_t.split())
 
-
-        
     def test_multinomial_default(self):
         model = mixmod.multinomial_model()
         self.assertTrue(model == [gm.ModelName.Binary_pk_Ekjh])
+
     def test_multinomial_all(self):
         models = mixmod.multinomial_model(gm.ALL)
         self.assertTrue(to_set(models) == self.all)
+
     def test_multinomial_equal_proportions(self):
         models = mixmod.multinomial_model(equal_proportions=True)
         self.assertTrue(to_set(models) == self.equal_proportions)
@@ -208,19 +205,19 @@ class TestMultinomialModels(unittest.TestCase):
     def test_multinomial_comp_indep_false(self):
         models = mixmod.multinomial_model(component_independency=False)
         self.assertTrue(to_set(models) == self.comp_indep_false)
-        
+
     def test_multinomial_comp_indep_false_var_indep_true(self):
         models = mixmod.multinomial_model(component_independency=False, variable_independency=True)
         self.assertTrue(to_set(models) == self.ci_f_vi_t)
-        
+
     def test_multinomial_comp_indep_true_var_indep_false(self):
         models = mixmod.multinomial_model(component_independency=True, variable_independency=False)
         self.assertTrue(to_set(models) == self.ci_t_vi_f)
-        
+
     def test_multinomial_comp_indep_false_equal_proportions_true(self):
         models = mixmod.multinomial_model(component_independency=False, equal_proportions=True)
         self.assertTrue(to_set(models) == self.ci_f_eqp_t)
-        
+
     def test_multinomial_comp_indep_true_equal_proportions_false(self):
         models = mixmod.multinomial_model(component_independency=True, equal_proportions=False)
         self.assertTrue(to_set(models) == self.ci_t_eqp_f)
@@ -233,11 +230,12 @@ class TestMultinomialModels(unittest.TestCase):
         models = mixmod.multinomial_model(equal_proportions=False)
         self.assertTrue(to_set(models) == self.eqp_f_frp_t)
 
+
 class TestCompositeModels(unittest.TestCase):
     def setUp(self):
         self.all = set(raw_composite_all.split())
         self.equal_proportions = set(raw_composite_equal_proportions.split())
-        self.free_proportions = set(raw_composite_free_proportions.split())                        
+        self.free_proportions = set(raw_composite_free_proportions.split())
         self.var_indep_true = set(raw_composite_var_indep_true.split())
         self.var_indep_false = set(raw_composite_var_indep_false.split())
         self.comp_indep_true = set(raw_composite_comp_indep_true.split())
@@ -249,14 +247,14 @@ class TestCompositeModels(unittest.TestCase):
         self.eqp_t_frp_f = set(raw_composite_eqp_t_frp_f.split())
         self.eqp_f_frp_t = set(raw_composite_eqp_f_frp_t.split())
 
-
-        
     def test_composite_default(self):
         model = mixmod.composite_model()
         self.assertTrue(model == [gm.ModelName.Heterogeneous_pk_Ekjh_Lk_Bk])
+
     def test_composite_all(self):
         models = mixmod.composite_model(gm.ALL)
         self.assertTrue(to_set(models) == self.all)
+
     def test_composite_equal_proportions(self):
         models = mixmod.composite_model(equal_proportions=True)
         self.assertTrue(to_set(models) == self.equal_proportions)
@@ -280,19 +278,19 @@ class TestCompositeModels(unittest.TestCase):
     def test_composite_comp_indep_false(self):
         models = mixmod.composite_model(component_independency=False)
         self.assertTrue(to_set(models) == self.comp_indep_false)
-        
+
     def test_composite_comp_indep_false_var_indep_true(self):
         models = mixmod.composite_model(component_independency=False, variable_independency=True)
         self.assertTrue(to_set(models) == self.ci_f_vi_t)
-        
+
     def test_composite_comp_indep_true_var_indep_false(self):
         models = mixmod.composite_model(component_independency=True, variable_independency=False)
         self.assertTrue(to_set(models) == self.ci_t_vi_f)
-        
+
     def test_composite_comp_indep_false_equal_proportions_true(self):
         models = mixmod.composite_model(component_independency=False, equal_proportions=True)
         self.assertTrue(to_set(models) == self.ci_f_eqp_t)
-        
+
     def test_composite_comp_indep_true_equal_proportions_false(self):
         models = mixmod.composite_model(component_independency=True, equal_proportions=False)
         self.assertTrue(to_set(models) == self.ci_t_eqp_f)
@@ -308,16 +306,17 @@ class TestCompositeModels(unittest.TestCase):
 
 class TestClustering(unittest.TestCase):
     def setUp(self):
-        self.iris_train_data = pnd.read_csv(filepath_or_buffer='data/iris.train',sep=',',header=False)
-    def test_gaussian_simple(self):
-        cluster = mixmod.cluster(data,[2,3,4], gm.QUANTITATIVE, models=mixmod.gaussian_model(family=gm.DIAGONAL))
+        self.iris_train_data = pnd.read_csv(filepath_or_buffer='data/iris.train', sep=',', header=False)
 
-        
+    def test_gaussian_simple(self):
+        cluster = mixmod.cluster(data, [2, 3, 4], gm.QUANTITATIVE, models=mixmod.gaussian_model(family=gm.DIAGONAL))
+
+
 if __name__ == '__main__':
-    #unittest.main()
-    #suite = unittest.TestLoader().loadTestsFromTestCase(TestGaussianModels)
+    # unittest.main()
+    # suite = unittest.TestLoader().loadTestsFromTestCase(TestGaussianModels)
     all_tests = unittest.TestSuite()
     all_tests.addTest(unittest.makeSuite(TestGaussianModels))
     all_tests.addTest(unittest.makeSuite(TestMultinomialModels))
-    all_tests.addTest(unittest.makeSuite(TestCompositeModels))        
+    all_tests.addTest(unittest.makeSuite(TestCompositeModels))
     unittest.TextTestRunner(verbosity=2).run(all_tests)
