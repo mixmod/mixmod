@@ -309,7 +309,8 @@ class TestClustering(unittest.TestCase):
         self.iris_train_data = pnd.read_csv(filepath_or_buffer='data/iris.train', sep=',', header=False)
 
     def test_gaussian_simple(self):
-        cluster = mixmod.cluster(data, [2, 3, 4], gm.QUANTITATIVE, models=mixmod.gaussian_model(family=gm.DIAGONAL))
+        cluster = mixmod.cluster(self.iris_train_data, [2, 3, 4], gm.QUANTITATIVE,
+                                 models=mixmod.gaussian_model(family=gm.DIAGONAL))
 
 
 if __name__ == '__main__':
