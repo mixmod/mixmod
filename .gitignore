@@ -1,5 +1,17 @@
+*.so
+*.o
+
+# Rmixmod
 Rmixmod_[0-9]*
 Rmixmod.Rcheck
 Rmixmod/autom4te.cache/
-*.so
-*.o
+
+# C++ components
+build
+CMakeFiles
+mixmodLib/BUILD
+mixmodIOStream/BUILD
+
+# pyMixmod
+Pymixmod/mixmod.cpp
+*.egg-info

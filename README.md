@@ -21,22 +21,80 @@ Main Statistical functionalities:
 
 Previous repository: <https://gforge.inria.fr/projects/mixmod>
 
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [Organization](#organization)
+- [C++ components](#c-components)
+  - [Requirements](#requirements)
+  - [Compilation](#compilation)
+- [Rmixmod](#rmixmod)
+  - [R Requirements](#r-requirements)
+  - [Build](#build)
+- [Citation](#citation)
+- [License](#license)
+
 ## Organization
 
 - **Rmixmod**  R interface of the C++ mixmod library
 - **mixmodLib** C++ mixmod library
 - **mixmodIOStream** C++ library to manage IO
-- **Pymixmod** Python interface
 - **mixmodCLI** Command Line Interface
+- **Pymixmod** Python interface
 - **mixmodGUI** unmaintained
 - **mixmodMVC** unmaintained
+
+## C++ components
+
+[![C++ components](https://github.com/mixmod/mixmod/actions/workflows/build.yml/badge.svg)](https://github.com/mixmod/mixmod/actions/workflows/build.yml)
+
+### Requirements
+
+Requirements for mixmoLib:
+
+``` bash
+sudo apt install -y cmake libeigen3-dev
+```
+
+Extra requirement for mixmodIOStream
+
+``` bash
+sudo apt install -y libxml++2.6-dev
+```
+
+### Compilation
+
+A main [CMake file](CMakeLists.txt) is used to compiled mixmodLib, mixmodIOStream and mixmodCLI.
+
+Compilation options:
+
+- `-DCMAKE_INSTALL_PREFIX`: installation folder
+- `-DCMAKE_BUILD_TYPE`: `Debug` or `Release` (default)
+- `-DCMAKE_CXX_FLAGS`: extra c++ compilation flags (optional)
+- `-DMIXMOD_BUILD_IOSTREAM`: `ON` or `OFF` (default). Compile or not mixmodIOStream
+- `-DMIXMOD_BUILD_CLI`: `ON` or `OFF` (default). Compile or not mixmodCLI. It requires `-DMIXMOD_BUILD_IOSTREAM=ON`
+- `-DMIXMOD_BUILD_EXAMPLES`: `ON` or `OFF` (default)
+
+Generate makefile:
+
+``` bash
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=~/usr/local/ -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" ..
+```
+
+Compile:
+
+``` bash
+make install -j2
+```
 
 ## Rmixmod
 
 [![Rmixmod build status](https://github.com/mixmod/mixmod/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rmixmod)](https://cran.r-project.org/package=Rmixmod) [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod?color=blue)](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod) [![Downloads](https://cranlogs.r-pkg.org/badges/Rmixmod)](https://cran.rstudio.com/web/packages/Rmixmod/index.html)
 
-### Requirements
+### R Requirements
 
 Install the following R packages in order to build Rmixmod:
 
@@ -69,6 +127,8 @@ R CMD check --as-cran Rmixmod_[version]/Rmixmod_[version].tar.gz
 ## Citation
 
 Lebret, R., Iovleff, S., Langrognet, F., Biernacki, C., Celeux, G., & Govaert, G. (2015). Rmixmod: The R Package of the Model-Based Unsupervised, Supervised, and Semi-Supervised Classification Mixmod Library. Journal of Statistical Software, 67(6), 1–29. <https://doi.org/10.18637/jss.v067.i06>
+
+See [CITATION.bib](CITATION.bib)
 
 ## License
 
