@@ -31,6 +31,10 @@ jobs:
       working-directory: Pymixmod
       run: |
         pip install -r requirements.txt
+    - name: print
+      run: |
+        ls ~/.local
+        ls ~/.local/lib
     - name: Install Pymixmod
       working-directory: Pymixmod
       run: |
