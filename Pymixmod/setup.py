@@ -55,6 +55,7 @@ ext_modules = [
               extra_compile_args=['-std=c++11'],
               language="c++",
               include_dirs=[".", np.get_include(), ] + [MIXMOD_SRC + i for i in mixmod_includes] + [mixmodlib_src],
+              library_dirs=["~/.local/lib/"],
               libraries=["mixmod"]),
     ]
 
@@ -64,4 +65,4 @@ setup(
     ext_modules=cythonize(ext_modules, gdb_debug=False, output_dir=".")
 )
 
-# gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I../../mixmodLib/trunk/SRC/mixmod/Clustering/ -I../../mixmodLib/trunk/SRC/mixmod/Kernel/IO/ -I../../mixmodLib/trunk/SRC/mixmod/Utilities/ -I/usr/include/python2.7 -c mixmod.cpp -o build/temp.linux-x86_64-2.7/mixmod.o
+# gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I../mixmodLib/SRC/mixmod/Clustering/ -I../mixmodLib/SRC/mixmod/Kernel/IO/ -I../mixmodLib/SRC/mixmod/Utilities/ -I/usr/include/python2.7 -c mixmod.cpp -o build/temp.linux-x86_64-2.7/mixmod.o
