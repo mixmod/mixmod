@@ -6,7 +6,7 @@ on:
 name: Test PyMixmod
 
 env:
-  LD_LIBRARY_PATH: ~/.local/lib
+  LD_LIBRARY_PATH: ~/.local/lib/:~/.local/
 
 jobs:
   linux:
@@ -34,7 +34,12 @@ jobs:
     - name: print
       run: |
         ls ~/.local
+    - name: print local/lib
+      run: |
         ls ~/.local/lib
+    - name: ld output
+      run: |
+        ld -lmixmod --verbose
     - name: Install Pymixmod
       working-directory: Pymixmod
       run: |
