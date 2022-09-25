@@ -37,6 +37,9 @@ jobs:
     - name: print local/lib
       run: |
         ls ~/.local/lib
+    - name: echo
+      run: |
+        echo $LD_LIBRARY_PATH
     - name: ld output
       run: |
         ld -lmixmod --verbose
