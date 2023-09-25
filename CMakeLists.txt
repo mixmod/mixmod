@@ -25,7 +25,7 @@ message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
 # ELSEIF(NOT BLAS_FOUND)
 #   message(STATUS "libblas not found")
 # ENDIF()
-# 
+#
 # #Armadillo stuff
 # find_package(Armadillo)
 # IF(ARMADILLO_FOUND)
@@ -34,7 +34,7 @@ message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
 # ELSEIF(NOT ARMADILLO_FOUND)
 #   message(STATUS "libarmadillo not found")
 # ENDIF()
-# 
+#
 # #ITpp stuff
 # find_package(ITpp)
 # IF(ITPP_FOUND)
@@ -45,7 +45,7 @@ message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
 # ENDIF()
 
 #usage "cmake . " + Options :
-#	-DCMAKE_INSTALL_PREFIX="<Path>" 
+#	-DCMAKE_INSTALL_PREFIX="<Path>"
 #		Default : /usr/local
 #		-> /usr/local/lib : libmixmod.so
 #		-> /usr/local/include/mixmod : *.h  + /usr/local/share/mixmod : EXAMPLES (module dev)
@@ -76,7 +76,7 @@ message(STATUS "CMAKE_BUILD_TYPE : " ${CMAKE_BUILD_TYPE})
 
 # Compiler settings
 #-------------------
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
 find_package(OpenMP)
 if (OPENMP_FOUND)
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
@@ -102,5 +102,3 @@ option (MIXMOD_BUILD_CLI "build cli" OFF)
 if (MIXMOD_BUILD_CLI AND MIXMOD_BUILD_IOSTREAM)
   add_subdirectory (mixmodCLI)
 endif ()
-
-
