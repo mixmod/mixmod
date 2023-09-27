@@ -51,10 +51,10 @@ jobs:
     #     ld -lmixmod --verbose
     - name: installed packages
       run: pip list
-    # - name: Install Pymixmod
-    #   working-directory: Pymixmod
-    #   run: |
-    #     pip install .
+    - name: Install Pymixmod
+      working-directory: Pymixmod
+      run: |
+        pip install .
     - name: Lint with flake8
       working-directory: Pymixmod
       run: |
