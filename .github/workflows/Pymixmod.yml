@@ -12,7 +12,7 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Dependencies
       run: |
         sudo apt install -y cmake libeigen3-dev
@@ -21,9 +21,9 @@ jobs:
         cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
         make install -j2
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.8
+        python-version: '3.8'
     - name: Install Tests dependencies
       run: |
         pip install pytest flake8
