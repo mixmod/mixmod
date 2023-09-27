@@ -8,7 +8,6 @@ on:
       - 'mixmodLib/**'
       - 'CMakeLists.txt'
       - '.github/workflows/Pymixmod.yml'
-      - '!**/README.md'
 
 name: Test PyMixmod
 
@@ -44,16 +43,18 @@ jobs:
     # - name: print local/lib
     #   run: |
     #     ls ~/.local/lib
-    - name: echo
-      run: |
-        echo $LD_LIBRARY_PATH
-    - name: ld output
-      run: |
-        ld -lmixmod --verbose
-    - name: Install Pymixmod
-      working-directory: Pymixmod
-      run: |
-        pip install .
+    # - name: echo
+    #   run: |
+    #     echo $LD_LIBRARY_PATH
+    # - name: ld output
+    #   run: |
+    #     ld -lmixmod --verbose
+    - name: installed packages
+      run: pip list
+    # - name: Install Pymixmod
+    #   working-directory: Pymixmod
+    #   run: |
+    #     pip install .
     - name: Lint with flake8
       working-directory: Pymixmod
       run: |
