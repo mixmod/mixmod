@@ -18,8 +18,8 @@ jobs:
         sudo apt install -y cmake libeigen3-dev
     - name: Build mixmod
       run: |
-        cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
-        make install -j2
+        sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
+        sudo make install -j2
     - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
