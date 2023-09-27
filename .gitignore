@@ -13,6 +13,6 @@ mixmodLib/BUILD
 mixmodIOStream/BUILD
 
 # pyMixmod
-Pymixmod/mixmod.cpp
+Pymixmod/mixmod/mixmod.cpp
 *.egg-info
 *.pyc

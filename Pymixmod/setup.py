@@ -52,11 +52,11 @@ mixmod_includes = [
 ext_modules = [
     Extension(
         "mixmod",
-        ["mixmod.pyx"],
+        ["mixmod/mixmod.pyx"],
         extra_compile_args=["-std=c++11"],
         language="c++",
         include_dirs=[
-            ".",
+            "mixmod",
             np.get_include(),
         ]
         + [MIXMOD_SRC + i for i in mixmod_includes]
@@ -66,6 +66,11 @@ ext_modules = [
     ),
 ]
 
-setup(name="PyMixmod", cmdclass={"build_ext": build_ext}, ext_modules=cythonize(ext_modules, gdb_debug=False, output_dir="."))
+setup(
+    name="PyMixmod",
+    version="0.1.0",
+    cmdclass={"build_ext": build_ext},
+    ext_modules=cythonize(ext_modules, gdb_debug=False, output_dir="."),
+)
 
 # gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I../mixmodLib/SRC/mixmod/Clustering/ -I../mixmodLib/SRC/mixmod/Kernel/IO/ -I../mixmodLib/SRC/mixmod/Utilities/ -I/usr/include/python2.7 -c mixmod.cpp -o build/temp.linux-x86_64-2.7/mixmod.o
