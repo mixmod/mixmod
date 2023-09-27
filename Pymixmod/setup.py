@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 ##  @author: Christian Poli, INRIA
@@ -46,23 +46,26 @@ mixmod_includes = [
     "/Kernel/Criterion/",
     "/Kernel/Parameter/",
     "/Utilities/",
-    "/Utilities/exceptions/"
-    ]
+    "/Utilities/exceptions/",
+]
 
 ext_modules = [
-    Extension("mixmod",
-              ["mixmod.pyx"],
-              extra_compile_args=['-std=c++11'],
-              language="c++",
-              include_dirs=[".", np.get_include(), ] + [MIXMOD_SRC + i for i in mixmod_includes] + [mixmodlib_src],
-              library_dirs=["~/.local/lib/"],
-              libraries=["mixmod"]),
-    ]
+    Extension(
+        "mixmod",
+        ["mixmod.pyx"],
+        extra_compile_args=["-std=c++11"],
+        language="c++",
+        include_dirs=[
+            ".",
+            np.get_include(),
+        ]
+        + [MIXMOD_SRC + i for i in mixmod_includes]
+        + [mixmodlib_src],
+        library_dirs=["~/.local/lib/", "/usr/local/lib/"],
+        libraries=["mixmod"],
+    ),
+]
 
-setup(
-    name="PyMixmod",
-    cmdclass={"build_ext": build_ext},
-    ext_modules=cythonize(ext_modules, gdb_debug=False, output_dir=".")
-)
+setup(name="PyMixmod", cmdclass={"build_ext": build_ext}, ext_modules=cythonize(ext_modules, gdb_debug=False, output_dir="."))
 
 # gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I../mixmodLib/SRC/mixmod/Clustering/ -I../mixmodLib/SRC/mixmod/Kernel/IO/ -I../mixmodLib/SRC/mixmod/Utilities/ -I/usr/include/python2.7 -c mixmod.cpp -o build/temp.linux-x86_64-2.7/mixmod.o
