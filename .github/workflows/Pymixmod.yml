@@ -53,7 +53,7 @@ jobs:
     - name: Install Pymixmod
       working-directory: Pymixmod
       run: |
-        pip install -e .
+        pip install .
     - name: Lint with flake8
       working-directory: Pymixmod
       run: |
