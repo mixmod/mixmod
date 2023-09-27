@@ -2,6 +2,13 @@ on:
   push:
     branches: [ master ]
   pull_request:
+    branches: [ master ]
+    paths:
+      - 'Pymixmod/**'
+      - 'mixmodLib/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/Pymixmod.yml'
+      - '!**/README.md'
 
 name: Test PyMixmod
 
