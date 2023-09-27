@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import unittest
 
-import pandas as pnd
+import pandas as pd
 
 import mixmod
 from mixmod import gm
@@ -306,14 +306,15 @@ class TestCompositeModels(unittest.TestCase):
 
 class TestClustering(unittest.TestCase):
     def setUp(self):
-        self.iris_train_data = pnd.read_csv(filepath_or_buffer='data/iris.train', sep=',', header=False)
+        self.iris_train_data = pd.read_csv(filepath_or_buffer="data/iris.train", sep=",")
 
     def test_gaussian_simple(self):
-        cluster = mixmod.cluster(self.iris_train_data, [2, 3, 4], gm.QUANTITATIVE,
-                                 models=mixmod.gaussian_model(family=gm.DIAGONAL))
+        cluster = mixmod.cluster(
+            self.iris_train_data.iloc[:, :-1], [2, 3, 4], gm.QUANTITATIVE, models=mixmod.gaussian_model(family=gm.DIAGONAL)
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # unittest.main()
     # suite = unittest.TestLoader().loadTestsFromTestCase(TestGaussianModels)
     all_tests = unittest.TestSuite()

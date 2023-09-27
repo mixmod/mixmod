@@ -1,11 +1,11 @@
 #from mixmod import *
 
 _MVI = 'variable_independency'
-_MCI = 'component_independency'     
+_MCI = 'component_independency'
 _EQP = 'equal_proportions'
 _FAM = 'family'
 
-## def data_type_from_model(m):    
+## def data_type_from_model(m):
 ##     if m is None:
 ##         return None
 ##     if not isinstance(m, Model):
@@ -21,31 +21,33 @@ def _match_any_re(whole_str, pattern):
         else:
             if p in whole_str:
                 return True
-    return False    
+    return False
 
 
 
 def gaussian_model_(*args, **kwargs):
     if not args and not kwargs:
-        return [gm.ModelName.Gaussian_pk_Lk_C]            
-    
+        return [gm.ModelName.Gaussian_pk_Lk_C]
+
     if args and (len(args) != 1 or args[0] != gm.ALL or kwargs):
         raise ValueError("Invalid arguments in: {} or in {}".format(args, kwargs))
-    # query mode bellow
+    # query mode below
     valid_props = [_EQP, 'family']
     invalid_args = [arg for arg in kwargs if arg not in valid_props]
     if invalid_args:
         raise ValueError("Invalid predicate(s): {}. Only {} attributes are allowed".format(invalid_args, valid_props))
     #family=None, free_proportions=True, equal_proportions=True):
-    family = [gm.ALL] if 'family' not in kwargs else kwargs['family']
-    if family in gm.Family:
+    family = gm.ALL if 'family' not in kwargs else kwargs['family']
+    if not isinstance(family, list):
         family = [family]
-    elif not is_included(family, gm.Family):
+
+    if not is_included(family, gm.Family):
         raise ValueError("unknown family {}".format(family))
     elif gm.ALL in family:
         family = [gm.ALL]
+
     equal_proportions = True if _EQP not in kwargs else kwargs[_EQP]
-    free_proportions = True if _EQP not in kwargs else not kwargs[_EQP]    
+    free_proportions = True if _EQP not in kwargs else not kwargs[_EQP]
     gaussian_f = 'Gaussian_p'
     family_dict = {
         gm.ALL:['_'],
@@ -61,7 +63,7 @@ def gaussian_model_(*args, **kwargs):
         return [e for e in gaussian_all if prop_free not in e.name]
     if not equal_proportions:
         return [e for e in gaussian_all if prop_equal not in e.name]
-    return gaussian_all 
+    return gaussian_all
 
 from re import compile as rec
 
@@ -80,7 +82,7 @@ class IndepComposite(object):
 
 def multi_like_model_impl(indep, model_, **kwargs):
     equal_proportions = True if _EQP not in kwargs else kwargs[_EQP]
-    free_proportions = True if _EQP not in kwargs else not kwargs[_EQP]    
+    free_proportions = True if _EQP not in kwargs else not kwargs[_EQP]
     prop_free = '_pk_'
     prop_equal = '_p_'
     result = [e for e in gm.ModelName if model_ in e.name]
@@ -90,22 +92,22 @@ def multi_like_model_impl(indep, model_, **kwargs):
         else:
             result = [e for e in result if _match_any_re(e.name, indep.var_false)]
     if _MCI in kwargs:
-        if kwargs[_MCI]: 
+        if kwargs[_MCI]:
             result = [e for e in result if _match_any_re(e.name, indep.comp_true)]
         else:
             result = [e for e in result if _match_any_re(e.name, indep.comp_false)]
     if not free_proportions:
         return [e for e in result if prop_free not in e.name]
     if not equal_proportions:
-        return [e for e in result if prop_equal not in e.name]                     
+        return [e for e in result if prop_equal not in e.name]
     return result
 
 def multinomial_model_(*args, **kwargs):
     if not args and not kwargs:
-        return [gm.ModelName.Binary_pk_Ekjh]    
+        return [gm.ModelName.Binary_pk_Ekjh]
     if args and (len(args) != 1 or args[0] != gm.ALL or kwargs):
         raise ValueError("Invalid arguments in: {} or in {}".format(args, kwargs))
-    # query mode bellow
+    # query mode below
     valid_props = [_EQP, _MVI, _MCI]
     invalid_args = [arg for arg in kwargs if arg not in valid_props]
     if invalid_args:
@@ -119,10 +121,10 @@ def multinomial_model_(*args, **kwargs):
 
 def composite_model_(*args, **kwargs):
     if not args and not kwargs:
-        return [gm.ModelName.Heterogeneous_pk_Ekjh_Lk_Bk]    
+        return [gm.ModelName.Heterogeneous_pk_Ekjh_Lk_Bk]
     if args and (len(args) != 1 or args[0] != gm.ALL or kwargs):
         raise ValueError("Invalid arguments in: {} or in {}".format(args, kwargs))
-    # query mode bellow
+    # query mode below
     valid_props = [_EQP, _MVI, _MCI]
     invalid_args = [arg for arg in kwargs if arg not in valid_props]
     if invalid_args:
@@ -152,9 +154,9 @@ def check_models(model_list, pattern=None):
 ##     .. admonition:: Constructor
 ##         :class: warning
 
-##         This is an abstract class, so instanciate it directly is not a good \
+##         This is an abstract class, so instantiate it directly is not a good \
 ##         idea ...
-        
+
 ##     :ivar model_list: list of selected model names
 ##     :vartype model_list: list[:ref:`gm.ModelName<gmMN>`]
 ##     :ivar default: is **True** if *model_list* holds the default value
@@ -166,8 +168,8 @@ def check_models(model_list, pattern=None):
 ##     :ivar query: holds (as a dictionary) the set of named \
 ##     arguments (in other words, the query) which selects the content of \
 ##     **model_list**. It has no meaning if **default** or **all** is **True**
-##     :vartype query: dict    
-##     """    
+##     :vartype query: dict
+##     """
 ##     def __init__(self, model_list, default_=False, all_=False, query_=None):
 ##         self.default = default_
 ##         self.full = all_
@@ -175,7 +177,7 @@ def check_models(model_list, pattern=None):
 ##         self.query = query_
 ##     def __call__(self):
 ##         return self.model_list
-    
+
 ## class GaussianModel(Model):
 ##     """
 ##     :Description: This class is useful for build collections of gaussian \
@@ -185,7 +187,7 @@ def check_models(model_list, pattern=None):
 
 ##     .. admonition:: Constructor
 ##         :class: note
-        
+
 ##         models = GaussianModel(model_list)
 
 ##         **NB:** If possible, consider calling :py:func:`gaussian_model` \
@@ -193,7 +195,7 @@ def check_models(model_list, pattern=None):
 
 ##     """
 ##     #actually: models = GaussianModel(model_list, default, all, query)
-    
+
 ##     def __init__(self, model_list, default_=False, all_=False, query_=None):
 ##         check_models(model_list, "Gaussian")
 ##         super(GaussianModel, self).__init__(model_list, default_, all_, query_)
@@ -209,7 +211,7 @@ def check_models(model_list, pattern=None):
 
 ##     .. admonition:: Constructor
 ##         :class: note
-        
+
 ##         models = MultinomialModel(model_list)
 
 ##         **NB:** If possible, consider calling :py:func:`multinomial_model` \
@@ -234,7 +236,7 @@ def check_models(model_list, pattern=None):
 
 ##     .. admonition:: Constructor
 ##         :class: note
-        
+
 ##         models = CompositeModel(model_list)
 
 ##         **NB:** If possible, consider calling :py:func:`composite_model` \
@@ -244,19 +246,19 @@ def check_models(model_list, pattern=None):
 ##     # actually: models = CompositeModel(model_list, default, all, query)
 ##     def __init__(self, model_list, default_=False, all_=False, query_=None):
 ##         check_models(model_list, "Heterogeneous")
-##         super(CompositeModel, self).__init__(model_list, default_, all_, query_)    
+##         super(CompositeModel, self).__init__(model_list, default_, all_, query_)
 ##     def required_data_type(self):
 ##         return gm.HETEROGENEOUS
-    
+
 
 
 def gaussian_model(*args, **kwargs):
     """
     :Description: This function returns a list of **gaussian** :ref:`gm.ModelName<gmMN>` enumeration items satisfying a given criterion
-    
+
     .. admonition:: Signature
         :class: note
-        
+
             model_list = mixmod.gaussian_model(gm.ALL)
 
             model_list = mixmod.gaussian_model([equal_proportions, family])
@@ -267,7 +269,7 @@ def gaussian_model(*args, **kwargs):
     :type family: :ref:`gm.Family<gmFam>`, list[:ref:`gm.Family<gmFam>`]
     :return:  list of selected models
     :rtype: list[:ref:`gm.ModelName<gmMN>`]
-    """    
+    """
     model_list = gaussian_model_(*args, **kwargs)
     return model_list
     #return GaussianModel(model_list, not kwargs, bool(args), kwargs)
@@ -275,10 +277,10 @@ def gaussian_model(*args, **kwargs):
 def multinomial_model(*args, **kwargs):
     """
     :Description: This function returns a list of **multinomial** :ref:`gm.ModelName<gmMN>` enumeration itemqsatisfying a given criterion
-    
+
     .. admonition:: Signature
         :class: note
-        
+
             model_list = mixmod.multinomial_model(gm.ALL)
 
             model_list = mixmod.multinomial_model([equal_proportions, variable_independency, component_independency])
@@ -291,18 +293,18 @@ def multinomial_model(*args, **kwargs):
     :type component_independency: bool
     :return:  list of selected models
     :rtype: list[:ref:`gm.ModelName<gmMN>`]
-    """    
+    """
     model_list = multinomial_model_(*args, **kwargs)
-    return model_list    
+    return model_list
     #return MultinomialModel(model_list, not kwargs, bool(args), kwargs)
 
 def composite_model(*args, **kwargs):
     """
     :Description: This function returns a list of **composite** :ref:`gm.ModelName<gmMN>` enumeration items satisfying a given criterion
-    
+
     .. admonition:: Signature
         :class: note
-        
+
             model_list = mixmod.composite_model(gm.ALL)
 
             model_list = mixmod.composite_model([equal_proportions, variable_independency, component_independency])
@@ -314,8 +316,8 @@ def composite_model(*args, **kwargs):
     :param component_independecy: when **True**, only models not depending on the **k** components are selected. When **False**, only models which depend on the **k** components are selected.
     :type component_independency: bool
     :return:  list of selected models
-    :rtype: list[:ref:`gm.ModelName<gmMN>`]    
-    """    
+    :rtype: list[:ref:`gm.ModelName<gmMN>`]
+    """
     model_list = composite_model_(*args, **kwargs)
-    return model_list    
+    return model_list
     #return CompositeModel(model_list, not kwargs, bool(args),  kwargs)
