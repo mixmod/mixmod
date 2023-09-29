@@ -16,3 +16,4 @@ mixmodIOStream/BUILD
 Pymixmod/mixmod/mixmod.cpp
 *.egg-info
 *.pyc
+.ipynb_checkpoints
