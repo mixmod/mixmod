@@ -6,7 +6,7 @@
 
 /***************************************************************************
     This file is part of MIXMOD
-    
+
     MIXMOD is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -20,7 +20,7 @@
     You should have received a copy of the GNU General Public License
     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-    All informations available on : http://www.mixmod.org                                                                                               
+    All informations available on : http://www.mixmod.org
 ***************************************************************************/
 
 #include <mixmod.h>
@@ -50,7 +50,7 @@ void clustering_1_example() {
 		cout<<"erreur : "<<filename<<endl;
 	}
 
-    
+
 	// 1. create XEM::ClusteringInput
 	//--------------------------
 
@@ -66,7 +66,7 @@ void clustering_1_example() {
 
     // Finalize input: run a series of sanity checks on it
     cInput->finalize();
-    
+
 	// edit cInput
 	cout << "-----------------------------------------------------------------------" << endl;
 	cout << " Input : " << endl;
@@ -143,7 +143,7 @@ void clustering_1_example() {
 //    cInput->addModel(Gaussian_pk_Lk_C);
 //    cInput->getStrategy()->insertAlgo(EM, 0);
 //    cInput->getStrategy()->insertAlgo(CEM, 1);
-//    
+//
 //    // Set strategy and algorithms parameters
 //    cInput->getStrategy()->setAlgoIteration(0, 10);
 //    cInput->getStrategy()->setAlgoStopRule(NBITERATION, 0);
@@ -160,7 +160,7 @@ void clustering_1_example() {
 //    XEM::ClusteringMain cMain (cInput);
 //    cMain.run();
 //    XEM::ClusteringOutput* cOutput = cMain.getClusteringOutput();
-//    
+//
 //    if (cOutput->atLeastOneEstimationNoError()) {
 //		vector<XEM::ClusteringModelOutput*> cMOutput = cOutput->getClusteringModelOutput();
 //		for (int i=0; i<3; i++) {
@@ -170,7 +170,7 @@ void clustering_1_example() {
 //}
 
 //OUTPUT:
-//~mixmod/dev/components/mixmodLib/trunk/BIN $ ./example_exe c1
+//mixmodLib/BIN $ ./example_exe c1
 //MODEL 0 2 -278.057 656.327
 //MODEL 1 3 -237.855 605.986
 //MODEL 2 4 -217.255 594.85

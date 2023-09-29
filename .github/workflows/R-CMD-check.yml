@@ -7,6 +7,12 @@ on:
     branches:
       - main
       - master
+    paths:
+      - 'Rmixmod/**'
+      - 'mixmodLib/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/R-CMD-check.yml'
+
 
 name: R-CMD-check
 

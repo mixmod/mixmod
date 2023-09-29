@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,21 +19,18 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
 
-import numpy as np
-import pandas as pnd
+import pandas as pd
+
 import mixmod
-from mixmod import gm # gm contains global constants (enum items etc.)
 
-        
+
 def clustering_10_example():
-
-    data = pnd.read_csv(filepath_or_buffer='data/birds.dat', sep=',')
+    folder_data = "data/"
+    data = pd.read_csv(folder_data + "birds.dat")
     mixmod.header_to_categories(data)
     # nb_cluster contains the numbers of clusters to be tested.
     # Here we assume that there are 3, 4, 5 or 6 clusters.
@@ -41,14 +38,12 @@ def clustering_10_example():
     return mixmod.cluster(data, nb_cluster=[3, 4, 5, 6])
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(
         "-----------------------------------------------------------------------\n"
         "Clustering example (number 2) : \n"
         "  - birds data (qualitative data)\n"
         "  - default options\n"
         "-----------------------------------------------------------------------\n\n"
-        )
+    )
     print(clustering_10_example().summary())

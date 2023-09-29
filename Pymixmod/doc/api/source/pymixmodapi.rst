@@ -2,43 +2,43 @@
 PyMixmod API
 ############
 .. py:currentmodule:: mixmod
-                      
+
 **************
 Main functions
 **************
 
 .. #.. autofunction:: mixmod.cluster
 
-.. #.. autofunction:: mixmod.learn                  
+.. #.. autofunction:: mixmod.learn
 
 .. #automodule:: mixmod
 
 .. autofunction:: mixmod.cluster
 
-                  
+
 .. autofunction:: mixmod.learn
 
-                  
+
 .. autofunction:: mixmod.predict
-                  
+
 
 *********
 Utilities
 *********
 
 .. autofunction:: mixmod.strategy
-                  
+
 .. autofunction:: mixmod.init
 
 .. autofunction:: mixmod.algo
 
-.. comment_out autofunction:: mixmod.sort_by_criterion                  
+.. comment_out autofunction:: mixmod.sort_by_criterion
 
-==========================                  
+==========================
 Models filtering utilities
 ==========================
 
-The three following functions (:py:func:`gaussian_model`, :py:func:`multinomial_model` and :py:func:`composite_model`) have in common the calling conventions described bellow.
+The three following functions (:py:func:`gaussian_model`, :py:func:`multinomial_model` and :py:func:`composite_model`) have in common the calling conventions described below.
 
 
 
@@ -50,7 +50,7 @@ There are three ways to call a models filtering function:
 
 .. note:: It isn't relevant to speak about **"default value"** for these function parameters because they play the role of filtering criteria in this context. So, when a parameter is missing, that simply  means there are no filtering at all on that criterion.
 
-                  
+
 .. autofunction:: mixmod.gaussian_model
 
 .. autofunction:: mixmod.multinomial_model
@@ -82,9 +82,9 @@ PyMixmod classes
 
 .. autoclass:: mixmod.Algo
 
-.. autoclass:: mixmod.Output               
+.. autoclass:: mixmod.Output
     :members:
-       
+
 .. autoclass:: mixmod.ClusterOutput
     :show-inheritance:
     :members:
@@ -93,21 +93,21 @@ PyMixmod classes
     :show-inheritance:
 
 .. autoclass:: mixmod.PredictOutput
-               
-.. autoclass:: mixmod.Result               
 
-.. autoclass:: mixmod.LearnResult               
+.. autoclass:: mixmod.Result
+
+.. autoclass:: mixmod.LearnResult
     :show-inheritance:
-       
+
 
 .. autoclass:: mixmod.Parameter
 
 .. autoclass:: mixmod.GaussianParameter
     :show-inheritance:
-       
+
 .. autoclass:: mixmod.MultinomialParameter
     :show-inheritance:
-       
+
 .. autoclass:: mixmod.CompositeParameter
 
 
@@ -117,11 +117,11 @@ PyMixmod classes
 Global constants
 ****************
 
-.. note:: All global constants are implemented as class attributes of the 
+.. note:: All global constants are implemented as class attributes of the
           **mixmod.gm** class (i.e. the *mixmod.gm* class plays the role of a namespace).
-          
+
           All enumeration items listed below could be referenced in two ways:
-          
+
           * With their actual names (e.g. **gm.DataType.QUANTITATIVE**)
           * With their shortcuts (e.g. **gm.QUANTITATIVE**)
 

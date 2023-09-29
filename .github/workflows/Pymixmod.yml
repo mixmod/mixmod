@@ -1,0 +1,53 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'Pymixmod/**'
+      - 'mixmodLib/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/Pymixmod.yml'
+
+name: Test PyMixmod
+
+env:
+  LD_LIBRARY_PATH: /usr/local/lib/
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Dependencies
+      run: |
+        sudo apt install -y cmake libeigen3-dev
+    - name: Build mixmod
+      run: |
+        sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
+        sudo make install -j2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    - name: Install Tests dependencies
+      run: |
+        pip install pytest flake8
+    - name: Install Other Python Dependencies
+      working-directory: Pymixmod
+      run: |
+        pip install -r requirements.txt
+    - name: Install Pymixmod
+      working-directory: Pymixmod
+      run: |
+        pip install .
+    - name: Lint with flake8
+      working-directory: Pymixmod
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      working-directory: Pymixmod
+      run: pytest test

@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 ##  @author: Christian Poli, INRIA
@@ -29,14 +29,14 @@ cdef class Init(object):
     :Description: Defines the parameters for the initiation step \
     of a strategy. Customarily, **Init** instances  are components of \
     :py:class:`Strategy` objects.
-    
+
     .. admonition:: Constructor
         :class: note
 
             *init_output = mixmod.Init([name, nb_try, nb_iteration, epsilon])*
 
         **Parameters:** see :py:func:`init` function
-        
+
         **NB:** An **Init** instance could be also obtained by calling \
         :py:func:`init` function
 
@@ -51,8 +51,8 @@ cdef class Init(object):
     :var epsilon: defines the epsilon value in the initialization step.
     :vartype epsilon: float, **default** = 0.001
     :var parameter: see :py:func:`init`
-    :var labels: see :py:func:`init`    
-    """    
+    :var labels: see :py:func:`init`
+    """
     cdef readonly name, nb_try, nb_iteration, epsilon, parameter, labels
     def __cinit__(self, name=gm.SMALL_EM, nb_try=10, nb_iteration=None,
                   epsilon=None, parameter=None, labels=None):
@@ -111,7 +111,7 @@ def init(*args, **kwargs):
     :Description: This function creates a :py:class:`Init` object, defining \
     the parameters for the initiation step of a strategy. The returned object \
     is used by :py:func:`strategy` function.
-    
+
     .. admonition:: Signature
         :class: note
 
@@ -136,9 +136,9 @@ def init(*args, **kwargs):
     :type parameter: :py:class:`GaussianParameter`, :py:class:`MultinomialParameter`
     :param labels: vector containing integers (>=0)
     :type labels: list[int], numpy.array[int]
-    :return: initialisation object 
+    :return: initialisation object
     :rtype: :py:class:`Init`
-    """    
+    """
     return Init(*args, **kwargs)
 
 
@@ -150,14 +150,14 @@ cdef class Algo(object):
     An **Algo** object or a list of **Algo** objects is customarily used to \
     set the **algo** parameter for the :py:func:`strategy` \
     function or Strategy constructor.
-    
+
     .. admonition:: Constructor
         :class: note
 
             init_output = mixmod.Algo([name, nb_iteration, epsilon])
 
         **Parameters:** see :py:func:`algo` function
-        
+
         **NB:** An **Algo** instance could be also obtained by calling \
         :py:func:`algo` function
 
@@ -168,7 +168,7 @@ cdef class Algo(object):
     :var epsilon: defines the epsilon value  (threshold value used \
     when the algorithm is wanted to be stopped at stationarity).
     :vartype epsilon: float, **default** = 0.001
-    """    
+    """
     cdef readonly name, nb_iteration, epsilon
     def __init__(self, name=gm.EM, nb_iteration=200, epsilon=0.001):
         if name not in gm.valid_algos:
@@ -181,8 +181,8 @@ cdef class Algo(object):
             raise ValueError("Algo.epsilon must be a real.")
         self.epsilon = epsilon
     def __str__(self):
-        out = StringIO()        
-        out.write("{}\n".format(self.name.name))        
+        out = StringIO()
+        out.write("{}\n".format(self.name.name))
         out.write("* number of iterations = {}\n".format(self.nb_iteration))
         out.write("* epsilon              = {}\n".format(self.epsilon))
         res = out.getvalue()
@@ -193,7 +193,7 @@ cdef class Algo(object):
         yield self
     def __reduce__(self):
         return Algo, (self.name, self.nb_iteration, self.epsilon)
-    
+
 default_algo = Algo()
 
 def algo(*args, **kwargs):
@@ -201,8 +201,8 @@ def algo(*args, **kwargs):
     :Description: This function creates an :py:class:`Algo` object, \
     defining the algorithm with options to be run on a strategy. The returned \
     object or a list of **Algo** objects is customarily used to \
-    set the **algo** parameter for the :py:func:`strategy` 
-    
+    set the **algo** parameter for the :py:func:`strategy`
+
     .. admonition:: Signature
         :class: note
 
@@ -215,11 +215,11 @@ def algo(*args, **kwargs):
     :param epsilon: defines the epsilon value. This is a threshold value used \
     when the algorithm is wanted to be stopped at stationarity. Available only \
     if **name** is **NOT** gm.SEM
-    :type epsilon: float, **default** = 0.001 
-    :return: algorithm object 
+    :type epsilon: float, **default** = 0.001
+    :return: algorithm object
     :rtype: :py:class:`Algo`
-    
-    """    
+
+    """
     return Algo(*args, **kwargs)
 
 cdef class Strategy(object):
@@ -229,7 +229,7 @@ cdef class Strategy(object):
 
     .. admonition:: Constructor
         :class: note
-        
+
         strategy_output = mixmod.Strategy([nb_try, init, algo])
 
         **Parameters:** see :py:func:`strategy` function
@@ -237,7 +237,7 @@ cdef class Strategy(object):
         **NB:** A **Strategy** instance could be also obtained by calling \
         :py:func:`strategy` function
 
-    :var nb_try: defines the  number of repetitions of the strategy 
+    :var nb_try: defines the  number of repetitions of the strategy
     :vartype nb_try: int+, **default** = 1
     :var init: initialisation of the strategy
     :vartype init: :py:class:`Init`, **default** = :py:func:`init`
@@ -255,10 +255,10 @@ cdef class Strategy(object):
             raise ValueError("{} is not an Init instance".format(init))
         self.init = init
         if not is_positive_int(nb_try):
-            raise ValueError("Strategy.nb_try must be a positive int.")        
+            raise ValueError("Strategy.nb_try must be a positive int.")
         self.nb_try = nb_try
         if not isinstance(seed, numbers.Integral):
-            raise ValueError("Strategy.seed must be an int.")        
+            raise ValueError("Strategy.seed must be an int.")
         self.seed = seed
         """
     def get_algo_name(self):
@@ -299,13 +299,13 @@ def strategy(*args, **kwargs):
     :Description: This function creates a :py:class:`Strategy` \
     object, containing the initialisation options and algorithms. The returned \
     object is used by :py:func:`cluster` function.
-    
+
     .. admonition:: Signature
         :class: note
 
             strategy_output = mixmod.strategy([nb_try, init, algo])
 
-    :param nb_try: defines the  number of repetitions of the strategy 
+    :param nb_try: defines the  number of repetitions of the strategy
     :type nb_try: int+, **default** = 1
     :param init: initialisation of the strategy
     :type init: :py:class:`Init`, **default** = :py:func:`init`

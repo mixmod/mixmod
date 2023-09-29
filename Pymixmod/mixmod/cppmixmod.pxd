@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 from libc.stdint cimport int64_t
@@ -32,10 +32,10 @@ from libcpp.string cimport string
 
 
 cdef extern from "":
-    void array_delete_int64_p 'delete[] '(int64_t* iii) 
+    void array_delete_int64_p 'delete[] '(int64_t* iii)
     void array_delete_int64_pp 'delete[] '(int64_t** iii)
     Parameter** new_array_parameter_1 'new XEM::Parameter*[1]'
-    
+
 cdef extern from "cppmixmod.h":
     double *new_double_array(int ii)
     double **new_double_p_array(int ii)
@@ -43,7 +43,7 @@ cdef extern from "cppmixmod.h":
     int64_t *new_int64_t_array(int ii)
 
 
-    
+
 cdef extern from "Util.h" namespace "XEM":
     cdef Exception & NOERROR
     cdef enum DataType:
@@ -82,13 +82,13 @@ cdef extern from "Util.h" namespace "XEM":
         UNKNOWN_MODEL_NAME = -1
 
         # 28 Gaussian 'Classical' models
-        
+
         # Spherical Gaussian model: proportion fixed
         Gaussian_p_L_I = 0
-        Gaussian_p_Lk_I 
+        Gaussian_p_Lk_I
 
         # Spherical Gaussian model: proportion free
-        Gaussian_pk_L_I 
+        Gaussian_pk_L_I
         Gaussian_pk_Lk_I
 
         # Diagonal Gaussian model: proportion fixed
@@ -128,21 +128,21 @@ cdef extern from "Util.h" namespace "XEM":
         #----------------#
         Gaussian_HD_p_AkjBkQkDk
         Gaussian_HD_p_AkBkQkDk
-        Gaussian_HD_p_AkjBkQkD 
-        Gaussian_HD_p_AjBkQkD 
-        Gaussian_HD_p_AkjBQkD  
-        Gaussian_HD_p_AjBQkD  
-        Gaussian_HD_p_AkBkQkD 
-        Gaussian_HD_p_AkBQkD 
+        Gaussian_HD_p_AkjBkQkD
+        Gaussian_HD_p_AjBkQkD
+        Gaussian_HD_p_AkjBQkD
+        Gaussian_HD_p_AjBQkD
+        Gaussian_HD_p_AkBkQkD
+        Gaussian_HD_p_AkBQkD
 
         Gaussian_HD_pk_AkjBkQkDk
-        Gaussian_HD_pk_AkBkQkDk 
+        Gaussian_HD_pk_AkBkQkDk
         Gaussian_HD_pk_AkjBkQkD
         Gaussian_HD_pk_AjBkQkD
         Gaussian_HD_pk_AkjBQkD
-        Gaussian_HD_pk_AjBQkD 
+        Gaussian_HD_pk_AjBQkD
         Gaussian_HD_pk_AkBkQkD
-        Gaussian_HD_pk_AkBQkD 
+        Gaussian_HD_pk_AkBQkD
 
         ######################
         #                    #
@@ -151,17 +151,17 @@ cdef extern from "Util.h" namespace "XEM":
         ######################
 
         # proportion fixed
-        Binary_p_E 
+        Binary_p_E
         Binary_p_Ek
-        Binary_p_Ej 
+        Binary_p_Ej
         Binary_p_Ekj
-        Binary_p_Ekjh 
+        Binary_p_Ekjh
         # proportion free
-        Binary_pk_E 
+        Binary_pk_E
         Binary_pk_Ek
-        Binary_pk_Ej 
+        Binary_pk_Ej
         Binary_pk_Ekj
-        Binary_pk_Ekjh 
+        Binary_pk_Ekjh
 
         # Heterogeneous model name:proportions free
         Heterogeneous_pk_E_L_B
@@ -214,7 +214,7 @@ cdef extern from "Util.h" namespace "XEM":
 
 cdef extern from "ModelType.h" namespace "XEM":
     cdef cppclass ModelType:
-        const ModelName & getModelName() const        
+        const ModelName & getModelName() const
 
 cdef extern from "ClusteringStrategy.h" namespace "XEM":
     cdef cppclass ClusteringStrategy:
@@ -241,17 +241,17 @@ cdef extern from "Input.h" namespace "XEM":
         void setKnownLabelDescription(LabelDescription & labeldescription)
         void setModel(vector[ModelName] & modelName)
         vector[ModelType*] getModelType() const
-        
+
 cdef extern from "ClusteringInput.h" namespace "XEM":
     #ctypedef ClusteringInput ClusteringInput_c
     cdef cppclass ClusteringInput:
         ClusteringInput()
         ClusteringInput(const vector[int64_t] & iNbCluster, const DataDescription & iDataDescription)
-        ClusteringStrategy *getStrategy() const	
+        ClusteringStrategy *getStrategy() const
         void addCriterion(const CriterionName criterionName)
         # inherited:
         void finalize()
-        
+
 cdef extern from "Exception.h" namespace "XEM":
     cdef cppclass Exception:
         #virtual const char* what() const throw ();
@@ -269,28 +269,28 @@ cdef extern from "Parameter.h" namespace "XEM":
         double * getTabProportion() const
         int64_t getPbDimension() const
         int64_t getFreeParameter() const
-        
+
 cdef extern from "GaussianParameter.h" namespace "XEM":
     cdef cppclass GaussianParameter:
         double ** getTabMean() const
         int64_t getFreeParameter() const
-        
+
 cdef extern from "GaussianEDDAParameter.h" namespace "XEM":
     cdef cppclass GaussianEDDAParameter:
         Matrix ** getTabSigma() const
         int64_t getFreeParameter() const
-        
+
 cdef extern from "GaussianGeneralParameter.h" namespace "XEM":
     cdef cppclass GaussianGeneralParameter:
         GaussianGeneralParameter(
-			int64_t iNbCluster, 
-			int64_t iPbDimension, 
-			ModelType * iModelType, 
-			double * proportions, 
-			double ** means, 
+			int64_t iNbCluster,
+			int64_t iPbDimension,
+			ModelType * iModelType,
+			double * proportions,
+			double ** means,
 			double *** variances)
         int64_t getFreeParameter() const
-        
+
 cdef extern from "BinaryParameter.h" namespace "XEM":
     cdef cppclass BinaryParameter:
         int64_t ** getTabCenter() const
@@ -298,25 +298,25 @@ cdef extern from "BinaryParameter.h" namespace "XEM":
         int64_t getTotalNbModality() const
         double *** scatterToArray() const
         int64_t getFreeParameter() const
-        
+
 cdef extern from "BinaryEkjhParameter.h" namespace "XEM":
     cdef cppclass BinaryEkjhParameter:
         BinaryEkjhParameter(
-			int64_t iNbCluster, 
-			int64_t iPbDimension, 
-			ModelType * iModelType, 
-			int64_t * tabNbModality, 
-			double * proportions, 
-			double ** centers, 
+			int64_t iNbCluster,
+			int64_t iPbDimension,
+			ModelType * iModelType,
+			int64_t * tabNbModality,
+			double * proportions,
+			double ** centers,
 			double *** scatters)
         int64_t getFreeParameter() const
-        
+
 cdef extern from "CompositeParameter.h" namespace "XEM":
     cdef cppclass CompositeParameter:
         BinaryParameter* getBinaryParameter()
         GaussianParameter* getGaussianParameter()
         int64_t getFreeParameter() const
-        
+
 cdef extern from "ParameterDescription.h" namespace "XEM":
     cdef cppclass ParameterDescription:
     # constructor for binary data
@@ -338,15 +338,15 @@ cdef extern from "ParameterDescription.h" namespace "XEM":
             double *** variances)
         # constructor for Heterogeneous
         ParameterDescription(
-            int64_t nbCluster, 
-            int64_t nbBinaryVariable, 
-            int64_t nbGaussianVariable, 
-            ModelName& modelName, 
-            double * proportions, 
-            double ** centers, 
-            double *** scatters, 
-            double ** means, 
-            double *** variances, 
+            int64_t nbCluster,
+            int64_t nbBinaryVariable,
+            int64_t nbGaussianVariable,
+            ModelName& modelName,
+            double * proportions,
+            double ** centers,
+            double *** scatters,
+            double ** means,
+            double *** variances,
             vector[int64_t] nbFactor)
         Parameter * getParameter()
 
@@ -357,16 +357,16 @@ cdef extern from "Label.h" namespace "XEM":
         void setLabel(vector[int64_t] label, int64_t nbSample);
         int64_t** getClassificationTab(vector[int64_t] & label, int64_t nbCluster) const
         const double getErrorRate(vector[int64_t] & label) const
-        
+
 cdef extern from "LabelDescription.h" namespace "XEM":
     cdef cppclass LabelDescription:
         const Label * getLabel() const
         LabelDescription(int64_t nbSample, vector[int64_t] vLabel)
-        
+
 cdef extern from "Partition.h" namespace "XEM":
     cdef cppclass Partition:
         Partition(const Label * label, int64_t nbCluster)
-        
+
 cdef extern from "Proba.h" namespace "XEM":
     cdef cppclass Proba:
         vector[vector[double]] getProba() const
@@ -374,12 +374,12 @@ cdef extern from "Proba.h" namespace "XEM":
 cdef extern from "ProbaDescription.h" namespace "XEM":
     cdef cppclass ProbaDescription:
         const Proba * getProba()
-        
+
 cdef extern from "CriterionOutput.h" namespace "XEM":
     cdef cppclass CriterionOutput:
         double getValue() const
         Exception & getError() const
-        
+
 cdef extern from "ModelOutput.h" namespace "XEM":
     cdef cppclass ModelOutput:
         ModelType getModelType() const
@@ -390,19 +390,19 @@ cdef extern from "ModelOutput.h" namespace "XEM":
         double getLikelihood() const
         ParameterDescription * getParameterDescription() const
         CriterionOutput & getCriterionOutput(CriterionName criterionName) const
-        
+
 cdef extern from "ClusteringModelOutput.h" namespace "XEM":
     cdef cppclass ClusteringModelOutput
-        
-    
-cdef extern from "ClusteringOutput.h" namespace "XEM":    
+
+
+cdef extern from "ClusteringOutput.h" namespace "XEM":
     cdef cppclass ClusteringOutput:
         void sort(CriterionName criterionName)
         bool atLeastOneEstimationNoError() const
         int64_t getNbClusteringModelOutput() const
         ClusteringModelOutput * getClusteringModelOutput(const int64_t index) const
         vector[ClusteringModelOutput*]&  getClusteringModelOutput() const
-        
+
 cdef extern from "Data.h" namespace "XEM":
     cdef cppclass Data
 
@@ -431,10 +431,10 @@ cdef extern from "ClusteringMain.h" namespace "XEM":
         void run(int seed) except +
         ClusteringOutput * getOutput() const
 
-cdef extern from "ClusteringOutput.h" namespace "XEM":    
+cdef extern from "ClusteringOutput.h" namespace "XEM":
     cdef cppclass ClusteringOutput:
         void sort(CriterionName criterionName)
-        
+
 cdef extern from "LearnInput.h" namespace "XEM":
     cdef cppclass LearnInput:
         LearnInput(DataDescription * learnData, LabelDescription * knownLabelDescription)
@@ -449,14 +449,14 @@ cdef extern from "LearnOutput.h" namespace "XEM":
         bool atLeastOneEstimationNoError() const
         LearnModelOutput * getLearnModelOutput(unsigned int index) const
         int64_t getNbLearnModelOutput() const
-        
+
 cdef extern from "LearnMain.h" namespace "XEM":
     cdef cppclass LearnMain:
         LearnMain()
         LearnMain(LearnInput * input,  LearnOutput * output = NULL)
         void run(int seed) except +
         LearnOutput * getLearnOutput()
-        
+
 cdef extern from "LearnModelOutput.h" namespace "XEM":
     cdef cppclass LearnModelOutput:
         LearnModelOutput()
@@ -472,7 +472,7 @@ cdef extern from "PredictInput.h" namespace "XEM":
         PredictInput(DataDescription * predictData, ParameterDescription * classificationRule)
         # inherited:
         #void finalize()
-        
+
 cdef extern from "PredictModelOutput.h" namespace "XEM":
     cdef cppclass PredictModelOutput:
         PredictModelOutput()
@@ -480,7 +480,7 @@ cdef extern from "PredictModelOutput.h" namespace "XEM":
         Exception & getStrategyRunError() const
         LabelDescription * getLabelDescription() const
         ProbaDescription * getProbaDescription() const
-                
+
 cdef extern from "PredictOutput.h" namespace "XEM":
     cdef cppclass PredictOutput:
         PredictOutput()

@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 ##  @author: Christian Poli, INRIA
@@ -48,7 +48,7 @@ cimport cppmixmod as mxm
 from cppmixmod cimport array_delete_int64_p, array_delete_int64_pp
 from cppmixmod cimport new_double_array, new_double_p_array, new_double_pp_array, new_int64_t_array, new_array_parameter_1
 import numpy as np
-import pandas as pnd
+import pandas as pd
 cimport numpy as cnp
 import numbers
 #import gmixmod as gm
@@ -62,7 +62,7 @@ try:
     from StringIO import StringIO
 except ImportError:
     from io import StringIO
-    
+
 import matplotlib
 import matplotlib.pyplot as plt
 import copy
@@ -85,16 +85,16 @@ cdef class Result(object):
             Though **Result** class is instanciable, its instanciation is \
             dedicated to the API so it's not recomended to instanciate it in your \
             own programs.
-        
+
     .. _result_class_var:
-    
+
     :var nb_cluster: number of classes for the configuration
     :vartype nb_cluster: int+
     :var model: model descriptor for the configuration
     :vartype model: :ref:`gm.ModelName<gmMN>`
     :var criterion:  see :py:func:`cluster`
     :vartype criterion: :ref:`gm.CriterionName<gmCN>`, list[:ref:`gm.CriterionName<gmCN>`]
-    :var criterion_value: value(s) for the criterion/criteria 
+    :var criterion_value: value(s) for the criterion/criteria
     :vartype criterion_value: float, list[float]
     :var parameters: see :py:class:`Parameter` and its subclasses
     :vartype parameters: :py:class:`GaussianParameter`, \
@@ -130,7 +130,7 @@ cdef class Result(object):
         parameters = self.parameters
         likelihood = self.likelihood
         nb_cluster = self.nb_cluster
-        out.write("* nbCluster   = {}\n".format(nb_cluster))      
+        out.write("* nbCluster   = {}\n".format(nb_cluster))
         out.write("* model name  = {}\n".format(model))
         for criterion, criterion_value in zip(self.criterion, self.criterion_value):
             out.write("* criterion   = {criterion}({criterion_value:1.4f})\n".format(criterion=criterion.name, criterion_value=criterion_value))
@@ -148,7 +148,7 @@ cdef class Result(object):
                         self.criterion_value, self.criterion_error,
                         self.partition, self.proba)
 
-        
+
 cdef class LearnResult(Result):
     """
     :Description: This class defines results for a given configuration \
@@ -184,7 +184,7 @@ cdef class LearnResult(Result):
         self.parameters = parameters
         self.criterion = criterion
         self.criterion_value = criterion_value
-        self.criterion_error = criterion_error        
+        self.criterion_error = criterion_error
         self.partition = partition
         self.proba = proba
         self.cv_label = cv_label
@@ -232,19 +232,19 @@ cdef class LearnResult(Result):
             out.write("\n")
         separator(self.nb_cluster)
         out.write("* Error rate with MAP = {rate:.2f}\n".format(rate=self.map_error_rate*100))
-        
+
 cdef class Output(object):
     """
     :Description: This class defines common features for  :py:func:`cluster` \
     and :py:func:`learn` output objects.
-    
+
     .. admonition:: Constructor
         :class: warning
 
         This is an abstract class, so instanciate it isn't a good idea ...
-        
+
     :var data:  see :py:func:`cluster`
-    :type data:  numpy.ndarray, pandas.DataFrame    
+    :type data:  numpy.ndarray, pandas.DataFrame
     :var nb_cluster: see :py:func:`cluster`
     :var data_type: see :py:func:`cluster`
     :var nb_sample: number of individuals
@@ -254,7 +254,7 @@ cdef class Output(object):
     :var known_labels: see :py:func:`cluster`
     :vartype known_labels: pandas.Categorical, numpy.array(int+), list[int+]
     :var weight: see :py:func:`cluster`
-    :vartype weight: list[int+], numpy.ndarray[int+],... 
+    :vartype weight: list[int+], numpy.ndarray[int+],...
     :var criterion: see :py:func:`cluster`
     :vartype criterion: :ref:`gm.CriterionName<gmCN>`, list[:ref:`gm.CriterionName<gmCN>`]
     :var models: see :py:func:`cluster`
@@ -262,10 +262,10 @@ cdef class Output(object):
     :var error: **False** if at least one configuration was computed successfully
     :vartype error: bool
     :var strategy: see :py:func:`cluster`
-    :var factor: number of modalities for qualitative variables    
-    """    
+    :var factor: number of modalities for qualitative variables
+    """
     cdef readonly data, nb_cluster,known_labels, criterion, error, ordered_by,
-    cdef readonly models, weight, factor, results, best_result, data_type    
+    cdef readonly models, weight, factor, results, best_result, data_type
     def str_models(self):
         out = StringIO()
         out.write("****************************************\n")
@@ -292,14 +292,14 @@ cdef class Output(object):
             nb_row = nb_sample
             nb_col = nb_var
             out.write("* data =\n")
-        if  isinstance(self.data, pnd.core.frame.DataFrame):
+        if  isinstance(self.data, pd.core.frame.DataFrame):
             data_ix = self.data.iloc
         else:
             data_ix = self.data
-        
-        data = pnd.DataFrame(data_ix[:nb_row,:nb_col]) #,index=range(1,nb_row+1))        
+
+        data = pd.DataFrame(data_ix[:nb_row,:nb_col]) #,index=range(1,nb_row+1))
         out.write(data.to_string(header=False))
-        out.write("\n* ... ...\n")  
+        out.write("\n* ... ...\n")
         # to do : known labels
     cdef set_results(self, results, best_result):
         pass
@@ -315,8 +315,8 @@ cdef class Output(object):
 
         else:
             self.results = results
-            self.best_result = best_result            
-    @property        
+            self.best_result = best_result
+    @property
     def default_results(self):
         if isinstance(self.results, dict):
             return self.results[self.criterion[0]]
@@ -332,7 +332,7 @@ cdef class Output(object):
         if criterion is None:
             return self.default_best_result
         return self.best_result[criterion]
-                        
+
     ## def sort_by_criterion(self, criterion):
     ##     """
     ##     .. admonition:: Signature
@@ -363,9 +363,9 @@ cdef class Output(object):
 ##     """
 ##     .. admonition:: Signature
 ##         :class: note
-    
+
 ##         *mixmod.sort_by_criterion(obj, criterion)*
-        
+
 ##     :var obj: object returned by a clustering or learning operation
 ##     :vartype obj: :py:class:`ClusterOutput`, :py:class:`LearnOutput`
 ##     :var criterion: a criterion member of the *output.criterion* list
@@ -388,21 +388,21 @@ cdef class ClusterOutput(Output):
     :py:func:`cluster` function. It inherits all features of \
     :py:class:`Output` class and additionally it defines specific features for \
     :py:func:`cluster` objects.
-    
+
     .. admonition:: Constructor
         :class: warning
 
         Though **ClusterOutput** is instanciable, its instanciation is \
         dedicated to the API so it's not recomended to instanciate it in your \
         own programs.
-        
+
     :var strategy: see :py:func:`cluster`
     :var results: provides :
 
         * the list of results for all configurations for a monocriterion clustering
         * a dictionary for a multicriteria clustering. Each entry in the dictionary \
           takes the form <criterion>: <list-of-results>
-        
+
     :vartype results: list[:py:class:`Result`] or  dict(:ref:`gm.CriterionName<gmCN>` : list[:py:class:`Result`])
     :var best_result: the result of the best configuration for a monocriterion clustering or a dictionary when the clustering is multicriteria.
     :vartype best_result: :py:class:`Result` or dict(:ref:`gm.CriterionName<gmCN>` : :py:class:`Result`)
@@ -436,11 +436,11 @@ cdef class ClusterOutput(Output):
 
         ## else:
         ##     self.results = results
-        ##     self.best_result = best_result        
-            
+        ##     self.best_result = best_result
+
         self.ordered_by = ordered_by
         self.error = error
-    ## @property        
+    ## @property
     ## def default_results(self):
     ##     if isinstance(self.results, dict):
     ##         return self.results[self.criterion[0]]
@@ -470,7 +470,7 @@ cdef class ClusterOutput(Output):
                     self.ordered_by,
                     self.error))
 
-        
+
     def write_delta(self, out):
         """
         write delta
@@ -486,16 +486,16 @@ cdef class ClusterOutput(Output):
         self.to_str(out, summary=summary)
         # to do : known labels
         out.write(str(self.strategy))
-        if not self.error:        
+        if not self.error:
             out.write("\n\n")
             out.write("****************************************\n")
             out.write("*** BEST MODEL OUTPUT:\n")
             out.write("*** According to the {} criterion\n".format(
                 self.criterion[0].name))
-            out.write("****************************************\n")            
+            out.write("****************************************\n")
             # best result
             self.default_best_result.to_str(out)
-            #out.write("****************************************\n")                        
+            #out.write("****************************************\n")
         res = out.getvalue()
         out.close()
         return res
@@ -503,15 +503,15 @@ cdef class ClusterOutput(Output):
         """
         Returns a displayable string giving the main information
         about the object
-        """        
+        """
         return self.dump(summary=True)
     def plot(self, y=None, colors=None, r_digits=None, show_multi_cluster=False, show=True, criterion=None, **kwargs):
         """
         :Description: see :py:func:`plot` function
-        
+
         .. admonition:: Signature
             :class: note
-    
+
             *fig = x.plot([y, show=True, \*\*kwargs])*
 
         :Parameters:  see :py:func:`plot` function
@@ -540,20 +540,20 @@ cdef class ClusterOutput(Output):
                     for j in range(len_y):
                         if j > i:
                             (plt_array[i][j]).axis('off')
-                plt.gcf().canvas.set_window_title('Quantitative variables')	
+                plt.gcf().canvas.manager.set_window_title('Quantitative variables')
                 if show:
                     plt.show()
         elif self.data_type == gm.QUALITATIVE:
             df = as_dataframe(data)
-            mat_x = matrix2binary(df).as_matrix()
+            mat_x = matrix2binary(df).values
             n, p = data.shape
-            unit_arr = np.empty(n,dtype=np.int)
+            unit_arr = np.empty(n,dtype=np.int64)
             unit_arr.fill(1)
-            d_c = np.dot(unit_arr, mat_x)            
+            d_c = np.dot(unit_arr, mat_x)
             y = mat_x/np.sqrt(p*d_c)
-            u_svd, s_svd, v_svd = np.linalg.svd(y)            
+            u_svd, s_svd, v_svd = np.linalg.svd(y)
             indiv = np.dot(y, v_svd.T[:,1:3]/(p*1.0))
-            
+
             if r_digits != None:
                 indiv = np.round(indiv, decimals=r_digits)
             else:
@@ -595,20 +595,20 @@ cdef class ClusterOutput(Output):
             plt.ylabel('Axis 2')
             plt.title('Multiple Correspondance Analysis')
             fig = plt.gcf()
-            fig.canvas.set_window_title('Multiple Correspondance Analysis')	
+            fig.canvas.manager.set_window_title('Multiple Correspondance Analysis')
             if show:
                 plt.show()
-                
-        elif self.data_type == gm.HETEROGENEOUS:        
+
+        elif self.data_type == gm.HETEROGENEOUS:
             raise ValueError("visualization for heterogeneous is not available yet")
         return fig
     def hist(self, variables=None, show=True, criterion=None, **kwargs):
         """
         :Description: see :py:func:`hist` function
-        
+
         .. admonition:: Signature
             :class: note
-    
+
             *fig = x.hist([variables, bins=10, show=True, \*\*kwargs])*
 
         :Parameters:  see :py:func:`hist` function
@@ -648,23 +648,23 @@ cdef class ClusterOutput(Output):
             hist_cluster_var(get_plt_obj(i,j), best_result, data, var=v, **kwargs)
         for r in range(j+1, plot_col):
             get_plt_obj(i,r).axis('off')
-        plt.gcf().canvas.set_window_title('Variables histograms')	    
+        plt.gcf().canvas.manager.set_window_title('Variables histograms')
         if show:
             plt.show()
         return fig
     def barplot(self,*args, **kwargs):
         """
         :Description: see :py:func:`barplot` function
-        
+
         .. admonition:: Signature
             :class: note
-    
+
             *fig = x.barplot([variables, colors, show=True, \*\*kwargs])*
 
-        :Parameters:  see :py:func:`barplot` function            
+        :Parameters:  see :py:func:`barplot` function
         """
         return barplot_cluster(self,*args, **kwargs)
-            
+
 def plot(x, *args, **kwargs):
     """
     :Description: This function plots data provided by a \
@@ -673,7 +673,7 @@ def plot(x, *args, **kwargs):
         Clusters are distinguished thanks to information provided by \
         :ref:`x.best_result.parameters<result_class_var>` and \
         :ref:`x.best_result.partition<result_class_var>`.
-        
+
         * **For quantitative data**, ellipsoids (i.e. linear transformations of \
         hyperspheres) centered at the mean are drawn using \
         :ref:`x.best_result.parameters<result_class_var>`. The directions of the \
@@ -688,7 +688,7 @@ def plot(x, *args, **kwargs):
 
     .. admonition:: Signature
         :class: note
-    
+
             *fig = mixmod.plot(x, [y, show=True, criterion=None, \*\*kwargs])*
 
     :param x: object returned by :py:func:`cluster`
@@ -698,7 +698,7 @@ def plot(x, *args, **kwargs):
     :param colors: list of colors to be used instead of default colors. \
     Colors encoding must be `matplotlib <http://matplotlib.org>`_ compliant \
     (see http://matplotlib.org/api/colors_api.html). Relevant only for \
-    qualitative data.    
+    qualitative data.
     :type colors: list[str]
     :param with_ellipse: when **True** (i.e. by default), ellipsoids (cf. \
     Description) are drawn. Relevant only for quantitative data.
@@ -710,7 +710,7 @@ def plot(x, *args, **kwargs):
     :param criterion: it selects the "best result" bound to this criterion \
     when **x** is the result of a multicriteria clustering.
     :type criterion: :ref:`gm.CriterionName<gmCN>`
-    :param kwargs\*\*: further arguments are passed to **matplotlib**    
+    :param kwargs\*\*: further arguments are passed to **matplotlib**
     :return: a `matplotlib <http://matplotlib.org>`_ figure object
     :rtype: `matplotlib.figure.Figure <http://matplotlib.org/api/figure_api.html>`_
     """
@@ -726,7 +726,7 @@ def hist(x, *args, **kwargs):
 
     .. admonition:: Signature
         :class: note
-    
+
             *fig = mixmod.hist(x, [variables, bins=10, show=True, criterion=None, \*\*kwargs])*
 
     :param x: object returned by :py:func:`cluster`
@@ -740,15 +740,15 @@ def hist(x, *args, **kwargs):
     :param criterion: it selects the "best result" bound to this criterion \
     when **x** is the result of a multicriteria clustering.
     :type criterion: :ref:`gm.CriterionName<gmCN>`
-    :param kwargs\*\*: further arguments are passed to **matplotlib**    
+    :param kwargs\*\*: further arguments are passed to **matplotlib**
     :return: a `matplotlib <http://matplotlib.org>`_ figure object
-    :rtype: `matplotlib.figure.Figure <http://matplotlib.org/api/figure_api.html>`_        
+    :rtype: `matplotlib.figure.Figure <http://matplotlib.org/api/figure_api.html>`_
     """
     x.hist(*args, **kwargs)
 """
     .. admonition:: Signature
         :class: note
-    
+
             *fig = mixmod.barplot(x, [variables, colors, show=True, \*\*kwargs])*
 
             or (as a :py:class:`ClusterOutput` method):
@@ -770,7 +770,7 @@ def barplot(x, *args, **kwargs):
         :class: note
 
             *fig = mixmod.barplot(x, [list : variables, colors, show=True, criterion=None, \*\*kwargs])*
-            
+
 
     :param x: object returned by :py:func:`cluster`
     :type x: :py:class:`ClusterOutput`
@@ -779,42 +779,42 @@ def barplot(x, *args, **kwargs):
     :param colors: list of colors to be used instead of default colors. \
     Colors encoding must be `matplotlib <http://matplotlib.org>`_ compliant \
     (see http://matplotlib.org/api/colors_api.html). Relevant only for \
-    qualitative data.    
+    qualitative data.
     :type colors: list[str]
     :param show: when set to **False** the result is not displayed. Useful when the function is called  only in order to obtain the returned object (e.g. for a later use with plotly)
     :type show: bool, **default** = True
     :param criterion: it selects the "best result" bound to this criterion \
     when **x** is the result of a multicriteria clustering.
-    :type criterion: :ref:`gm.CriterionName<gmCN>`    
-    :param kwargs\*\*: further arguments are passed to **matplotlib**    
+    :type criterion: :ref:`gm.CriterionName<gmCN>`
+    :param kwargs\*\*: further arguments are passed to **matplotlib**
     :return: a `matplotlib <http://matplotlib.org>`_ figure object
-    :rtype: `matplotlib.figure.Figure <http://matplotlib.org/api/figure_api.html>`_        
+    :rtype: `matplotlib.figure.Figure <http://matplotlib.org/api/figure_api.html>`_
     """
     x.barplot(*args, **kwargs)
 
-    
+
 cdef class LearnOutput(Output):
     """
     :Description: This class defines the type returned by the \
     :py:func:`learn` function. It inherits all features of \
     :py:class:`Output` class and dditionally it defines specific features for \
     :py:func:`learn` objects.
-    
+
     .. admonition:: Constructor
         :class: warning
 
         Though **LearnOutput** is instanciable, its instanciation is \
         dedicated to the API so it's not recomended to instanciate it in your \
         own programs.
-        
+
     :var results: provides the list of results for all configurations
     :vartype results: list[:py:class:`LearnResult`]
     :var best_result: the result of the best configuration (for the first \
     criterion)
-    
+
     :vartype best_result: :py:class:`LearnResult`
     :var nb_cv_block: see :py:func:`learn`
-    """    
+    """
     cdef readonly nb_cv_block
     def __cinit__(self, data, nb_cluster, known_labels, nb_cv_block , criterion,
                    models, data_type, weight, factor, results, best_result,
@@ -828,10 +828,10 @@ cdef class LearnOutput(Output):
         self.data_type = data_type
         self.weight = weight
         self.factor = factor
-        Output.set_results(self, results, best_result)        
+        Output.set_results(self, results, best_result)
         ## self.results = results
         ## self.best_result = best_result
-        self.ordered_by = ordered_by     
+        self.ordered_by = ordered_by
         self.error = error
     def __reduce__(self):
         return LearnOutput, (self.data, self.nb_cluster, self.known_labels,
@@ -842,23 +842,23 @@ cdef class LearnOutput(Output):
     def write_delta(self, out):
         out.write("nb_cv_block: {}".format(self.nb_cv_block))
     def __str__(self):
-        return self.dump()        
+        return self.dump()
     def dump(self, summary=False):
         out = StringIO()
         out.write("****************************************\n")
         out.write("*** INPUT:\n")
         out.write("****************************************\n")
         self.to_str(out, summary=summary)
-        if not self.error:        
+        if not self.error:
             out.write("\n\n")
             out.write("****************************************\n")
             out.write("*** BEST MODEL OUTPUT:\n")
             out.write("*** According to the {} criterion\n".format(
                 self.criterion[0].name))
-            out.write("****************************************\n")            
+            out.write("****************************************\n")
             # best result
             self.default_best_result.to_str(out)
-            out.write("****************************************\n")            
+            out.write("****************************************\n")
         res = out.getvalue()
         out.close()
         return res
@@ -866,22 +866,22 @@ cdef class LearnOutput(Output):
         """
         Returns a displayable string giving the main information
         about the object
-        """        
+        """
         return self.dump(summary=True)
 
 cdef class PredictOutput(object):
     """
     :Description: This class defines the type returned by the \
-    :py:func:`predict` function. 
-    
+    :py:func:`predict` function.
+
     .. admonition:: Constructor
         :class: warning
 
         Though **PredictOutput** is instanciable, its instanciation is \
         dedicated to the API so it's not recomended to instanciate it in your \
         own programs.
-        
-        
+
+
     :var data: see :py:func:`predict`
     :type data:  numpy.ndarray, pandas.DataFrame
     :var nb_sample: number of individuals
@@ -896,7 +896,7 @@ cdef class PredictOutput(object):
     :vartype partition: list[int]
     :var proba: matrix holding the probabilities for individuals to be assigned to a class
     :vartype proba: list[list[float]]
-    """    
+    """
     cdef readonly data, data_type, nb_sample, nb_variable
     cdef readonly error, classification_rule,partition, proba
     def __cinit__(self, data, data_type, nb_sample, nb_variable, error,
@@ -905,7 +905,7 @@ cdef class PredictOutput(object):
         self.data_type = data_type
         self.nb_sample = nb_sample
         self.nb_variable = nb_variable
-        self.error = error 
+        self.error = error
         self.classification_rule = classification_rule
         self.partition = partition
         self.proba = proba
@@ -924,15 +924,15 @@ cdef class PredictOutput(object):
             nb_row = nb_sample
             nb_col = nb_var
             out.write("* data =\n")
-        if  isinstance(self.data, pnd.core.frame.DataFrame):
+        if  isinstance(self.data, pd.core.frame.DataFrame):
             data_ix = self.data.iloc
         else:
             data_ix = self.data
-        
-        data = pnd.DataFrame(data_ix[:nb_row,:nb_col]) #,index=range(1,nb_row+1))        
+
+        data = pd.DataFrame(data_ix[:nb_row,:nb_col]) #,index=range(1,nb_row+1))
         out.write(data.to_string(header=False))
-        out.write("\n* ... ...\n")  
-     
+        out.write("\n* ... ...\n")
+
     def dump(self, summary=False):
         out = StringIO()
         out.write("****************************************\n")
@@ -940,13 +940,13 @@ cdef class PredictOutput(object):
         out.write("****************************************\n")
         out.write(str(self.classification_rule))
         self.data_to_str(out, summary=summary)
-        if not self.error:        
+        if not self.error:
             out.write("\n\n")
             out.write("****************************************\n")
             out.write("*** PREDICTION:\n")
             out.write("* partition =")
             write_list(self.partition, out)
-            data = pnd.DataFrame(self.proba)
+            data = pd.DataFrame(self.proba)
             nn, _ = data.shape
             s_proba = "* probabilities = "
             b_proba = " "*len(s_proba)
@@ -964,19 +964,19 @@ cdef class PredictOutput(object):
         """
         return self.dump(summary=True)
     def __str__(self):
-        return self.dump()        
- 
+        return self.dump()
+
 
 cdef class _Cluster:
     cdef readonly data, nb_cluster, data_type
     cdef readonly models, strategy, criterion, weight, known_labels
     def __cinit__(self, data,
-                 nb_cluster, 
-                 data_type=None, 
-                 models=None, 
-                 strategy=None, 
+                 nb_cluster,
+                 data_type=None,
+                 models=None,
+                 strategy=None,
                  criterion=[gm.default_criterion_name],
-                 weight=None, 
+                 weight=None,
                  known_labels=None):
         """
         Cluster constructor
@@ -1009,7 +1009,7 @@ cdef class _Cluster:
             raise ValueError("Type doensn't match between model ({}) and required type ({})".format(model_dtype, data_type))
         else:
             self.data_type = data_type
-        self.data = data        
+        self.data = data
         self.models = models #if models is None else models()
         self.strategy = strategy if strategy else Strategy()
         if self.strategy.init.name in [gm.PARAMETER, gm.LABEL] and len(self.nb_cluster)>1:
@@ -1018,7 +1018,7 @@ cdef class _Cluster:
             self.criterion = [criterion]
         elif not isinstance(criterion, list) or not criterion:
             raise ValueError("Unknown criterion: {}".format(criterion))
-        else: 
+        else:
             for elt in criterion:
                 if elt not in gm.valid_cluster_criterion:
                     raise ValueError("Unknown criterion: {}".format(elt))
@@ -1037,18 +1037,18 @@ cdef class _Cluster:
                 raise ValueError("more than one cluster, known_labels can be used only with one number of cluster!")
         else:
             self.known_labels =  known_labels # i.e. None
-    
+
     def run(self):
         builder = ClusteringBuilder(self) # cbuilder.pxi
-        builder.process_input()        
-        builder.set_algo()        
-        builder.set_init_algo()        
-        builder.set_criterion()        
-        builder.set_model()        
-        builder.set_weight()        
-        builder.set_known_partition()        
-        builder.finalize()        
-        builder.main_run()        
+        builder.process_input()
+        builder.set_algo()
+        builder.set_init_algo()
+        builder.set_criterion()
+        builder.set_model()
+        builder.set_weight()
+        builder.set_known_partition()
+        builder.finalize()
+        builder.main_run()
         return builder.get_output()
 
 #http://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html#template.MainClass1.function1
@@ -1059,7 +1059,7 @@ def cluster(*args, **kwargs):
     :Description:
 
      This function computes an optimal mixture model according to the provided \
-     criteria and the list of model defined in  :py:class:`Model`, 
+     criteria and the list of model defined in  :py:class:`Model`,
      using the algorithm specified in :py:class:`Strategy` .
 
     .. admonition:: Signature
@@ -1069,11 +1069,11 @@ def cluster(*args, **kwargs):
             strategy, criterion, weight, known_labels])*
 
     .. _cluster_fun_params:
-    
+
     :param data: 2-dimension input data. Either *numpy.ndarray* \
     or *pandas. DataFrame* inputs are accepted for quantitative data, whereas \
     *pandas.DataFrame* type is required for qualitative or heterogeneous \
-    input data. Rows represent observations and columns represent variables. 
+    input data. Rows represent observations and columns represent variables.
     :type data:  numpy.ndarray, pandas.DataFrame
     :param nb_cluster: number of clusters [#int_plus]_.
     :type nb_cluster: int+, list[int+]
@@ -1083,7 +1083,7 @@ def cluster(*args, **kwargs):
     from the variables type and the model type (when provided).
     :type data_type: :ref:`gm.DataType<gmDT>`
     :param models: defines the list of models to run. Default model depends on data type:
-    
+
         +-------------+--------------------------------------------+-------------------------------------+
         |Data type    |Default model                               |See also(for specifying other models)|
         +=============+============================================+=====================================+
@@ -1105,14 +1105,14 @@ def cluster(*args, **kwargs):
     :param weight: numeric vector [#int_plus]_, it's size equals the data row number.\
     It is optionnal and it's to be used when weight is associated \
     to the data.
-    :type weight: list[int+], numpy.ndarray[int+],... 
+    :type weight: list[int+], numpy.ndarray[int+],...
     :param known_labels: numeric vector [#int_plus]_, it's size equals the data row number. It is used for \
     semi-supervised classification when labels are known. Each cell \
     corresponds to a cluster affectation (**see note:** [#known_labels_footnote]_).
     :type known_labels: pandas.Categorical, numpy.array(int+), list[int+]
 
     :return: The returned object has two attributes containing the results :
-    
+
         * **results:** a list of :py:class:`Result` objects containing\
         **all the results** sorted in ascending order according to the given \
         criterion when clustering is monocriterion otherwise a dictionary of \
@@ -1120,20 +1120,20 @@ def cluster(*args, **kwargs):
         * **best_result:**  the :py:class:`Result` object containing the \
         **best model** results  when clustering is monocriterion otherwise a dictionary of \
         "best result" objects for all criteria ( see :py:class:`ClusterOutput` ).
- 
+
 
     :rtype: :py:class:`ClusterOutput`
 
     .. rubric:: __
 
-    .. [#int_plus] **int+** means here **positive integer** 
+    .. [#int_plus] **int+** means here **positive integer**
 
     .. [#dt_shortcut_fnot] *gm.QUANTITATIVE*, *gm.QUALITATIVE* and \
     gm.HETEROGENEOUS are shortcuts for *gm.DataType* enum items
-    
+
     .. [#crit_shortcut_fnot] *gm.BIC*, *gm.ICL* etc. are shortcuts for \
     *gm.CriterionName* enum items
-    
+
     .. [#known_labels_footnote] **known_labels** parameter is authorized only \
     if **nb_cluster** is mono-valued.
     """
@@ -1145,11 +1145,11 @@ cdef class _Learn:
     cdef readonly data, nb_cluster, data_type, nb_cv_block
     cdef readonly models, strategy, criterion, weight, known_labels
     def __cinit__(self, data,
-                 known_labels, 
-                 data_type=None, 
-                 models=None, 
+                 known_labels,
+                 data_type=None,
+                 models=None,
                  criterion=None,
-                 weight=None, 
+                 weight=None,
                  nb_cv_block=None):
         """
         Learn object constructor
@@ -1187,7 +1187,7 @@ cdef class _Learn:
         ##                [dt.name for dt in list(allowed_dtypes)]))
         ## else:
         ##     self.data_type = data_type
-        self.data = data        
+        self.data = data
         self.known_labels = check_known_labels(known_labels, data.shape[0])
         self.nb_cluster = np.max(self.known_labels)
         #self.models = check_model(models)
@@ -1198,7 +1198,7 @@ cdef class _Learn:
             self.criterion = [criterion]
         elif not isinstance(criterion, list) or not criterion:
             raise ValueError("Unknown criterion: {}".format(criterion))
-        else: 
+        else:
             for elt in criterion:
                 if elt not in gm.valid_learn_criterion:
                     raise ValueError("Unknown criterion: {}".format(elt))
@@ -1216,16 +1216,16 @@ cdef class _Learn:
                 raise ValueError("nb_cv_block value is not valid")
         #else:
         #    self.nb_cv_block = 10
-    
+
     def run(self):
         builder = LearningBuilder(self) # cbuilder.pxi
         builder.process_input()
         builder.set_criterion()
-        builder.set_model()        
-        builder.set_weight()        
+        builder.set_model()
+        builder.set_weight()
         builder.set_nb_cv_block()
-        builder.finalize()        
-        builder.main_run()        
+        builder.finalize()
+        builder.main_run()
         return builder.get_output()
 
 
@@ -1234,21 +1234,21 @@ def learn(*args, **kwargs):
     :Description: This function computes the first step of a discriminant analysis (its \
     purpose is to find the best classification rule by running an **M** step \
     from the training observations).
-    
+
     .. admonition:: Signature
         :class: note
-    
+
             *learn_output = mixmod.learn(data, known_labels, [data_type, models, \
             criterion, weight, nb_cv_block])*
-    
+
     :param data: see **data** parameter on :ref:`cluster()<cluster_fun_params>`
     :type data:  numpy.ndarray, pandas.DataFrame
     :param known_labels: numeric vector [#int_plus]_, it's size equals the data row number. \
     Each cell corresponds to a cluster affectation (the max. value shows up \
     the number of clusters) .
-    :type known_labels: pandas.Categorical, numpy.array(int+), list[int+]    
+    :type known_labels: pandas.Categorical, numpy.array(int+), list[int+]
     :param data_type: see **data_type:** parameter on :ref:`cluster()<cluster_fun_params>`
-    :type data_type: :ref:`gm.DataType<gmDT>`   
+    :type data_type: :ref:`gm.DataType<gmDT>`
     :param models: see **models** parameter on :ref:`cluster()<cluster_fun_params>`
     :type models: list[:ref:`gm.ModelName<gmMN>`]
     :param criterion:  defines the criterion/criteria to select the best model. \
@@ -1256,11 +1256,11 @@ def learn(*args, **kwargs):
     Possible items: *gm.CV* and *gm.BIC* [#crit_shortcut_fnot]_ .
     :type criterion: :ref:`gm.CriterionName<gmCN>`, list[:ref:`gm.CriterionName<gmCN>`], **default** = **gm.CV**
     :param weight: see **weight** parameter on :ref:`cluster()<cluster_fun_params>`
-    :type weight: list[int+], numpy.ndarray[int+],... 
+    :type weight: list[int+], numpy.ndarray[int+],...
     :param nb_cv_block: defines the number of block to perform the cross validation. Ignored if criterion!=gm.CV. Default value is 10.
     :type nb_cv_block: int+
     :return: The returned object has two attributes containing the results:
-    
+
         * **results:** a list of :py:class:`LearnResult` objects containing\
         **all the results** sorted in ascending order according to the given \
         criterion.
@@ -1275,16 +1275,16 @@ cdef class _Predict:
     """
     :Description: This function computes the second step of a discriminant analysis. The aim \
     of this step is to assign remaining observations to one of the groups.
-    
+
     .. admonition:: Signature
         :class: note
-    
+
             *predict_output = mixmod.predict(data, classification_rule)*
-    
+
     :param data: 2-dimension input data to reclassify (quantitative or qualitative). Either *numpy.ndarray* \
     or *pandas. DataFrame* inputs are accepted for quantitative data, whereas \
     *pandas.DataFrame* type is required for qualitative \
-    input data. Rows represent observations and columns represent variables. 
+    input data. Rows represent observations and columns represent variables.
     :type data:  numpy.ndarray, pandas.DataFrame
     :param classification_rule: object containing  the classification rule \
     computed by :py:func:`learn` (i.e. the **best_result** \
@@ -1292,12 +1292,12 @@ cdef class _Predict:
     :type classification_rule: :py:class:`Result`
     :return: The returned object has two attributes containing the computed \
     results:
-    
+
         * **partition:** assignation to groups of the processed observations.
         * **proba** probability of belonging to each group for every \
-        observation.    
+        observation.
     :rtype:  :py:class:`PredictOutput`
-    """    
+    """
     cdef readonly data, data_type, nb_variable, nb_sample, error
     cdef readonly classification_rule, partition, proba
     def __cinit__(self, data, classification_rule):
@@ -1309,38 +1309,38 @@ cdef class _Predict:
         if isinstance(classification_rule.parameters, GaussianParameter):
             self.data_type = gm.QUANTITATIVE
         elif isinstance(classification_rule.parameters, MultinomialParameter):
-            self.data_type = gm.QUALITATIVE                        
+            self.data_type = gm.QUALITATIVE
         elif isinstance(classification_rule.parameters, CompositeParameter):
             self.data_type = gm.HETEROGENEOUS
         else:
             raise ValueError("Unknown parameter type")
         if self.data_type not in allowed_dtypes:
             raise ValueError("data are not compatible with the classification rule parameters")
-        self.data = data        
+        self.data = data
         self.classification_rule = classification_rule
         self. nb_sample = data.shape[0]
         self.nb_variable = data.shape[1]
     def run(self):
         builder = PredictBuilder(self) # cbuilder.pxi
         builder.process_input()
-        builder.finalize()  
+        builder.finalize()
         builder.main_run()
         return builder.get_output()
-            
+
 def predict(*args, **kwargs):
     """
     :Description: This function computes the second step of a discriminant analysis. The aim \
     of this step is to assign remaining observations to one of the groups.
-    
+
     .. admonition:: Signature
         :class: note
-    
+
             *predict_output = mixmod.predict(data, classification_rule)*
-    
+
     :param data: 2-dimension input data to reclassify (quantitative or qualitative). Either *numpy.ndarray* \
     or *pandas. DataFrame* inputs are accepted for quantitative data, whereas \
     *pandas.DataFrame* type is required for qualitative \
-    input data. Rows represent observations and columns represent variables. 
+    input data. Rows represent observations and columns represent variables.
     :type data:  numpy.ndarray, pandas.DataFrame
     :param classification_rule: object containing  the classification rule \
     computed by :py:func:`learn` (i.e. the **best_result** \
@@ -1348,12 +1348,11 @@ def predict(*args, **kwargs):
     :type classification_rule: :py:class:`Result`
     :return: The returned object has two attributes containing the computed \
     results:
-    
+
         * **partition:** assignation to groups of the processed observations.
         * **proba** probability of belonging to each group for every \
-        observation.    
+        observation.
     :rtype:  :py:class:`PredictOutput`
-    """    
+    """
     predict_ = _Predict(*args, **kwargs)
     return predict_.run()
-

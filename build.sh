@@ -1,7 +1,7 @@
 #!/bin/bash
 #Build the entire dev project (triggered by Jenkins) from mixmod/code folder.
 #NOTE: no need to remove everything if nothing change since last commit
-set -e 
+set -e
 
 BTYPE=$1
 PREFIX=$2
@@ -66,7 +66,7 @@ conditional_build "./mixmodCLI/"
 #Next two are frozen (maintained until build 4290. Now unmaintained)
 
 #mixmodMVC
-#conditional_build "./mixmodMVC/trunk"
+#conditional_build "./mixmodMVC/"
 
 #mixmodGUI
 #conditional_build "./mixmodGUI/"

@@ -11,7 +11,7 @@ MIXMOD_IOSTREAM="./mixmodIOStream/SRC"
 mkdir -p ./$dir/Rmixmod/
 # remove all potential old content
 rm -rf ./$dir/Rmixmod/*
-# copy Rmixmod from trunk (DESCRIPTION, configure.ac, NAMESPACE etc.)
+# copy Rmixmod (DESCRIPTION, configure.ac, NAMESPACE etc.)
 cp -r ./Rmixmod ./$dir/
 
 cd ./$dir/Rmixmod

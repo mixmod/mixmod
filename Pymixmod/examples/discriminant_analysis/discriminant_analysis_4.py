@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,55 +19,51 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 
-from __future__ import (absolute_import, division,
-                        print_function, unicode_literals)
+import pandas as pd
 
-import numpy as np
-import pandas as pnd
 import mixmod
-from mixmod import gm # gm contains global constants (enum items etc.)
+from mixmod import gm  # gm contains global constants (enum items etc.)
 
 
 def discriminant_analysis_4_example():
-
-    raw_data = pnd.read_csv(filepath_or_buffer='data/heterodata.train', sep=',')
-    data = raw_data.ix[:,1:] # exclude labels on first (index=0) column
-    data['B']=data['B'].astype('category')
-    data['B.1']=data['B.1'].astype('category')    
-    known_labels =  raw_data.ix[:,0]
+    folder_data = "data/"
+    raw_data = pd.read_csv(folder_data + "heterodata.train")
+    data = raw_data.iloc[:, 1:]  # exclude labels on first (index=0) column
+    data["B"] = data["B"].astype("category")
+    data["B.1"] = data["B.1"].astype("category")
+    known_labels = raw_data.iloc[:, 0]
     models = mixmod.composite_model(gm.ALL)
     hetero_learn = mixmod.learn(data, known_labels, models=models)
-    test_data = pnd.read_csv(filepath_or_buffer='data/heterodata.test', sep=',')
-    test_data = test_data.ix[:,1:] # exclude labels on first (index=0) column
-    test_data['B']=test_data['B'].astype('category')
-    test_data['B.1']=test_data['B.1'].astype('category')        
+    test_data = pd.read_csv(folder_data + "heterodata.test")
+    test_data = test_data.iloc[:, 1:]  # exclude labels on first (index=0) column
+    test_data["B"] = test_data["B"].astype("category")
+    test_data["B.1"] = test_data["B.1"].astype("category")
     prediction = mixmod.predict(test_data, hetero_learn.best_result)
     return hetero_learn, prediction
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(
         "-----------------------------------------------------------------------\n"
         "Heterogeneous discriminant analysis: \n"
-
         "-----------------------------------------------------------------------\n\n"
-        )
+    )
     learn_step, prediction_step = discriminant_analysis_4_example()
     print(
         "-----------------------------------------------------------------------\n"
         "Learn step: \n"
         "-----------------------------------------------------------------------\n\n"
-        )
-    
+    )
+
     print(learn_step.summary())
     print(
         "-----------------------------------------------------------------------\n"
         "Prediction step: \n"
         "-----------------------------------------------------------------------\n\n"
-        )
-    
+    )
+
     print(prediction_step.summary())

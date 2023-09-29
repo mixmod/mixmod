@@ -7,68 +7,61 @@ There are two ways to install PyMixmod :
  * Test/Evaluation installation with Anaconda distribution
  * Standard installation (root privileges are required)
 
-Installation with Anaconda
+Install mixmod C++ library
 ==========================
 
-This method is faster than the standard method and it can be performed without root privileges. On the other hand, Anaconda contains a lot of additional packages, not required by PyMixmod.
+First, you need to install the c++ library. Go to the root of the mixmod repository and run
 
-The installation of PyMixmod requires tree steps:
+::
 
- * Download and install the Anaconda distribution by following the online documentation http://continuum.io/downloads  (both Python 2.7.x and 3.4.x releases are convenent for PyMixmod)
- * Build PyMixmod
-   
-   ::
-      python setup.py  build_ext
+  mkdir build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr/local/ -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" ..
+  make install
 
-   NB: be sure to use the Python interpreter provided by Anaconda distribution
-   instead of the standard Python interpreter
+Do not forget to add the folder containing the compiled library to your `LD_LIBRARY_PATH` environment variable
 
- * Install PyMixmod
+::
 
-   ::
-      python setup.py install
-   
+  export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
-   
 
 Standard installation
 =====================
-   
-PyMixmod requires Python 2.7.x or Python 3.4.x and the following  Python modules:
+
+In the Pymixmod folder.
+
+Python requirements
+-------------------
+
+PyMixmod requires Python 2.7.x (NOT MAINTAINED) or Python 3.8.x or higher and the following Python modules:
 
   * numpy (v >= 1.9.0)
-  * scipy (v >= 0.15.1)
-  * pandas (v >= 0.15.2)
-  * matplotlib (v >= 1.4.3)
+  * scipy (v >= 1.2.0)
+  * pandas (v >= 0.23.0)
+  * matplotlib (v >= 3.0.0)
+  * cython (v >= 0.20, < 1.0.0)
   * enum34 (only for Python 2.7.x)
-    
-**NB:** One way (among others) to install a Python module is the **pip** command. In order to install a module into the standard location, you need *root* privileges. Example:
+
+You can install them with pip
 
 ::
 
-   sudo pip install numpy
-
-**Warning:** Currently (april 2015) there are a known bug (cf. http://stackoverflow.com/questions/25674612/ubuntu-14-04-pip-cannot-upgrade-matplotllib) which prevents installing matplotlib1.4.3 on Python3.4 unless you previously installed the freetype6-dev package (i.e. the package name on Ubuntu 14.04). This bug has already been fixed on master https://github.com/matplotlib/matplotlib/pull/3414
+  pip install -r requirements.txt
 
 
-
-
-*****************
-Building PyMixmod
-*****************
-
-In addition, the Cython module is required for building PyMixmod:
-
-* Install Cython (v>=0.20)
+Build PyMixmod
+--------------
 
 ::
 
-   sudo pip install cython
+  pip install -e .
 
-Building PyMixmod for test and developpement
-============================================
 
-* Go into *..../Py* directory and execute:
+Building PyMixmod for test and development
+==========================================
+
+* Go into *..../Pymixmod* directory and execute:
 
 ::
 
@@ -81,11 +74,11 @@ Building PyMixmod for test and developpement
 Building PyMixmod + installation in the standard location
 =========================================================
 
-* Go to Py directory and execute:
+* Go to Pymixmod directory and execute:
 
 ::
 
-   python setup.py build_ext 
+   python setup.py build_ext
 
 
 **NB** The module *mixmod.so* is generated in ./build/lib.linux-xxxx/
@@ -97,3 +90,31 @@ Building PyMixmod + installation in the standard location
    sudo python setup.py install
 
 **NB:** This way,  *mixmod.so* is available from every directory on the computer
+
+
+Installation with Anaconda
+==========================
+
+(NOT TESTED)
+
+This method is faster than the standard method and it can be performed without root privileges.
+On the other hand, Anaconda contains a lot of additional packages, not required by PyMixmod.
+
+The installation of PyMixmod requires three steps:
+
+ * Download and install the Anaconda distribution by following the online documentation http://continuum.io/downloads
+ (both Python 2.7.x and 3.8.x releases are convenient for PyMixmod)
+ * Build PyMixmod
+
+   ::
+
+      python setup.py build_ext
+
+   NB: be sure to use the Python interpreter provided by Anaconda distribution
+   instead of the standard Python interpreter
+
+ * Install PyMixmod
+
+   ::
+
+      python setup.py install
