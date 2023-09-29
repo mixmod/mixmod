@@ -23,7 +23,6 @@ Previous repository: <https://gforge.inria.fr/projects/mixmod>
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
 - [Organization](#organization)
 - [C++ components](#c-components)
   - [Requirements](#requirements)
@@ -31,6 +30,7 @@ Previous repository: <https://gforge.inria.fr/projects/mixmod>
 - [Rmixmod](#rmixmod)
   - [R Requirements](#r-requirements)
   - [Build](#build)
+- [PyMixmod](#pymixmod)
 - [Citation](#citation)
 - [License](#license)
 
@@ -91,6 +91,8 @@ make install -j2
 
 ## Rmixmod
 
+R interface of the C++ mixmod library.
+
 [![Rmixmod build status](https://github.com/mixmod/mixmod/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rmixmod)](https://cran.r-project.org/package=Rmixmod) [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod?color=blue)](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod) [![Downloads](https://cranlogs.r-pkg.org/badges/Rmixmod)](https://cran.rstudio.com/web/packages/Rmixmod/index.html)
 
@@ -123,6 +125,14 @@ and checked running:
 ``` sh
 R CMD check --as-cran Rmixmod_[version]/Rmixmod_[version].tar.gz
 ```
+
+## PyMixmod
+
+Python interface of the C++ mixmod library.
+
+[![Test PyMixmod](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml)
+
+See the dedicated [README](Pymixmod/README.rst).
 
 ## Citation
 
