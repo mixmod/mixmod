@@ -34,13 +34,13 @@ In the Pymixmod folder.
 Python requirements
 -------------------
 
-PyMixmod requires Python 2.7.x or Python 3.4.x and the following Python modules:
+PyMixmod requires Python 2.7.x (NOT MAINTAINED) or Python 3.8.x or higher and the following Python modules:
 
   * numpy (v >= 1.9.0)
-  * scipy (v >= 0.15.1)
-  * pandas (v >= 0.15.2)
-  * matplotlib (v >= 1.4.3)
-  * cython (v >= 0.20)
+  * scipy (v >= 1.2.0)
+  * pandas (v >= 0.23.0)
+  * matplotlib (v >= 3.0.0)
+  * cython (v >= 0.20, < 1.0.0)
   * enum34 (only for Python 2.7.x)
 
 You can install them with pip
@@ -95,13 +95,15 @@ Building PyMixmod + installation in the standard location
 Installation with Anaconda
 ==========================
 
+(NOT TESTED)
+
 This method is faster than the standard method and it can be performed without root privileges.
 On the other hand, Anaconda contains a lot of additional packages, not required by PyMixmod.
 
 The installation of PyMixmod requires three steps:
 
  * Download and install the Anaconda distribution by following the online documentation http://continuum.io/downloads
- (both Python 2.7.x and 3.4.x releases are convenient for PyMixmod)
+ (both Python 2.7.x and 3.8.x releases are convenient for PyMixmod)
  * Build PyMixmod
 
    ::

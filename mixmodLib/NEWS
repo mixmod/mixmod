@@ -8,9 +8,8 @@ Completely drop NEWMAT support. You can still choose between Eigen, Armadillo, I
 ************
 12/09/2016
 ************
-Switch from NEWMAT to Eigen. Some regression-tests are differents : 
-You can still choose NEWMAT by changing the value in trunk/dev/components/mixmodLib/trunk/SRC/mixmod/Utilities/maths/SelectLibrary.h
+Switch from NEWMAT to Eigen. Some regression-tests are different:
+You can still choose NEWMAT by changing the value in mixmodLib/SRC/mixmod/Utilities/maths/SelectLibrary.h
 Old result (with NEWMAT in hexadecimal) are in the file trunk/test/components/mixmodLib/trunk/DATA/NEWMAT_RefOutput.tar.gz
 Most of the result in double from both libraries are in the files double_eigen.tar.gz and double_NEWMAT.tar.gz (same folder as above)
 ************
-
