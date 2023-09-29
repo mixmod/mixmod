@@ -1,2 +1,43 @@
+# [project]
+# name = "PyMixmod"
+# version = "0.1.0"
+# description = "Classification with Mixture Modelling. Interface of 'MIXMOD' software for supervised, unsupervised and semi-supervised classification with mixture modelling <doi: 10.18637/jss.v067.i06>"
+# authors = [
+#     {name="Florent LANGROGNET"},
+#     {name="Remi LEBRET"},
+#     {name="Christian POLI"},
+#     {name="Serge IOVLEFF"},
+#     {name="Benjamin AUDER"},
+#     {name="Parmeet BHATIA"},
+#     {name="Anwuli ECHENIM"},
+#     {name="Serge IOVLEFF"},
+#     {name="Christophe BIERNACKI"},
+#     {name="Gilles CELEUX"},
+#     {name="Gerard GOVAERT"},
+#     {name="Quentin GRIMONPREZ"},
+# ]
+# readme = "README.rst"
+# license = {text = "GPL-3.0-or-later"}
+# classifiers = [
+#     "Operating System :: OS Independent",
+#     "Programming Language :: Python :: 3",
+#     "Programming Language :: Cython",
+#     "Topic :: Scientific/Engineering :: Mathematics",
+# ]
+
+# dependencies = [
+#     "cython<1.0.0",
+#     "numpy>=1.9.0",
+#     "scipy>=1.2.0",
+#     "pandas>=0.23.0",
+#     "matplotlib>=3.0.0",
+# ]
+
+# [project.urls]
+# repository = "https://github.com/mixmod/mixmod"
+
+# [tool.setuptools]
+# packages = ["mixmod"]
+
 [build-system]
 requires = ["setuptools", "wheel", "cython<1.0.0", "numpy>=1.9.0"]

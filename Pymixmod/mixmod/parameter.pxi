@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 ##  @author: Christian Poli, INRIA
@@ -35,7 +35,7 @@ cdef class Parameter(object):
         idea ...
 
     :var proportions: nb_cluster sized list, the sum of proportions is **1**
-    :vartype proportions: list[float]    
+    :vartype proportions: list[float]
     """
     cdef readonly proportions, nb_free_param
     def __init__(self, proportions, nb_free_param=None):
@@ -59,17 +59,17 @@ cdef class GaussianParameter(Parameter):
     :vartype mean: numpy.ndarray
     :var variance: list of float matrices (nb_cluster * nb_variable sized)
     :vartype variance: list[numpy.ndarray]
-    """    
+    """
     cdef readonly mean, variance
     def __init__(self, proportions, mean, variance, nb_free_param=None):
         self.proportions = proportions
-        self.nb_free_param = nb_free_param        
+        self.nb_free_param = nb_free_param
         self.mean = mean
         self.variance = variance
 
-    
+
     def __str__(self):
-        out = StringIO()        
+        out = StringIO()
         if len(self.proportions):
             out.write("****************************************\n")
             for i, prop in enumerate(self.proportions):
@@ -77,7 +77,7 @@ cdef class GaussianParameter(Parameter):
                 out.write("* proportion = {:1.4f}\n".format(prop))
                 out.write("* means      =")
                 write_list_float(self.mean[i], out)
-                data = pnd.DataFrame(self.variance[i]) #,index=range(1,nb_row+1))
+                data = pd.DataFrame(self.variance[i]) #,index=range(1,nb_row+1))
                 nn, _ = data.shape
                 s_variance = "* variances  = "
                 b_variance = " "*len(s_variance)
@@ -87,7 +87,7 @@ cdef class GaussianParameter(Parameter):
                                                       format).split('\n')):
                     out.write("{}|{}|\n".
                               format(b_variance if j else s_variance, el))
-                
+
             out.write("****************************************\n")
             out.write("\n")
         res = out.getvalue()
@@ -115,16 +115,16 @@ cdef class MultinomialParameter(Parameter):
     :vartype scatter:  list[numpy.ndarray]
     :var factor: number of modalities for qualitative variables
     :vartype factor: list[int]
-    """    
+    """
     cdef readonly center, scatter, factor
     def __init__(self, proportions, center, scatter, factor, nb_free_param=None):
         self.proportions = proportions
-        self.nb_free_param = nb_free_param        
+        self.nb_free_param = nb_free_param
         self.center = center
         self.scatter = scatter
-        self.factor = factor        
+        self.factor = factor
     def __str__(self):
-        out = StringIO()        
+        out = StringIO()
         if len(self.proportions):
             out.write("****************************************\n")
             out.write("* number of modalities =")
@@ -134,7 +134,7 @@ cdef class MultinomialParameter(Parameter):
                 out.write("* proportion = {:1.4f}\n".format(prop))
                 out.write("* center     =")
                 write_list(self.center[i], out)
-                data = pnd.DataFrame(self.scatter[i]) #,index=range(1,nb_row+1))
+                data = pd.DataFrame(self.scatter[i]) #,index=range(1,nb_row+1))
                 nn, _ = data.shape
                 s_scatter = "* scatter    = "
                 b_scatter = " "*len(s_scatter)
@@ -145,7 +145,7 @@ cdef class MultinomialParameter(Parameter):
                         split('\n')):
                     out.write("{}|{}|\n".\
                               format(b_scatter if j else s_scatter, el))
-                
+
             out.write("****************************************\n")
             out.write("\n")
         res = out.getvalue()
@@ -154,7 +154,7 @@ cdef class MultinomialParameter(Parameter):
     def __reduce__(self):
         return MultinomialParameter, (self.proportions, self.center,
                                       self.scatter, self.factor, self.nb_free_param)
-    
+
 cdef class CompositeParameter(object):
     """
     :Description: This class groups together a gaussian parameter and a \
@@ -171,17 +171,17 @@ cdef class CompositeParameter(object):
     :vartype proportions: list[float]
     :var factor: number of modalities for qualitative variables
     :vartype factor: list[int]
-    """    
+    """
     cdef readonly m_parameter, g_parameter, factor, proportions, nb_free_param
     def __init__(self, m_parameter, g_parameter, proportions, factor, nb_free_param=None):
         self.m_parameter = m_parameter
         self.g_parameter = g_parameter
         self.proportions = proportions
-        self.nb_free_param = nb_free_param        
+        self.nb_free_param = nb_free_param
         self.factor = factor
     def __str__(self):
-        out = StringIO()        
-        out.write("Gaussian Parameters\n")        
+        out = StringIO()
+        out.write("Gaussian Parameters\n")
         out.write(str(self.g_parameter))
         out.write("Multinomial Parameters\n")
         out.write(str(self.m_parameter))

@@ -5,7 +5,7 @@
 
 ## ################################################################################
 ##     This file is part of MIXMOD
-    
+
 ##     MIXMOD is free software: you can redistribute it and/or modify
 ##     it under the terms of the GNU General Public License as published by
 ##     the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@
 ##     You should have received a copy of the GNU General Public License
 ##     along with MIXMOD.  If not, see <http://www.gnu.org/licenses/>.
 
-##     All informations available on : http://www.mixmod.org
+##     All information available on : http://www.mixmod.org
 ## ################################################################################
 
 ##  @author: Christian Poli, INRIA
@@ -50,14 +50,14 @@ def check_y_plot(y, data):
     return y_int
 
 def colnames (data):
-    if  isinstance(data, pnd.core.frame.DataFrame):
+    if  isinstance(data, pd.core.frame.DataFrame):
         return data.columns
     return [str(i) for i in range(data.shape[1])]
 def get_data_ix(data):
-    if  isinstance(data, pnd.core.frame.DataFrame):
-        return data.ix
+    if  isinstance(data, pd.core.frame.DataFrame):
+        return data.iloc
     return data
-    
+
 
 
 from matplotlib.lines import Line2D
@@ -82,7 +82,7 @@ def get_color(i, colors_=None):
                   "The provided color set will be completed with default values".format(len(colors_)))
             color_list = colors_ + [c for c in color_list if c not in colors_]
     sz = len(color_list)
-    return str(color_list[(i % sz)])    
+    return str(color_list[(i % sz)])
 
 def draw_ellipse(plt_obj, best_result, i, j, **kwargs):
     """
@@ -106,9 +106,9 @@ def draw_ellipse(plt_obj, best_result, i, j, **kwargs):
         y_stuff = ctr[1] - ell_rot[1]
         plt_obj.plot(x_stuff, y_stuff, markersize=5, color='red') #, linestyle='--')
         plt_obj.plot(x_mat[:,0], y_mat[:,0], markersize=7, color='black', linestyle='--')
-        plt_obj.plot(x_mat[:,1], y_mat[:,1], markersize=7, color='black', linestyle='--')        
+        plt_obj.plot(x_mat[:,1], y_mat[:,1], markersize=7, color='black', linestyle='--')
         plt_obj.plot(ctr[0], ctr[1], marker='x', markersize=5,markeredgewidth=3.0, color='blue', linestyle='--')
-        
+
 def plot_cluster(plt_obj, best_result, data, x_var=0, y_var=1, colors=None, with_ellipse=True, **kwargs):
     plt_obj.tick_params(axis='both', which='major', labelsize=8)
     plt_obj.tick_params(axis='both', which='minor', labelsize=6)
@@ -133,7 +133,7 @@ def plot_cluster(plt_obj, best_result, data, x_var=0, y_var=1, colors=None, with
 
 def hist_cluster_var(plt_obj, best_result, data, var,  bins=10, hist_x_dim=10000, **kwargs):
     plt_obj.tick_params(axis='both', which='major', labelsize=8)
-    plt_obj.tick_params(axis='both', which='minor', labelsize=6)    
+    plt_obj.tick_params(axis='both', which='minor', labelsize=6)
     _, nb_var = data.shape
     data_ix = get_data_ix(data)
     nb_cluster = best_result.nb_cluster
@@ -150,7 +150,7 @@ def hist_cluster_var(plt_obj, best_result, data, var,  bins=10, hist_x_dim=10000
     mixture = mixture * ratio
     plt_obj.plot(x_axis, mixture, color=colors[0])
     plt_obj.set_title('Histogram of {}'.format(cols[var]))
-    for k in range(nb_cluster):                         
+    for k in range(nb_cluster):
         plt_obj.plot(x_axis, density[k], color=colors[k+1], linestyle='--',**kwargs)
 
 def barplot_cluster(self_, variables=None, colors=None, verbose=False, show=True, criterion=None, **kwargs):
@@ -186,7 +186,7 @@ def barplot_cluster(self_, variables=None, colors=None, verbose=False, show=True
         return plt_array[j]
     for iv, v in enumerate(variables):
         fact = par.factor[v]
-        t=pnd.pivot_table(data, columns=[data.columns[v]],aggfunc=len)
+        t=pd.pivot_table(data, columns=[data.columns[v]],aggfunc=len)
         proba = np.empty(shape=(nb_cluster,fact))
         for k in range(nb_cluster):
             center_k = par.center[k, v]-1
@@ -220,7 +220,7 @@ def barplot_cluster(self_, variables=None, colors=None, verbose=False, show=True
         pltobj.set_xticklabels(xticklabels_, fontdict=None, minor=False)
 
         for f in range(fact):
-            y_ = t.ix[0,f]/float(nb_sample)
+            y_ = t.iloc[0,f]/float(nb_sample)
             x = rect_x[f]
             pl=pltobj.plot([x, x + width_*nb_cluster], [y_, y_], markersize=7, label="Unconditional frequency", color='red', linestyle='--')
             if not f:
@@ -235,7 +235,7 @@ def barplot_cluster(self_, variables=None, colors=None, verbose=False, show=True
         i = plot_row * plot_col // nb_sel_var
         j = plot_row * plot_col % nb_sel_var
         get_plt_obj(-i,j).axis('off')
-    plt.gcf().canvas.set_window_title('Multinomial variables')	    
+    plt.gcf().canvas.manager.set_window_title('Multinomial variables')
     if show:
         plt.show()
     return fig

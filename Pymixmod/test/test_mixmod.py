@@ -306,7 +306,7 @@ class TestCompositeModels(unittest.TestCase):
 
 class TestClustering(unittest.TestCase):
     def setUp(self):
-        self.iris_train_data = pd.read_csv(filepath_or_buffer="data/iris.train", sep=",")
+        self.iris_train_data = pd.read_csv("data/iris.train")
 
     def test_gaussian_simple(self):
         cluster = mixmod.cluster(
