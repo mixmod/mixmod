@@ -77,7 +77,7 @@ LabelDescription::LabelDescription(int64_t nbSample, std::vector<int64_t> vLabel
 	std::string name("Label");
 	_columnDescription[0]->setName(name);
 
-  if (_nbSample != vLabel.size())
+  if ((size_t)_nbSample != vLabel.size())
     THROW (InputException, badNumberOfValuesInLabelInput);
 
 	_label = new Label(_nbSample);
@@ -109,7 +109,7 @@ LabelDescription::LabelDescription(Model * estimation) : Description() {
 //------------
 // Constructor by copy
 //------------
-LabelDescription::LabelDescription(LabelDescription & labelDescription) {
+LabelDescription::LabelDescription(LabelDescription & labelDescription) : Description(labelDescription) {
 	(*this) = labelDescription;
 }
 

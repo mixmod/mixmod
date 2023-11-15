@@ -58,7 +58,7 @@ public:
 	PredictModelOutput(ModelType & modelType, int64_t nbCluster, Exception& error);
 
 	/// Copy Constructor
-	PredictModelOutput(const PredictModelOutput & cModelOutput);
+	PredictModelOutput(const PredictModelOutput & cModelOutput) = delete;
 
 	/// Destructor
 	virtual ~PredictModelOutput();

@@ -252,7 +252,6 @@ double* SphericalMatrix::addGeneralValueInStore(double * store) {
 
 void SphericalMatrix::input(std::ifstream & fi) {
 	int64_t p, q;
-	double garbage;
 
 	for (p = 0; p < _s_pbDimension; p++) {
 		// useless because all are 0

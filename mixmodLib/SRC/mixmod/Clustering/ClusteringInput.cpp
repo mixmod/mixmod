@@ -129,7 +129,7 @@ so we have to remove criterionName tests in this method
 A new task 5290 has been created to try to do only a insert
  */
 void ClusteringInput::insertCriterion(const CriterionName criterionName, unsigned int index) {
-	if (index >= 0 && index <= _criterionName.size()) {
+	if (index <= _criterionName.size()) {
 		switch (criterionName) {
 		case BIC:
 			_criterionName.insert(_criterionName.begin() + index , BIC);

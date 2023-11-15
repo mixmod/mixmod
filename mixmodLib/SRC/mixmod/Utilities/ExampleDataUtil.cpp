@@ -173,7 +173,7 @@ GenericData* readGenericData (string fileName) {
 
 DataDescription* getXEMDataDescriptionFromGeneric (GenericData* genericData) {
 	// infer data type from genericData fields
-	DataType dataType;
+	DataType dataType = QualitativeData;
 	if (genericData->bData && genericData->gData)
 		dataType = HeterogeneousData;
 	else if (genericData->bData)
@@ -182,7 +182,7 @@ DataDescription* getXEMDataDescriptionFromGeneric (GenericData* genericData) {
 		dataType = QuantitativeData;
 	
 	// call appropriate data constructor
-	DataDescription* dataDescription = 0;
+	DataDescription* dataDescription = nullptr;
 	switch (dataType) {
 	case QualitativeData: {
 		BinaryData* data = new BinaryData (genericData->nbSample, genericData->bNbColumn,

@@ -97,8 +97,10 @@ DataDescription::DataDescription(BinaryData * bData) {
 DataDescription::DataDescription(CompositeData * cData) {
 	BinaryData * bData = cData->getBinaryData();
 	GaussianData * gData = cData->getGaussianData();
+
 	assert(bData != NULL);
 	assert(gData != NULL);
+	(void)gData;
 	_fileName = "";
 	_format = FormatNumeric::defaultFormatNumericFile;
 	_infoName = "";
@@ -125,7 +127,7 @@ DataDescription::DataDescription(CompositeData * cData) {
 //------------
 // Constructor by copy
 //------------
-DataDescription::DataDescription(DataDescription & dataDescription) {
+DataDescription::DataDescription(DataDescription & dataDescription) : Description(dataDescription) {
 	*this = dataDescription;
 }
 

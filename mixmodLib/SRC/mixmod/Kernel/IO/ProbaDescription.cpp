@@ -95,7 +95,7 @@ ProbaDescription::ProbaDescription(Model * model) : Description() {
 //------------
 // Constructor by copy
 //------------
-ProbaDescription::ProbaDescription(ProbaDescription & probaDescription) {
+ProbaDescription::ProbaDescription(ProbaDescription & probaDescription) : Description(probaDescription) {
 	(*this) = probaDescription;
 }
 

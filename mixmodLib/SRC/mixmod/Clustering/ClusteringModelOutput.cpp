@@ -33,13 +33,6 @@ ClusteringModelOutput::ClusteringModelOutput() {
 }
 
 //-----------------
-//  Copy constructor
-//-----------------
-ClusteringModelOutput::ClusteringModelOutput(const ClusteringModelOutput & cModelOutput) {
-	THROW(OtherException, internalMixmodError);
-}
-
-//-----------------
 //  Initialization Constructor
 //-----------------
 ClusteringModelOutput::ClusteringModelOutput(Model * estimation) : ModelOutput(estimation) {

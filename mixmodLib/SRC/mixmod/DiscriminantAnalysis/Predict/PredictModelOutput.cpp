@@ -34,13 +34,6 @@ PredictModelOutput::PredictModelOutput() {
 }
 
 //-----------------
-//  Copy constructor
-//-----------------
-PredictModelOutput::PredictModelOutput(const PredictModelOutput & cModelOutput) {
-	THROW(OtherException, internalMixmodError);
-}
-
-//-----------------
 //  Initialization Constructor
 //-----------------
 PredictModelOutput::PredictModelOutput(Model * estimation) : ModelOutput(estimation) {

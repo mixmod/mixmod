@@ -718,8 +718,8 @@ void ModelType::edit(std::ostream & oFile) {
 		break;
 	case (Gaussian_p_Lk_B):
 		oFile << "p_Lk_B";
-		break;
 		oFile << "Gaussian Diagonal Model : ";
+		break;
 	case (Gaussian_p_L_Bk):
 		oFile << "Gaussian Diagonal Model : ";
 		oFile << "p_L_Bk";
@@ -940,15 +940,16 @@ void ModelType::edit(std::ostream & oFile) {
 }
 
 void ModelType::setTabSubDimensionFree(int64_t iTabSubDimensionFree, int64_t position) {
-	if (!isHD(_nameModel) || !isFreeSubDimension(_nameModel)) THROW(InputException,wrongModelInSetSubDimensionFree);	if (position>=0 && position<_nbSubDimensionFree){
+  if (!isHD(_nameModel) || !isFreeSubDimension(_nameModel)) THROW(InputException,wrongModelInSetSubDimensionFree);
+  if (position>=0 && position<_nbSubDimensionFree){
     if (_tabSubDimensionFree == NULL) {
       _tabSubDimensionFree = new int64_t[_nbSubDimensionFree];
     }
     _tabSubDimensionFree[position] = iTabSubDimensionFree;
-	}
-	else{
-	  THROW(InputException, wrongModelPositionInSetSubDimensionFree);
-	}
+  }
+  else{
+    THROW(InputException, wrongModelPositionInSetSubDimensionFree);
+  }
 }
 
 void ModelType::setSubDimensionEqual(int64_t iSubDimensionEqual) {

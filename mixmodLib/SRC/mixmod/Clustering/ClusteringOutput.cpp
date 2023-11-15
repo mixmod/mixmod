@@ -154,7 +154,6 @@ bool ClusteringOutput::operator ==(const ClusteringOutput & cOutput) const {
   	}
 
 		//Checking criterionValues
-    int64_t j = 0;
     for (int64_t i = 0; i < maxNbCriterion; i++) {
       for (int64_t j = 0; j < maxNbCriterion; j++) {
         if (cOutputThis->getCriterionOutput(i).getCriterionName() == cOutputOther->getCriterionOutput(j).getCriterionName()) {
