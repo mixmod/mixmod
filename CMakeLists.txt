@@ -1,6 +1,6 @@
 # Configuration
 #--------------
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
 set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 PROJECT(mixmod)
 
