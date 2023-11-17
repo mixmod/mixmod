@@ -556,7 +556,6 @@ void SymmetricMatrix::compute_M_as__O_Sinverse_Ot_this(
 
 void SymmetricMatrix::input(std::ifstream & fi) {
 	int64_t i, j, r = 0;
-	double garbage;
 
 	for (i = 0; i < _s_pbDimension; i++) {
     for (j = 0; j < i + 1; j++) {

@@ -299,7 +299,6 @@ void DiagMatrix::operator=(Matrix* M) {
 
 void DiagMatrix::input(std::ifstream & fi) {
 	int64_t p, q;
-	double garbage;
 
 	for (p = 0; p < _s_pbDimension; p++) {
 		// useless because all are 0

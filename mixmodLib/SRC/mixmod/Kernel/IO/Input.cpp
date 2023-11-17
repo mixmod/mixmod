@@ -209,7 +209,7 @@ void Input::setModelType(const ModelType * modelType, unsigned int index) {
 // insertModelType
 //-----------------
 void Input::insertModelType(const ModelType * modelType, unsigned int index) {
-	if (index >= 0 && index <= _modelType.size()) {
+	if (index <= _modelType.size()) {
 		_modelType.insert(_modelType.begin() + index, new ModelType(*modelType));
 	}
 	else {

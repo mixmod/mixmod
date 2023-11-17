@@ -55,7 +55,7 @@ public:
 	ClusteringModelOutput(ModelType & modelType, int64_t nbCluster, Exception& error);
 
 	/// Copy Constructor
-	ClusteringModelOutput(const ClusteringModelOutput & cModelOutput);
+	ClusteringModelOutput(const ClusteringModelOutput & cModelOutput) = delete;
 
 	/// Destructor
 	virtual ~ClusteringModelOutput();

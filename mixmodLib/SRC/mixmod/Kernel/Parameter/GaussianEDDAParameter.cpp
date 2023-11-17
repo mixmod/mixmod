@@ -335,11 +335,10 @@ void GaussianEDDAParameter::input(std::ifstream & fi, int64_t nbVariables_binary
 
 	int64_t j, k;
 	double * muk;
-  double garbage;
   int64_t sumNbFactor = 0;
-  for (int64_t l = 0; l < nbFactor.size(); l++) sumNbFactor += nbFactor[l]; 
-  for (int t = 0; t < _nbCluster * (1 + nbVariables_binary + sumNbFactor); t++) { 
-    garbage = getDoubleFromStream(fi);
+  for (uint64_t l = 0; l < nbFactor.size(); l++) sumNbFactor += nbFactor[l];
+  for (int t = 0; t < _nbCluster * (1 + nbVariables_binary + sumNbFactor); t++) {
+    getDoubleFromStream(fi);
   }
 	for (k = 0; k < _nbCluster; k++) {
 		muk = _tabMean[k];

@@ -1702,7 +1702,7 @@ void inputCriterion(std::ifstream & fi, CriterionName & criterionName) {
 	}
 }
 
-void inputCVinitBlocks(std::ifstream & fi, CVinitBlocks cVinitBlocks) {
+void inputCVinitBlocks(std::ifstream & fi, CVinitBlocks & cVinitBlocks) {
 	std::string a = "";
 	fi >> a;
 	if (a.compare("CV_RANDOM") == 0) {
@@ -1716,7 +1716,7 @@ void inputCVinitBlocks(std::ifstream & fi, CVinitBlocks cVinitBlocks) {
 	}
 }
 
-void inputDCVinitBlocks(std::ifstream & fi, DCVinitBlocks dCVinitBlocks) {
+void inputDCVinitBlocks(std::ifstream & fi, DCVinitBlocks & dCVinitBlocks) {
 	std::string a = "";
 	fi >> a;
 	if (a.compare("DCV_RANDOM") == 0) {

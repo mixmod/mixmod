@@ -903,9 +903,9 @@ int64_t generateRandomIndex(bool * tabIndividualCanBeUsedForInitRandom, double *
 
 void inputCriterion(std::ifstream & fi, CriterionName & criterionName);
 
-void inputCVinitBlocks(std::ifstream & fi, CVinitBlocks cVinitBlocks);
+void inputCVinitBlocks(std::ifstream & fi, CVinitBlocks & cVinitBlocks);
 
-void inputDCVinitBlocks(std::ifstream & fi, DCVinitBlocks dCVinitBlocks);
+void inputDCVinitBlocks(std::ifstream & fi, DCVinitBlocks & dCVinitBlocks);
 
  
 }

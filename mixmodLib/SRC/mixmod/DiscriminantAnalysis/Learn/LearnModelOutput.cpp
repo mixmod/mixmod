@@ -37,13 +37,6 @@ LearnModelOutput::LearnModelOutput() {
 }
 
 //-----------------
-//  Copy constructor
-//-----------------
-LearnModelOutput::LearnModelOutput(const LearnModelOutput & cModelOutput) {
-	THROW(OtherException, internalMixmodError);
-}
-
-//-----------------
 //  Initialization Constructor
 //-----------------
 LearnModelOutput::LearnModelOutput(Model * estimation) : ModelOutput(estimation) {

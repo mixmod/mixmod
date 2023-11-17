@@ -58,7 +58,7 @@ public:
 	LearnModelOutput(ModelType & modelType, int64_t nbCluster, Exception& error);
 
 	/// Copy Constructor
-	LearnModelOutput(const LearnModelOutput & cModelOutput);
+	LearnModelOutput(const LearnModelOutput & cModelOutput) = delete;
 
 
 	/// Destructor
