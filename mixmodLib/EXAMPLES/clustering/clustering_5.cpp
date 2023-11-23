@@ -112,7 +112,7 @@ void clustering_5_example() {
         // print out parameters
         param->edit();
         // print out criterion values
-        for ( int64_t iCriterion=0; iCriterion < cInput->getCriterionName().size(); iCriterion++ )
+        for ( std::size_t iCriterion=0; iCriterion < cInput->getCriterionName().size(); iCriterion++ )
             cMOutput->getCriterionOutput ( cInput->getCriterionName ( iCriterion ) ).editTypeAndValue ( std::cout );
     }
     cout<<"-----------------------------------------------------------------------"<<endl;

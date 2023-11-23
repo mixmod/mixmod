@@ -44,6 +44,7 @@ public:
 	BinaryEParameter(Model * iModel, ModelType * iModelType, int64_t * tabNbModality);
 
 	/// Constructor
+	using BinaryParameter::operator==;
 	BinaryEParameter(const BinaryEParameter * iParameter);
 
 	/// Destructor

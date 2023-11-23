@@ -92,7 +92,7 @@ ModelOutput::ModelOutput(
     _probaDescription = new ProbaDescription(probaDescription);
     _labelDescription = new LabelDescription(labelDescription);
     _parameterDescription = new ParameterDescription(parameterDescription);
-    for (int64_t i = 0; i < criterionOutput.size(); i++) {
+    for (std::size_t i = 0; i < criterionOutput.size(); i++) {
       _criterionOutput[i].setValue(criterionOutput[i]->getValue());
       _criterionOutput[i].setCriterionName(criterionOutput[i]->getCriterionName());
       _criterionOutput[i].setError(criterionOutput[i]->getError());

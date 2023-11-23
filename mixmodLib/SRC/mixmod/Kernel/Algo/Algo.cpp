@@ -126,8 +126,8 @@ bool Algo::continueAgain() {
 							progressFile << "{ \"Progress\" : 100 }";
 							progressFile.close();
 						}
-						break;
 					}
+					break;
 
 				case NBITERATION_EPSILON:
 					if (MASSICCC == 10) {
@@ -150,8 +150,8 @@ bool Algo::continueAgain() {
 							progressFile << "{ \"Progress\" : 100 }";
 							progressFile.close();
 						}
-						break;
 					}
+					break;
 
 			default: result = (_indexIteration <= _nbIteration);
 			}

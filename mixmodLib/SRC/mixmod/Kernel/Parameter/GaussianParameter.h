@@ -65,6 +65,7 @@ public:
 	virtual ~GaussianParameter();
 
 	/// Comparison operator
+	using Parameter::operator ==;
 	virtual bool operator ==(const GaussianParameter & param) const;
 
 	virtual Parameter* clone()const = 0;
