@@ -68,6 +68,9 @@ ModelOutput::ModelOutput(Model * estimation) {
 	}
 
 	_likelihood = estimation->getLogLikelihood(false);
+
+        if (estimation->getAlgoName() != UNKNOWN_ALGO_NAME)
+          _completedLikelihood = estimation->getCompletedLogLikelihood();
 }
 
 //------------------------------
@@ -114,7 +117,6 @@ ModelOutput::ModelOutput(ModelType & modelType, int64_t nbCluster, Exception& er
 	_probaDescription = NULL;
 	_labelDescription = NULL;
 	_parameterDescription = NULL;
-	_likelihood = 0;
 }
 
 //-----------
