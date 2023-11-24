@@ -15,6 +15,6 @@ jobs:
         sudo apt install -y cmake libeigen3-dev libxml++2.6-dev
     - name: Build
       run: |
-        cmake -DCMAKE_INSTALL_PREFIX=~/.local -DCMAKE_CXX_FLAGS="-Wall -Wextra -D_GLIBCXX_ASSERTIONS" -DMIXMOD_BUILD_EXAMPLES=ON -DMIXMOD_BUILD_IOSTREAM=ON -DMIXMOD_BUILD_CLI=ON .
+        cmake -DCMAKE_INSTALL_PREFIX=~/.local -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wno-unused-parameter -D_GLIBCXX_ASSERTIONS" -DMIXMOD_BUILD_EXAMPLES=ON -DMIXMOD_BUILD_IOSTREAM=ON -DMIXMOD_BUILD_CLI=ON .
         make install -j2
         ctest -j2 --output-on-failure
