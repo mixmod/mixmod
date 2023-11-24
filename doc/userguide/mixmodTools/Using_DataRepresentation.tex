@@ -1,0 +1,204 @@
+%====================================
+%====================================
+\subsection{Individuals representation} \label{individualsRepresentationSection}
+%====================================
+%====================================
+{\sc mixmod} is concerned with data sets where experimental unit
+individuals are described with several variables. Individuals are
+represented in a standard way a row vector. Then data sets are
+represented by a matrix with $n$ rows and $d$ columns, rows representing individuals, and columns representing variables.\\
+Let's consider the {\it esteve.dat} individual file, in the directory MIXMOD/DATA, which describes 77 individuals and 7
+variables in a \textbf{quantitative situation}
+
+{\scriptsize
+\begin{verbatim}
+        0.8277   0.3626   0.4243   0.0269   0.0523   0.0000   2.7021
+        0.7713   0.4399   0.4586   0.0355   0.0000   0.0015   4.0874
+        0.6407   0.4841   0.5302   0.0000   0.2723   0.0000   2.7531
+        0.9384   0.2396   0.2436   0.0008   0.0516   0.0000   2.6013
+
+        ...
+\end{verbatim}}
+
+
+Let's consider the {\it b\_conf.dat} individual file, in the directory MIXMOD/DATA, which describes 30 individuals and 8
+variables in a \textbf{qualitative situation}
+
+{\scriptsize
+ \begin{verbatim}
+        1        1        5        1        1        1        1        2
+        1        5        1        1        1        4        2        2
+        2        2        5        1        1        3        1        1
+        1        5        2        1        1        3        2        1
+
+        ...
+ \end{verbatim}
+}
+
+
+Notice that the possible values of qualitative data depend on the number of modalities of the variable.
+Only integers are authorized and values such as \textit{yes/no} are not allowed.
+
+%==================================
+%==================================
+\subsection{Weight representation}
+%==================================
+%==================================
+Weights are stored in a vector of real or integer numbers, with $n$ (number of individuals) rows.
+Weight is an option of {\sc mixmod} and for example it can represent the repetition of individuals.
+Let's consider the weight file {\it geyser.wgt} in the directory MIXMOD/DATA/. It gives the information of all
+individuals of {\it geyser.dat} repeated 2 times.\\
+
+%{\noindent {\em Warning CV criterion gives pertinent results only if weights are integer numbers.}}
+
+%=====================================
+%=====================================
+\subsection{Parameter representation} \label{parameterRepresentationSection}
+%=====================================
+%=====================================
+%Parameters give
+%proportions, means and dispersion or proportions, means, subDimensions, parameters Akj,
+%parameters Bk and orientation of each mixture
+%component.
+This representation is used in the case of USER initialization type.\\
+\begin{itemize}
+ \item Gaussian
+
+$ $
+
+Let's consider the parameter file {\it parameter.init} with 2
+clusters, in the directory MIXMOD/DATA/. It gives the values of the unknown mixture model parameters in the quantitative case
+{\scriptsize
+\begin{verbatim}
+        0.367647                [Initial proportion of component 1]
+        2.094330   54.750000    [Initial mean of component 1]
+        17.280889   0.000000    [Initial variance matrix of component 1]
+        0.000000   17.280889
+
+
+        0.632353                [Initial proportion of component 2]
+        4.297930   80.284884    [Initial mean of component 2]
+        15.830206   0.000000    [Initial variance matrix of component 2]
+        0.000000   15.830206
+\end{verbatim}}
+
+\item Multinomial
+
+$ $
+
+Let's consider the parameter file {\it parameter\_qualitatif.init} with 2 clusters in the directory MIXMOD/DATA/.
+It gives the values of the unknown mixture model parameters in the qualitative case (with modalities [2;3;4;5])
+{\scriptsize
+ \begin{verbatim}
+        0.2                     [Initial proportion of component 1]
+        1  2  3  4              [Initial mean of component 1]
+        0.1     0.1             [Initial dispersion array of component 1]
+        0.1     0.2     0.1
+        0.1     0.1     0.3     0.1
+        0.1     0.1     0.1     0.4   0.1
+
+
+        0.8                     [Initial proportion of component 2]
+        2  3  4  5              [Initial mean of component 2]
+        0.5     0.5             [Initial dispersion array of component 2]
+        0.25    0.25    0.5
+        0.1667  0.1667  0.1667  0.5
+        0.125   0.125   0.125   0.125   0.5
+
+
+ \end{verbatim}
+}
+
+\item Gaussian High Dimensional
+
+$ $
+
+Let's consider the parameter file {\it parameter\_HD.init} with 2 clusters in the directory
+MIXMOD/DATA. It gives the values of the unknown mixture parameters in the gaussian high dimensional (HD)
+case
+{\scriptsize
+\begin{verbatim}
+        0.75                                            [Initial proportion of component 1]
+        14.842      11.718     32.014    36.81   13.35  [Initial mean of component 1]
+        3                                               [Initial subDimension of component 1]
+        144.744604  0.214614   0.101925                 [Initial parameter Akj of component 1]
+        0.063887                                        [Initial parameter Bk of component 1]
+       -0.262423    0.355093   0.004478                 [Initial parameter Bk oforientation array of component 1]
+       -0.170051   -0.888586  -0.207320
+       -0.601104    0.057918   0.532327
+       -0.687179   -0.071419  -0.105660
+       -0.262061    0.275444  -0.813918
+
+
+        0.25                                            [Initial proportion of component 2]
+        13.27       12.138     28.102    32.624  11.816 [Initial mean of component 2]
+        3                                               [Initial subDimension of component 2]
+        99.333875   0.155693   0.138530                 [Initial parameter Akj of component 2]
+        0.049261                                        [Initial parameter Bk of component 2]
+       -0.259855    0.127732  -0.473221                 [Initial parameter Bk oforientation array of component 2]
+       -0.239538    0.555917   0.750006
+       -0.587639   -0.078075  -0.049268
+       -0.675526    0.144512  -0.205855
+       -0.271003   -0.804774   0.410791
+\end{verbatim}
+}
+
+
+\end{itemize}
+
+
+
+
+
+
+%==============================================
+%==============================================
+\subsection{Partition representation} \label{partitionRepresentationSection}
+%==============================================
+%==============================================
+A partition gives a classification of the individuals they are affected to a mixture component.\\
+It is a matrix (of 0 and 1)
+with $n$ rows and $k$ columns, each row corresponding to an individual and each column indicating the group
+membership ($0$ if the individual does not belong to the group associated to this column
+and $1$ otherwise).\\
+Some individuals can have no group assignment they are represented by a
+row of $0$.\\
+Let's consider the full partition file {\it geyser3clusters.part} in the directory MIXMOD/DATA/. This file gives a
+full classification of {\it geyser.dat} for 3 mixture components.
+
+This representation is used in the case of USER\_PARTITION initialization type and/or with known partition.
+{\scriptsize
+\begin{verbatim}
+        0   1   0    [individual 1 in component 2]
+        0   0   1    [individual 2 in component 3]
+        0   1   0    [individual 3 in component 2]
+        0   0   1    [individual 4 in component 3]
+        1   0   0    [individual 5 in component 1]
+
+        ...
+
+        0   1   0    [individual 268 in component 2]
+        0   0   1    [individual 269 in component 3]
+        1   0   0    [individual 270 in component 1]
+        0   0   1    [individual 271 in component 3]
+        1   0   0    [individual 272 in component 1]
+\end{verbatim}}
+%{\noindent Let's consider the partial partition file {\it iris.partial.part}, in the directory
+%MIXMOD/DATA/, with 3 clusters.}
+%{\scriptsize
+%\begin{verbatim}
+%        1  0  0    [individual 3 in component 1]
+%
+%        ...
+%
+%        0  1  0    [individual 60 in component 2]
+%
+%        ...
+%
+%        0  0  1    [individual 115 in component 3]
+%
+%        ...
+%
+%        0  0  0    [individual 149: unknown partition]
+%        0  0  0    [individual 150: unknown partition]
+%\end{verbatim}}

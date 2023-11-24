@@ -17,3 +17,17 @@ Pymixmod/mixmod/mixmod.cpp
 *.egg-info
 *.pyc
 .ipynb_checkpoints
+
+# latex
+*.aux
+*.fls
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+
+*-eps-converted-to.pdf

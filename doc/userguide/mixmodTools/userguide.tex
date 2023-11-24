@@ -1,0 +1,188 @@
+\documentclass{book}
+%\documentstyle[12pt,epsf,fancyheadings,headerfooter]{book}
+
+
+%=========================================
+%\pagestyle{fancyplain}
+%\addtolength{\headwidth}{\marginparsep}
+%\addtolength{\headwidth}{\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+% remember chapter title
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% section number and title
+
+%\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\small\rightmark}}
+
+%\rhead[\fancyplain{}{\small\leftmark}]{\fancyplain{}{\thepage}}
+
+%supprime le numero de page en bas de page
+%\cfoot{}
+
+%\input amssym.def
+%\input amssym
+
+% \usepackage{epsfig}
+\usepackage{epsf}
+\usepackage{arydshln}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{lscape}
+\usepackage{hyperref}
+
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+% \newtheorem{ste}{Step}
+% \newtheorem{lem}{Lemma}[section]
+% \newtheorem{cor}{Corollary}
+% \newtheorem{th}{Theorem}
+% \newtheorem{rem}{Remark}[section]
+% \newtheorem{deff}{Definition}[chapter]
+% \newtheorem{prop}{Proposition}[chapter]
+% \newtheorem{algo}{Algorithm}[chapter]
+
+\def\P{{\Bbb P}}
+\def\Z{{\Bbb Z}}
+\def\R{{\Bbb R}}
+\def\N{{\Bbb N}}
+\def\F{{\Bbb F}}
+\def\Q{{\Bbb Q}}
+\def\U{{\Bbb U}}
+\def\E{{\Bbb E}}
+
+\textheight23cm
+\textwidth15cm
+%\hoffset-15mm
+\voffset-25mm
+\evensidemargin-1mm
+
+
+
+\pagestyle{myheadings}
+
+\topmargin2cm
+
+\newcommand{\NN}{{\cal N}}
+
+
+%----------------- DOCUMENT ---------------
+%
+%     MIXMOD USER GUIDE, TECHNICAL DOCUMENT
+%
+%------------------------------------------
+
+\begin{document}
+
+%====================
+%====== Title =======
+%====================
+
+\thispagestyle{empty}
+
+{\vskip 3in }
+\vspace{3cm}
+
+{\hfill {\sl  User's Guide: {\sc mixmod} V.2.1.1}}\\
+
+\vspace{3cm}
+
+\begin{center}
+
+{\vskip 0.1in }
+{\Large\bf {\sc mixmod} User's Guide }\\
+\vspace{1cm}
+{\Large\bf {\bf MIX}ture {\bf MOD}elling Software}\\
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm, height=7cm]{XEMlogo.eps}
+\end{figure}
+
+{\bf\large High Performance Model-Based Cluster and Discriminant Analysis}\\
+
+\vspace{2cm}
+
+\url{http://www-math.univ-fcomte.fr/mixmod/index.php}
+
+\vspace{1cm}
+
+\bigskip
+
+\date{}
+
+%{Friday February 9, 2001}
+
+\medskip
+
+Christophe Biernacki$^1$, Gilles Celeux$^2$, Jean-Fran\c cois Si Abdallah$^{2}$, G\'erard Govaert$^3$,\\
+Florent Langrognet$^4$
+
+\bigskip
+
+{\it
+$^1${UMR 8524, Cnrs \& Universit\'e de Lille 1}\\
+$^2${INRIA Futurs}\\
+$^3${UMR 6599, Cnrs \& Universit\'e de Technologie de Compi\`egne}\\
+$^4${UMR 6623, Cnrs \& Universit\'e de Franche-Comt\'e}
+}\\
+
+\end{center}
+
+\bigskip
+\bigskip
+
+\thispagestyle{empty}
+
+%=============================================================================
+%=============================================================================
+\newpage
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\input{Introduction.tex}
+
+\chapter{Getting started}
+
+\input{Started.tex}
+
+%\chapter{Technical description}
+%\pageheader{}{\it Using {\sc XEM}}{\thepage}
+%\pageheaderlinetrue
+%\input{Technical.tex}
+
+\chapter{Using {\sc mixmod}}
+
+\input{Using.tex}
+
+\section{Illustrative data sets}
+\input{Examples.tex}
+
+%======================
+%====== Annexes =======
+%======================
+
+%\chapter*{Appendix (Technical document)}
+%\pageheader{}{\it Appendix}{\thepage}
+%\pageheaderlinetrue
+%\addcontentsline{toc}{chapter}{Appendix (Technical document)}
+%\markboth{Appendix (Technical document)}{}
+%\input{Appendix.tex}
+
+%=======================
+%====== References =====
+%=======================
+
+%\chapter*{Selected references}
+%\pageheader{}{\it References}{\thepage}
+%\pageheaderlinetrue
+%\addcontentsline{toc}{chapter}{Selected references}
+%\markboth{Selected references}{}
+%\input{References.tex}
+
+\end{document}

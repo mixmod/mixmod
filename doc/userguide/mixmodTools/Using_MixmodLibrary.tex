@@ -1,0 +1,228 @@
+{\sc mixmod} can be used in another program as a library in the conditions of ({\it see
+www.gnu.org/copyleft/gpl.html)} GNU GPL license.
+We will quickly describe how to
+use Mixmod as a library in this section but the reference guide is the {\bf Software Documentation}.\\
+
+
+%------------------------------------------
+\subsection{How to build a Mixmod project ?}
+%------------------------------------------
+To build a such project, the user must link his program to
+\begin{itemize}
+	\item {\sc mixmod} library (in \textit{LIB/MIXMOD} directory)
+	\item {\sc newmat} library (in \textit{LIB/NEWMAT} directory)
+\end{itemize}
+The \textit{MIXMOD} directory is a example of a such program \textit{MIXMOD/SRC} directory contains \textit{main.cpp} which have to be linked to {\sc mixmod} and {\sc newmat} libraries.
+To build this project, the user can use'cmake' tools (but he is free to use another way !) by taping the following lines in \it{MIXMOD} directory
+\begin{itemize}
+  \item camke . (note the '.')
+  \item make
+  \item make install
+\end{itemize}
+So,
+\begin{itemize}
+  \item libnewmat,
+  \item libmixmod,
+  \item mixmod executable
+\end{itemize}
+will be created.\\
+So, to build a software using the {\sc mixmod} library, the user has to replace \textit{main.cpp} by another \textit{main} which does not use input and output files. Such \textit{main}s are available in the \textit{MIXMOD/EXAMPLES} directory.\\
+
+
+%------------------------------------------------
+\subsection{How to create a {\it main.cpp} ?}
+%------------------------------------------------
+This file must
+\begin{itemize}
+  \item create an {\it XEMInput} object which contains all input informations,
+  \item create an {\it XEMMain} object using the {\it XEMInput} object,
+  \item create an {\it XEMOutput} object which contains all output informations,
+  \item call the {\it run} method of the {\it XEMMain} object with the {\it XEMOutput} object.
+\end{itemize}
+
+
+
+
+%--------------------
+\subsection{Examples}
+%--------------------
+
+%--------------------------------------------
+\subsubsection{First example minimal main.cpp}
+%--------------------------------------------
+This example is the simplest way to create input, output and xmain objects.\\
+See MIXMOD/EXAMPLES/main\_mini.cpp.\\
+{\scriptsize
+\begin{verbatim}
+  #include "../LIB/MIXMOD/XEMMain.h"
+  #include "../LIB/MIXMOD/XEMGaussianData.h"
+
+  int main(int argc, char * argv[]){
+
+  XEMOutput * output = NULL;
+  try{
+    int nbSample = 272;
+    int pbDimension = 2;
+
+    int nbNbCluster = 1;
+    int tabNbCluster[1];
+    tabNbCluster[0]=2;
+
+    char dataFileName[100];
+    strcpy(dataFileName,"../DATA/geyser.dat");
+    XEMData * data = new XEMGaussianData(nbSample, pbDimension, dataFileName);
+
+    XEMInput * input = new XEMInput(nbSample, pbDimension, nbNbCluster, tabNbCluster, data);
+    input->finalize();
+
+    //XEMMain
+    XEMMain xmain(input);
+
+    //Create a XEMOutput object
+    //-------------------------
+    output = new XEMOutput(input, xmain);
+
+    // xmain run
+    xmain.run(output);
+
+    // output printing ...
+    cout<<"model paramter "<<endl;
+    cout<<"--------------"<<endl;
+    XEMModelOutput * modelOutput = output->_tabBestModelOutput[0];
+    XEMParameter * param = modelOutput->_param;
+    param->edit();
+
+    // delete
+    delete data;
+    delete input;
+  }
+
+  catch (XEMErrorType errorType){
+    XEMError error(errorType);
+    error.run();
+  }
+
+  delete output;
+
+  return 0;
+}
+\end{verbatim}}
+
+So, the user can use the output object to edit informations or to use them in his own objects
+(see {\bf Software Documentation} to know more about the {\it XEMOutput} class).\\
+
+
+%--------------------------------------------------------------
+\subsubsection{How to give specific information to an input object ?\\}
+%--------------------------------------------------------------
+Several methods of {\it XEMInput} class can be called to change default values (see {\bf Software Documentation}).\\
+\\
+This other example explain how to specify model types in the input object.\\
+See MIXMOD/EXAMPLES/main\_model.cpp.
+{\scriptsize
+\begin{verbatim}
+  #include "../LIB/MIXMOD/XEMMain.h"
+  #include "../LIB/MIXMOD/XEMModelType.h"
+  #include "../LIB/MIXMOD/XEMGaussianData.h"
+
+  int main(int argc, char * argv[]){
+
+    XEMOutput * output = NULL;
+
+    try{
+      int nbSample = 272;
+      int pbDimension = 2;
+
+      int nbNbCluster = 1;
+      int tabNbCluster[1];
+      tabNbCluster[0]=2;
+
+      char dataFileName[100];
+      strcpy(dataFileName,"../DATA/geyser.dat");
+      XEMData * data = new XEMGaussianData(nbSample, pbDimension, dataFileName);
+
+      XEMInput * input = new XEMInput(nbSample, pbDimension, nbNbCluster, tabNbCluster, data);
+
+      XEMModelType * tabModelType[28];
+      tabModelType[0] = new XEMModelType(Gaussian_p_L_I);
+      tabModelType[1] = new XEMModelType(Gaussian_p_Lk_I);
+      tabModelType[2] = new XEMModelType(Gaussian_p_L_B);
+      tabModelType[3] = new XEMModelType(Gaussian_p_Lk_B);
+      tabModelType[4] = new XEMModelType(Gaussian_p_L_Bk);
+      tabModelType[5] = new XEMModelType(Gaussian_p_Lk_Bk);
+      tabModelType[6] = new XEMModelType(Gaussian_p_L_C);
+      tabModelType[7] = new XEMModelType(Gaussian_p_Lk_C);
+      tabModelType[8] = new XEMModelType(Gaussian_p_L_D_Ak_D);
+      tabModelType[9] = new XEMModelType(Gaussian_p_Lk_D_Ak_D);
+      tabModelType[10] = new XEMModelType(Gaussian_p_L_Dk_A_Dk);
+      tabModelType[11] = new XEMModelType(Gaussian_p_Lk_Dk_A_Dk);
+      tabModelType[12] = new XEMModelType(Gaussian_p_L_Ck);
+      tabModelType[13] = new XEMModelType(Gaussian_p_Lk_Ck);
+      tabModelType[14] = new XEMModelType(Gaussian_pk_L_I);
+      tabModelType[15] = new XEMModelType(Gaussian_pk_Lk_I);
+      tabModelType[16] = new XEMModelType(Gaussian_pk_L_B);
+      tabModelType[17] = new XEMModelType(Gaussian_pk_Lk_B);
+      tabModelType[18] = new XEMModelType(Gaussian_pk_L_Bk);
+      tabModelType[19] = new XEMModelType(Gaussian_pk_Lk_Bk);
+      tabModelType[20] = new XEMModelType(Gaussian_pk_L_C);
+      tabModelType[21] = new XEMModelType(Gaussian_pk_Lk_C);
+      tabModelType[22] = new XEMModelType(Gaussian_pk_L_D_Ak_D);
+      tabModelType[23] = new XEMModelType(Gaussian_pk_Lk_D_Ak_D);
+      tabModelType[24] = new XEMModelType(Gaussian_pk_L_Dk_A_Dk);
+      tabModelType[25] = new XEMModelType(Gaussian_pk_Lk_Dk_A_Dk);
+      tabModelType[26] = new XEMModelType(Gaussian_pk_L_Ck);
+      tabModelType[27] = new XEMModelType(Gaussian_pk_Lk_Ck);
+
+      input->setModelType(28, tabModelType);
+      input->finalize();
+
+      //XEMMain
+      XEMMain xmain(input);
+
+      //Create a XEMOutput object
+      //-------------------------
+      output = new XEMOutput(input, xmain);
+
+      // xmain run
+      xmain.run(output);
+
+      // output printing ...
+      cout<<"best model paramter "<<endl;
+      cout<<"-------------------"<<endl;
+      XEMModelOutput * modelOutput = output->_tabBestModelOutput[0];
+      XEMParameter * param = modelOutput->_param;
+      param->edit();
+
+      // delete
+      delete data;
+      delete input;
+      for (int i=0; i<28; i++){
+        delete tabModelType[i];
+      }
+    }
+
+    catch (XEMErrorType errorType){
+      XEMError error(errorType);
+      error.run();
+    }
+
+  delete output;
+
+  return 0;
+}
+\end{verbatim}}
+
+
+%----------------------------
+\subsubsection{Other examples\\}
+%----------------------------
+The MIXMOD/EXAMPLES directory contains some {\it main} examples
+\begin{itemize}
+	\item main\_criterion.cpp to change default value of the criterion,
+	\item main\_strategy1.cpp to set the default strategy to the input object,
+\item main\_strategy2.cpp to set a new strategy to the input object {\it USER} initialization and 200 iterations of {\it SEM} algorithm,
+	\item main\_discriminantAnalysis.cpp an example for discriminant analysis in qualitative case.
+\end{itemize}
+
+
+%\newpage

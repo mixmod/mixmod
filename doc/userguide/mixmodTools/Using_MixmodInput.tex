@@ -1,0 +1,273 @@
+This section is aimed to define all the inputs available in {\sc mixmod}
+independently of how {\sc mixmod} is used (scilab, matlab, or in command line).
+
+
+
+
+
+\subsection{{\sc mixmod} required inputs}
+\label{input_option}
+
+{\sc mixmod} function needs two required inputs
+\begin{itemize}
+ \item[1.] {\it data} a matrix $[n,d]$ of individuals ($n$ number of samples, $d$ number of variables),
+ \item[2.] {\it nbCluster} a vector of integers representing the number of clusters
+                             (several clusters can be in competition),
+ \item[-] qualitative case
+
+{\it tabModality} a vector representing the modalities on each variable.
+
+% \item gaussian HD  case
+
+%{\it subDimension} a vector of integers or
+%                an integer, representing the intrinsic sub-dimension for each class.
+\end{itemize}
+
+
+
+Optional inputs can be added to the required ones to precise the execution of {\sc mixmod}.
+
+\subsection{{\sc mixmod} optional inputs}
+ \paragraph{Criterion} This option permits to select the criterion giving the best configuration
+                         of an execution (model, number of cluster and strategy)
+    \begin{itemize}
+     \item BIC Bayesian Information Criterion (cf. Section 4.3.1 of Statistical Documentation) ;
+     \item ICL Integrated Completed Likelihood (cf. Section 4.3.2 of Statistical Documentation) ;
+     \item NEC Entropy Criterion (cf. Section 4.3.3 of Statistical Documentation) ;
+     \item CV Cross-Validation (cf. Section 4.3.4 of Statistical Documentation) ;
+     \item DCV Double Cross-Validation (cf. Section 4.3.5 of Statistical Documentation).
+    \end{itemize}
+
+
+   {\it Default value is 'BIC'}.
+
+ \paragraph{Model}
+Specifying a model different of the default one is possible when informations on the data are known
+(for example there is the same number of individuals in each class).\\
+{\it Default value is 'Binary\_pk\_Ekjh' for qualitative data (see Table \ref{10models})
+or 'Gaussian\_pk\_Lk\_C' for quantitative data (see Table \ref{28models} and Table \ref{16models})}.
+
+\noindent {With gaussian HD models, you have to give subDimensionFree and/or subDimensionEqual parameters.}
+
+
+\begin{table}[!h]
+\caption{The 28 Gaussian Models (Covariance Structure).}
+{\small
+\label{28models}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Model  & Categories \\
+\hline
+Gaussian$\_p\_L\_I$               & Spherical \\
+Gaussian$\_p\_L_k\_I$             &  \\
+\hline
+Gaussian$\_p\_L\_B$               & Diagonal \\
+Gaussian$\_p\_L_k\_B$             & \\
+Gaussian$\_p\_L\_B_k$             & \\
+Gaussian$\_p\_L_k\_B_k$           & \\
+\hline
+Gaussian$\_p\_L\_C$               & General \\
+Gaussian$\_p\_L_k\_C$             & \\
+Gaussian$\_p\_L\_D\_A_k\_D$       & \\
+Gaussian$\_p\_L_k\_D\_A_k\_D$     & \\
+Gaussian$\_p\_L\_D_k\_A\_D_k$     & \\
+Gaussian$\_p\_L_k\_D_k\_A\_D_k$   & \\
+Gaussian$\_p\_L\_C_k$             &\\
+Gaussian$\_p\_L_k\_C_k$           & \\
+\hline
+Gaussian$\_p_k\_L\_I$             & Spherical \\
+Gaussian$\_p_k\_L_k\_I$           & \\
+\hline
+Gaussian$\_p_k\_L\_B$             & Diagonal \\
+Gaussian$\_p_k\_L_k\_B$           & \\
+Gaussian$\_p_k\_L\_B_k$           & \\
+Gaussian$\_p_k\_L_k\_B_k$         & \\
+\hline
+Gaussian$\_p_k\_L\_C$             & General \\
+Gaussian$\_p_k\_L_k\_C$           & \\
+Gaussian$\_p_k\_L\_D\_A_k\_D$     & \\
+Gaussian$\_p_k\_L_k\_D\_A_k\_D$   & \\
+Gaussian$\_p_k\_L\_D_k\_A\_D_k$   & \\
+Gaussian$\_p_k\_L_k\_D_k\_A\_D_k$ & \\
+Gaussian$\_p_k\_L\_C_k$           & \\
+Gaussian$\_p_k\_L_k\_C_k$         & \\
+\hline
+\end{tabular}
+\end{center}}
+\end{table}
+
+
+
+
+
+
+
+
+\begin{table}[!h]
+\caption{The 10 Binary Models.}
+{\small
+\label{10models}
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+Model \\
+\hline
+Binary$\_p\_E$ \\
+Binary$\_p\_E_j$ \\
+Binary$\_p\_E_k$ \\
+Binary$\_p\_E_{kj}$ \\
+Binary$\_p\_E_{kjh}$  \\
+Binary$\_pk\_E$ \\
+Binary$\_pk\_E_j$  \\
+Binary$\_pk\_E_k$\\
+Binary$\_pk\_E_{kj}$ \\
+Binary$\_pk\_E_{kjh}$\\
+\hline
+\end{tabular}
+\end{center}}
+\end{table}
+
+
+
+
+
+
+\begin{table}[!h]
+\caption{The 16 High Dimensional (HD) Models.}
+{\small
+\label{16models}
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+Model \\
+\hline
+Gaussian\_HD$\_p\_A_{kj}\_B_k\_Q_k\_D_k$ \\
+Gaussian\_HD$\_p\_A_{k}\_B_k\_Q_k\_D_k$ \\
+Gaussian\_HD$\_p\_A_{kj}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p\_A_{kj}\_B\_Q_k\_D$ \\
+Gaussian\_HD$\_p\_A_{k}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p\_A_{k}\_B\_Q_k\_D$ \\
+Gaussian\_HD$\_p\_A_{j}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p\_A_{j}\_B\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{kj}\_B_k\_Q_k\_D_k$ \\
+Gaussian\_HD$\_p_k\_A_{k}\_B_k\_Q_k\_D_k$ \\
+Gaussian\_HD$\_p_k\_A_{kj}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{kj}\_B\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{k}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{k}\_B\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{j}\_B_k\_Q_k\_D$ \\
+Gaussian\_HD$\_p_k\_A_{j}\_B\_Q_k\_D$ \\
+\hline
+\end{tabular}
+\end{center}}
+\end{table}
+
+
+
+
+\paragraph{Weight}
+This option is to be used when weight is associated to the data.\\
+{\it Default value is 1.}
+
+\paragraph{Partition}
+This option is to be used when a partition of the data is already known. \\
+{\it Default value is no knownPartition.}
+
+
+\paragraph{Strategy}
+This option permits to define different ways to execute the algorithms available in {\sc mixmod}
+(cf. section 3 of Statistical Documentation) .\\
+
+\begin{itemize}
+ \item[1.] {\bf initialization} defining the initialization of the strategy.
+           There are different ways to initialize an algorithm
+           \begin{itemize}
+            \item RANDOM Initialization from a random position is a standard way to
+initialize an algorithm. This random initial position is obtained by
+choosing at random centers in the data set. This simple strategy is
+repeated $5$ times (the user can choose the number of times) from
+different random positions and the position that maximises the
+likelihood is selected.
+             \item USER\_PARTITION This option initializes the strategy from a
+specified classification (full or partial) of the observations.
+This option provides the possibility to use {\sc mixmod} for
+Discriminant Analysis and in this case, partition must be full.
+             \item USER This option starts the strategy with specified initial values
+of the unknown mixture model parameters, i.e. the mixing
+proportions and the parameters of the distribution.
+             \item SMALL\_EM A maximum of $50$ iterations of the EM algorithm according to the process $n_i$ numbers of iterations
+of EM are done (with random initialization) until the SMALL\_EM stop criterion value has been reached
+ (cf. Statistical Documentation Equation (14)). This action is repeated until the sum of $n_i$
+reaches $50$ iterations (or if in one action $50$ iterations are reached before the stop criterion value).\\
+It appears that repeating runs of EM is generally profitable since using a single run
+of EM can often lead to suboptimal solutions.
+             \item CEM\_INIT  $10$ repetitions of $50$ iterations of the CEM algorithm are done.
+One advantage of initializing an algorithm with CEM lies in the fact
+that CEM converges generally in a small number of iterations. Thus,
+without consuming a large amount of CPU times, several runs of CEM are
+performed. Then EM is run with the best solution among the $10$ repetitions.
+             \item SEM\_MAX  A run of $500$ iterations of SEM. The idea is that an SEM sequence is
+expected to enter rapidly in the neighbourhood of the global maximum
+of the likelihood function.
+             \item[] {\it Default value is RANDOM.}
+           \end{itemize}
+ \item[2.] {\bf algorithm} defining the algorithms used in the strategy, the stopping rule and when to stop.
+            \begin{itemize}
+             \item[a.] Algorithms
+                \begin{itemize}
+                 \item EM Expectation Maximisation (cf. Section 3.1 of Statistical Documentation),
+                 \item CEM Classification EM (cf. Section 3.3 of Statistical Documentation),
+                 \item SEM Stochastic EM (cf. Section 3.2 of Statistical Documentation),
+                 \item MAP Maximum a Posteriori,
+                 \item M Only M step.
+                \end{itemize}
+             \item[b.] Stopping rules for the algorithm
+                \begin{itemize}
+                 \item NBITERATION Sets the maximum number of iterations,
+                 \item EPSILON Sets relative increase of the log-likelihood criterion.
+                 \item NBITERATION$\_$EPSILON Sets the maximum number of iterations and the epsilon value.
+                \end{itemize}
+               \item[] {\it Default values are 200 NBITERATION of EM with an EPSILON value of 10-4.}
+            \end{itemize}
+\end{itemize}
+
+
+{\scriptsize
+\begin{table}[h]
+
+\label{optionTable}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Criterion   & Initialization     & Algorithms        & Stopping rules & Models Quantitatif/ Qualitatif\\
+\hline
+
+{\bf BIC}         & {\bf RANDOM}             & {\bf EM}                & {\bf NBITERATION\_EPSILON} &{\bf  'Gaussian\_pk\_Lk\_Ck'/ 'Binary\_pk\_Ekjh'}  \\
+\hline
+CV          & USER               & CEM               & EPSILON & \\
+\hline
+ICL         & USER\_PARTITION    & SEM               & NBITERATION & \\
+\hline
+NEC         & SMALL\_EM          & MAP               &  & \\
+\hline
+DCV         & CEM\_INIT          & M                  & &  \\
+\hline
+            & SEM\_MAX           &                   & &  \\
+\hline
+            &                    &                   &  & \\
+\hline
+\end{tabular}
+\end{center}
+\caption{{\sc mixmod} options bold strings represent default values. .}
+\end{table}}
+
+
+{\noindent Warning 1 with HD models, only init USER\_PARTITION + M and init USER + MAP
+                      (the two steps of Discriminant Analysis)
+                        are available.}
+
+
+{\noindent Warning 2 with CEM algorithm, EPSILON = 0 is allowed.}
+
+{\noindent Warning 3 with SEM algorithm, only NBITERATION is allowed.}

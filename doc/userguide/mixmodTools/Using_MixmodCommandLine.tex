@@ -1,0 +1,565 @@
+This section outlines the operations and the available options of the
+package for an on-line use. Instructions on the form of the input
+and output files are also given. {\sc mixmod} is called by {\sc mixmod}'s executable file in the MIXMOD/BIN/ directory.\\
+Results are stored in the output text files.\\
+
+\noindent{\bf Synopsis}
+{\scriptsize
+\begin{verbatim}
+       mixmod  input_filename (or mixmod.exe input_filename for windows)
+\end{verbatim}}
+
+\noindent{\bf Example}
+{\scriptsize
+\begin{verbatim}
+       mixmod  ../EXAMPLES/geyser.xem
+\end{verbatim}}
+
+%======================
+%======================
+\subsection{Input file}
+%======================
+%======================
+
+%===============================
+\subsubsection{File structure for Cluster Analysis}
+%===============================
+
+{\sc mixmod} needs an input data file with arguments that reflect the chosen preferences or needs.\\
+An input data file consists in a succession of keywords followed by values
+that precise the caracteristics of the input data. They
+make this input data file easier to write because there is no order in the definition except for
+the strategies.
+
+Two types of inputs are availables
+\begin{itemize}
+  \item Required Inputs
+
+\begin{itemize}
+  \item {\em NbLines} Specifies the number of rows in the data set file.
+   \item {\em NbNbCluster} Specifies the length of the list of number of clusters.
+  \item {\em ListNbCluster} Specifies the list of number of clusters defined by NbNbCluster.
+  \item {\em DataFile} Specifies the path and name of the data file.
+  \item {\em PbDimension} Specifies the problem dimension an integer which gives the number of colums in the data file.
+
+ % \item In gaussian HD case
+ % \begin{itemize}
+ %   \item {\em SubDimensionFree} Specifies the intrinsic dimension of each class by a vector.
+ %   \item {\em SubDimensionEqual} Specifies the intrinsic dimension of each class by an integer.
+ % \end{itemize}
+  \item In qualitative case
+  \begin{itemize}
+  \item{\em NbModality} Specifies the modalities on each variable.
+  \end{itemize}
+
+\end{itemize}
+  \item Optional Inputs
+ \begin{itemize}
+ \item criterion,
+ \item models,
+% \item partition file,
+ \item weight file,
+ \item strategy.
+ \end{itemize}
+\end{itemize}
+
+\noindent{Let's consider the input files {\it geyserDefault.xem}, which is in the package directory
+MIXMOD/EXAMPLES/}. It contains the required inputs and all the optional inputs are initialized with default values
+{\scriptsize
+\begin{verbatim}
+        NbLines
+            272                      [Number of lines in the data file]
+        PbDimension
+            2                        [Dimension sample]
+        NbNbCluster
+            1                        [List of size 1]
+        ListNbCluster
+            2                        [2 components specified]
+        DataFile
+            ../DATA/geyser.dat       [Input data set (Old Faithful Geyser)]
+\end{verbatim}}
+
+
+
+
+To run this example under Linux/Unix, use the following command in MIXMOD/BIN/ directory.
+{\scriptsize
+\begin{verbatim}
+        mixmod  ../EXAMPLES/geyserDefault.xem
+\end{verbatim}}
+
+
+
+\paragraph{Example of an input file with strategy geyserMiniUSER.xem }
+
+{\scriptsize
+\begin{verbatim}
+        NbLines
+            272
+        PbDimension
+            2
+        NbNbCluster
+            1
+        ListNbCluster
+            2
+        DataFile
+            ../DATA/geyser.dat
+
+        NbStrategy
+            1
+        InitType
+            USER                       [Starting parameter specified by user]
+        InitFile
+            ../DATA/geyser.init        [Input file for parameter initialisation for 2 clusters]
+        NbAlgorithm
+            1
+        Algorithm
+            EM
+        StopRule
+            NBITERATION
+        StopRuleValue
+            200
+\end{verbatim}}
+
+
+%\paragraph{Example of an input file with a known partition geyserMiniKnownLabel.xem}
+
+%{\scriptsize
+%\begin{verbatim}
+%        NbLines
+%            272
+%        PbDimension
+%            2
+%        NbNbCluster
+%            1
+%        ListNbCluster
+%            2
+%        DataFile
+%            ../DATA/geyser.dat
+%
+%        PartitionFile
+%            ../DATA/geyser.part      [define partition file for known label]
+%
+%\end{verbatim}}
+
+
+
+
+
+%\newpage
+
+
+
+
+
+\paragraph{An input file with all options geyser.xem }
+
+
+{\scriptsize
+\begin{verbatim}
+        NbLines
+            272                      [Number of lines in the data file]
+        PbDimension
+            2                        [Dimension sample]
+        NbCriterion
+            1                        [One criterion]
+        ListCriterion
+            BIC                      [BIC criterion]
+        NbNbCluster
+            1                        [List of size 1]
+        ListNbCluster
+            2                        [2 components specified]
+        NbModel
+            1                        [One model]
+        ListModel
+            Gaussian_pk_Lk_I         [Gaussian spherical model [pk_Lk_I]]
+        NbStrategy
+            1                        [One strategy]
+        InitType
+            RANDOM                   [Starting parameter by random centers]
+        NbAlgorithm
+            1                        [One algorithm in the strategy]
+        Algorithm
+            EM                       [EM algorithm]
+        StopRule
+            NBITERATION              [Stopping rule for EM is number of iterations]
+        StopRuleValue
+            200                      [200 iterations desired]
+        DataFile
+            ../DATA/geyser.dat       [Input data set (Old Faithful Geyser)]
+        WeightFile
+            ../DATA/geyser.wgt       [Weight file for data]
+\end{verbatim}}
+
+
+
+
+
+{\noindent Many examples are available in directories MIXMOD/EXAMPLE and MIXMOD/TEST.}
+
+
+
+
+%------------------------------------
+\subsubsection{File structure for Discriminant Analysis}
+%------------------------------------
+To execute Discriminant Analysis with {\sc mixmod}, the user supplies
+classified observations (training observations) and tests observations to be
+classified.
+Suppose that we have $2$ groups, and for each observation we know
+the group membership. An estimation of the parameters is obtained
+by maximizing the log-likelihood.
+
+%{\scriptsize
+%\begin{verbatim}
+%        NbLines
+%            272
+%        PbDimension
+%            2
+%        NbCriterion
+%            1
+%        ListCriterion
+%            CV
+%        NbNbCluster
+%            1
+%        ListNbCluster
+%            2
+%        NbModel
+%            1
+%        ListModel
+%            Gaussian_pk_Lk_Ck
+%        NbStrategy
+%            1                         [One strategy]
+%        InitType
+%            USER_PARTITION            [Initialisation by user partition]
+%        InitFile
+%            ../DATA/geyser.part       [Labels (input file) in directory MIXMOD/DATA/]
+%        NbAlgorithm
+%            1                         [One algorithm]
+%        Algorithm
+%            M                         [Maximization of log-Likelihood]
+%        DataFile
+%            ../DATA/geyser.dat
+%        PartitionFile
+%            ../DATA/geyser.part
+%\end{verbatim}}
+
+
+%{\scriptsize
+%\begin{verbatim}
+%        NbLines
+%            200
+%        PbDimension
+%            15
+%        SubDimensionEqual
+%            4
+%        NbCriterion
+%            1
+%        ListCriterion
+%            CV
+%        NbNbCluster
+%            1
+%        ListNbCluster
+%            3
+%        NbModel
+%            1
+%        ListModel
+%            Gaussian_HDDA_pk_AkjBkQkD
+%        NbStrategy
+%            1                         [One strategy]
+%        InitType
+%            USER_PARTITION            [Initialisation by user partition]
+%        InitFile
+%            ../DATA/dataSimul_15D.part       [Labels (input file) in directory MIXMOD/DATA/]
+%        NbAlgorithm
+%            1                         [One algorithm]
+%        Algorithm
+%            M                         [Maximization of log-Likelihood]
+%        DataFile
+%            ../DATA/dataSimul_15D.dat
+%        PartitionFile
+%            ../DATA/dataSimul_15D.part
+%\end{verbatim}}
+
+
+{\scriptsize
+ \begin{verbatim}
+        NbLines
+             1756
+        PbDimension
+             256
+        NbCriterion
+             1
+        ListCriterion
+             CV
+        NbNbCluster
+             1
+        ListNbCluster
+             3
+        NbModel
+             2
+        ListModel
+             Gaussian_HD_pk_AkjBkQkD
+             subDimensionEqual
+                10
+             Gaussian_HD_pk_AkjBkQkDk
+             subDimensionFree
+                5
+                6
+                7
+        NbStrategy
+             1                         [One strategy]
+        InitType
+             USER_PARTITION            [Initialisation by user partition]
+        InitFile
+             ../DATA/USPS_358.part       [Labels (input file) in directory MIXMOD/DATA/]
+        NbAlgorithm
+             1                         [One algorithm]
+        Algorithm
+             M                         [Maximization of log-Likelihood]
+        PartitionFile
+             ../DATA/USPS_358.part
+        DataFile
+             ../DATA/USPS_358.dat
+ \end{verbatim}
+}
+
+
+Running this file ({\it HD\_USPS\_358\_M.test} in directory MIXMOD/TEST) produces
+estimated parameters (i.e. CVparameter.txt file, see output files (\ref{output})).\\
+
+%Running this file (geyser.discriminant.training.xem in directory MIXMOD/EXAMPLES) produces
+%estimated parameters (i.e. CVparameter.txt file, see output files (\ref{output})).\\
+
+Now we use the estimated parameters to classify the optional test sample by the
+MAP algorithm.
+
+%{\scriptsize
+%\begin{verbatim}
+%        NbLines
+%            5                                   [Remaining number of lines]
+%        PbDimension
+%            2                                   [Remaining data dimension]
+%        NbNbCluster
+%            1
+%        ListNbCluster
+%            2
+%        NbModel
+%            1
+%        ListModel
+%            Gaussian_pk_Lk_Ck
+%        NbStrategy
+%            1                                   [One strategy]
+%        InitType
+%            USER                                [Parameters specified by user]
+%        InitFile
+%            CVparameter.txt                    [Starting parameters are results of last step]
+%        NbAlgorithm
+%            1                                   [One algorithm]
+%        Algorithm
+%            MAP                                 [MAP algorithm]
+%        DataFile
+%            ../DATA/geyser.discriminant.dat     [Remaining sample to be classify]
+%\end{verbatim}}
+
+
+%{\scriptsize
+%\begin{verbatim}
+%        NbLines
+%            3                                   [Remaining number of lines]
+%        PbDimension                             [Remaining data dimension]
+%            15
+%        SubDimensionEqual
+%            4
+%        NbNbCluster
+%            1
+%        ListNbCluster
+%            3
+%        NbModel
+%            1
+%        ListModel
+%            Gaussian_HDDA_pk_AkjBkQkD
+%        NbStrategy
+%            1                                   [One strategy]
+%        InitType
+%            USER                                [Parameters specified by user]
+%        InitFile
+%            CVparameter.txt                    [Starting parameters are results of last step]
+%        NbAlgorithm
+%            1                                   [One algorithm]
+%        Algorithm
+%            MAP                                 [MAP algorithm]
+%        DataFile
+%            ../DATA/dataSimul_15D_indiv.dat     [Remaining sample to be classify]
+%\end{verbatim}}
+
+
+
+
+{\scriptsize
+  \begin{verbatim}
+         NbLines
+             17
+        PbDimension
+             256
+        NbCriterion
+             1
+        ListCriterion
+             BIC
+        NbNbCluster
+             1
+        ListNbCluster
+             3
+        NbModel
+             1
+        ListModel
+             Gaussian_HD_pk_AkjBkQkD
+             subDimensionEqual
+                10
+        NbStrategy
+             1
+        InitType
+             USER
+        InitFile
+             ../DATA/USPS_358.init
+        NbAlgorithm
+             1
+        Algorithm
+             MAP
+        DataFile
+             ../DATA/USPS_358.dat
+  \end{verbatim}
+}
+
+
+
+
+
+
+Running this file ({\it HD\_USPS\_358\_MAP.test} in directory MIXMOD/TEST) produces
+estimated classes/partition of the remaining data set (i.e. BIClabel.txt, BICpartition.txt files).
+
+%-----------------------------
+\subsubsection{Others options}
+\label{output}
+%-----------------------------
+All global parameters, maximum numbers of iterations, number of random
+centers initialisations, overflow, underflow,... are implemented and
+can be modified in file XEMUtil.h in MIXMOD/SRC/ directory.
+
+%=========================
+%=========================
+\subsection{Output files}
+%=========================
+%=========================
+The Output files contain the results of the fit of mixture(s)
+model(s) for each criterion type, they are created in the working directory.\\
+This is an exhaustive list of the files
+\begin{itemize}
+ \item complete.txt,
+ \item numericComplete.txt,
+ \item errorMixmod.txt,
+ \item errorModel.txt,
+ \item $X$standard.txt,
+ \item $X$numericStandard.txt,
+ \item $X$partition.txt,
+ \item $X$label.txt,
+ \item $X$posteriorProbabilities.txt,
+ \item $X$likelihood.txt,
+ \item $X$numericLikelihood.txt,
+ \item $X$parameter.txt
+ \item $X$Error.txt,
+ \item CVlabelClassification.txt,
+ \item DCVinfo.txt,
+ \item DCVnumericInfo.txt.
+\end{itemize}
+
+Here $X$ represents all available criteria BIC, ICL, NEC, CV, DCV.
+
+%===========================
+%\subsubsection{Complete output}
+%===========================
+\paragraph{Example of complete output}(result of {\it geyserMini2clusters.xem file}) in the directory MIXMOD/EXAMPLES
+
+{\scriptsize
+\begin{verbatim}
+---------------------------------
+     MIXMOD  Complete Output
+---------------------------------
+Number of samples 272.000000
+
+        Strategy
+        --------
+        Initial start parameters method RANDOM
+        Number of algorithms in the strategy 1
+        Algorithm 1
+          Type EM
+          Stopping rule NBITERATION
+          Number of iterations 100
+          Set tolerance (xml criterion) 0.000100
+
+                Number of Clusters 2
+                ------------------
+
+                        Model Type Gaussian Ellipsoidal Model pk_Lk_C
+                        ----------
+
+                        BIC Criterion Value 2322.971927
+                        Component 1
+                        ---------
+                        Mixing proportion 0.642879
+                        Mean 4.292206 79.996273
+                        Covariance matrix
+                                0.145346 0.830099
+                                0.830099 40.903602
+
+                        Component 2
+                        ---------
+                        Mixing proportion 0.357121
+                        Mean 2.039681 54.516886
+                        Covariance matrix
+                                0.098361 0.561759
+                                0.561759 27.680967
+
+
+        Strategy
+        --------
+        Initial start parameters method RANDOM
+        Number of algorithms in the strategy 1
+        Algorithm 1
+          Type EM
+          Stopping rule NBITERATION
+          Number of iterations 100
+          Set tolerance (xml criterion) 0.000100
+
+                Number of Clusters 3
+                ------------------
+
+                        Model Type Gaussian Ellipsoidal Model pk_Lk_C
+                        ----------
+
+                       BIC Criterion Value 2327.088167
+                        Component 1
+                        ---------
+                        Mixing proportion 0.642748
+                        Mean 4.292448 79.998690
+                        Covariance matrix
+                                0.158302 0.756685
+                                0.756685 36.185614
+
+                        Component 2
+                        ---------
+                        Mixing proportion 0.140194
+                        Mean 1.974277 49.482145
+                        Covariance matrix
+                                0.042067 0.201082
+                                0.201082 9.615981
+
+                        Component 3
+                        ---------
+                        Mixing proportion 0.217058
+                        Mean 2.082576 57.777045
+                        Covariance matrix
+                                0.097293 0.465063
+                                0.465063 22.239891
+\end{verbatim}}

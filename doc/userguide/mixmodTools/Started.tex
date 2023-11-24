@@ -1,0 +1,278 @@
+%=============================
+%=============================
+\section{System requirements}
+%=============================
+%=============================
+{\sc mixmod} can be used on many systems (unix, linux and windows).\\
+%The gcc compiler is required for unix and linux systems. For windows, no compiler is required (a compiled package is available).
+
+
+%===============================
+%===============================
+\section{Download and Installation instructions}
+%===============================
+\hspace{-1cm}
+\begin{tabular}{|c|c|l|}
+
+ \hline
+Platform & Version & Procedure \\
+
+\hline
+%\multicolumn{2}{|r|}{{\bf 3D}} \\
+
+% \cline{1-2}
+
+
+ & & 1) download mixmod\_2\_1\_1\_linux\_bin.tgz \\
+ & binary& 2) put it where you want to install MIXMOD  \\
+ & & 3) extract  mixmod\_2\_1\_1\_linux\_bin.tgz \\
+
+
+
+
+{\bf Linux} & & \\
+%& \multicolumn{2}{|c|}{} \\
+\cline{2-3}
+%\hline
+&  &  1) download mixmod\_2\_1\_1\_linux\_src.tgz \\
+ & & 2) put it where you want to install MIXMOD  \\
+ &source & 3) extract  mixmod\_2\_1\_1\_linux\_src.tgz \\
+& & 4) launch successively in {\em $<mixmodDir>$} {\em cmake .}, {\em make}, {\em make install}\\
+\hline
+
+{\bf Windows} & mixmod\_2\_1\_1.exe & 1) download mixmod\_2\_1\_1.exe\\
+& & 2) launch MIXMOD setup and choose {\em $<mixmodDir>$}\\
+\hline
+\end{tabular}
+
+
+%===============================
+%===============================
+%\section{InstallationDownload instructions}
+%===============================
+
+%===============================
+%===============================
+\section{Using {\sc MIXMOD}}
+%===============================
+\subsection*{Scilab}
+Run Scilab and execute the {\em initMixmod.sci} file in directory MIXMOD/ by typing the following command:
+\begin{verbatim}
+        exec(`initMixmod.sci');
+\end{verbatim}
+You will be asked to enter MIXMOD directory location, this will load {\em MIXMOD} functions each time you run Scilab.\\
+This procedure has to be done only once.
+Each time you install a new version of MIXMOD, you will have to launch {\em initMixmod.sci}. To know which
+version you are working with, you can type 'mixmodDir' in Scilab consol.
+
+
+
+
+\subsection*{Matlab}
+
+{\sc mixmod} runs with Matlab 7 or above.
+Before using {\em MIXMOD}, you have to set {\em mixmod path} in Matlab
+by selecting \textit{Set Path} in \textit{File} menu of Matlab window, clic on \textit{Add Folder} then
+select {\em MIXMOD} and {\em MIXMOD/UTIL/MATLAB}.
+Either you have administrator
+rights and thus you can save the new path or you will have to set {\em mixmod path} each time you
+want to run {\em mixmod}.
+%Launch Matlab and execute {\em 'initMixmod.m'}, mixmod toolkit functions will be added to the path.
+%Add {\sc mixmod} to Matlab path (for example, by selecting Set Path in file menu of Matlab window) and run Matlab.
+
+
+
+
+
+%===============================
+%{\sc mixmod} can be obtained via the web for several
+%systems, Unix, PC Linux and PC Windows at
+%\begin{verbatim}
+%        \url{http://www-math.univ-fcomte.fr/mixmod/index.php}
+%\end{verbatim}
+%{\em mixmod2.1.1-Setup.exe} is an installation version for Windows and {\em
+%mixmod2.1.1-Linux-Unix.tgz} (Linux, Unix) is a packed version. They contain all
+%the necessary files to use and incorporate {\sc mixmod} in Scilab and Matlab.
+
+%==============================================
+%\subsection{Instructions for PC Linux/Unix}
+%==============================================
+%\begin{itemize}
+%\item [1.]
+%Download {\em mixmod2.1.1-Linux-Unix.tgz} file on your local account.
+%\item [2.]
+%The commands to unpack it (and remove the tar file) are
+%\begin{verbatim}
+%  tar zxvf mixmod2.1.1-Linux-Unix.tgz
+%%  rm mixmod2.1.1-Linux-Unix.tgz
+%\end{verbatim}
+%%\end{itemize}
+
+%=======================================
+%\subsection{Instructions for PC Windows}
+%=======================================
+%\begin{itemize}
+%\item [1.]
+%Download {\em mixmod2.1.1-Setup.exe} file on your computer.
+%\item [2.]
+%Launch {\em mixmod2.1.1-Setup.exe}.
+%\end{itemize}
+
+
+%=================================
+%=================================
+%\section{Make files - Compilation}
+%=================================
+%=================================
+
+%==============================================
+%\subsection{Instructions for PC Linux/Unix}
+%==============================================
+%This distribution has been tested on
+%PC linux. You will need to
+%compile all the *.cpp files listed as program files to get the
+%complete package. A C/C++ compiler with a make command (which must be compatible with gnumake
+%(example gmake)) is needed.
+
+%\begin{itemize}
+%  \item [1.]
+%    Enter the directory MIXMOD/ to build the package.
+%	\begin{verbatim}
+%	     cd MIXMOD/
+%	\end{verbatim}
+
+%  \item [2.]
+%    Configure your system by using the following command
+%   	\begin{verbatim}
+%	     ./configure
+%	\end{verbatim}
+%    This will create and/or modify a few makefiles and other files of your
+%    system.
+%  \item [3.]
+%    To compile everything with the CC or gnu compiler use the command
+%   	\begin{verbatim}
+%	     make
+%	\end{verbatim}
+%    This will compile {\sc mixmod} and produce the
+%    executable files {\em mixmod} and {\em test}.
+%  \item [4.]
+%    Finally, to complete the building of the package (to update MIXMOD/BIN/ directory), use the command
+%	\begin{verbatim}
+%	     make install
+%	\end{verbatim}
+%\end{itemize}
+
+%=======================================
+%\subsection{Instructions for PC Windows}
+%=======================================
+%{\em mixmod2.0-Setup.exe} is an auto-installation file for Windows including an executable file. So, no compilation is needed to install and launch {\sc mixmod} for Windows.\\
+%However, to have an executable file well adapted to your computer, you have to compile {\sc mixmod}. In that aim, it is necessary
+%to install a {\em gcc} compiler and GNU tools for Windows (example mingw). Then follow the same process as for PC
+%Linux/Unix configure, make, make install can be used.
+
+
+%===============================================
+%===============================================
+%\section{Environment variables}
+%===============================================
+%===============================================
+
+%==============================
+%\subsection{PC Linux/Unix}
+%==============================
+%\begin{itemize}
+%\item Add the environment variable named {\em PathToMixmod}, which contains {\sc mixmod} directory path.
+%\item Add {\sc mixmod} executable path to the environment variable {\em PATH}.
+%\end{itemize}
+
+%Example for tcsh or csh shell
+%\begin{itemize}
+%\item \texttt{setenv PathToMixmod \$HOME/MIXMOD}
+%\item \texttt{setenv PATH \$PathToMixmod/BIN:\$PATH}
+%\end{itemize}
+
+%Example for sh or bash shell
+%\begin{itemize}
+%\item \texttt{export PathToMixmod=\$HOME/MIXMOD}
+%\item \texttt{export PATH=\$PathToMixmod/BIN:\$PATH}
+%\end{itemize}
+
+
+
+%============================
+%\subsection{PC Windows}
+%============================
+%If {\sc mixmod} has been installed using the setup file, environment variables have been updated.\\
+%Else, the environment variable {\em PathToMixmod} must be
+%defined with the {\sc mixmod} directory path. Then add the {\sc mixmod} executable path ({\em \%PathToMixmod\%/BIN}) to the
+%home path.\\
+%Access to the environment variables
+%\begin{verbatim}
+%        Control Panel --> System --> Advanced --> Environment Variables
+%\end{verbatim}
+%For Windows98, environment variables must be updated manually (in {\em autoexe.bat} file for instance).
+
+
+
+
+
+%================
+%================
+%\section{Tests}
+%================
+%================
+%The package contains a test program to be sure that {\sc mixmod} is well installed.
+%To test the package installation, run the following command under MIXMOD/BIN/
+%directory\\
+%\begin{itemize}
+%\item In a command DOS window for PC Windows
+%\begin{verbatim}
+ %       test.exe      (to launch a simple test)
+%\end{verbatim}
+%\item In a shell window for Unix or linux
+%\begin{verbatim}
+%        ./test     (to launch a simple test)
+%\end{verbatim}
+%\end{itemize}
+%A message diagnostics the test execution {\em failed}, {\em problem(s)} or {\em ok}.
+
+
+
+
+
+
+
+%=================================================
+%=================================================
+%\section{Using {\sc mixmod} in Scilab environment}
+%=================================================
+%=================================================
+%{\sc mixmod} runs with Scilab-4.0 or above.
+%Run Scilab and execute the {\em initMixmod.sci} file in directory MIXMOD/ by typing the following command
+%\begin{verbatim}
+%        exec(`initMixmod.sci');
+%\end{verbatim}
+
+
+%=================================================
+%=================================================
+%\section{Using {\sc mixmod} in Matlab environment}
+%=================================================
+%=================================================
+%{\sc mixmod} runs with Matlab 6 or above.
+%Add {\sc mixmod} to Matlab path (for example, by selecting Set Path in file menu of Matlab window) and run Matlab.
+%\begin{figure}[!ht]
+% \epsfxsize=7cm
+%  \epsfysize=5cm
+%  \centerline{\epsffile{matlabSetPath.ps}}
+%  \caption{Set path option.}
+%  \label{SetPathMenu}
+%\end{figure}
+
+%\begin{figure}[!ht]
+%  \epsfxsize=7cm
+%  \epsfysize=6cm
+%  \centerline{\epsffile{matlabPath.ps}}
+%  \caption{Matlab path window.}
+%  \label{PathWindow}
+%\end{figure}
