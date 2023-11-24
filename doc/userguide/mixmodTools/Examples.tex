@@ -1,0 +1,137 @@
+The data sets have been chosen to illustrate the features of the
+methods implemented in {\sc mixmod}. All of them are available in {\it
+MIXMOD/DATA/} directory, which contains the following data sets:
+%--------------------------------
+\subsection*{Old Faithful Geyser}
+%--------------------------------
+
+The file {\it geyser.dat} contains 272 observations from the Old
+Faithful Geyser in the Yellowstone National Park. Each observation
+consists of two measurements: the duration (in minutes) of the eruption
+and the waiting time (in minutes) to the next eruption.
+Old Faithful erupts more frequently than any other big geyser,
+although it is not the largest nor the most regular geyser in the park. Its
+average interval between two eruptions is about 76 minutes, varying from
+45 - 110 minutes. An eruption lasts from 1.1/2 to 5 minutes, expels 3,700 -
+8,400 gallons (14,000 - 32,000 liters) of boiling water, and reaches
+heights of 106 - 184 feet (30 - 55m). It was named for its consistent
+performance by members of the Washburn Expedition in 1870. Old
+Faithful is still as spectacular and predictable as it was a century
+ago.
+
+%-------------------------------------
+\subsection*{Diabetes in Pima Indians}
+%-------------------------------------
+The diagnostic, binary-valued variable investigated is whether the
+patient shows signs of diabetes according to the World Health Organization
+criterion (i.e.\ if the 2 hour post-load plasma glucose was at least
+200 mg/dl at any survey examination or if found during routine medical
+care). The population of women who were at least 21 years old, lives
+near Phoenix, Arizona, USA.\@
+
+It appears that this data set was incorrectly recorded. Many
+attributes have missing values and these have been encoded with the
+numerical value 0. This applies to something like 5 of the eight
+attributes. Besides, the classification variable is coded as 1=healthy
+and 2=diabetic (i.e.\ interchanged wrt. UCI dataset).
+\begin{table}[!h]
+    \caption{Diabetes in Pima Indians}
+    \begin{center}
+        \begin{tabular}{|c|c|l|}
+            \hline
+            Column & Type   & Description \\
+            \hline
+            1 & metric & number of pregnancies \\
+            2 & metric & plasma glucose concentration in an oral glucose tolerance test \\
+            3 & metric & diastolic blood pressure (mm Hg) \\
+            4 & metric & triceps skin fold thickness (mm) \\
+            5 & metric & serum insulin ($\mu$ U/ml) \\
+            6 & metric & body mass index (weight in kg/(height in m)$^2$) \\
+            7 & metric & diabetes pedigree function \\
+            8 & metric & age in years \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+%----------------------------
+\subsection*{Haemophilia}
+%----------------------------
+The Haemophilia data set {\it haemophilia.dat}, analyzed by Basford
+and McLachlan (1985), consists of two bivariate components,
+and its analysis illustrates the caution needed to be exercised in
+practice when fitting mixture models.
+
+
+%------------------------
+\subsection*{Enzyme}
+%------------------------
+
+The data set {\it enzyme.dat} concerns the distribution of enzymatic
+activity in the blood, for an enzyme involved in the metabolism of
+carcinogenic substances, among of group of 245 unrelated
+individuals. The interest here is to identify subgroups of slow or
+fast metabolisers as a marker of genetic polymorphism in the general
+population.  This data set has been analyzed by Bechtel {\em et al.}
+(1993), who identified a mixture of 2 skewed distributions using
+maximum likelihood technics implemented in the program {\sc Skumix}
+of Maclean {\em et al} (1976).
+
+%--------------------
+\subsection*{Acidity}
+%--------------------
+The data set {\it acidity.dat} concerns an acidity index measured in a
+sample of 155 lakes in the Northeastern United States and has been
+previously analyzed as a mixture of Gaussian distributions on the log
+scale by Crawford {\em et al.}(1992, 1994).
+
+%---------------------------
+\subsection*{U.S. Companies}
+%---------------------------
+The data file {\it uscomp.dat} contains measurements for 79
+U.S. companies out of the top 500.
+\begin{table}[h]
+    \caption{U.S. Companies}
+    \begin{center}
+        \begin{tabular}{|c|c|l|}
+            \hline
+            Column & Type   & Description \\
+            \hline
+            1 & text   & company \\
+            2 & metric & assets \\
+            3 & metric & sales \\
+            4 & metric & market value \\
+            5 & metric & profits \\
+            6 & metric & cash flow \\
+            7 & metric & employees \\
+            8 & text   & branch \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+%-----------------------------
+\subsection*{Swiss Bank Notes}
+%-----------------------------
+The data file {\it bank.dat} contains measurements on 100 genuine and
+100 forged old Swiss 1000 franc bills from Flury and Riedwyl
+(1988). The first 100 rows correspond to the genuine bills and the
+second 100 rows to the forged data.
+
+\begin{table}[!h]
+    \caption{Swiss Bank Notes}
+    \begin{center}
+        \begin{tabular}{|c|c|l|}
+            \hline
+            Column & Type   & Description \\
+            \hline
+            1 & metric & length of the bill\\
+            2 & metric & height of the bill, measured on the left \\
+            3 & metric & height of the bill, measured on the right \\
+            4 & metric & distance of inner frame to the lower border \\
+            5 & metric & distance of inner frame to the upper border \\
+            6 & metric & length of the diagonal\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}

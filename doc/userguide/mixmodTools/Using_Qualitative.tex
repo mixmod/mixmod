@@ -1,0 +1,85 @@
+In this chapter, examples with prompt \verb#-># are writen in Scilab environmment and examples
+with prompt \verb#>># are writen in Matlab environment. Examples with prompt \verb#->
+(>>)#  are available for both environments.\\
+In examples of files, note that all sequences writen between \verb#[# and \verb#]# are note included in files, they
+are comments for userguide.
+%============================
+\section{Data representation}
+%============================
+\input{Using_Qualitative_DataRepresentation.tex}
+
+
+%===============================================
+\section{{\sc mixmod} Graphical User Interfaces}
+%===============================================
+The procedure is the same that in quantitative data sets case but
+the number of modality for each variable must be entered with
+problem dimension (number of variable). The model choice is done
+among binary model types.
+
+
+%=======================================
+\section{{\sc mixmod} toolkit functions}
+%=======================================
+\input{Using_Qualitative_MixmodToolkit.tex}
+
+
+%=================================================
+\section{{\sc mixmod} command line (expert using)}
+%=================================================
+%\input{Using_MixmodCommandLine.tex}
+The procedure is the same that in quantitative data sets case. In
+the input file, the number of modalities must be entered by using
+{\em NbModality} keyword. Model types for qualitative data sets
+are: Binary\_p\_E, Binary\_p\_Ek, Binary\_p\_Ej, Binary\_p\_Ekj,
+Binary\_pk\_E, Binary\_pk\_Ek, Binary\_pk\_Ej, Binary\_pk\_Ekj.\\
+Let consider the b\_toby.xem  input file in MIXMOD/EXAMPLES/
+directory:
+{\scriptsize
+\begin{verbatim}
+NbLines
+    216
+PbDimension
+    4
+NbCriterion
+    3
+ListCriterion
+    BIC
+    ICL
+    NEC
+NbModel
+    8
+ListModel
+    Binary_p_E
+    Binary_p_Ej
+    Binary_p_Ek
+    Binary_p_Ekj
+    Binary_pk_E
+    Binary_pk_Ej
+    Binary_pk_Ek
+    Binary_pk_Ekj
+NbNbCluster
+    1
+ListNbCluster
+    2
+
+NbStrategy
+    1
+InitType
+    RANDOM
+NbAlgorithm
+    1
+Algorithm
+    EM
+StopRule
+    NBITERATION
+StopRuleValue
+    100
+
+DataFile
+    ../DATA/b_toby.dat
+
+NbModality         [Define number of modalities for each variable]
+  2 2 2 2
+
+\end{verbatim}}

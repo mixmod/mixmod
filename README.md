@@ -23,18 +23,20 @@ Previous repository: <https://gforge.inria.fr/projects/mixmod>
 
 ## Table of contents
 
-- [Organization](#organization)
+- [Folder structure](#folder-structure)
 - [C++ components](#c-components)
   - [Requirements](#requirements)
   - [Compilation](#compilation)
+  - [Examples](#examples)
 - [Rmixmod](#rmixmod)
   - [R Requirements](#r-requirements)
   - [Build](#build)
 - [PyMixmod](#pymixmod)
+- [Docs](#docs)
 - [Citation](#citation)
 - [License](#license)
 
-## Organization
+## Folder structure
 
 - **Rmixmod**  R interface of the C++ mixmod library
 - **mixmodLib** C++ mixmod library
@@ -89,6 +91,10 @@ Compile:
 make install -j2
 ```
 
+### Examples
+
+See [mixmodLib/EXAMPLES](mixmodLib/EXAMPLES) for some examples.
+
 ## Rmixmod
 
 R interface of the C++ mixmod library.
@@ -133,6 +139,10 @@ Python interface of the C++ mixmod library.
 [![Test PyMixmod](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml)
 
 See the dedicated [README](Pymixmod/README.rst).
+
+## Docs
+
+See the [doc](doc) folder to find the different paper about Rmixmod, a statistical documentation and a user guide for mixmod.
 
 ## Citation
 

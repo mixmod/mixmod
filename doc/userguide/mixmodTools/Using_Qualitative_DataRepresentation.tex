@@ -1,0 +1,62 @@
+%====================================
+%====================================
+\subsection{Individuals representation}
+%====================================
+%====================================
+{\sc mixmod} is concerned with data set where experimental unit
+individuals are described with several variables and each
+variables with several modalities. Individuals are represented in
+a standard way: a row vector. Then data sets are represented by a
+matrix with $n$ rows and $d$ columns, rows representing individuals, and columns representing variables.\\
+In data file, modalities are represented by integers: 1 represent
+the first modality of considered variable. Binary data is not
+represented in the standard way (by 0 and 1), 0
+is replaced by 1 and 1 is replaced by 2 (modalities 1 and 2 of considered variable).\\
+Let consider the b\_toby.dat individual file, in the directory
+MIXMOD/DATA, which describes 216 individuals, 4 variables:
+{\scriptsize
+\begin{verbatim}
+        2    2    2    2
+        2    2    2    2
+        2    2    2    2
+        2    2    2    2
+        ...
+\end{verbatim}}
+
+
+%==================================
+%==================================
+\subsection{Weight representation}
+%==================================
+%==================================
+Weights are represented in the same way as in quantitative data
+sets case.
+
+%=====================================
+%=====================================
+\subsection{Parameter representation}
+%=====================================
+%=====================================
+Parameters give proportions, centers and scatters of each mixture
+component. This representation is used in the cases of USER and USER\_PARTITION initialization types.\\
+Let consider the parameter file b\_toby.init with 2 clusters, in
+the directory MIXMOD/DATA/. It gives values of the unknown mixture
+model parameters. {\scriptsize
+\begin{verbatim}
+        0.720754                                 [Initial proportion of component 1]
+        2  1  1  1                               [Initial center of component 1]
+        0.286412  0.329619  0.354016  0.132373   [Initial scatter matrix of component 1]
+
+        0.279246                                 [Initial proportion of component 2]
+        2  2  2  2                               [Initial center of component 2]
+        0.006807  0.060236  0.073469  0.230868   [Initial scatter matrix of component 2]
+\end{verbatim}}
+
+
+%==============================================
+%==============================================
+\subsection{Partition representation}
+%==============================================
+%==============================================
+Partition are represented in the same way as in quantitative data
+sets case.

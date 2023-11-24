@@ -1,0 +1,272 @@
+%================================================
+\subsection{ Convert old input file}
+%================================================
+In the package directory MIXMOD/BIN/ there is an executable file named {\em ConvertOldInputFile}.
+ This program convert old input files to new input data files (with keywords since {\sc mixmod} V1.3).\\
+\noindent{\bf Synopsis}
+{\scriptsize
+\begin{verbatim}
+       convertOldInputFile nameFile
+\end{verbatim}}
+
+{\noindent The conversion creates a new file .old ({\em nameFile.old}) which is the old input data file and the
+origin file is replaced by the new input data file with keywords.}\\
+Let consider the old input data file geyserOld.xem (which will become geyserOld.xem.old) in the
+directory MIXMOD/EXAMPLES/DOC/:
+{\scriptsize
+\begin{verbatim}
+        272                  // NbLines
+        2                    // PbDimension
+        1                    // NbCriterion
+        ICL                  // ListCriterion
+        1                    // NbNbCluster
+        2                    // ListNbCluster
+        1                    // NbModel
+        Gaussian_pk_L_Ck     // ListModel
+        1                    // NbStrategy
+        RANDOM               // InitType
+        1                    // NbAlgorithm
+        EM                   // Algorithm
+        NBITERATION          // StopRule
+        200                  // StopRuleValue
+        ../DATA/geyser.data  // data file
+
+\end{verbatim}}
+
+\noindent{Command for this example in directory MIXMOD/BIN/:}
+{\scriptsize
+\begin{verbatim}
+      ConvertOldInputFile ../EXAMPLES/DOC/geyserOld.xem
+
+\end{verbatim}}
+
+{\noindent The new geyserOld.xem become:}
+{\scriptsize
+\begin{verbatim}
+        NbLines
+            272                 // Size lines
+        PbDimension
+            2                   // Dimension sample
+        NbCriterion
+            1                   // Number of criteria
+        ListCriterion
+            ICL                 // ICL criterion
+        NbNbCluster
+            1                   // List size of clusters (2)
+        ListNbCluster
+            2                   // 2 clusters
+        NbModel
+            1                   // Number of models
+        ListModel
+            Gaussian_pk_Lk_Ck   // Gaussian ellipsoidal model pk[LkCk]
+        NbStrategy
+            1                   // One strategy
+        InitType
+            RANDOM              // Starting parameter by random centers
+        NbAlgorithm
+            1                   // One algorithm used
+        Algorithm
+            EM                  // Algorithm EM
+        StopRule
+            NBITERATION         // Stopping rules for EM, number of iterations
+        StopRuleValue
+            200                 // 200 iterations desired
+        DataFile
+            ../DATA/geyser.dat  // Input data set (Old Faithful Geyser)
+
+
+
+\end{verbatim}}
+
+%=============================================================
+\subsection{ Convert label file to partition file}
+%=============================================================
+In the package directory MIXMOD/BIN/ there is an executable file named {\em convertLabelFileToPartitionFile}. This program convert a label file, which contains a column vector of label, to a
+partition file, which contains a partition matrix of 0 and 1 (between {\sc mixmod} 1.5 and 1.6).\\
+\noindent{\bf Synopsis}
+{\scriptsize
+\begin{verbatim}
+       convertLabelFileToPartitionFile nameFile n k
+\end{verbatim}}
+
+\noindent{$n$: number of rows (number of samples)}\\
+$k$: number of clusters\\
+The conversion creates a new partition file .lab ({\em nameFile.lab}) which contains a partition matrix of 0
+and 1.\\
+Consider the label file geyserLabel.txt in the directory MIXMOD/EXAMPLES/DOC/:
+{\scriptsize
+\begin{verbatim}
+        2    // sample 1 in component 2
+        1    // sample 2 in component 1
+        2    // sample 3 in component 2
+        1    // sample 4 in component 1
+        2    // sample 5 in component 2
+        1    // sample 6 in component 1
+        2    // sample 7 in component 2
+        2    // sample 8 in component 2
+        1    // sample 9 in component 1
+        2    // sample 10 in component 2
+
+        ...
+\end{verbatim}}
+
+\noindent{Command for this example MIXMOD/BIN/:}
+{\scriptsize
+\begin{verbatim}
+      convertLabelFileToPartitionFile ../../EXAMPLES/DOC/geyserLabel.txt 272 2
+\end{verbatim}}
+
+\noindent{Created file is {\em geyserLabel.txt.lab}:}
+{\scriptsize
+\begin{verbatim}
+        0   1
+        1   0
+        0   1
+        1   0
+        0   1
+        1   0
+        0   1
+        0   1
+        1   0
+        0   1
+
+        ...
+\end{verbatim}}
+
+
+
+%================================================================
+\subsection{ Convert old data weight file in 2 files}
+%================================================================
+In the package directory MIXMOD/BIN/ there is an executable file named {\em
+convertOldWeightDataFileIn2Files}. This program separate old data file with weight in 2 files: a data file and a
+weight file (betwenn {\sc mixmod} 1.5 and 1.6).\\
+\noindent{\bf Synopsis}
+{\scriptsize
+\begin{verbatim}
+       convertOldWeightDataFileIn2Files nameFile n d
+\end{verbatim}}
+
+\noindent{$n$ number of rows (number of samples)}\\
+$d$: data dimension (number of columns in data set)\\
+The conversion creates two new files. A file .dat ({\em nameFile.dat}) which contains matrix of data set and a
+file .wgt ({\em nameFile.wgt}) which contains vector of weight.\\
+Consider the old data weight file esteveWeightOld.dat in the directory MIXMOD/EXAMPLES/DOC/:
+{\scriptsize
+\begin{verbatim}
+
+        0.8277    0.3626    0.4243    0.0269    0.0523    0.        2.7021    10.   [weight = 10]
+        0.7713    0.4399    0.4586    0.0355    0.        0.0015    4.0874    10.   [weight = 10]
+        0.6407    0.4841    0.5302    0.        0.2723    0.        2.7531    10.   [weight = 10]
+        0.9384    0.2396    0.2436    0.0008    0.0516    0.        2.6013    10.   [weight = 10]
+        0.7166    0.6576    0.2323    0.        0.007     0.0012    1.9698    10.   [weight = 10]
+        0.7802    0.4377    0.4425    0.0595    0.0198    0.0003    2.3369    10.   [weight = 10]
+        0.7671    0.3738    0.4918    0.        0.1734    0.0052    3.0098    10.   [weight = 10]
+        0.7659    0.4967    0.3769    0.        0.1572    0.        1.7791    10.   [weight = 10]
+        0.7448    0.3449    0.5504    0.        0.1526    0.        1.9758    10.   [weight = 10]
+        0.7696    0.3979    0.4991    0.0149    0.        0.        3.3411    10.   [weight = 10]
+
+        ...
+\end{verbatim}}
+
+\noindent{Command for this example MIXMOD/BIN/:}
+{\scriptsize
+\begin{verbatim}
+      convertOldWeightDataFileIn2Files ../../EXAMPLES/DOC/esteveWeightOld.dat 77 7
+\end{verbatim}}
+
+\noindent{First file created is the new data file esteveWeightOld\_noWeight.dat:}
+{\scriptsize
+\begin{verbatim}
+        0.8277    0.3626    0.4243    0.0269    0.0523    0.        2.7021
+        0.7713    0.4399    0.4586    0.0355    0.        0.0015    4.0874
+        0.6407    0.4841    0.5302    0.        0.2723    0.        2.7531
+        0.9384    0.2396    0.2436    0.0008    0.0516    0.        2.6013
+        0.7166    0.6576    0.2323    0.        0.007     0.0012    1.9698
+        0.7802    0.4377    0.4425    0.0595    0.0198    0.0003    2.3369
+        0.7671    0.3738    0.4918    0.        0.1734    0.0052    3.0098
+        0.7659    0.4967    0.3769    0.        0.1572    0.        1.7791
+        0.7448    0.3449    0.5504    0.        0.1526    0.        1.9758
+        0.7696    0.3979    0.4991    0.0149    0.        0.        3.3411
+
+        ...
+\end{verbatim}}
+
+{\noindent Second file created is the weight file esteveWeightOld.dat.wgt:}
+{\scriptsize
+\begin{verbatim}
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+        10.   // weight = 10
+
+        ...
+\end{verbatim}}
+
+
+%=======================================
+\subsection{ Convert old partition file}
+%=======================================
+In the package directory MIXMOD/BIN/ there is an executable file named {\em convertOldPartitionFile}. This
+program convert an old partition file to a new partition file (betwenn {\sc mixmod} 1.5 and 1.6). The number of
+concerned samples (first number in old partition file) and the number of sample (first number on each line) are
+removed. Moreover, samples which label are unknown, are replaced by a line vector of 0.\\
+\noindent{\bf Synopsis}
+{\scriptsize
+\begin{verbatim}
+       convertOldPartitionFile nameFile n k
+\end{verbatim}}
+
+\noindent{$n$ number of rows (number of samples)}\\
+$k$: number of clusters\\
+The conversion create a new partition file .lab ({\em nameFile.lab}) which contains a partition matrix of 0 and
+1.\\
+Consider the old partition file {\em geyserOldPartition.lab} in the directory {\em MIXMOD/EXAMPLES/DOC}:
+{\scriptsize
+\begin{verbatim}
+        10
+        1    0   1
+        2    1   0
+        3    0   1
+        4    1   0
+        5    0   1
+        6    1   0
+        7    0   1
+        8    0   1
+        9    1   0
+        10   0   1
+\end{verbatim}}
+
+\noindent{Command for this example {\em MIXMOD/BIN/}:}
+{\scriptsize
+\begin{verbatim}
+      convertOldPartitionFile ../../EXAMPLES/DOC/geyserOldPartition.lab 272 2
+\end{verbatim}}
+
+\noindent{Created file is {\em geyserOldPartition\_newPartition.lab}:}
+{\scriptsize
+\begin{verbatim}
+        0   1    // sample 1 in component 2
+        1   0
+        0   1
+        1   0
+        0   1
+        1   0
+        0   1
+        0   1
+        1   0
+        0   1    // sample 10 in component 2
+        0   0    // sample 11 not affected
+
+        ...
+
+        0   0    // sample 272 not affected
+\end{verbatim}}
+
+\newpage

@@ -1,0 +1,121 @@
+%==================================
+\subsection{{\sc mixmod} functions}
+%==================================
+The using is the same that in quantitative data sets case.\\ In
+optional input a vector of number of modalities ($d$ number of
+modalities) must be added. The binary optional models must be
+chosen: Binary\_p\_E, Binary\_p\_Ek, Binary\_p\_Ej, Binary\_p\_Ekj.\\
+
+%----------------------
+\noindent{Example:\\}
+%----------------------
+
+\begin{tabular}{c|c}
+\begin{minipage}[c]{0.47\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+    -> toby = read('DATA/b_toby.dat',216,4);
+    -> nbModalities = [2 2 2 2];
+    -> nbCluster = [2 3 4];
+    -> criteria = ['BIC' 'ICL'];
+    -> models = ['Binay_p_E';
+                 'Binay_p_Ek';
+                 'Binay_pk_Ej';
+                 'Binay_pk_Ekj'];
+    -> out = mixmod(toby, nbCluster, nbModalities,...
+                    models, criteria);
+\end{verbatim}}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.53\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+    >> geyser = load('DATA/b_toby.dat');
+    >> nbModalities = [2 2 2 2];
+    >> nbCluster = [2 3 4];
+    >> criteria = [{'BIC'} {'ICL'}];
+    >> models = [{'Binay_p_E'};
+                 {'Binay_p_Ek'};
+                 {'Binay_pk_Ej'};
+                 {'Binay_pk_Ekj'}];
+    >> out = mixmod(toby, nbCluster, nbModalities,...
+                    models, criteria);
+\end{verbatim}}
+\end{minipage}%
+\end{tabular}
+
+
+%======================================
+\subsection{{\sc mixmodView} functions} \label{mixmodViewFunctionsSection}
+%======================================
+mixmodView functions are not available for qualitative data sets.
+
+
+%==================================
+\subsection{Others functions}
+%==================================
+
+%==========================================
+\subsubsection{{\sc printMixmod} functions}
+%==========================================
+The using is the same that in quantitative data sets case.\\
+
+%----------------------
+\noindent{Example:\\}
+%----------------------
+
+\begin{tabular}{c|c}
+\begin{minipage}[c]{0.47\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+    -> exec('initMixmod.sci');
+    -> toby   = read('DATAb\b_toby.dat',216,4);
+    -> output = mixmod(toby,2,[2 2 2 2]);
+    -> printMixmod(output);
+\end{verbatim}}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.53\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+    >> toby   = load('DATA\b_toby.dat');
+    >> output = mixmod(toby,2,[2 2 2 2]);
+    >> printMixmod(output);
+\end{verbatim}}
+\end{minipage}%
+\end{tabular}\\
+
+%==========================================
+\subsubsection{{\sc mixmodInput} functions}
+%==========================================
+The using is the same that in quantitative data sets case. The
+optional input {\em  allBinaryModel} returns, all binary model
+types. The optional input {\em allModel} returns all gaussian and
+binary model types.\\
+
+%----------------------
+\noindent{Example:\\}
+%----------------------
+
+\begin{tabular}{c|c}
+\begin{minipage}[c]{0.47\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+  -> exec('initMixmod.sci');
+  -> toby   = read('DATAb\b_toby.dat',216,4);
+\end{verbatim}}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.53\columnwidth}%
+{\scriptsize
+\begin{verbatim}
+  >> toby   = load('DATA\b_toby.dat');
+\end{verbatim}}
+\end{minipage}%
+\end{tabular}
+
+{\scriptsize
+\begin{verbatim}
+       -> (>>) [criterion, model, strategy] = mixmodInput('allBinaryModel');
+       -> (>>) output = mixmod(toby, 2, [2 2 2 2], model);
+\end{verbatim}}
