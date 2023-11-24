@@ -23,8 +23,8 @@
     All informations available on : http://www.mixmod.org
 ***************************************************************************/
 
-#include <mixmod.h>
 #include "mixmod/Utilities/ExampleDataUtil.h"
+#include <mixmod.h>
 
 //--------------------------
 //--------------------------
@@ -32,7 +32,8 @@
 // Quantitative Data
 //--------------------------
 //--------------------------
-void clustering_1_example() {
+void clustering_1_example()
+{
 
 	cout << "-----------------------------------------------------------------------" << endl;
 	cout << "Clustering example : " << endl;
@@ -41,15 +42,14 @@ void clustering_1_example() {
 	cout << "-----------------------------------------------------------------------" << endl << endl;
 
 	// if mximod_example is installed in the /usr/local/bin folder, data files are in /usr/local/share/mixmod/EXAMPLES folder
-        //otherwise, change the following line
-	string filename ("data/iris.train");
-        fstream file;
-        cout<<filename<<endl;
-	file.open (filename.c_str());
+	// otherwise, change the following line
+	string filename("data/iris.train");
+	fstream file;
+	cout << filename << endl;
+	file.open(filename.c_str());
 	if (!file.is_open()) {
-		cout<<"erreur : "<<filename<<endl;
+		cout << "erreur : " << filename << endl;
 	}
-
 
 	// 1. create XEM::ClusteringInput
 	//--------------------------
@@ -57,49 +57,47 @@ void clustering_1_example() {
 	// nbCluster contains the numbers of clusters to be tested.
 	// Here we assume that there are 2, 3 or 4 clusters.
 	vector<int64_t> nbCluster;
-	nbCluster.push_back (2);
-	nbCluster.push_back (3);
-	nbCluster.push_back (4);
+	nbCluster.push_back(2);
+	nbCluster.push_back(3);
+	nbCluster.push_back(4);
 
 	// XEM::ClusteringInput
-	XEM::ClusteringInput* cInput = XEM::getClusteringInput (filename, nbCluster);
+	XEM::ClusteringInput *cInput = XEM::getClusteringInput(filename, nbCluster);
 
-    // Finalize input: run a series of sanity checks on it
-    cInput->finalize();
+	// Finalize input: run a series of sanity checks on it
+	cInput->finalize();
 
 	// edit cInput
 	cout << "-----------------------------------------------------------------------" << endl;
 	cout << " Input : " << endl;
 	cout << "-----------------------------------------------------------------------" << endl << endl;
-	cInput->edit (cout);
+	cInput->edit(cout);
 	cout << endl;
-
 
 	// 2. XEM::ClusteringMain
 	//---------------------
 
 	// 2.1. Create XEM::ClusteringMain
-	XEM::ClusteringMain cMain (cInput);
+	XEM::ClusteringMain cMain(cInput);
 
 	// 2.2. run XEM::ClusteringMain
 	// TODO [bauder]: should be a static method :
 	//                XEM::ClusteringOutput * cOutput = XEM::ClusteringMain::run(cInput);
 	cMain.run();
 
-	//2.3. Create a new XEM::ClusteringOutput object
-	// all Outputs are in XEM::ClusteringOutput
-	XEM::ClusteringOutput* cOutput = cMain.getOutput();
-
+	// 2.3. Create a new XEM::ClusteringOutput object
+	//  all Outputs are in XEM::ClusteringOutput
+	XEM::ClusteringOutput *cOutput = cMain.getOutput();
 
 	// 3. post treatment example
 	//------------------------------
 	// sort (using BIC - the default criterion)
-	cOutput->sort (XEM::BIC);
+	cOutput->sort(XEM::BIC);
 
 	if (cOutput->atLeastOneEstimationNoError()) {
 		// get the best XEM::ClusteringModelOutput
-		XEM::ClusteringModelOutput* cMOutput = cOutput->getClusteringModelOutput().front();
-		XEM::ParameterDescription* paramDescription = cMOutput->getParameterDescription();
+		XEM::ClusteringModelOutput *cMOutput = cOutput->getClusteringModelOutput().front();
+		XEM::ParameterDescription *paramDescription = cMOutput->getParameterDescription();
 
 		cout << "-----------------------------------------------------------------------" << endl;
 		cout << "Best model is " << endl;
@@ -109,20 +107,19 @@ void clustering_1_example() {
 		cout << "-----------------------------------------------------------------------" << endl;
 		cout << "Parameters display" << endl;
 
-		XEM::Parameter* param = paramDescription->getParameter();
+		XEM::Parameter *param = paramDescription->getParameter();
 		// print out parameters
 		param->edit();
 		// print out criterion values
 		for (std::size_t iCriterion = 0; iCriterion < cInput->getCriterionName().size(); iCriterion++)
-			cMOutput->getCriterionOutput (cInput->getCriterionName (iCriterion)).editTypeAndValue (std::cout);
+			cMOutput->getCriterionOutput(cInput->getCriterionName(iCriterion)).editTypeAndValue(std::cout);
 	}
 	cout << "-----------------------------------------------------------------------" << endl;
 
 	// release memory
 	delete cInput;
-	//delete cOutput; //WRONG: cMain garbage collected ==> _output (==cOutput) is freed already
+	// delete cOutput; //WRONG: cMain garbage collected ==> _output (==cOutput) is freed already
 }
-
 
 // Simple test: [TODO: move]
 
@@ -130,7 +127,7 @@ void clustering_1_example() {
 //#include "XEM::ExampleDataUtil.h"
 //#include <vector>
 //
-//void clustering_1_example() {
+// void clustering_1_example() {
 //    // Create clustering input from iris dataset.
 //    string file("../EXAMPLES/data/iris.train");
 //    int64_t nbClust_arr[] = {2, 3, 4};
@@ -164,13 +161,14 @@ void clustering_1_example() {
 //    if (cOutput->atLeastOneEstimationNoError()) {
 //		vector<XEM::ClusteringModelOutput*> cMOutput = cOutput->getClusteringModelOutput();
 //		for (int i=0; i<3; i++) {
-//			cout << "MODEL " << i << " " << cMOutput[i]->getNbCluster() << " " << cMOutput[i]->getLikelihood() << " " << cMOutput[i]->getCriterionOutput(0).getValue() << endl;
+//			cout << "MODEL " << i << " " << cMOutput[i]->getNbCluster() << " " << cMOutput[i]->getLikelihood() << " " <<
+//cMOutput[i]->getCriterionOutput(0).getValue() << endl;
 //		}
 //    }
 //}
 
-//OUTPUT:
-//mixmodLib/BIN $ ./example_exe c1
-//MODEL 0 2 -278.057 656.327
-//MODEL 1 3 -237.855 605.986
-//MODEL 2 4 -217.255 594.85
+// OUTPUT:
+// mixmodLib/BIN $ ./example_exe c1
+// MODEL 0 2 -278.057 656.327
+// MODEL 1 3 -237.855 605.986
+// MODEL 2 4 -217.255 594.85
