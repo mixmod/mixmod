@@ -71,6 +71,8 @@ ModelOutput::ModelOutput(Model * estimation) {
 
         if (estimation->getAlgoName() != UNKNOWN_ALGO_NAME)
           _completedLikelihood = estimation->getCompletedLogLikelihood();
+
+	_entropy = estimation->getEntropy();
 }
 
 //------------------------------
