@@ -88,8 +88,6 @@ public:
 
 	Exception & getStrategyRunError() const;
 
-	Model * getModel() const;
-
 	double getLikelihood() const;
 
 	CriterionOutput const & getCriterionOutput(CriterionName criterionName) const;
