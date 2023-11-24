@@ -90,6 +90,7 @@ public:
 
 	double getLikelihood() const;
 	double getCompletedLikelihood() const;
+	double getEntropy() const;
 
 	CriterionOutput const & getCriterionOutput(CriterionName criterionName) const;
 	CriterionOutput const & getCriterionOutput(const int index) const;
@@ -123,6 +124,9 @@ protected:
 
         // the penalized log-likelihood
 	double _completedLikelihood = 0.0;
+
+	// entropy
+	double _entropy = 0.0;
 
 	// the error
 	Exception * _strategyRunError;
@@ -158,6 +162,10 @@ inline double ModelOutput::getLikelihood() const {
 
 inline double ModelOutput::getCompletedLikelihood() const {
 	return _completedLikelihood;
+}
+
+inline double ModelOutput::getEntropy() const {
+        return _entropy;
 }
 
 inline CriterionOutput const & ModelOutput::getCriterionOutput(CriterionName criterionName) const {
