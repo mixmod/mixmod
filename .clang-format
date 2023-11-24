@@ -1,0 +1,11 @@
+BasedOnStyle: LLVM
+UseTab: ForIndentation
+IndentWidth: 4
+TabWidth: 4
+BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: false
+IndentCaseLabels: false
+ColumnLimit: 127
+AccessModifierOffset: -4
+NamespaceIndentation: None
+FixNamespaceComments: false
