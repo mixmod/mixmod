@@ -89,6 +89,7 @@ public:
 	Exception & getStrategyRunError() const;
 
 	double getLikelihood() const;
+	double getCompletedLikelihood() const;
 
 	CriterionOutput const & getCriterionOutput(CriterionName criterionName) const;
 	CriterionOutput const & getCriterionOutput(const int index) const;
@@ -117,8 +118,11 @@ protected:
 	// the probabilities of the model
 	ProbaDescription * _probaDescription;
 
-	// the model likelihood
-	double _likelihood;
+	// the model log-likelihood
+	double _likelihood = 0.0;
+
+        // the penalized log-likelihood
+	double _completedLikelihood = 0.0;
 
 	// the error
 	Exception * _strategyRunError;
@@ -150,6 +154,10 @@ inline Exception & ModelOutput::getStrategyRunError() const {
 
 inline double ModelOutput::getLikelihood() const {
 	return _likelihood;
+}
+
+inline double ModelOutput::getCompletedLikelihood() const {
+	return _completedLikelihood;
 }
 
 inline CriterionOutput const & ModelOutput::getCriterionOutput(CriterionName criterionName) const {
