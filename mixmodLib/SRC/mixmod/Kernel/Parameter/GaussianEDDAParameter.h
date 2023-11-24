@@ -58,6 +58,7 @@ public:
 	virtual ~GaussianEDDAParameter();
 
 	/// Comparison operator
+	using GaussianParameter::operator==;
 	virtual bool operator ==(const GaussianEDDAParameter & param) const;
 
 	/// reset to default values

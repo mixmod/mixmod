@@ -57,6 +57,23 @@ ModelType::ModelType(const ModelType & iModelType) {
 	}
 }
 
+ModelType & ModelType::operator=(const ModelType & iModelType) {
+	if (this != &iModelType)
+	{
+		_nameModel = iModelType._nameModel;
+		_subDimensionEqual = iModelType._subDimensionEqual;
+		_nbSubDimensionFree = iModelType._nbSubDimensionFree;
+		if ((_nbSubDimensionFree != 0) && (iModelType._tabSubDimensionFree)) {
+			_tabSubDimensionFree = new int64_t[_nbSubDimensionFree];
+			recopyTab(iModelType._tabSubDimensionFree, _tabSubDimensionFree, _nbSubDimensionFree);
+		}
+		else {
+			_tabSubDimensionFree = NULL;
+		}
+	}
+	return *this;
+}
+
 ModelType::~ModelType() {
 	if (_tabSubDimensionFree) {
 		//delete [] _tabSubDimensionFree; //TODO [bauder]: there is something wrong with this variable, 

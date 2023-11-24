@@ -47,6 +47,9 @@ public:
 	// copy constructor
 	ModelType(const ModelType & iModelType);
 
+	// operator=
+	ModelType & operator=(const ModelType & iModelType);
+
 	/// Destructor
 	~ModelType();
 

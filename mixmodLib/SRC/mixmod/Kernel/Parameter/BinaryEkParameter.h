@@ -50,6 +50,7 @@ public:
 	~BinaryEkParameter();
 
 	/// Comparison operator
+	using BinaryParameter::operator==;
 	virtual bool operator ==(const BinaryEkParameter & param) const;
 
 	/// reset to default values

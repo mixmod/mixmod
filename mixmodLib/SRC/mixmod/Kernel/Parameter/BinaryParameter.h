@@ -65,6 +65,7 @@ public:
 	virtual ~BinaryParameter();
 
 	/// Comparison operator
+	using Parameter::operator==;
 	virtual bool operator ==(const BinaryParameter & param) const;
 
 

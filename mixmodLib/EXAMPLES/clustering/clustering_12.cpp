@@ -163,11 +163,11 @@ void clustering_12_example() {
         // print out parameters
         param->edit();
         // print out criterion values
-        for ( int64_t iCriterion=0; iCriterion < cInput->getCriterionName().size(); iCriterion++ )
+        for ( std::size_t iCriterion=0; iCriterion < cInput->getCriterionName().size(); iCriterion++ )
             cMOutput->getCriterionOutput ( cInput->getCriterionName ( iCriterion ) ).editTypeAndValue ( std::cout );
     } else {
         cout<<"All models got error\n";
-        for ( int i = 0; i < cOutput->getClusteringModelOutput().size(); ++i ) {
+        for ( std::size_t i = 0; i < cOutput->getClusteringModelOutput().size(); ++i ) {
             cout<<cOutput->getClusteringModelOutput ( i )->getStrategyRunError().what() <<endl;
         }
     }

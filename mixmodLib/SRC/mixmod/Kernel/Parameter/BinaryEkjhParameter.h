@@ -64,6 +64,7 @@ public:
 	~BinaryEkjhParameter();
 
 	/// Comparison operator
+	using BinaryParameter::operator==;
 	virtual bool operator ==(const BinaryEkjhParameter & param) const;
 
 	/// reset to default values
