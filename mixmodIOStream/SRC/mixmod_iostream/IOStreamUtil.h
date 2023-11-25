@@ -32,8 +32,8 @@
 #include <sys/stat.h>
 
 #include "mixmod/Clustering/ClusteringInput.h"
-//#include "mixmod/Clustering/ClusteringOutput.h"
-//#include "mixmod/Clustering/ClusteringInput.h"
+// #include "mixmod/Clustering/ClusteringOutput.h"
+// #include "mixmod/Clustering/ClusteringInput.h"
 #include "mixmod/Clustering/ClusteringOutput.h"
 
 // DiscriminantAnalysis
@@ -182,6 +182,9 @@ inline Glib::ustring XMLFileTypeToString(IOStreamXMLFile file)
 		break;
 	case IOStreamXMLFile::Weights:
 		res = "Weights";
+		break;
+	case IOStreamXMLFile::Label:
+		res = "Label";
 		break;
 	}
 	return res;

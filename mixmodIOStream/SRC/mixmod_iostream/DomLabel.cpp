@@ -165,8 +165,8 @@ unique_ptr<LabelDescription> DomLabel::readLabelAsData(string sFilename)
 	//------------------------
 	// Declaration of variables
 	//------------------------
-	xmlpp::Element *elementName, *elementNbSample, *elementNbColumn, *elementFormat, *elementLabelFilename, *elementListColumn;
-
+	xmlpp::Element *elementName, *elementNbSample, *elementFormat, *elementLabelFilename, *elementListColumn;
+	// xmlpp::Element *elementNbColumn;
 	// name
 	elementName = dynamic_cast<xmlpp::Element *>(_root->get_first_child("Name"));
 	string sName = elementName ? elementName->get_child_text()->get_content() : "";
@@ -280,8 +280,8 @@ unique_ptr<LabelDescription> DomLabel::readLabel(string sFilename)
 	//------------------------
 	// Declaration of variables
 	//------------------------
-	xmlpp::Element *elementName, *elementNbSample, *elementNbCluster, *elementFormat, *elementLabelFilename,
-	    *elementListColumn;
+	xmlpp::Element *elementName, *elementNbSample, *elementNbCluster, *elementFormat, *elementLabelFilename;
+	// xmlpp::Element *elementListColumn;
 
 	// name
 	elementName = dynamic_cast<xmlpp::Element *>(_root->get_first_child("Name"));
