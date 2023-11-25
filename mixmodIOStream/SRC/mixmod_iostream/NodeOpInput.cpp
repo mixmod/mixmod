@@ -156,7 +156,7 @@ void NodeOpInput::writeListModel(Input *input)
 	xmlpp::Element *binaryModel = listModel->add_child("BinaryModel");
 	xmlpp::Element *compositeModel = listModel->add_child("CompositeModel");
 	// fill with each model name
-	for (int64_t i = 0; i < input->getModelType().size(); i++) {
+	for (std::size_t i = 0; i < input->getModelType().size(); i++) {
 		ModelName modelName = input->getModelType()[i]->getModelName();
 		// text for XML
 		xmlpp::Element *whichModel = NULL;
@@ -204,7 +204,7 @@ void NodeOpInput::writeListModel(Input *input)
 	if (HDModel->get_first_child()) {
 		bool equalDone = false, freeDone = false;
 		std::vector<ModelType *> mtvect = input->getModelType();
-		for (int64_t k = 0; k < mtvect.size(); k++) {
+		for (std::size_t k = 0; k < mtvect.size(); k++) {
 			// subDimensionEqual
 			ModelType *mtype = mtvect[k];
 			const ModelName &mName = mtype->getModelName();
@@ -248,7 +248,7 @@ void NodeOpInput::writeNbClusterNode(ClusteringInput *input)
 	// nbCluster
 	xmlpp::Element *listCluster = _rootInput->add_child("ListNbCluster");
 	vector<int64_t> vectNbCluster(input->getNbCluster());
-	for (int64_t i = 0; i < vectNbCluster.size(); ++i) {
+	for (std::size_t i = 0; i < vectNbCluster.size(); ++i) {
 		xmlpp::Element *nbCluster = listCluster->add_child("NbCluster");
 		nbCluster->add_child_text(std::to_string(vectNbCluster[i]));
 	}
@@ -532,14 +532,14 @@ void NodeOpInput::readModelNode(Input &input)
 			}
 			// for(auto mtit= input.getModelType().begin(); mtit!=input.getModelType().end(); ++mtit){
 			// ModelType* mType = dynamic_cast<ModelType*>(*mtit);
-			for (int k = 0; k < input.getModelType().size(); k++) {
+			for (std::size_t k = 0; k < input.getModelType().size(); k++) {
 				ModelType *mType = input.getModelType()[k];
 				if (!isHD(mType->getModelName()))
 					continue;
 				if (isFreeSubDimension(mType->getModelName())) {
 					//
 					if (dkListElt) {
-						for (int64_t i = 0; i < dkVect.size(); i++) {
+						for (std::size_t i = 0; i < dkVect.size(); i++) {
 							mType->_nbSubDimensionFree = nbSubDimFree;
 							mType->setTabSubDimensionFree(dkVect[i], i);
 						}

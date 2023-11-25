@@ -25,22 +25,22 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-//#include <sys/sendfile.h>
+// #include <sys/sendfile.h>
 #include "mixmod_iostream/IOStreamUtil.h"
 #include <stdio.h>
 #include <unistd.h>
-//#include "mixmod_iostream/DomClusteringProject.h"
+// #include "mixmod_iostream/DomClusteringProject.h"
 #include "mixmod_iostream/DomOpProject.h"
-//#include "mixmod_iostream/DomDAProject.h"
+// #include "mixmod_iostream/DomDAProject.h"
 #include "mixmod_iostream/NodeOpInput.h"
 #include "mixmod_iostream/NodeOpOutput.h"
 
 #include "mixmod/Kernel/IO/BinaryData.h"
 #include "mixmod/Kernel/IO/GaussianData.h"
-//#include "mixmod/Clustering/ClusteringInput.h"
+// #include "mixmod/Clustering/ClusteringInput.h"
 #include "mixmod/Clustering/ClusteringMain.h"
-//#include "mixmod/Clustering/ClusteringOutput.h"
-//#include "mixmod/Clustering/ClusteringModelOutput.h"
+// #include "mixmod/Clustering/ClusteringOutput.h"
+// #include "mixmod/Clustering/ClusteringModelOutput.h"
 
 #include "mixmod/Clustering/ClusteringModelOutput.h"
 #include "mixmod/Clustering/ClusteringOutput.h"
@@ -733,7 +733,8 @@ The following files are created :
 void OStream_Clustering_FLAT(ClusteringMain *cMain)
 {
 
-	int64_t iEst, iCrit;
+	int64_t iEst;
+	std::size_t iCrit;
 
 	ClusteringOutput *cOutput = cMain->getOutput();
 	ClusteringModelOutput *currentCMOutput = NULL;
@@ -828,7 +829,7 @@ void OStream_Clustering_FLAT(ClusteringMain *cMain)
 	for (iCrit = 0; iCrit < criterionName.size(); iCrit++) {
 		// Is this criterion used in Input ?
 		bool used = false;
-		for (int i = 0; i < criterionNameInInput.size(); i++) {
+		for (std::size_t i = 0; i < criterionNameInInput.size(); i++) {
 			if (criterionNameInInput[i] == criterionName[iCrit]) {
 				used = true;
 				iCritInCriterionNameInInput = criterionNameInInput[i];
@@ -1079,8 +1080,8 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 		throw IOStreamErrorType::badColumnUsedInCreateMixmodDataFileFromUserDataFile;
 	}
 
-	int64_t i;
-	int64_t cptTrue = 0;
+	std::size_t i;
+	std::size_t cptTrue = 0;
 	for (i = 0; i < columnUsed.size(); i++) {
 		if (columnUsed[i]) {
 			cptTrue++;
