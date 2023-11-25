@@ -35,6 +35,7 @@ Previous repository: <https://gforge.inria.fr/projects/mixmod>
 - [Docs](#docs)
 - [Citation](#citation)
 - [License](#license)
+- [Contributing](#contributing)
 
 ## Folder structure
 
@@ -153,3 +154,15 @@ See [CITATION.bib](CITATION.bib)
 ## License
 
 mixmod is distributed under the GPL v3 license
+
+## Contributing
+
+- Use the [.clang-format](.clang-format) file to format the c++ code.
+- Use [lintr](https://cran.r-project.org/package=lintr) to format the R code with the following .lintr file:
+
+  ``` text
+  linters: linters_with_defaults(
+    line_length_linter(127),
+    object_name_linter = NULL
+    )
+  ```
