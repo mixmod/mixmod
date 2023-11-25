@@ -24,7 +24,7 @@
 #   LibXML++_LIBRARIES
 #
 
-include(FindPkgConfig)
+find_package(PkgConfig)
 include(FindPackageHandleStandardArgs)
 
 # Use pkg-config to get hints about paths
@@ -59,4 +59,3 @@ endif()
 # NOTE: Singular variables for this library, plural for libraries this this lib depends on.
 #set(LibXML++_PROCESS_INCLUDES LibXML++_INCLUDE_DIR)
 #set(LibXML++_PROCESS_LIBS LibXML++_LIBRARY)
-
