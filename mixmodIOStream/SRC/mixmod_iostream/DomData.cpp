@@ -23,7 +23,7 @@
     All informations available on : http://www.mixmod.org
  ***************************************************************************/
 
-//#include <QTextStream>
+// #include <QTextStream>
 #include "mixmod_iostream/DomData.h"
 #include "mixmod/Kernel/IO/BinaryData.h"
 #include "mixmod/Kernel/IO/ColumnDescription.h"
@@ -168,12 +168,12 @@ DataDescription *DomData::readDataFile(const string &sFilename)
 				auto column = new QualitativeColumnDescription(index, nbFactor);
 				column->setName(nameColumn);
 
-				// assigment of column to vColumnDescription
+				// assignment of column to vColumnDescription
 				vColumnDescription.push_back(column);
 				break;
 			}
 			case IOStreamColumnType::Quantitative: {
-				// creation and assigment of column to dataDescription(index)
+				// creation and assignment of column to dataDescription(index)
 				ColumnDescription *column = new QuantitativeColumnDescription(index);
 				column->setName(nameColumn);
 
@@ -185,7 +185,7 @@ DataDescription *DomData::readDataFile(const string &sFilename)
 				// creation of Column
 				IndividualColumnDescription *column = new IndividualColumnDescription(index);
 				column->setName(nameColumn);
-				// assigment of column to vColumnDescription
+				// assignment of column to vColumnDescription
 				vColumnDescription.push_back(column);
 				xmlpp::Element *nn = dynamic_cast<xmlpp::Element *>(n->get_first_child("IndividualName"));
 				if (!nn)
@@ -196,7 +196,7 @@ DataDescription *DomData::readDataFile(const string &sFilename)
 					if (!individualNode)
 						continue;
 
-					// cross Column to find all individualdescription
+					// cross Column to find all individual description
 					// creation of the individual description and filling
 					IndividualDescription individual;
 					individual.name = individualNode->get_child_text()->get_content();
@@ -269,7 +269,7 @@ void DomData::writeListColumnNode(const vector<ColumnDescription *> &vColumnDesc
 
 			// ListFactor [TODO: <Factor Name=... Num=.../> ...]
 			xmlpp::Element *listFactorName = NULL;
-			for (int64_t j = 0; j < QCD->getVariableDescription().size(); ++j) {
+			for (std::size_t j = 0; j < QCD->getVariableDescription().size(); ++j) {
 				// factor j of variable i
 				if (!QCD->getVariableDescription()[j].name.empty()) {
 					if (!listFactorName)
@@ -286,7 +286,7 @@ void DomData::writeListColumnNode(const vector<ColumnDescription *> &vColumnDesc
 		case (IOStreamColumnType::Individual): {
 			column->set_attribute("type", "Individual", "xsi");
 			IndividualColumnDescription *ICD = dynamic_cast<IndividualColumnDescription *>(vColumnDescription[i]);
-			for (int64_t j = 0; j < ICD->getIndividualDescription().size(); ++j) {
+			for (std::size_t j = 0; j < ICD->getIndividualDescription().size(); ++j) {
 
 				// creates individual nodes in .mxd
 				xmlpp::Element *individualName = column->add_child("IndividualName");

@@ -23,7 +23,7 @@
     All informations available on : http://www.mixmod.org
  ***************************************************************************/
 
-//#include <QTextStream>
+// #include <QTextStream>
 #include "mixmod_iostream/DomLabel.h"
 #include "mixmod/Kernel/IO/IndividualColumnDescription.h"
 #include "mixmod/Kernel/IO/Partition.h"
@@ -347,7 +347,7 @@ void DomLabel::writeListColumnNode(const vector<ColumnDescription *> &vColumnDes
 			column->set_attribute("NbFactor", std::to_string(QCD->getNbFactor()));
 			// ListFactor [TODO: <Factor Name=... Num=.../> ...]
 			xmlpp::Element *listFactorName = NULL;
-			for (int64_t j = 0; j < QCD->getVariableDescription().size(); ++j) {
+			for (std::size_t j = 0; j < QCD->getVariableDescription().size(); ++j) {
 				// factor j of variable i
 				if (!QCD->getVariableDescription()[j].name.empty()) {
 					if (!listFactorName)
