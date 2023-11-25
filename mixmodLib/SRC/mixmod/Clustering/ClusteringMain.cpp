@@ -101,13 +101,12 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
     time(&startTime);
   }
 
-	// Initialize output [HACK: using pointer because of an error when retrieving CriterionOutput later]
-	//std::vector<CriterionName>* vCriterion = new std::vector<CriterionName>();
-	std::vector<CriterionName>* vCriterion = new std::vector<CriterionName>();
+	// Initialize output
+	std::vector<CriterionName> vCriterion;
 	const int nbCriterion = _input->getCriterionName().size();
 	for (int iCriterion = 0; iCriterion<nbCriterion; iCriterion++)
-		vCriterion->push_back(_input->getCriterionName()[iCriterion]);
-	_output = new ClusteringOutput(*vCriterion);
+		vCriterion.push_back(_input->getCriterionName()[iCriterion]);
+	_output = new ClusteringOutput(vCriterion);
 
 	// Main loop : build and run every model, and incrementally fill output
 	// NOTE: potential parallelization here (OpenMP at least)
@@ -216,7 +215,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
 			if (model->getErrorType() == NOERROR) {
 			  atLeastOneModelOk = true;
 				// Loop over criterion name
-				for (std::vector<CriterionName>::const_iterator it= vCriterion->begin(); it != vCriterion->end(); it++) {
+				for (std::vector<CriterionName>::const_iterator it= vCriterion.begin(); it != vCriterion.end(); it++) {
 					CriterionName criterion = *it;
 					switch (criterion) {
 					case BIC:
@@ -250,7 +249,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
 			}
 			else {
 				// Set criterion error (over all criterion names)
-				for (std::vector<CriterionName>::const_iterator it= vCriterion->begin(); it != vCriterion->end(); it++) {
+				for (std::vector<CriterionName>::const_iterator it= vCriterion.begin(); it != vCriterion.end(); it++) {
 					CriterionName criterion = *it;
 					cmoutput->setCriterionOutput(
 						CriterionOutput(criterion, 0.0, model->getErrorType()));
@@ -297,8 +296,6 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
   }
   delete workingData;
 //delete workingStrategy; //Invalid read dans le cas USER_PARTITION && example... 
-
-//delete vCriterion;
 
   if (!atLeastOneModelOk){
     THROW(OtherException, AllModelsGotErros);

@@ -99,7 +99,7 @@ private:
 	std::vector<ClusteringModelOutput*> _clusteringModelOutput;
 	// vector containing criterion name
 	// that will be useful to deal with output in mixmodGUI
-	std::vector<CriterionName> const & _criterionName;
+	std::vector<CriterionName> _criterionName;
 };
 
 inline std::vector<ClusteringModelOutput*> const & ClusteringOutput::getClusteringModelOutput() const {
