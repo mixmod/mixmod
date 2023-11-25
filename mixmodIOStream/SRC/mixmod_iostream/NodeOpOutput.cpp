@@ -54,7 +54,7 @@ namespace XEM {
   }
   NodeOpOutput::NodeOpOutput(PredictOutput * output, string & s) : NodeOutput() {
     auto vect = output->getPredictModelOutput();
-	for (int64_t i = 0; i < vect.size(); ++i) {
+	for (std::size_t i = 0; i < vect.size(); ++i) {
       writePredictOutput(vect[i], s, i + 1);
 	}
   }
@@ -68,7 +68,7 @@ namespace XEM {
     PredictInput* pInput = nullptr;
     ParameterDescription *parDesc = nullptr;
     ModelType modelType;
-    int64_t nbCluster;
+    int64_t nbCluster = 0;
     vector<CriterionOutput*> vCriterionOutput;
     double likelihood = 0.0;
     ///////
@@ -328,7 +328,7 @@ namespace XEM {
 	if (output->getStrategyRunError() == NOERROR) {
       //criterion
       xmlpp::Element *listCriterionElement = outputElement->add_child("ListOutputCriterion");
-      for (int64_t i = 0; i < criterionName.size() ; ++i) {
+      for (std::size_t i = 0; i < criterionName.size() ; ++i) {
         xmlpp::Element *criterionElement = listCriterionElement->add_child("OutputCriterion");
         xmlpp::Element *nameElement = criterionElement->add_child("CriterionName");
         nameElement->add_child_text(CriterionNameToString(criterionName[i]));
