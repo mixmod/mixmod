@@ -92,7 +92,7 @@ unique_ptr<ProbaDescription> DomProba::readProba(string sFilename)
 	//------------------------
 	// Declaration of variables
 	//------------------------
-	xmlpp::Element *elementName, *elementNbSample, *elementNbColumn, *elementFormat, *elementProbaFilename, *elementListColumn;
+	xmlpp::Element *elementName, *elementNbSample, *elementFormat, *elementProbaFilename, *elementListColumn;
 
 	// name
 	elementName = dynamic_cast<xmlpp::Element *>(_root->get_first_child("Name"));

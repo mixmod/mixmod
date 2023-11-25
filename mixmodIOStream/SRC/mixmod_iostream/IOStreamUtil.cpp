@@ -305,8 +305,6 @@ PredictMain *IStream_XML_Predict(const std::string &s, bool bOnlyInput, IoMode i
 /// to validate schema XML. The used .xsd depends on xml file
 void ValidateSchema(const string &s, const IOStreamXMLFile &xmlFile, bool verbose)
 {
-
-	bool res = false;
 	string schemafile;
 	string res_path = XEM_RESOURCES_PATH + string("/");
 	switch (xmlFile) {
