@@ -70,13 +70,13 @@ public:
 	//int64_t _nbSubDimensionFree;
 
 	/// list of subDimensionEqual
-	int64_t _subDimensionEqual;
+	int64_t _subDimensionEqual = 0;
 
 	/// _nbSubDimensionFree : size of array _tabSubDimensionFree
-	int64_t _nbSubDimensionFree;
+	int64_t _nbSubDimensionFree = 0;
 
 	/// array of subDimensionFree
-	int64_t * _tabSubDimensionFree;
+	int64_t * _tabSubDimensionFree = nullptr;
 
 	/// getModelName
 	const ModelName & getModelName() const;
