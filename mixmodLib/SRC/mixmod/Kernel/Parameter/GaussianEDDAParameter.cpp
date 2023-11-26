@@ -294,21 +294,23 @@ void GaussianEDDAParameter::initUSER(Parameter * iParam) {
 	// we got an XEMGaussianGeneralParameter 
 	// because of the implementation in class XEMStrategyType
 	// in gaussian cases the init parameters are allways General
-	GaussianGeneralParameter * param = (GaussianGeneralParameter *) iParam->getGaussianParameter();
-	double ** iTabMean = param->getTabMean();
-	double * iTabProportion = param->getTabProportion();
-	Matrix ** iTabWk = param->getTabWk();
-	Matrix ** iTabSigma = param->getTabSigma();
-	int64_t k;
-	for (k = 0; k < _nbCluster; k++) {
-		recopyTab(iTabMean[k], _tabMean[k], _pbDimension);
-		(* _tabWk[k]) = iTabWk[k];
-		(* _tabSigma[k]) = iTabSigma[k];
-		if (hasFreeProportion(_modelType->_nameModel)) {
-			_tabProportion[k] = iTabProportion[k];
-		}
-		else {
-			_tabProportion[k] = 1.0 / _nbCluster;
+	GaussianEDDAParameter * param = dynamic_cast<GaussianEDDAParameter *>(iParam->getGaussianParameter());
+	if (param) {
+		double ** iTabMean = param->getTabMean();
+		double * iTabProportion = param->getTabProportion();
+		Matrix ** iTabWk = param->getTabWk();
+		Matrix ** iTabSigma = param->getTabSigma();
+		int64_t k;
+		for (k = 0; k < _nbCluster; k++) {
+			recopyTab(iTabMean[k], _tabMean[k], _pbDimension);
+			(* _tabWk[k]) = iTabWk[k];
+			(* _tabSigma[k]) = iTabSigma[k];
+			if (hasFreeProportion(_modelType->_nameModel)) {
+				_tabProportion[k] = iTabProportion[k];
+			}
+			else {
+				_tabProportion[k] = 1.0 / _nbCluster;
+			}
 		}
 	}
 }
