@@ -45,7 +45,12 @@ CVCriterion::CVCriterion(Model * model, const int64_t nbCVBlock)
 //Destructor
 //----------
 CVCriterion::~CVCriterion() {
-	if (_tabCVBlock) delete [] _tabCVBlock;
+	if (_tabCVBlock)
+	{
+		for (int64_t v = 0; v < _nbCVBlock; v++)
+			delete [] _tabCVBlock[v]._tabWeightedIndividual;
+		delete [] _tabCVBlock;
+	}
 }
 
 //---
