@@ -205,4 +205,5 @@ void discriminant_analysis_4_example () {
     //release memory
     delete lInput;
     delete pInput;
+    delete [] vLabel_p;
 }
