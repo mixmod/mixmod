@@ -93,7 +93,9 @@ public:
 protected:
 	
 	/// pointer to a classification rule
-	Parameter * _classificationRule;
+	Parameter * _classificationRule = nullptr;
+	ParameterDescription * _parameterDescription = nullptr;
+
 	/// verif
 	virtual bool verif();
 };

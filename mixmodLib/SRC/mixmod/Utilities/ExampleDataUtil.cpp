@@ -254,9 +254,6 @@ PredictInput* getPredictInput (string fileName, LearnModelOutput* lOutput) {
 	ParameterDescription* paramPredict = new ParameterDescription (lOutput);
 	PredictInput* pInput = new PredictInput (dataDescription, paramPredict);
  	delete dataDescription;
-// 	delete paramPredict; //TODO: fix memory leak
-                         // HINT: data[parameter]Description removal has a side effect: remove lOutput (?!)
-
 	return pInput;
 }
 
