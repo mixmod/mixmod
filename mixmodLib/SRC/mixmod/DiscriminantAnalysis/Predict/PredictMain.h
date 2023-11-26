@@ -50,7 +50,7 @@ public:
 	PredictMain();
 
 	/// Constructor
-	PredictMain(PredictInput * input,  PredictOutput * output = NULL);
+	PredictMain(PredictInput * input, PredictOutput * output = nullptr);
 
 	/// Destructor
 	virtual ~PredictMain();
@@ -69,9 +69,9 @@ public:
 private:
 	
 	// input container
-	PredictInput * _input;
+	PredictInput * _input = nullptr;
 	// output container
-	PredictOutput * _output;
+	PredictOutput * _output = nullptr;
 };
 
 inline PredictOutput * PredictMain::getPredictOutput() const {

@@ -47,7 +47,8 @@ ModelOutput::ModelOutput(const ModelOutput & modelOutput) {
 //------------------------------
 //  Initialization constructor 1
 //------------------------------
-ModelOutput::ModelOutput(Model * estimation) {
+ModelOutput::ModelOutput(Model * estimation)
+: _estimation(estimation) {
 	if (!estimation) {
 		THROW(OtherException, nullPointerError);
 	}
@@ -129,6 +130,7 @@ ModelOutput::~ModelOutput() {
 	if (_parameterDescription != NULL) delete _parameterDescription;
 	if (_probaDescription != NULL) delete _probaDescription;
 	if (_strategyRunError != NULL) delete _strategyRunError;
+	delete _estimation;
 }
 
 //----------------------

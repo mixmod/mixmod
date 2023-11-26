@@ -81,6 +81,11 @@ ModelType::~ModelType() {
 	}
 }
 
+ModelType * ModelType::clone() {
+	return new ModelType(*this);
+}
+
+
 /// Comparison operator
 bool ModelType::operator ==(const ModelType & modelType) const {
 

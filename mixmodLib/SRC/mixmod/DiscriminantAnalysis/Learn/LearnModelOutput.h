@@ -74,7 +74,7 @@ public:
 private:
 	
 	// label from CV criterion
-	LabelDescription * _CVLabel;
+	LabelDescription * _CVLabel = nullptr;
 };
 
 inline const LabelDescription * LearnModelOutput::getCVLabel() const {

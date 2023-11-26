@@ -47,7 +47,7 @@ public:
 	ClusteringMain();
 
 	/// Build a ClusteringMain object from ClusteringInput and ClusteringOutput
-	ClusteringMain(ClusteringInput * cInput,  ClusteringOutput * output = NULL);
+	ClusteringMain(ClusteringInput * cInput,  ClusteringOutput * output = nullptr);
 
 	/// Destructor
 	virtual ~ClusteringMain();
@@ -67,10 +67,10 @@ public:
 private:
 
 	/// Input
-	ClusteringInput * _input;
+	ClusteringInput * _input = nullptr;
 	
 	/// Output
-	ClusteringOutput * _output;
+	ClusteringOutput * _output = nullptr;
 };
 
 inline  ClusteringInput * ClusteringMain::getInput() const {
