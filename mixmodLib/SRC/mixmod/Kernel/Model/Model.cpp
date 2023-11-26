@@ -845,7 +845,7 @@ int64_t Model::computeLabel(int64_t i0) {
 void Model::FixKnownPartition(Partition *& knownPartition) {
 	// update Nk if knownLabel
 	if (knownPartition != NULL) {
-		int64_t ** knownPartitionValue = knownPartition->_tabValue;
+		int64_t ** knownPartitionValue = knownPartition->getTabValue();
 		int64_t * knownPartition_i;
 		double ** p_cik = _tabCik;
 		int64_t ** p_zikKnown = _tabZikKnown;
@@ -1040,7 +1040,7 @@ void Model::initUSER_PARTITION(Partition * initPartition, int64_t nbTryInInit) {
 	if (nbInitializedCluster != _nbCluster) {
 		// upadte tabIndividualCanBeUsedForInitRandom
 		int64_t i, k;
-		int64_t ** initLabelValue = initPartition->_tabValue;
+		int64_t ** initLabelValue = initPartition->getTabValue();
 		int64_t nbSampleCanBeUsedForInitRandom = _nbSample;
 		bool * tabIndividualCanBeUsedForInitRandom = new bool[_nbSample];
 		for (i = 0; i < _nbSample; i++) {

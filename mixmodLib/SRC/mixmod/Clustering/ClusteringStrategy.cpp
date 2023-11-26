@@ -384,7 +384,7 @@ void ClusteringStrategy::run(Model *& model) const {
 		bool ok = false;
 		int64_t nbPartition = _strategyInit->getNbPartition();
 		while (ok == false && index < nbPartition) {
-			int64_t nbClusterOfInitPartition = _strategyInit->getPartition(index)->_nbCluster;
+			int64_t nbClusterOfInitPartition = _strategyInit->getPartition(index)->getNbCluster();
 			if (nbCluster == nbClusterOfInitPartition) {
 				ok = true;
 			}

@@ -59,7 +59,7 @@ Input::Input(const Input & input) {
 
 	_knownPartition = NULL;
 	if (input._knownPartition != NULL) {
-		_knownPartition = new Partition(input._knownPartition);
+		_knownPartition = new Partition(*input._knownPartition);
 	}
 
 //if (!_knownLabelDescription) ??

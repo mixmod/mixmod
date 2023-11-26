@@ -335,7 +335,7 @@ void GaussianParameter::computeTabMeanInitUSER_PARTITION(int64_t & nbInitialized
 {
 	int64_t k;
 	int64_t i;
-	int64_t ** initPartitionValue = initPartition->_tabValue;
+	int64_t ** initPartitionValue = initPartition->getTabValue();
 	int64_t nbSample = _model->getNbSample();
 	GaussianData * data = _model->getGaussianData();
 	double ** matrix = data->getYStore();

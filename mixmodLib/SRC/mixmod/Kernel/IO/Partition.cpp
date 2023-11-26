@@ -44,16 +44,19 @@ Partition::Partition() {
 //------------
 // Constructor
 //------------
-Partition::Partition(Partition * iPartition) {
-	_nbSample = iPartition->_nbSample;
-	_nbCluster = iPartition->_nbCluster;
-	if (iPartition->_tabValue)
-		_tabValue = copyTab(
-				iPartition->_tabValue, iPartition->_nbSample, iPartition->_nbCluster);
-	else
-		_tabValue = NULL;
-	_partitionFile = iPartition->getPartitionFile();
-	_deleteValues = true;
+Partition::Partition(const Partition & iPartition) {
+	if (this != &iPartition)
+	{
+		_nbSample = iPartition._nbSample;
+		_nbCluster = iPartition._nbCluster;
+		if (iPartition._tabValue)
+			_tabValue = copyTab(
+					iPartition._tabValue, iPartition._nbSample, iPartition._nbCluster);
+		else
+			_tabValue = NULL;
+		_partitionFile = iPartition.getPartitionFile();
+		_deleteValues = true;
+	}
 }
 
 //----------------------------
