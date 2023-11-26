@@ -121,7 +121,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
 #endif
 {
   Data* workingData = _input->getDataDescription().getData()->clone();
-  ClusteringStrategy* workingStrategy = _input->getStrategy()->clone();
+  std::shared_ptr<ClusteringStrategy> workingStrategy(_input->getStrategy()->clone());
 
 	// Prepare reduced data if qualitative data and DATA_REDUCE==true
 	std::vector<int64_t> correspondenceOriginDataToReduceData;
@@ -140,7 +140,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
 			workingData = bData->reduceData(
 					correspondenceOriginDataToReduceData, workingKnownPartition,
 					inputInitPartition, workingKnownPartition, workingInitPartition);
-			workingStrategy = new ClusteringStrategy(*(_input->getStrategy()));
+			workingStrategy.reset(new ClusteringStrategy(*(_input->getStrategy())));
 		}
 		catch (Exception& errorType) {
 			throw;
@@ -291,11 +291,8 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc) {
 
 	// Conditionally release memory
   if (_input->getKnownLabelDescription()) delete workingKnownPartition;
-  if (_input->getDataType() == QualitativeData && DATA_REDUCE) {
-    delete workingStrategy;
-  }
+
   delete workingData;
-//delete workingStrategy; //Invalid read dans le cas USER_PARTITION && example... 
 
   if (!atLeastOneModelOk){
     THROW(OtherException, AllModelsGotErros);
