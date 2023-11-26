@@ -218,7 +218,7 @@ protected:
 
 	/** a input object must be finalized (verif, ...)
 	 */
-	bool _finalized;
+	bool _finalized = false;
 
 private:
 
@@ -226,14 +226,14 @@ private:
 	DataDescription _dataDescription;
 
 	// Known Partition
-	Partition * _knownPartition;
-	LabelDescription * _knownLabelDescription;
+	Partition * _knownPartition = nullptr;
+	LabelDescription * _knownLabelDescription = nullptr;
 
 	// Number of samples (no reduced data)
-	int64_t _nbSample;
+	int64_t _nbSample = 0;
 
 	// Problem dimension
-	int64_t _pbDimension;
+	int64_t _pbDimension = 0;
 
 	// nbCluster
 	std::vector<int64_t> _nbCluster;

@@ -34,45 +34,39 @@ namespace XEM {
 //--------------------
 // Default Constructor
 //--------------------
-Input::Input() {
-	_nbSample = 0;
-	_pbDimension = 0;
-	_nbCluster.clear();
-	//_knownPartition   = NULL;
-	_knownLabelDescription = NULL;
-	_finalized = false;
-	//_dataDescription will be created by default DataDescription constructor
-}
+Input::Input() {}
 
 //-----------------
 // Copy Constructor
 //-----------------
 Input::Input(const Input & input) {
-	_finalized = input._finalized;
+	if (this != &input)
+	{
+		_finalized = input._finalized;
 
-	_nbSample = input._nbSample;
-	_pbDimension = input._pbDimension;
-	_nbCluster = input._nbCluster;
+		_nbSample = input._nbSample;
+		_pbDimension = input._pbDimension;
+		_nbCluster = input._nbCluster;
 
-	_dataDescription = (input._dataDescription); // op =
+		_dataDescription = (input._dataDescription); // op =
 
 
-	_knownPartition = NULL;
-	if (input._knownPartition != NULL) {
-		_knownPartition = new Partition(*input._knownPartition);
+		_knownPartition = NULL;
+		if (input._knownPartition != NULL) {
+			_knownPartition = new Partition(*input._knownPartition);
+		}
+
+	//if (!_knownLabelDescription) ??
+	//  delete _knownLabelDescription;
+
+		_knownLabelDescription = NULL;
+		if (input._knownLabelDescription != NULL) {
+			_knownLabelDescription = new LabelDescription(*input._knownLabelDescription);
+		}
+
+		_criterionName = input._criterionName;
+		_modelType = input._modelType;
 	}
-
-//if (!_knownLabelDescription) ??
-//  delete _knownLabelDescription;
-
-	_knownLabelDescription = NULL;
-	if (input._knownLabelDescription != NULL) {
-		_knownLabelDescription = new LabelDescription(*input._knownLabelDescription);
-	}
-
-	_criterionName = input._criterionName;
-	_modelType = input._modelType;
-
 }
 
 //---------------------------
@@ -134,10 +128,10 @@ Input::Input(Input * originalInput, CVBlock & learningBlock) {
 // Destructor
 //-----------
 Input::~Input() {
-	if (!_knownPartition) {
+	if (_knownPartition) {
 		delete _knownPartition;
 	}
-	if (!_knownLabelDescription) {
+	if (_knownLabelDescription) {
 		delete _knownLabelDescription;
 	}
 	for (unsigned int i = 0; i < _modelType.size(); i++) {
@@ -358,7 +352,7 @@ void Input::setKnownLabelDescription(LabelDescription *labeldescription) {
 }
 
 void Input::removeKnownLabelDescription() {
-	if (!_knownLabelDescription)
+	if (_knownLabelDescription)
 		delete _knownLabelDescription;
 
 	_knownLabelDescription = NULL;
