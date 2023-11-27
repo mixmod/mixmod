@@ -46,7 +46,7 @@ namespace XEM
 //--------------------------------------
 // Constructor from a vector of criteria
 //--------------------------------------
-ClusteringOutput::ClusteringOutput(std::vector<CriterionName> const &criterionName) : _criterionName(criterionName) {}
+ClusteringOutput::ClusteringOutput(const std::vector<CriterionName> & criterionName) : _criterionName(criterionName) {}
 
 //-----------------
 //  Copy constructor
