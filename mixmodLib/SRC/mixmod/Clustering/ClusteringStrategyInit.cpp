@@ -83,7 +83,7 @@ ClusteringStrategyInit::ClusteringStrategyInit(const ClusteringStrategyInit &str
 		}
 	}
 
-	_deleteTabParameter = false; // TODO ?
+	_deleteTabParameter = true;
 
 	_nbTry = strategyInit.getNbTry();
 	_nbIteration = strategyInit.getNbIteration();
