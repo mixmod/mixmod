@@ -77,6 +77,7 @@ Compilation options:
 - `-DMIXMOD_BUILD_IOSTREAM`: `ON` or `OFF` (default). Compile or not mixmodIOStream
 - `-DMIXMOD_BUILD_CLI`: `ON` or `OFF` (default). Compile or not mixmodCLI. It requires `-DMIXMOD_BUILD_IOSTREAM=ON`
 - `-DMIXMOD_BUILD_EXAMPLES`: `ON` or `OFF` (default)
+- `-DMIXMOD_ENABLE_OPENMP`: `OFF` or `ON` (default). Enable OpenMP or not.
 
 Generate makefile:
 

@@ -77,7 +77,10 @@ message(STATUS "CMAKE_BUILD_TYPE : " ${CMAKE_BUILD_TYPE})
 # Compiler settings
 #-------------------
 set (CMAKE_CXX_STANDARD 17)
-find_package(OpenMP)
+option (MIXMOD_ENABLE_OPENMP "Enable OpenMP multithreading" ON)
+if (MIXMOD_ENABLE_OPENMP)
+  find_package(OpenMP)
+endif ()
 if (OPENMP_FOUND)
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
