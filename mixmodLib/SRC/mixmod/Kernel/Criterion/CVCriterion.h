@@ -58,13 +58,13 @@ private:
 	void createCVBlocks();
 
 	/// Table of XEMCVBlock : testBlock
-	CVBlock *_tabCVBlock;
+	CVBlock *_tabCVBlock = nullptr;
 
 	// pointer to a XEMLabelDescription
 	std::vector<int64_t> _cvLabel;
 
 	// number of CV Blocks
-	int64_t _nbCVBlock;
+	int64_t _nbCVBlock = 0;
 
 	// initialisation method of cv blocks
 	CVinitBlocks _CVinitBlocks;
