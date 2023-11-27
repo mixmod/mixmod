@@ -51,7 +51,7 @@ public:
 	LearnMain();
 
 	/// Constructor
-	LearnMain(LearnInput *input, LearnOutput *output = NULL);
+	LearnMain(LearnInput *input, LearnOutput *output = nullptr);
 
 	/// Destructor
 	virtual ~LearnMain();
@@ -68,9 +68,9 @@ public:
 
 private:
 	// input container
-	LearnInput *_input;
+	LearnInput *_input = nullptr;
 	// output container
-	LearnOutput *_output;
+	LearnOutput *_output = nullptr;
 };
 
 inline LearnOutput *LearnMain::getLearnOutput() const { return _output; }

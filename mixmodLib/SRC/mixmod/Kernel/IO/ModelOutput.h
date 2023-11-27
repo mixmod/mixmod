@@ -133,6 +133,8 @@ protected:
 
 	// the error
 	Exception *_strategyRunError;
+
+	Model * _estimation = nullptr;
 };
 
 inline ModelType ModelOutput::getModelType() const { return _modelType; }

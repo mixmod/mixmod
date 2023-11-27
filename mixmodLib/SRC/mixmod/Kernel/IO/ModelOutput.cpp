@@ -46,6 +46,7 @@ ModelOutput::ModelOutput(const ModelOutput &modelOutput) { THROW(OtherException,
 //  Initialization constructor 1
 //------------------------------
 ModelOutput::ModelOutput(Model *estimation)
+: _estimation(estimation)
 {
 	if (!estimation) {
 		THROW(OtherException, nullPointerError);
@@ -127,6 +128,7 @@ ModelOutput::~ModelOutput()
 		delete _probaDescription;
 	if (_strategyRunError != NULL)
 		delete _strategyRunError;
+	delete _estimation;
 }
 
 //----------------------

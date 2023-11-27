@@ -52,7 +52,7 @@ public:
 	PredictOutput(const PredictOutput &lOutput);
 
 	/// Initialisation constructor
-	PredictOutput(Model *estimation);
+	explicit PredictOutput(Model *estimation);
 
 	/// Destructor
 	virtual ~PredictOutput();
