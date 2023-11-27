@@ -58,9 +58,7 @@ LearnMain::LearnMain(LearnInput *input, LearnOutput *output) : _input(input), _o
 //-----------
 LearnMain::~LearnMain()
 {
-	if (_output) {
-		delete _output;
-	}
+	delete _output;
 }
 
 //---
@@ -122,8 +120,8 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 		BinaryData *bData = dynamic_cast<BinaryData *>(inputData);
 
 		// initPartition
-		Partition *inputInitPartition = NULL;
-		Partition *workingInitPartition = NULL;
+		Partition *inputInitPartition = nullptr;
+		Partition *workingInitPartition = nullptr;
 
 		try {
 			// TODO RD : data ne doit pas forcément etre recréé
@@ -134,8 +132,8 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 			 if inputInitPartition : delete workingStrategy, workingInitPartition
 
 			 */
-		} catch (Exception &errorType) {
-			workingData = NULL;
+		} catch (const Exception &) {
+			workingData = nullptr;
 			throw;
 		}
 		// fin de ReduceData
@@ -177,7 +175,7 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 	while (iEstimation < nbEstimation) {
 		try {
 			learnStrategy.run(estimations[iEstimation]);
-		} catch (Exception &errorType) {
+		} catch (Exception & errorType) {
 
 			if (VERBOSE == 1) {
 				Error error(errorType);
@@ -285,12 +283,6 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 		}
 
 	} // end iModel
-
-	// release memory
-	for (unsigned int iModel=0; iModel<nbEstimation; iModel++){
-		delete estimations[iModel];
-		estimations[iModel] = nullptr;
-	}
 }
 
 //------------------------

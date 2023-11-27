@@ -52,7 +52,7 @@ public:
 	ModelType &operator=(const ModelType &iModelType);
 
 	/// Destructor
-	~ModelType();
+	virtual ~ModelType();
 
 	/// Comparison operator
 	bool operator==(const ModelType &modelType) const;
@@ -63,7 +63,7 @@ public:
 	/// name of the model
 	ModelName _nameModel;
 
-	ModelType *clone();
+	virtual ModelType *clone();
 
 	/// getModelName
 	const ModelName &getModelName() const;

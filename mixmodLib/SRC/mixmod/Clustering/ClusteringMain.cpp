@@ -127,8 +127,8 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 			BinaryData *bData = dynamic_cast<BinaryData *>(_input->getDataDescription().getData());
 
 			// initPartition
-			Partition *inputInitPartition = NULL;
-			Partition *workingInitPartition = NULL;
+			Partition *inputInitPartition = nullptr;
+			Partition *workingInitPartition = nullptr;
 			if (_input->getStrategy()->getStrategyInit()->getStrategyInitName() == USER_PARTITION) {
 				inputInitPartition = _input->getStrategy()->getStrategyInit()->getPartition(0);
 			}
@@ -138,7 +138,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 				workingData = bData->reduceData(correspondenceOriginDataToReduceData, workingKnownPartition,
 				                                inputInitPartition, workingKnownPartition, workingInitPartition);
 				workingStrategy.reset(new ClusteringStrategy(*(_input->getStrategy())));
-			} catch (Exception &errorType) {
+			} catch (const Exception &) {
 				throw;
 			}
 		}
@@ -162,7 +162,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 				if (VERBOSE == 1)
 					std::cout << "Model name : " << ModelNameToString(modelType->getModelName()) << std::endl;
 
-				Model *model = NULL;
+				Model *model = nullptr;
 				switch (_input->getDataType()) {
 				case QualitativeData:
 					model = new BinaryModel(modelType, nbCluster, workingData, workingKnownPartition,
@@ -182,7 +182,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 
 				try {
 					workingStrategy->run(model);
-				} catch (Exception &e) {
+				} catch (Exception & e) {
 					if (VERBOSE == 1) {
 						Error error(e);
 						error.run();
@@ -255,8 +255,6 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 					entropyFile.close();
 				}
 
-				// model cannot be null (especially when we'll use enum class)
-				delete model;
 				// Write progress in file
 				if (MASSICCC == 1) {
 					time_t currTime;

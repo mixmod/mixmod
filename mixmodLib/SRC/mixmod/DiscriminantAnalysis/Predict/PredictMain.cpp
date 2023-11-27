@@ -53,9 +53,7 @@ PredictMain::PredictMain(PredictInput *input, PredictOutput *output) : _input(in
 //-----------
 PredictMain::~PredictMain()
 {
-	if (_output) {
-		delete _output;
-	}
+	delete _output;
 }
 
 //---
@@ -81,14 +79,14 @@ void PredictMain::run(IoMode iomode, int verbose, int massiccc)
 	Data *data = (_input->getDataDescription()).getData();
 
 	// define a new estimation
-	Model *estimation;
+	Model *estimation = nullptr;
 
 	// create model for binary data
 	if (_input->getDataType() == QualitativeData && DATA_REDUCE) {
 
 		Data *workingData = data;
-		Partition *inputKnownPartition = NULL;
-		Partition *workingKnownPartition = NULL;
+		Partition *inputKnownPartition = nullptr;
+		Partition *workingKnownPartition = nullptr;
 
 		std::vector<int64_t> correspondenceOriginDataToReduceData;
 
@@ -98,8 +96,8 @@ void PredictMain::run(IoMode iomode, int verbose, int massiccc)
 		BinaryData *bData = dynamic_cast<BinaryData *>(data);
 
 		// initPartition
-		Partition *inputInitPartition = NULL;
-		Partition *workingInitPartition = NULL;
+		Partition *inputInitPartition = nullptr;
+		Partition *workingInitPartition = nullptr;
 
 		try {
 			// TODO RD : data ne doit pas forcément etre recréé
@@ -111,7 +109,7 @@ void PredictMain::run(IoMode iomode, int verbose, int massiccc)
 
 			 */
 		} catch (Exception &errorType) {
-			workingData = NULL;
+			workingData = nullptr;
 			throw;
 		}
 		// fin de ReduceData
@@ -123,12 +121,12 @@ void PredictMain::run(IoMode iomode, int verbose, int massiccc)
 	// create model for quantitative data
 	else if (_input->getDataType() == QuantitativeData) {
 		// create new estimation
-		estimation = new Model(modelType, nbCluster, data, NULL);
+		estimation = new Model(modelType, nbCluster, data, nullptr);
 	}
 	// create model for heterogeneous data
 	else {
 		// create new estimation
-		estimation = new Model(modelType, nbCluster, data, NULL);
+		estimation = new Model(modelType, nbCluster, data, nullptr);
 	}
 
 	// create new strategy
@@ -152,9 +150,6 @@ void PredictMain::run(IoMode iomode, int verbose, int massiccc)
 	}
 	// create output
 	_output = new PredictOutput(estimation);
-
-	// release memory
-	delete estimation;
 }
 
 //------------------------
