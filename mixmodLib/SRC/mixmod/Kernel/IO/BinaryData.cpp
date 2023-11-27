@@ -358,7 +358,7 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	if ((knownPartition && !initPartition) || (!knownPartition && initPartition)) {
 		maxTabFactor = maxTabFactor * _tabNbModality[_pbDimension - 1];
 	}
-	if (maxTabFactor > int64_t_max) {
+	if (maxTabFactor > static_cast<double>(int64_t_max)) {
 		THROW(NumericException, int64_t_max_error);
 	}
 
