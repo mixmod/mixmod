@@ -118,10 +118,11 @@ int64_t Description::getPbDimension() const
 {
 	int64_t nbVariable = _nbColumn;
 	for (int64_t i = 0; i < _nbColumn; i++) {
-		if (typeid(*(_columnDescription[i])) == typeid(IndividualColumnDescription)) {
+		auto descI = _columnDescription[i];
+		if (typeid(*descI) == typeid(IndividualColumnDescription)) {
 			nbVariable--;
 		}
-		if (typeid(*(_columnDescription[i])) == typeid(WeightColumnDescription)) {
+		if (typeid(*descI) == typeid(WeightColumnDescription)) {
 			nbVariable--;
 		}
 	}

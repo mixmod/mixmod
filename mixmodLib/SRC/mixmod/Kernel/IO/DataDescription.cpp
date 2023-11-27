@@ -221,9 +221,10 @@ DataType DataDescription::getDataType() const
 	int64_t nbQualitativeVariable = 0;
 	int64_t nbQuantitativeVariable = 0;
 	for (int64_t i = 0; i < _nbColumn; i++) {
-		if (typeid(*(_columnDescription[i])) == typeid(QualitativeColumnDescription))
+		auto descI = _columnDescription[i];
+		if (typeid(*descI) == typeid(QualitativeColumnDescription))
 			nbQualitativeVariable++;
-		if (typeid(*(_columnDescription[i])) == typeid(QuantitativeColumnDescription))
+		if (typeid(*descI) == typeid(QuantitativeColumnDescription))
 			nbQuantitativeVariable++;
 	}
 

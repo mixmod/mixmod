@@ -286,14 +286,15 @@ void BinaryData::input(const DataDescription &dataDescription)
 				getline(s, atom, sep);
 			while (atom.empty());
 
-			if (typeid(*(dataDescription.getColumnDescription(j))) == typeid(QualitativeColumnDescription)) {
+			const auto descJ = dataDescription.getColumnDescription(j);
+			if (typeid(*descJ) == typeid(QualitativeColumnDescription)) {
 				int64_t binValue = atoi(atom.c_str());
 				if (binValue > _tabNbModality[binaryVariableIndex] || binValue <= 0)
 					THROW(InputException, wrongValueInMultinomialCase);
 				curSampleValue[binaryVariableIndex] = binValue;
 				binaryVariableIndex++;
 			} else {
-				if (typeid(*(dataDescription.getColumnDescription(j))) == typeid(WeightColumnDescription)) {
+				if (typeid(*descJ) == typeid(WeightColumnDescription)) {
 					_weight[i] = atof(atom.c_str());
 				} else {
 					// ignore everything else

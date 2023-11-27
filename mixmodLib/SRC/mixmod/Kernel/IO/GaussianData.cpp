@@ -311,13 +311,13 @@ void GaussianData::input(const DataDescription &dataDescription)
 				// allow any number of separators between items
 				getline(s, atom, sep);
 			while (atom.empty());
-
-			if (typeid(*(dataDescription.getColumnDescription(j))) == typeid(QuantitativeColumnDescription)) {
+                        auto descJ = dataDescription.getColumnDescription(j);
+			if (typeid(*descJ) == typeid(QuantitativeColumnDescription)) {
 				curSampleValue[gaussianVariableIndex] = atof(atom.c_str());
 				_yStore[i][gaussianVariableIndex] = curSampleValue[gaussianVariableIndex];
 				gaussianVariableIndex++;
 			} else {
-				if (typeid(*(dataDescription.getColumnDescription(j))) == typeid(WeightColumnDescription)) {
+				if (typeid(*descJ) == typeid(WeightColumnDescription)) {
 					_weight[i] = atof(atom.c_str());
 				} else {
 					// ignore everything else
