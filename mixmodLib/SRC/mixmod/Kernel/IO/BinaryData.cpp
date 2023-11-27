@@ -353,7 +353,7 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	}
 	if (knownPartition && initPartition) {
 		maxTabFactor = maxTabFactor * _tabNbModality[_pbDimension - 1];
-		maxTabFactor = maxTabFactor * (knownPartition->_nbCluster + 1);
+		maxTabFactor = maxTabFactor * (knownPartition->getNbCluster() + 1);
 	}
 	if ((knownPartition && !initPartition) || (!knownPartition && initPartition)) {
 		maxTabFactor = maxTabFactor * _tabNbModality[_pbDimension - 1];
@@ -384,7 +384,7 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	if (knownPartition && initPartition) {
 		tabFactor[_pbDimension] = tabFactor[_pbDimension - 1] * _tabNbModality[_pbDimension - 1];
 		// cout<<"tabFactor["<<_pbDimension<<"] : "<<tabFactor[_pbDimension]<<endl;
-		tabFactor[_pbDimension + 1] = tabFactor[_pbDimension] * (knownPartition->_nbCluster + 1);
+		tabFactor[_pbDimension + 1] = tabFactor[_pbDimension] * (knownPartition->getNbCluster() + 1);
 		// cout<<"tabFactor["<<_pbDimension+1<<"] : "<<tabFactor[_pbDimension+1]<<endl;
 	}
 	if ((knownPartition && !initPartition) || (!knownPartition && initPartition)) {
@@ -516,33 +516,35 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	// Set reduce labels //
 	int64_t nbCluster;
 	if (initPartition) {
-		nbCluster = initPartition->_nbCluster;
+		nbCluster = initPartition->getNbCluster();
 		oInitPartition = new Partition();
 		oInitPartition->setDimension(sizeList, nbCluster);
-		oInitPartition->_tabValue = new int64_t *[sizeList];
+		int64_t ** tabValue = new int64_t *[sizeList];
 		for (i = 0; i < sizeList; i++) {
-			oInitPartition->_tabValue[i] = new int64_t[nbCluster];
+			tabValue[i] = new int64_t[nbCluster];
 		}
 		// l'algo suivant peut etre optimise (on fait eventuellement plusieurs fois la meme chose)
 		for (i = 0; i < _nbSample; i++) {
 			for (k = 0; k < nbCluster; k++)
-				oInitPartition->_tabValue[correspondenceOriginDataToReduceData[i]][k] = initPartition->_tabValue[i][k];
+				tabValue[correspondenceOriginDataToReduceData[i]][k] = initPartition->getTabValueI(i)[k];
 		}
+		oInitPartition->setTabValue(tabValue);
 		// oInitLabel->_complete = true;
 	}
 
 	if (knownPartition) {
-		nbCluster = knownPartition->_nbCluster;
+		nbCluster = knownPartition->getNbCluster();
 		oKnownPartition = new Partition();
 		oKnownPartition->setDimension(sizeList, nbCluster);
-		oKnownPartition->_tabValue = new int64_t *[sizeList];
+		int64_t ** tabValue = new int64_t *[sizeList];
 		for (i = 0; i < sizeList; i++)
-			oKnownPartition->_tabValue[i] = new int64_t[nbCluster];
+			tabValue[i] = new int64_t[nbCluster];
 		// l'algo suivant peut etre optimise(on fait eventuellement plusieurs fois la meme chose)
 		for (i = 0; i < _nbSample; i++) {
 			for (k = 0; k < nbCluster; k++)
-				oKnownPartition->_tabValue[correspondenceOriginDataToReduceData[i]][k] = knownPartition->_tabValue[i][k];
+				tabValue[correspondenceOriginDataToReduceData[i]][k] = knownPartition->getTabValueI(i)[k];
 		}
+		oKnownPartition->setTabValue(tabValue);
 		// oKnownLabel->_complete = true;
 	}
 

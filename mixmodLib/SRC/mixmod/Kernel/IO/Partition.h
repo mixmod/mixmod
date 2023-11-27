@@ -45,7 +45,7 @@ public:
 	Partition();
 
 	/// Constructor
-	Partition(Partition *iPartition);
+	Partition(const Partition & iPartition);
 
 	/// Constructor
 	Partition(int64_t nbSample, int64_t nbCluster, const NumericPartitionFile &partitionFile);
@@ -74,6 +74,8 @@ public:
 	 */
 	bool isComplete();
 	int64_t **getTabValue() const;
+	void setTabValue(int64_t ** tabValue);
+
 	int64_t *getTabValueI(int64_t index) const;
 
 	/// get Format
@@ -97,24 +99,33 @@ public:
 	 */
 	friend std::ostream &operator<<(std::ostream &fo, const Partition &partition);
 
-	// TODO
-	// private:
+private:
 
 	/// Number of samples
-	int64_t _nbSample;
+	int64_t _nbSample = 0;
 
 	/// Number of clusters
-	int64_t _nbCluster;
+	int64_t _nbCluster = 0;
 
-	int64_t **_tabValue; // aggregate
+	int64_t **_tabValue = nullptr; // aggregate
 
 	/// name of partition
 	NumericPartitionFile _partitionFile;
 
-	bool _deleteValues;
+	bool _deleteValues = true;
 };
 
 inline int64_t **Partition::getTabValue() const { return _tabValue; }
+
+inline void Partition::setTabValue(int64_t ** tabValue) {
+	if (_tabValue)
+	{
+		for (int64_t i = 0; i < _nbSample; ++ i)
+			delete[] _tabValue[i];
+		delete[] _tabValue;
+	}
+	_tabValue = tabValue;
+}
 
 inline int64_t *Partition::getTabValueI(int64_t index) const { return _tabValue[index]; }
 

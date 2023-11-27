@@ -312,7 +312,7 @@ void BinaryParameter::computeTabCenterInitUSER_PARTITION(int64_t &nbInitializedC
 	double argMax, bestArgMax;
 
 	double **tabTik = _model->getTabTik();
-	int64_t **initPartitionValue = initPartition->_tabValue;
+	int64_t **initPartitionValue = initPartition->getTabValue();
 	BinaryData *data = _model->getBinaryData();
 	Sample **dataMatrix = data->getDataMatrix();
 	BinarySample *curSample;
