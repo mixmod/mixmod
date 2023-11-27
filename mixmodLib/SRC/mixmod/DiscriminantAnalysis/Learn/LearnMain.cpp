@@ -287,16 +287,10 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 	} // end iModel
 
 	// release memory
-	// NOTE [bauder, 2013-02-24]: not everything should be released here,
-	// since line 185 in examples/.../discriminant_analysis_3.cpp
-	// ( "XEMParameterDescription * paramPredict = new XEMParameterDescription ( lMOutput );" )
-	// attempts to use some feature of these estimations.
-	// However, fixing memory management here seems rather subtle.
-	// To be fixed soon [see also mixmodLib#5279]
-	//   for (unsigned int iModel=0; iModel<nbEstimation; iModel++){
-	//     delete estimations[iModel];
-	//     estimations[iModel] = 0;
-	//   }
+	for (unsigned int iModel=0; iModel<nbEstimation; iModel++){
+		delete estimations[iModel];
+		estimations[iModel] = nullptr;
+	}
 }
 
 //------------------------
