@@ -266,7 +266,8 @@ void Label::input(const LabelDescription &labelDescription)
 			if (fi.eof()) {
 				THROW(InputException, endDataFileReach);
 			}
-			if (typeid(*(labelDescription.getColumnDescription(j))) == typeid(IndividualColumnDescription)) {
+			auto descJ = labelDescription.getColumnDescription(j);
+			if (typeid(*descJ) == typeid(IndividualColumnDescription)) {
 				std::string stringTmp;
 				fi >> stringTmp;
 				// cout<<stringTmp<<endl;

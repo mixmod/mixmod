@@ -185,16 +185,17 @@ Label *LabelDescription::createLabel()
 	int64_t nbIndividualVariable = 0;
 
 	for (int64_t i = 0; i < _nbColumn; i++) {
-		if (typeid(*(_columnDescription[i])) == typeid(QualitativeColumnDescription)) {
+		auto descI = _columnDescription[i];
+		if (typeid(*descI) == typeid(QualitativeColumnDescription)) {
 			nbQualitativeVariable++;
 		}
-		if (typeid(*(_columnDescription[i])) == typeid(QuantitativeColumnDescription)) {
+		if (typeid(*descI) == typeid(QuantitativeColumnDescription)) {
 			THROW(InputException, badLabelDescription);
 		}
-		if (typeid(*(_columnDescription[i])) == typeid(WeightColumnDescription)) {
+		if (typeid(*descI) == typeid(WeightColumnDescription)) {
 			THROW(InputException, tooManyWeightColumnDescription);
 		}
-		if (typeid(*(_columnDescription[i])) == typeid(IndividualColumnDescription)) {
+		if (typeid(*descI) == typeid(IndividualColumnDescription)) {
 			nbIndividualVariable++;
 		}
 	}
