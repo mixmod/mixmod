@@ -190,9 +190,9 @@ void NodeOpInput::writeListModel(Input *input)
 	  }
 
 	  //subDimensionFree
-	  if (input->getModelType()[0]->_nbSubDimensionFree != 0) {
+	  if (input->getModelType()[0]->getNbSubDimensionFree() != 0) {
 	    xmlpp::Element * listDk = HDModel->add_child("ListDk");
-	    for (int64_t i = 0; i < input->getModelType()[0]->_nbSubDimensionFree; i++) {
+	    for (int64_t i = 0; i < input->getModelType()[0]->getNbSubDimensionFree(); i++) {
 	      xmlpp::Element *dk =  listDk->add_child("Dk");
 	      dk->add_child_text(std::to_string(input->getModelType()[0]->getTabSubDimensionFreeI(i)));
 	    }
@@ -219,8 +219,8 @@ void NodeOpInput::writeListModel(Input *input)
 			// subDimensionFree
 			if (!freeDone && isFreeSubDimension(mName)) {
 				xmlpp::Element *listDk = HDModel->add_child("ListDk");
-				listDk->set_attribute("NbCluster", std::to_string(mtype->_nbSubDimensionFree));
-				for (int64_t i = 0; i < mtype->_nbSubDimensionFree; i++) {
+				listDk->set_attribute("NbCluster", std::to_string(mtype->getNbSubDimensionFree()));
+				for (int64_t i = 0; i < mtype->getNbSubDimensionFree(); i++) {
 					xmlpp::Element *dk = listDk->add_child("Dk");
 					dk->add_child_text(std::to_string(mtype->getTabSubDimensionFreeI(i)));
 					dk->set_attribute("Num", std::to_string(i + 1));
@@ -540,7 +540,7 @@ void NodeOpInput::readModelNode(Input &input)
 					//
 					if (dkListElt) {
 						for (std::size_t i = 0; i < dkVect.size(); i++) {
-							mType->_nbSubDimensionFree = nbSubDimFree;
+							mType->setNbSubDimensionFree(nbSubDimFree);
 							mType->setTabSubDimensionFree(dkVect[i], i);
 						}
 					} else {

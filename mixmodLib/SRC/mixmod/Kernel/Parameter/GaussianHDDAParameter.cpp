@@ -70,13 +70,13 @@ GaussianHDDAParameter::GaussianHDDAParameter(Model *iModel, ModelType *iModelTyp
 	}
 	__storeDim = _pbDimension * (_pbDimension + 1) / 2;
 
-	if ((iModelType->_tabSubDimensionFree != NULL) && isFreeSubDimension(iModelType->_nameModel)) {
+	if ((iModelType->getTabSubDimensionFree() != NULL) && isFreeSubDimension(iModelType->_nameModel)) {
 		for (k = 0; k < _nbCluster; k++) {
-			_tabDk[k] = iModelType->_tabSubDimensionFree[k];
+			_tabDk[k] = iModelType->getTabSubDimensionFreeI(k);
 		}
-	} else if ((iModelType->_subDimensionEqual != 0) && !isFreeSubDimension(iModelType->_nameModel)) {
+	} else if ((iModelType->getSubDimensionEqual() != 0) && !isFreeSubDimension(iModelType->_nameModel)) {
 		for (k = 0; k < _nbCluster; k++) {
-			_tabDk[k] = iModelType->_subDimensionEqual;
+			_tabDk[k] = iModelType->getSubDimensionEqual();
 		}
 	}
 

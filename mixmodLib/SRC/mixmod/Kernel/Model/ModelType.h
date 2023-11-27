@@ -65,25 +65,15 @@ public:
 
 	ModelType *clone();
 
-	//// list of number of subDimensionEqual
-	// int64_t _nbSubDimensionEqual;
-	//// list of number of subDimensionFree
-	// int64_t _nbSubDimensionFree;
-
-	/// list of subDimensionEqual
-	int64_t _subDimensionEqual;
-
-	/// _nbSubDimensionFree : size of array _tabSubDimensionFree
-	int64_t _nbSubDimensionFree;
-
-	/// array of subDimensionFree
-	int64_t *_tabSubDimensionFree;
-
 	/// getModelName
 	const ModelName &getModelName() const;
 
 	/// getSubDimensionEqual
 	const int64_t &getSubDimensionEqual() const;
+
+	int64_t getNbSubDimensionFree() const;
+
+	void setNbSubDimensionFree(const int64_t _nbSubDimensionFree);
 
 	/// getTabSubDimensionFree
 	const int64_t *getTabSubDimensionFree() const;
@@ -106,6 +96,21 @@ public:
 	void printShortcut(std::ostream &flux) const;
 	/// editModelType
 	void edit(std::ostream &oFile);
+
+private:
+	//// list of number of subDimensionEqual
+	// int64_t _nbSubDimensionEqual;
+	//// list of number of subDimensionFree
+	// int64_t _nbSubDimensionFree;
+
+	/// list of subDimensionEqual
+	int64_t _subDimensionEqual = 0;
+
+	/// _nbSubDimensionFree : size of array _tabSubDimensionFree
+	int64_t _nbSubDimensionFree = 0;
+
+	/// array of subDimensionFree
+	int64_t *_tabSubDimensionFree = nullptr;
 };
 
 inline const ModelName &ModelType::getModelName() const { return _nameModel; }
@@ -113,6 +118,10 @@ inline const ModelName &ModelType::getModelName() const { return _nameModel; }
 inline const int64_t &ModelType::getSubDimensionEqual() const { return _subDimensionEqual; }
 
 inline const int64_t *ModelType::getTabSubDimensionFree() const { return _tabSubDimensionFree; }
+
+inline int64_t ModelType::getNbSubDimensionFree() const { return _nbSubDimensionFree; }
+
+inline void ModelType::setNbSubDimensionFree(const int64_t nbSubDimensionFree) { _nbSubDimensionFree = nbSubDimensionFree; }
 
 inline const int64_t &ModelType::getTabSubDimensionFreeI(int64_t index) const { return _tabSubDimensionFree[index]; }
 
