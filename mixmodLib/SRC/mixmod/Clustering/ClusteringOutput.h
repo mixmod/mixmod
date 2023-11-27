@@ -47,7 +47,7 @@ class ClusteringOutput
 
 public:
 	/// Default Constructor
-	ClusteringOutput(std::vector<CriterionName> const &criterionName);
+	ClusteringOutput(const std::vector<CriterionName> & criterionName);
 
 	/// Copy Constructor
 	ClusteringOutput(const ClusteringOutput &cOutput);
@@ -100,7 +100,7 @@ private:
 	std::vector<ClusteringModelOutput *> _clusteringModelOutput;
 	// vector containing criterion name
 	// that will be useful to deal with output in mixmodGUI
-	std::vector<CriterionName> const &_criterionName;
+	std::vector<CriterionName> _criterionName;
 };
 
 inline std::vector<ClusteringModelOutput *> const &ClusteringOutput::getClusteringModelOutput() const
