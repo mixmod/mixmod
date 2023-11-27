@@ -45,8 +45,9 @@ PredictInput::PredictInput(const PredictInput &cInput) : Input(cInput), _classif
 // Initialisation Constructor
 //---------------------------
 PredictInput::PredictInput(DataDescription *predictData, ParameterDescription *classificationRule)
-    : Input(std::vector<int64_t>(1, classificationRule->getNbCluster()), *predictData),
-      _classificationRule(classificationRule->getParameter())
+    : Input(std::vector<int64_t>(1, classificationRule->getNbCluster()), *predictData)
+    , _classificationRule(classificationRule->getParameter())
+    , _parameterDescription(classificationRule)
 {
 	// replace default model type by the input model type
 	delete _modelType[0];
@@ -56,7 +57,9 @@ PredictInput::PredictInput(DataDescription *predictData, ParameterDescription *c
 //-----------
 // Destructor
 //-----------
-PredictInput::~PredictInput() {}
+PredictInput::~PredictInput() {
+  delete _parameterDescription;
+}
 
 //------------
 //------------
