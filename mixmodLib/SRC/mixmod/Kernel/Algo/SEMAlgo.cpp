@@ -123,6 +123,7 @@ void SEMAlgo::run(Model *&model)
 
 	bestModel->Estep(); // E step to update Tik and fik
 	// update model (to output)
+	delete model;
 	model = bestModel.release();
 }
 
