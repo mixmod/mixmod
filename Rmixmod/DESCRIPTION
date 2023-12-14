@@ -1,6 +1,6 @@
 Package: Rmixmod
-Version: 2.1.9
-Date: 2023-09-25
+Version: 2.1.10
+Date: 2023-12-10
 Title: Classification with Mixture Modelling
 Description: Interface of 'MIXMOD' software for supervised, unsupervised and
     semi-supervised classification with mixture modelling <doi: 10.18637/jss.v067.i06>.
@@ -12,10 +12,10 @@ Authors@R: c(
     person("Benjamin", "Auder", role = "aut", email = "benjamin.auder@u-psud.fr"),
     person("Parmeet", "Bhatia", role = "ctb", email = "parmeet.bhatia@inria.fr"),
     person("Anwuli", "Echenim", role = "ctb", email = "anwuli.echenim@inria.fr"),
-    person("Serge", "Iovleff", role = "aut", email = "serge.iovleff@univ-lille1.fr"),
     person("Christophe", "Biernacki", role = "ctb", email = "christophe.biernacki@math.univ-lille1.fr"),
     person("Gilles", "Celeux", role = "ctb", email = "gilles.celeux@math.u-psud.fr"),
     person("Gerard", "Govaert", role = "ctb", email = "gerard.govaert@utc.fr"),
+    person("Julien", "Schueller", role = "ctb"),
     person("Quentin", "Grimonprez", role = "cre", email = "quentingrim@yahoo.fr"))
 SystemRequirements: GNU make
 Copyright: Authors, and Mixmod use Eigen3 C++ library
