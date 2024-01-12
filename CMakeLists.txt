@@ -13,6 +13,8 @@ find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 include_directories(${EIGEN3_INCLUDE_DIRS})
 message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
 
+include (GNUInstallDirs)
+
 #GSL stuff
 # find_package(GSL)
 # find_package(BLAS)

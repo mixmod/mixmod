@@ -12,17 +12,17 @@ target_include_directories (mixmod PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/mixmod/Utilities>)
 
 INSTALL(TARGETS mixmod 
-	LIBRARY DESTINATION lib
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	COMPONENT runtime)
 
 #to allow #include <mixmod.h>
 INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mixmod/Utilities/mixmod.h
-	DESTINATION include
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 	COMPONENT dev)
 
 #installed headers have same structure as in source folder
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/mixmod
-	DESTINATION include
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 	COMPONENT dev
 	FILES_MATCHING
 		PATTERN "*.h"
