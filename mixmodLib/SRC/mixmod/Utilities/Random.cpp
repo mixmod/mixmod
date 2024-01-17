@@ -28,7 +28,7 @@
 #include "mixmod/Utilities/Random.h" // prototypes
 #include "mixmod/Utilities/Util.h"
 #include <fstream>
-#include <time.h>
+#include <random>
 
 namespace XEM
 {
@@ -66,12 +66,10 @@ void initRandomize(int seed) { seed < 0 ? randomize() : antiRandomize(seed); }
 // Randomly initialize seeds (non-deterministic runs)
 void randomize()
 {
-	struct timespec tp;
-
-	clock_gettime(CLOCK_REALTIME, &tp);
-
-	z = (uint32_t)tp.tv_nsec / 1000000; // milliseconds
-	y = (uint32_t)tp.tv_sec;
+	std::random_device rd;
+	std::uniform_int_distribution<uint32_t> dist(0);
+	z = dist(rd) % 1000;
+	y = dist(rd);
 	rnd();
 }
 
