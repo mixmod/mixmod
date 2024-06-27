@@ -114,10 +114,12 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 	const int nbnbCluster = _input->getNbCluster().size();
 	_output->clusteringModelOutputResize(nbModel * nbnbCluster);
 
+	static std::exception_ptr save_exc = nullptr;
 #ifdef _OPENMP
 #pragma omp parallel
 #endif
 	{
+		try {
 		Data *workingData = _input->getDataDescription().getData()->clone();
 		std::shared_ptr<ClusteringStrategy> workingStrategy(_input->getStrategy()->clone());
 
@@ -280,7 +282,14 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 			THROW(OtherException, AllModelsGotErros);
 		}
 
+		} catch(...) {
+			save_exc = std::current_exception();
+		}
 	} // End of openMP parallel section
+
+	// throw out of the parallel region
+	if (save_exc != nullptr)
+		std::rethrow_exception(save_exc);
 }
 
 }
