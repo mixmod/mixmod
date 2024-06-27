@@ -18,7 +18,7 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install Dependencies
       run: |
         sudo apt install -y cmake libeigen3-dev
@@ -27,7 +27,7 @@ jobs:
         sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
         sudo make install -j2
     - name: Set up Python 3.8
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.8'
     - name: Install Tests dependencies
