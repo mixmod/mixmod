@@ -26,10 +26,10 @@ jobs:
       run: |
         sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local .
         sudo make install -j2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
-        python-version: '3.8'
+        python-version: '3.10'
     - name: Install Tests dependencies
       run: |
         pip install pytest flake8
