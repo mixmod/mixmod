@@ -101,8 +101,8 @@ See [mixmodLib/EXAMPLES](mixmodLib/EXAMPLES) for some examples.
 
 R interface of the C++ mixmod library.
 
-[![Rmixmod build status](https://github.com/mixmod/mixmod/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rmixmod)](https://cran.r-project.org/package=Rmixmod) [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod?color=blue)](http://cranlogs.r-pkg.org/badges/grand-total/Rmixmod) [![Downloads](https://cranlogs.r-pkg.org/badges/Rmixmod)](https://cran.rstudio.com/web/packages/Rmixmod/index.html)
+[![R-CMD-check](https://github.com/mixmod/mixmod/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/mixmod/mixmod/actions/workflows/R-CMD-check.yml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Rmixmod)](https://cran.r-project.org/package=Rmixmod) [![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/Rmixmod?color=blue)](https://cranlogs.r-pkg.org/badges/grand-total/Rmixmod) [![Downloads](https://cranlogs.r-pkg.org/badges/Rmixmod)](https://cran.rstudio.com/web/packages/Rmixmod/index.html)
 
 ### R Requirements
 
@@ -138,7 +138,7 @@ R CMD check --as-cran Rmixmod_[version]/Rmixmod_[version].tar.gz
 
 Python interface of the C++ mixmod library.
 
-[![Test PyMixmod](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml/badge.svg?branch=master)](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml)
+[![Test PyMixmod](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml/badge.svg)](https://github.com/mixmod/mixmod/actions/workflows/Pymixmod.yml)
 
 See the dedicated [README](Pymixmod/README.rst).
 
