@@ -9,9 +9,8 @@ list (APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/UTIL/cmake/")
 option (BUILD_SHARED_LIBS "shared/static libs" ON)
 
 #Eigen stuff
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
-include_directories(${EIGEN3_INCLUDE_DIRS})
-message(STATUS "libeigen found here : "  ${EIGEN3_INCLUDE_DIRS})
+find_package(Eigen3 REQUIRED CONFIG)
+message(STATUS "Found Eigen: ${Eigen3_DIR}")
 
 include (GNUInstallDirs)
 

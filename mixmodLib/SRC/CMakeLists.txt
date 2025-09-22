@@ -4,6 +4,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 #Generation de la liste des fichiers sources
 FILE(GLOB_RECURSE mixmod_src ${CMAKE_CURRENT_SOURCE_DIR}/mixmod/*.cpp)
 ADD_LIBRARY(mixmod ${mixmod_src})
+target_link_libraries(mixmod PRIVATE Eigen3::Eigen)
 
 SET_TARGET_PROPERTIES(mixmod PROPERTIES VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}" )
 target_include_directories (mixmod PUBLIC
