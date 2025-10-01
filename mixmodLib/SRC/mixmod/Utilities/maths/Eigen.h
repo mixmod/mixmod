@@ -275,7 +275,11 @@ public:
 
 		// Switch when n > 16
 		if (_value->rows() < 16) {
+#if EIGEN_VERSION_AT_LEAST(3, 5, 0)
+			auto svd = new Eigen::JacobiSVD<Eigen::MatrixXd, Eigen::ComputeFullU>(*_value);
+#else
 			auto svd = new Eigen::JacobiSVD<Eigen::MatrixXd>(*_value, Eigen::ComputeFullU);
+#endif
 			auto eigenD = svd->singularValues();
 			auto eigenU = svd->matrixU();
 			for (int64_t i = 0; i < eigenD.rows(); i++)
@@ -293,7 +297,11 @@ public:
 			delete svd;
 
 		} else {
+#if EIGEN_VERSION_AT_LEAST(3, 5, 0)
+			auto svd = new Eigen::BDCSVD<Eigen::MatrixXd, Eigen::ComputeFullU>(*_value);
+#else
 			auto svd = new Eigen::BDCSVD<Eigen::MatrixXd>(*_value, Eigen::ComputeFullU);
+#endif
 			auto eigenD = svd->singularValues();
 			auto eigenU = svd->matrixU();
 			for (int64_t i = 0; i < eigenD.rows(); i++)
