@@ -214,6 +214,7 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 		if ((estimations[iModel]->getErrorType()) == NOERROR) {
 			// loop over criterion name
 			for (unsigned int iCriterion = 0; iCriterion < criterion.size(); iCriterion++) {
+				try {
 				switch (criterion[iCriterion]) {
 				case BIC: {
 					// create BIC criterion
@@ -240,6 +241,14 @@ void LearnMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 					THROW(OtherException, internalMixmodError);
 				default:
 					THROW(OtherException, internalMixmodError);
+				}
+				} catch (Exception & e) {
+					if (VERBOSE == 1) {
+						Error error(e);
+						error.run();
+					}
+					_output->getLearnModelOutput(iModel)->setCriterionOutput(
+					    CriterionOutput(criterion[iCriterion], 0.0, e));
 				}
 
 				// Write progress in file
