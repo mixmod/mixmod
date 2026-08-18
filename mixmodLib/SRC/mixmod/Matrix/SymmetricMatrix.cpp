@@ -79,7 +79,10 @@ double SymmetricMatrix::determinant(Exception &errorType)
 	} catch (...) {
 		throw errorType;
 	}
-	if (fabs(det) < minDeterminantValue) {
+	// Use fabs to handle floating-point rounding (e.g. with Intel compiler) that may
+	// produce a very small negative value for a near-singular positive-definite matrix.
+	det = fabs(det);
+	if (det < minDeterminantValue) {
 		throw NumericException(dynamic_cast<NumericException &>(errorType));
 	}
 	return det;
