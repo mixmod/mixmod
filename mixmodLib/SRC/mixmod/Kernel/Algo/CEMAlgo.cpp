@@ -57,7 +57,7 @@ void CEMAlgo::run(Model *&model)
 	model->setAlgoName(CEM);
 
 	if (DEBUG > 0) {
-		MIXMOD_DEBUG_COUT << "Debut de l'ago CEM :" << endl;
+		MIXMOD_COUT << "Debut de l'ago CEM :" << endl;
 		model->editDebugInformation();
 	}
 
@@ -67,7 +67,7 @@ void CEMAlgo::run(Model *&model)
 		model->Mstep(); /* M Step */
 
 		if (DEBUG > 0) {
-			MIXMOD_DEBUG_COUT << "Apres la " << _indexIteration << " eme iteration de CEM :" << endl;
+			MIXMOD_COUT << "Apres la " << _indexIteration << " eme iteration de CEM :" << endl;
 			model->editDebugInformation();
 		}
 

@@ -74,7 +74,7 @@ void SEMAlgo::run(Model *&model)
 	model->setAlgoName(SEM);
 
 	if (DEBUG > 0) {
-		MIXMOD_DEBUG_COUT << "Debut de l'Algo SEM :" << endl;
+		MIXMOD_COUT << "Debut de l'Algo SEM :" << endl;
 		model->editDebugInformation();
 	}
 
@@ -85,7 +85,7 @@ void SEMAlgo::run(Model *&model)
 	model->Mstep(); // M Step
 
 	if (DEBUG > 0) {
-		MIXMOD_DEBUG_COUT << "Apres la 1ere iteration de SEM :" << endl;
+		MIXMOD_COUT << "Apres la 1ere iteration de SEM :" << endl;
 		model->editDebugInformation();
 	}
 
@@ -102,7 +102,7 @@ void SEMAlgo::run(Model *&model)
 		model->Mstep(); // M Step
 
 		if (DEBUG > 0) {
-			MIXMOD_DEBUG_COUT << "Apres la " << _indexIteration << " eme iteration de SEM :" << endl;
+			MIXMOD_COUT << "Apres la " << _indexIteration << " eme iteration de SEM :" << endl;
 			model->editDebugInformation();
 		}
 
@@ -111,7 +111,7 @@ void SEMAlgo::run(Model *&model)
 		if (lastLL > bestLL) {
 
 			if (DEBUG > 0)
-				MIXMOD_DEBUG_COUT << "BestModel prend la valeur de LastModel" << endl;
+				MIXMOD_COUT << "BestModel prend la valeur de LastModel" << endl;
 
 			bestLL = lastLL;
 			// delete bestModel;

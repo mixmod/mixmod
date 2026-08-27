@@ -284,7 +284,7 @@ void ClusteringStrategy::setNbTry(int64_t nbTry)
 //---
 void ClusteringStrategy::run(Model *&model) const
 {
-	// MIXMOD_DEBUG_COUT<<"XEMClusteringStrategy Init, nbTry="<<_nbTry<<endl;
+	// MIXMOD_COUT<<"XEMClusteringStrategy Init, nbTry="<<_nbTry<<endl;
 	if (_nbTry == 1) {
 		oneTry(model, true);
 	} else {
@@ -328,7 +328,7 @@ void ClusteringStrategy::run(Model *&model) const
 		    for (int64_t i=1; i<_nbTry; i++){
 		      oneTry(model);
 		      double lastLLorCLL = model->getCompletedLogLikelihoodOrLogLikelihood();
-		      MIXMOD_DEBUG_COUT<<"Try n°="<< i << " lastLL=" << lastLLorCLL << " bestLL=" << bestLLorCLL
+		      MIXMOD_COUT<<"Try n°="<< i << " lastLL=" << lastLLorCLL << " bestLL=" << bestLLorCLL
 		      << " nbCluster=" << model->getNbCluster() << " modelName="
 		      << XEMModelNameToString(model->getModelType()->getModelName()) << endl;
 		      if (lastLLorCLL > bestLLorCLL){
@@ -421,7 +421,7 @@ void ClusteringStrategy::oneTry(Model *&model, bool doThrow) const
 		// model->getParameter()->edit();
 
 		if (DEBUG > 0) {
-			MIXMOD_DEBUG_COUT << "After initialization :" << endl;
+			MIXMOD_COUT << "After initialization :" << endl;
 			model->editDebugInformation();
 		}
 
@@ -449,7 +449,7 @@ void ClusteringStrategy::oneTry(Model *&model, bool doThrow) const
 	// s'il y a eu un throw, normalement le model n'est pas noerror
 	//  il ne faut pas que le throw aille plus haut car il y a éventuellement plusieurs nbTry
 	catch (Exception &error) {
-		// MIXMOD_DEBUG_COUT<<"erreur dans un oneRun, on continue"<<endl;
+		// MIXMOD_COUT<<"erreur dans un oneRun, on continue"<<endl;
 		// Nothing to do
 		// except when nbTry==1
 		if (doThrow)

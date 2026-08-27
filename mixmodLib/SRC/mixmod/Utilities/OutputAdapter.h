@@ -28,27 +28,9 @@ inline std::ostream &mixmodErr()
 #endif
 }
 
-#if defined(RPACKAGE) && !defined(MIXMOD_ENABLE_DEBUG_IO)
-class MixmodNullBuffer : public std::streambuf
-{
-public:
-	int overflow(int c) { return c; }
-};
-
-inline std::ostream &mixmodDebugOut()
-{
-	static MixmodNullBuffer nullBuffer;
-	static std::ostream nullStream(&nullBuffer);
-	return nullStream;
-}
-#else
-inline std::ostream &mixmodDebugOut() { return mixmodOut(); }
-#endif
-
 }
 
 #define MIXMOD_COUT ::XEM::mixmodOut()
 #define MIXMOD_CERR ::XEM::mixmodErr()
-#define MIXMOD_DEBUG_COUT ::XEM::mixmodDebugOut()
 
 #endif
