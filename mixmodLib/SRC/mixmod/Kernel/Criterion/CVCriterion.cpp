@@ -151,7 +151,7 @@ void CVCriterion::createCVBlocks()
 			}
 		}
 		if (v != _nbCVBlock) {
-			// MIXMOD_COUT<<"MIXMOD_COUT erreur 4 ds CVCriterion"<<endl;
+			// MIXMOD_COUT<<"cout erreur 4 ds CVCriterion"<<endl;
 			THROW(OtherException, internalMixmodError);
 		}
 	}
@@ -177,7 +177,7 @@ void CVCriterion::createCVBlocks()
 				}
 			}
 			if (index != weightTotal) {
-				// MIXMOD_COUT<<"MIXMOD_COUT erreur 5 ds CVCriterion"<<endl;
+				// MIXMOD_COUT<<"cout erreur 5 ds CVCriterion"<<endl;
 				THROW(OtherException, internalMixmodError);
 			}
 			quickSortWithOrder(tabRandom.get(), tabIndex.get(), 0, (weightTotal)-1);
@@ -270,7 +270,7 @@ void CVCriterion::createCVBlocks()
 					i++;
 				}
 				if (i != _tabCVBlock[v]._nbSample) {
-					// MIXMOD_COUT<<"MIXMOD_COUT erreur 6 ds CVCriterion"<<endl;
+					// MIXMOD_COUT<<"cout erreur 6 ds CVCriterion"<<endl;
 					THROW(OtherException, internalMixmodError);
 				}
 				while (!listCVBlock.empty()) {
@@ -349,7 +349,7 @@ void CVCriterion::createCVBlocks()
 				}
 			}
 			if (nbTraited != weightTotal) {
-				// MIXMOD_COUT<<"MIXMOD_COUT erreur 1 ds CVCriterion"<<endl;
+				// MIXMOD_COUT<<"cout erreur 1 ds CVCriterion"<<endl;
 				THROW(OtherException, internalMixmodError);
 			}
 
@@ -372,7 +372,7 @@ void CVCriterion::createCVBlocks()
 				}
 				_tabCVBlock[v]._weightTotal = weightTotalBlockV;
 				if (i != _tabCVBlock[v]._nbSample) {
-					// MIXMOD_COUT<<"MIXMOD_COUT erreur 2 ds CVCriterion"<<endl;
+					// MIXMOD_COUT<<"cout erreur 2 ds CVCriterion"<<endl;
 					THROW(OtherException, internalMixmodError);
 				}
 			}
@@ -388,7 +388,7 @@ void CVCriterion::createCVBlocks()
 		}
 
 		else { //_CVinitBlocks != CV_RANDOM and != CV_DIAG){
-			// MIXMOD_COUT<<"MIXMOD_COUT erreur 3 ds CVCriterion"<<endl;
+			// MIXMOD_COUT<<"cout erreur 3 ds CVCriterion"<<endl;
 			THROW(OtherException, internalMixmodError);
 		}
 	} // end of else (weightTotal > _nbCVBlocks)
