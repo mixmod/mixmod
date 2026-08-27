@@ -435,9 +435,9 @@ void BinaryEkjhParameter::editScatter(int64_t k)
 	int64_t j, h;
 	for (j = 0; j < _pbDimension; j++) {
 		for (h = 0; h < _tabNbModality[j]; h++) {
-			cout << "\t" << _scatter[k][j][h];
+			MIXMOD_COUT << "\t" << _scatter[k][j][h];
 		}
-		cout << endl;
+		MIXMOD_COUT << endl;
 	}
 }
 

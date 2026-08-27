@@ -489,11 +489,11 @@ void CompositeParameter::initUSER(Parameter *iParam)
 
 void CompositeParameter::edit()
 {
-	cout << "Binary Parameters\n";
-	cout << "**********************************************************\n";
+	MIXMOD_COUT << "Binary Parameters\n";
+	MIXMOD_COUT << "**********************************************************\n";
 	_parameterComponent[0]->edit();
-	cout << "\nGaussian Parameters\n";
-	cout << "**********************************************************\n";
+	MIXMOD_COUT << "\nGaussian Parameters\n";
+	MIXMOD_COUT << "**********************************************************\n";
 	_parameterComponent[1]->edit();
 }
 

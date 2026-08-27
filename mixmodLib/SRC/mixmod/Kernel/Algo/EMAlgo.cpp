@@ -66,7 +66,7 @@ void EMAlgo::run(Model *&model)
 	model->setAlgoName(EM);
 
 	if (DEBUG > 0) {
-		cout << "Debut Algo EM :" << endl;
+		MIXMOD_DEBUG_COUT << "Debut Algo EM :" << endl;
 		model->editDebugInformation();
 	}
 
@@ -75,7 +75,7 @@ void EMAlgo::run(Model *&model)
 	model->Mstep(); // M Step
 
 	if (DEBUG > 0) {
-		cout << "Apres la 1ere iteration de EM :" << endl;
+		MIXMOD_DEBUG_COUT << "Apres la 1ere iteration de EM :" << endl;
 		model->editDebugInformation();
 	}
 
@@ -86,7 +86,7 @@ void EMAlgo::run(Model *&model)
 		model->Mstep(); // M Step
 
 		if (DEBUG > 0) {
-			cout << "Apres la " << _indexIteration << " eme iteration de EM :" << endl;
+			MIXMOD_DEBUG_COUT << "Apres la " << _indexIteration << " eme iteration de EM :" << endl;
 			model->editDebugInformation();
 		}
 

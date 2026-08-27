@@ -138,15 +138,15 @@ int64_t BinaryEkjParameter::getFreeParameter() const
 //-------
 double BinaryEkjParameter::getPdf(int64_t iSample, int64_t kCluster) const
 {
-	// cout<<" XEMBinaryEkjParameter::getPdf"<<endl;
+	// MIXMOD_COUT<<" XEMBinaryEkjParameter::getPdf"<<endl;
 	int64_t j;
 	double bernPdf = 1.0;
 	BinaryData *data = _model->getBinaryData();
 	BinarySample *curSample = (data->_matrix[iSample])->getBinarySample();
 
 	for (j = 0; j < _pbDimension; j++) {
-		// cout<<"curSample :  "<<curSample->getDataValue(j)<<endl;
-		// cout<<" _tabCenter[kCluster][j] :  "<< _tabCenter[kCluster][j]<<endl;
+		// MIXMOD_COUT<<"curSample :  "<<curSample->getDataValue(j)<<endl;
+		// MIXMOD_COUT<<" _tabCenter[kCluster][j] :  "<< _tabCenter[kCluster][j]<<endl;
 		//  iSample have major modality ?//
 		if (curSample->getDataValue(j) == _tabCenter[kCluster][j]) {
 			bernPdf *= 1.0 - _scatter[kCluster][j];
@@ -162,15 +162,15 @@ double BinaryEkjParameter::getPdf(int64_t iSample, int64_t kCluster) const
 //----------
 long double BinaryEkjParameter::getLogPdf(int64_t iSample, int64_t kCluster) const
 {
-	// cout<<" XEMBinaryEkjParameter::getPdf"<<endl;
+	// MIXMOD_COUT<<" XEMBinaryEkjParameter::getPdf"<<endl;
 	int64_t j;
 	double bernPdf = 0.0;
 	BinaryData *data = _model->getBinaryData();
 	BinarySample *curSample = (data->_matrix[iSample])->getBinarySample();
 
 	for (j = 0; j < _pbDimension; j++) {
-		// cout<<"curSample :  "<<curSample->getDataValue(j)<<endl;
-		// cout<<" _tabCenter[kCluster][j] :  "<< _tabCenter[kCluster][j]<<endl;
+		// MIXMOD_COUT<<"curSample :  "<<curSample->getDataValue(j)<<endl;
+		// MIXMOD_COUT<<" _tabCenter[kCluster][j] :  "<< _tabCenter[kCluster][j]<<endl;
 		//  iSample have major modality ?//
 		if (curSample->getDataValue(j) == _tabCenter[kCluster][j]) {
 			bernPdf += log(1.0 - _scatter[kCluster][j]);
@@ -339,12 +339,12 @@ void BinaryEkjParameter::editScatter(int64_t k)
 	for (j = 0; j < _pbDimension; j++) {
 		for (h = 1; h <= _tabNbModality[j]; h++) {
 			if (h == _tabCenter[k][j]) {
-				cout << "\t" << _scatter[k][j];
+				MIXMOD_COUT << "\t" << _scatter[k][j];
 			} else {
-				cout << "\t" << _scatter[k][j] / (_tabNbModality[j] - 1);
+				MIXMOD_COUT << "\t" << _scatter[k][j] / (_tabNbModality[j] - 1);
 			}
 		}
-		cout << endl;
+		MIXMOD_COUT << endl;
 	}
 }
 

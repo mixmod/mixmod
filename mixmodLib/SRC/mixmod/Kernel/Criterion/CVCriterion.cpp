@@ -78,19 +78,19 @@ void CVCriterion::run(CriterionOutput &output)
 		createCVBlocks();
 		// loop over the blocks
 		for (int64_t v = 0; v < _nbCVBlock; v++) {
-			// cout<<"CV block n°"<<v<<endl<<"---------"<<endl;
+			// MIXMOD_COUT<<"CV block n°"<<v<<endl<<"---------"<<endl;
 			CVModel->updateForCV(_model, _tabCVBlock[v]);
 			// CVModel->getParameter()->edit();
 			//  loop over samples
 			for (int64_t ii = 0; ii < _tabCVBlock[v]._nbSample; ii++) {
 				i = _tabCVBlock[v]._tabWeightedIndividual[ii].val;
-				// cout<<"individu : "<<i<<endl;
+				// MIXMOD_COUT<<"individu : "<<i<<endl;
 				known_ki = _model->getKnownLabel(i);
 				x = data->_matrix[i];
 				_cvLabel[i] = CVModel->computeLabel(x);
-				// cout<<"individu : "<<i<<" - knownLabel : "<<known_ki<<" - computeLabel : "<<_cvLabel[i]<<endl;
+				// MIXMOD_COUT<<"individu : "<<i<<" - knownLabel : "<<known_ki<<" - computeLabel : "<<_cvLabel[i]<<endl;
 				if (_cvLabel[i] != known_ki) {
-					/*cout<<"labels differents dans CV pour l'individu : "<<i<<" de poids : "
+					/*MIXMOD_COUT<<"labels differents dans CV pour l'individu : "<<i<<" de poids : "
 					<<_tabCVBlock[v]._tabWeightedIndividual[ii].weight<<endl;*/
 					missClass += _tabCVBlock[v]._tabWeightedIndividual[ii].weight;
 				}
@@ -151,7 +151,7 @@ void CVCriterion::createCVBlocks()
 			}
 		}
 		if (v != _nbCVBlock) {
-			// cout<<"cout erreur 4 ds CVCriterion"<<endl;
+			// MIXMOD_COUT<<"MIXMOD_COUT erreur 4 ds CVCriterion"<<endl;
 			THROW(OtherException, internalMixmodError);
 		}
 	}
@@ -159,7 +159,7 @@ void CVCriterion::createCVBlocks()
 	else { // weightTotal > _nbCVBlocks
 
 		if (_CVinitBlocks == CV_RANDOM) {
-			// cout<<"CVCriterion CV_RANDOM"<<endl;
+			// MIXMOD_COUT<<"CVCriterion CV_RANDOM"<<endl;
 			//  random
 			// double * tabRandom = new double[weightTotal];
 			// int64_t * tabIndex = new int64_t[weightTotal];
@@ -170,14 +170,14 @@ void CVCriterion::createCVBlocks()
 				sumWeight = 0.0;
 				while (sumWeight < weight[i]) {
 					tabRandom[index] = rnd();
-					// cout<<"CVCriterion tabRandom["<<index<<"]  "<<tabRandom[index]<<endl;
+					// MIXMOD_COUT<<"CVCriterion tabRandom["<<index<<"]  "<<tabRandom[index]<<endl;
 					tabIndex[index] = i;
 					sumWeight++;
 					index++;
 				}
 			}
 			if (index != weightTotal) {
-				// cout<<"cout erreur 5 ds CVCriterion"<<endl;
+				// MIXMOD_COUT<<"MIXMOD_COUT erreur 5 ds CVCriterion"<<endl;
 				THROW(OtherException, internalMixmodError);
 			}
 			quickSortWithOrder(tabRandom.get(), tabIndex.get(), 0, (weightTotal)-1);
@@ -270,7 +270,7 @@ void CVCriterion::createCVBlocks()
 					i++;
 				}
 				if (i != _tabCVBlock[v]._nbSample) {
-					// cout<<"cout erreur 6 ds CVCriterion"<<endl;
+					// MIXMOD_COUT<<"MIXMOD_COUT erreur 6 ds CVCriterion"<<endl;
 					THROW(OtherException, internalMixmodError);
 				}
 				while (!listCVBlock.empty()) {
@@ -284,7 +284,7 @@ void CVCriterion::createCVBlocks()
 		}
 		//------------------------------
 		else if (_CVinitBlocks == CV_DIAG) {
-			// cout<<"CVCriterion CV_DIAG"<<endl;
+			// MIXMOD_COUT<<"CVCriterion CV_DIAG"<<endl;
 			//------------------------------
 			//  Lists
 			list<TWeightedIndividual *> *listCVBlock = new list<TWeightedIndividual *>[_nbCVBlock];
@@ -298,7 +298,7 @@ void CVCriterion::createCVBlocks()
 				for (w = 0; w < weight[i]; w++) {
 					// add i in listCVBlock[v]
 					//------------------------
-					// cout<<"ajout de l'individu :  "<<i<<" au block : "<<v<<endl;
+					// MIXMOD_COUT<<"ajout de l'individu :  "<<i<<" au block : "<<v<<endl;
 					listBegin = listCVBlock[v].begin();
 					listEnd = listCVBlock[v].end();
 					listIterator = listBegin;
@@ -349,7 +349,7 @@ void CVCriterion::createCVBlocks()
 				}
 			}
 			if (nbTraited != weightTotal) {
-				// cout<<"cout erreur 1 ds CVCriterion"<<endl;
+				// MIXMOD_COUT<<"MIXMOD_COUT erreur 1 ds CVCriterion"<<endl;
 				THROW(OtherException, internalMixmodError);
 			}
 
@@ -372,7 +372,7 @@ void CVCriterion::createCVBlocks()
 				}
 				_tabCVBlock[v]._weightTotal = weightTotalBlockV;
 				if (i != _tabCVBlock[v]._nbSample) {
-					// cout<<"cout erreur 2 ds CVCriterion"<<endl;
+					// MIXMOD_COUT<<"MIXMOD_COUT erreur 2 ds CVCriterion"<<endl;
 					THROW(OtherException, internalMixmodError);
 				}
 			}
@@ -388,16 +388,16 @@ void CVCriterion::createCVBlocks()
 		}
 
 		else { //_CVinitBlocks != CV_RANDOM and != CV_DIAG){
-			// cout<<"cout erreur 3 ds CVCriterion"<<endl;
+			// MIXMOD_COUT<<"MIXMOD_COUT erreur 3 ds CVCriterion"<<endl;
 			THROW(OtherException, internalMixmodError);
 		}
 	} // end of else (weightTotal > _nbCVBlocks)
 	/*
 	     for (v=0; v<_nbCVBlock; v++){
-	       cout<<endl<<"bloc "<<v<<" taille : "<<_tabCVBlock[v]._nbSample<<endl;
-	       cout<<"bloc "<<v<<" poids total : "<<_tabCVBlock[v]._weightTotal<<endl;
+	       MIXMOD_COUT<<endl<<"bloc "<<v<<" taille : "<<_tabCVBlock[v]._nbSample<<endl;
+	       MIXMOD_COUT<<"bloc "<<v<<" poids total : "<<_tabCVBlock[v]._weightTotal<<endl;
 	       for (int64_t i=0; i<_tabCVBlock[v]._nbSample; i++){
-	         cout<<"individu n : "<<_tabCVBlock[v]._tabWeightedIndividual[i].val
+	         MIXMOD_COUT<<"individu n : "<<_tabCVBlock[v]._tabWeightedIndividual[i].val
 	         <<" - poids : "<<_tabCVBlock[v]._tabWeightedIndividual[i].weight<<endl;
 	   }
 	   }*/

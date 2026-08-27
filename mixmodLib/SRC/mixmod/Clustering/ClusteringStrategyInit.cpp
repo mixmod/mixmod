@@ -627,7 +627,7 @@ for (int64_t p=0; p<nbPartition; p++){
  -------------------------------------------------------*/
 void ClusteringStrategyInit::initSMALL_EM(Model *&model)
 {
-	// cout<<"init SMALL_EM, nbTryInInit="<<strategyInit->getNbTry()<<",
+	// MIXMOD_COUT<<"init SMALL_EM, nbTryInInit="<<strategyInit->getNbTry()<<",
 	// nbIteration = "<<strategyInit->getNbIteration()<<", epsilon = "<<strategyInit->getEpsilon()<<endl;
 	model->setAlgoName(EM);
 	double logLikelihood, bestLogLikelihood;
@@ -642,11 +642,11 @@ void ClusteringStrategyInit::initSMALL_EM(Model *&model)
 				// one run of small EM
 				model->getParameter()->reset();
 				oneRunOfSmallEM(model, logLikelihood);
-				// cout<<"sortie de oneRunOfSmallEM, LL = "<<logLikelihood<<endl;
+				// MIXMOD_COUT<<"sortie de oneRunOfSmallEM, LL = "<<logLikelihood<<endl;
 				if ((nbRunOfSmallEMOk == 1) || (logLikelihood > bestLogLikelihood)) {
 					bestLogLikelihood = logLikelihood;
 					bestParameter->recopy(model->getParameter());
-					// cout<<"best LL dans SMALL_EM : " <<bestLogLikelihood<<endl;
+					// MIXMOD_COUT<<"best LL dans SMALL_EM : " <<bestLogLikelihood<<endl;
 				}
 			} catch (Exception &errorType) {
 				nbRunOfSmallEMOk--;
@@ -665,7 +665,7 @@ void ClusteringStrategyInit::initSMALL_EM(Model *&model)
 	model->getParameter()->setModel(model);
 
 	// delete bestParameter;
-	//   cout<<"fin de init SMALL_EM, nb d'essais effectues="<<i<<endl;
+	//   MIXMOD_COUT<<"fin de init SMALL_EM, nb d'essais effectues="<<i<<endl;
 }
 
 //---------------------
@@ -682,7 +682,7 @@ void ClusteringStrategyInit::oneRunOfSmallEM(Model *&model, double &logLikelihoo
 	int64_t nbIteration = 1;
 	bool continueAgain = true;
 	while (continueAgain) {
-		//    cout<<"while de oneRunOfSmallEM, nbIteration = "<<nbIteration<<endl;
+		//    MIXMOD_COUT<<"while de oneRunOfSmallEM, nbIteration = "<<nbIteration<<endl;
 		//(nbIteration < strategyInit->getNbIteration()) && (eps > strategyInit->getEpsilon())){
 		lastLogLikelihood = logLikelihood;
 		model->Estep();
@@ -712,7 +712,7 @@ void ClusteringStrategyInit::oneRunOfSmallEM(Model *&model, double &logLikelihoo
 	if (_stopName == NBITERATION) {                    // logLikelihood is an output
 		logLikelihood = model->getLogLikelihood(true); // true : to compute fi
 	}
-	// cout<<"Fin de oneRunOfSmallEM, nb d'iterations effectuees = "<<nbIteration<<", logLikelihood = "<<logLikelihood<<endl;
+	// MIXMOD_COUT<<"Fin de oneRunOfSmallEM, nb d'iterations effectuees = "<<nbIteration<<", logLikelihood = "<<logLikelihood<<endl;
 }
 
 /*---------------------------------------------------
@@ -728,7 +728,7 @@ void ClusteringStrategyInit::oneRunOfSmallEM(Model *&model, double &logLikelihoo
  ---------------------------------------------------*/
 void ClusteringStrategyInit::initCEM_INIT(Model *&model)
 {
-	// cout<<"init CEM, nbTryInInit="<<strategyInit->getNbTry()<<endl;
+	// MIXMOD_COUT<<"init CEM, nbTryInInit="<<strategyInit->getNbTry()<<endl;
 	model->setAlgoName(CEM);
 	int64_t i;
 	double cLogLikelihood = 0.0, oldLogLikelihood = 0.0;
@@ -762,7 +762,7 @@ void ClusteringStrategyInit::initCEM_INIT(Model *&model)
 					}
 				}
 			}
-			// cout<<"dans init CEM, nb d'iterations effectuées : "<<nbIter<<endl;
+			// MIXMOD_COUT<<"dans init CEM, nb d'iterations effectuées : "<<nbIter<<endl;
 			//  Compute log-likelihood
 			cLogLikelihood = model->getCompletedLogLikelihood();
 			// Comparaison of log-likelihood between step p and p-1
@@ -770,7 +770,7 @@ void ClusteringStrategyInit::initCEM_INIT(Model *&model)
 				bestCLogLikelihood = cLogLikelihood;
 				bestParameter->recopy(model->getParameter());
 			}
-			// cout<<"nbIter : "<<nbIter<<endl;
+			// MIXMOD_COUT<<"nbIter : "<<nbIter<<endl;
 		} catch (...) {
 			nbRunOfCEMOk--;
 		}
@@ -786,7 +786,7 @@ void ClusteringStrategyInit::initCEM_INIT(Model *&model)
 	// set Best parameter
 	model->setParameter(bestParameter);
 	model->getParameter()->setModel(model);
-	// cout<<"fin de init CEM, nb d'essais effectues="<<i<<endl;
+	// MIXMOD_COUT<<"fin de init CEM, nb d'essais effectues="<<i<<endl;
 }
 
 /*---------------------------------------------------------
@@ -803,7 +803,7 @@ void ClusteringStrategyInit::initCEM_INIT(Model *&model)
  -------------------------------------------------------*/
 void ClusteringStrategyInit::initSEM_MAX(Model *&model)
 {
-	// cout<<"init SEM_MAX, nbTryInInit="<<strategyInit->getNbIteration()<<endl;
+	// MIXMOD_COUT<<"init SEM_MAX, nbTryInInit="<<strategyInit->getNbIteration()<<endl;
 	model->setAlgoName(SEM);
 	int64_t j;
 	double logLikelihood, bestLogLikelihood;
@@ -840,7 +840,7 @@ void ClusteringStrategyInit::initSEM_MAX(Model *&model)
 	// set Best parameter
 	model->setParameter(bestParameter);
 	model->getParameter()->setModel(model);
-	// cout<<"fin de init SEM_MAX, nb d'iterations effectuees="<<j<<" meilleure solution : "<<bestIndex<<endl;
+	// MIXMOD_COUT<<"fin de init SEM_MAX, nb d'iterations effectuees="<<j<<" meilleure solution : "<<bestIndex<<endl;
 }
 
 }

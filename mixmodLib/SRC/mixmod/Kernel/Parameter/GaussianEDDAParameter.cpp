@@ -501,23 +501,23 @@ void GaussianEDDAParameter::edit()
 {
 	int64_t k;
 	for (k = 0; k < _nbCluster; k++) {
-		cout << "\tcomponent : " << k << endl;
-		cout << "\t\tproportion : " << _tabProportion[k] << endl;
-		editTab(_tabMean + k, 1, _pbDimension, cout, " ", "\t\tmean : ");
-		cout << "\t\tsigma : " << endl;
-		_tabSigma[k]->edit(cout, "\t\t\t");
+		MIXMOD_COUT << "\tcomponent : " << k << endl;
+		MIXMOD_COUT << "\t\tproportion : " << _tabProportion[k] << endl;
+		editTab(_tabMean + k, 1, _pbDimension, MIXMOD_COUT, " ", "\t\tmean : ");
+		MIXMOD_COUT << "\t\tsigma : " << endl;
+		_tabSigma[k]->edit(MIXMOD_COUT, "\t\t\t");
 
-		cout << "\t\tWk : " << endl;
-		_tabWk[k]->edit(cout, "\t\t\t");
+		MIXMOD_COUT << "\t\tWk : " << endl;
+		_tabWk[k]->edit(MIXMOD_COUT, "\t\t\t");
 
-		cout << "\t\tinvSigma : " << endl;
-		_tabInvSigma[k]->edit(cout, "\t\t\t");
+		MIXMOD_COUT << "\t\tinvSigma : " << endl;
+		_tabInvSigma[k]->edit(MIXMOD_COUT, "\t\t\t");
 
-		cout << "\t\ttabInvSqrtDetSigma : " << _tabInvSqrtDetSigma[k] << endl;
+		MIXMOD_COUT << "\t\ttabInvSqrtDetSigma : " << _tabInvSqrtDetSigma[k] << endl;
 	}
 
-	cout << "\tW : " << endl;
-	_W->edit(cout, "\t\t");
+	MIXMOD_COUT << "\tW : " << endl;
+	_W->edit(MIXMOD_COUT, "\t\t");
 }
 
 //------

@@ -153,7 +153,7 @@ void CriterionOutput::editTypeAndValue(std::ostream &oFile) const
 	if (*(dynamic_cast<Exception *>(_error)) == NOERROR) {
 		oFile << _value << endl << endl;
 	} else {
-		// cout << "----<<<<<<<>>>>>>>>>>" << << endl;
+		// MIXMOD_COUT << "----<<<<<<<>>>>>>>>>>" << << endl;
 		oFile << "numeric Error" << endl << endl;
 	}
 }

@@ -63,7 +63,7 @@ void MAPAlgo::run(Model *&model)
 	//  model = model;
 	model->setAlgoName(MAP);
 	model->MAPstep(); // MAP Step
-	                  // cout << "\nMAP algorithm \n";
+	                  // MIXMOD_COUT << "\nMAP algorithm \n";
 }
 
 }

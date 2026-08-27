@@ -525,7 +525,7 @@ void NodeOpInput::readModelNode(Input &input)
 					xmlpp::Element *dkElt = dynamic_cast<xmlpp::Element *>(*dkit);
 					if (!dkElt)
 						continue;
-					// std::cout<<"Dk: "<< dkElt->get_child_text()->get_content()<<std::endl;
+					// MIXMOD_COUT<<"Dk: "<< dkElt->get_child_text()->get_content()<<std::endl;
 					// dkVect.push_back(std::stoll(dkElt->get_attribute_value("Num")));
 					dkVect.push_back(std::stoll(dkElt->get_child_text()->get_content()));
 				}

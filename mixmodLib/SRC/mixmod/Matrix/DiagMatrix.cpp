@@ -77,7 +77,7 @@ void DiagMatrix::compute_product_Lk_Wk(Matrix *Wk, double L) { THROW(OtherExcept
 
 void DiagMatrix::inverse(Matrix *&Inv)
 {
-	// cout<<"Inv diag :  "<<Inv<<endl;
+	// MIXMOD_COUT<<"Inv diag :  "<<Inv<<endl;
 	if (Inv == NULL) {
 		Inv = new DiagMatrix(_s_pbDimension);
 	}

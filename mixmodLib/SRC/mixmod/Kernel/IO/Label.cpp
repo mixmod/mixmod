@@ -210,7 +210,7 @@ int64_t **Label::getClassificationTab(std::vector<int64_t> const &label, int64_t
 
 	// loop over labels
 	for (int64_t i = 0; i < _nbSample; i++) {
-		// cout<<_label[i]<<endl;
+		// MIXMOD_COUT<<_label[i]<<endl;
 		if (label[i] > 0) {
 			++classTab[_label[i] - 1][label[i] - 1];
 		}
@@ -270,7 +270,7 @@ void Label::input(const LabelDescription &labelDescription)
 			if (typeid(*descJ) == typeid(IndividualColumnDescription)) {
 				std::string stringTmp;
 				fi >> stringTmp;
-				// cout<<stringTmp<<endl;
+				// MIXMOD_COUT<<stringTmp<<endl;
 			} else {
 				fi >> readLabel;
 				_label.push_back(readLabel);
