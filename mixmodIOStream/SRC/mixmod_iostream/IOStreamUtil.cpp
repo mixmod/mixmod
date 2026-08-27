@@ -37,6 +37,7 @@
 
 #include "mixmod/Kernel/IO/BinaryData.h"
 #include "mixmod/Kernel/IO/GaussianData.h"
+#include "mixmod/Utilities/OutputAdapter.h"
 // #include "mixmod/Clustering/ClusteringInput.h"
 #include "mixmod/Clustering/ClusteringMain.h"
 // #include "mixmod/Clustering/ClusteringOutput.h"
