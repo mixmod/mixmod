@@ -10,7 +10,8 @@ IOSTREAMDIR  = ./mixmod_iostream
 MIXMODLIB    = mixmod.a
 
 
-PKG_CXXFLAGS = -DWITHOUT_OMP -DXEM_RESOURCES_PATH='"$(R_PACKAGE_DIR)/XML_specs"' $(RMIXMOD_XML) -I. -I./mixmod_iostream $(LIBXMLXX_CFLAGS)
+PKG_CXXFLAGS = -DRPACKAGE -DWITHOUT_OMP -DXEM_RESOURCES_PATH='"$(R_PACKAGE_DIR)/XML_specs"' $(RMIXMOD_XML) \
+	-I. -I./mixmod_iostream $(LIBXMLXX_CFLAGS)
 ## Use the R_HOME indirection to support installations of multiple R version
 PKG_LIBS = -L$(MIXMODDIR) $(MIXMODLIB) $(LIBXMLXX_LIBS)
 
