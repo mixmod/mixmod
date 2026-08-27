@@ -84,7 +84,7 @@ void Algo::setEpsilon(double epsilon)
 /* Stopping rule for algorithm : continueAgain */
 bool Algo::continueAgain()
 {
-	// cout<<"Algo::continueAgain"<<endl;
+	// MIXMOD_COUT<<"Algo::continueAgain"<<endl;
 	bool result, res1, res2;
 	double diff;
 	ofstream progressFile;

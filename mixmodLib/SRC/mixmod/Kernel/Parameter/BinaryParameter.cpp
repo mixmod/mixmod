@@ -320,13 +320,13 @@ void BinaryParameter::computeTabCenterInitUSER_PARTITION(int64_t &nbInitializedC
 	int64_t nbSample = _model->getNbSample();
 
 	for (k = 0; k < _nbCluster; k++) {
-		// cout<<"k = "<<k<<endl;
+		// MIXMOD_COUT<<"k = "<<k<<endl;
 		for (j = 0; j < _pbDimension; j++) {
-			// cout<<"j = "<<j<<endl;
+			// MIXMOD_COUT<<"j = "<<j<<endl;
 			bestArgMax = 0.0;
 			_tabCenter[k][j] = 0;
 			for (h = 1; h <= tabNbModality[j]; h++) {
-				// cout<<"h = "<<h<<endl;
+				// MIXMOD_COUT<<"h = "<<h<<endl;
 				argMax = 0.0;
 				for (i = 0; i < nbSample; i++) {
 					curSample = dataMatrix[i]->getBinarySample();
@@ -337,7 +337,7 @@ void BinaryParameter::computeTabCenterInitUSER_PARTITION(int64_t &nbInitializedC
 							argMax += tabTik[i][k] * data->_weight[i];
 						}
 					}
-					// cout<<"argMax = "<<argMax<<endl;
+					// MIXMOD_COUT<<"argMax = "<<argMax<<endl;
 				} // end for i
 
 				if (argMax > bestArgMax) {
@@ -345,7 +345,7 @@ void BinaryParameter::computeTabCenterInitUSER_PARTITION(int64_t &nbInitializedC
 					_tabCenter[k][j] = h;
 				}
 			} // end for h
-			  // cout<<"bestArgMax = "<<bestArgMax<<endl;
+			  // MIXMOD_COUT<<"bestArgMax = "<<bestArgMax<<endl;
 		}     // end for j
 	}         // end for k
 
@@ -535,16 +535,16 @@ void BinaryParameter::edit()
 {
 	int64_t k, i;
 	for (k = 0; k < _nbCluster; k++) {
-		cout << "\tcomponent : " << k << endl;
-		cout << "\tproportion : " << _tabProportion[k] << endl;
-		cout << "\tcenter : ";
+		MIXMOD_COUT << "\tcomponent : " << k << endl;
+		MIXMOD_COUT << "\tproportion : " << _tabProportion[k] << endl;
+		MIXMOD_COUT << "\tcenter : ";
 		for (i = 0; i < _pbDimension; i++) {
-			cout << "\t" << _tabCenter[k][i];
+			MIXMOD_COUT << "\t" << _tabCenter[k][i];
 		}
-		cout << endl;
-		cout << "\tscatter : ";
+		MIXMOD_COUT << endl;
+		MIXMOD_COUT << "\tscatter : ";
 		editScatter(k); // virtual
-		cout << endl;
+		MIXMOD_COUT << endl;
 	}
 }
 

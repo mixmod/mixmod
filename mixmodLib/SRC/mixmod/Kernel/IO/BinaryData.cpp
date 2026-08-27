@@ -165,10 +165,10 @@ BinaryData::BinaryData(int64_t nbSample, int64_t pbDimension, Data *originalData
 	for (int64_t i = 0; i < _nbSample; i++) {
 		_matrix[i] =
 		    new BinarySample(pbDimension, (origMatrix[block._tabWeightedIndividual[i].val]->getBinarySample())->getTabValue());
-		// cout<<"ind : "<<block._tabWeightedIndividual[i].val;
+		// MIXMOD_COUT<<"ind : "<<block._tabWeightedIndividual[i].val;
 
 		_weight[i] = block._tabWeightedIndividual[i].weight;
-		// cout<<" - weight : "<<block._tabWeightedIndividual[i].weight<<endl;
+		// MIXMOD_COUT<<" - weight : "<<block._tabWeightedIndividual[i].weight<<endl;
 	}
 }
 
@@ -379,18 +379,18 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	tabFactor[0] = 1;
 	for (j = 1; j < _pbDimension; j++) {
 		tabFactor[j] = tabFactor[j - 1] * _tabNbModality[j - 1];
-		// cout<<"_tabNbModality["<<j-1<<"] : "<<_tabNbModality[j-1]<<endl;
-		// cout<<"tabFactor["<<j<<"] : "<<tabFactor[j]<<endl;
+		// MIXMOD_COUT<<"_tabNbModality["<<j-1<<"] : "<<_tabNbModality[j-1]<<endl;
+		// MIXMOD_COUT<<"tabFactor["<<j<<"] : "<<tabFactor[j]<<endl;
 	}
 	if (knownPartition && initPartition) {
 		tabFactor[_pbDimension] = tabFactor[_pbDimension - 1] * _tabNbModality[_pbDimension - 1];
-		// cout<<"tabFactor["<<_pbDimension<<"] : "<<tabFactor[_pbDimension]<<endl;
+		// MIXMOD_COUT<<"tabFactor["<<_pbDimension<<"] : "<<tabFactor[_pbDimension]<<endl;
 		tabFactor[_pbDimension + 1] = tabFactor[_pbDimension] * (knownPartition->getNbCluster() + 1);
-		// cout<<"tabFactor["<<_pbDimension+1<<"] : "<<tabFactor[_pbDimension+1]<<endl;
+		// MIXMOD_COUT<<"tabFactor["<<_pbDimension+1<<"] : "<<tabFactor[_pbDimension+1]<<endl;
 	}
 	if ((knownPartition && !initPartition) || (!knownPartition && initPartition)) {
 		tabFactor[_pbDimension] = tabFactor[_pbDimension - 1] * _tabNbModality[_pbDimension - 1];
-		// cout<<"tabFactor["<<_pbDimension<<"] : "<<tabFactor[_pbDimension]<<endl;
+		// MIXMOD_COUT<<"tabFactor["<<_pbDimension<<"] : "<<tabFactor[_pbDimension]<<endl;
 	}
 
 	sizeList = 0;
@@ -413,7 +413,7 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 		if (!knownPartition && initPartition)
 			value += (initPartition->getGroupNumber(i) + 1) * tabFactor[_pbDimension];
 
-		// cout<<"value de l'indvidu "<<i+1<<" : "<<value<<endl;
+		// MIXMOD_COUT<<"value de l'indvidu "<<i+1<<" : "<<value<<endl;
 		tabBaseMj[i] = value;
 
 		// Search if sample already exist in list
@@ -511,7 +511,7 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 			idxSample++;
 		}
 		correspondenceOriginDataToReduceData[i] = idxSample;
-		// cout<<correspondcenceOriginDataToReduceData[i]<<endl;
+		// MIXMOD_COUT<<correspondcenceOriginDataToReduceData[i]<<endl;
 	}
 
 	// Set reduce labels //
@@ -550,30 +550,30 @@ Data *BinaryData::reduceData(std::vector<int64_t> &correspondenceOriginDataToRed
 	}
 
 	///////////////////////////////////////////////
-	/*cout<<endl<<"nb d'individus differents : "<<sizeList<<endl;
-	 cout<<"individu | knownLabel | initLabel | Poids  "<<endl<<endl;
+	/*MIXMOD_COUT<<endl<<"nb d'individus differents : "<<sizeList<<endl;
+	 MIXMOD_COUT<<"individu | knownLabel | initLabel | Poids  "<<endl<<endl;
 	 for (listIterator = listDiffIndiv.begin(); listIterator != listDiffIndiv.end(); listIterator++)
-	 cout<<(*listIterator)->val<<"   "<<(*listIterator)->weight<<endl;
+	 MIXMOD_COUT<<(*listIterator)->val<<"   "<<(*listIterator)->weight<<endl;
 
 	 for (i=0; i<sizeList; i++){
 	 for (j=0; j<_pbDimension; j++){
-	 cout<<" "<<((BinarySample*)data[i])->getDataValue(j)<<" ";
+	 MIXMOD_COUT<<" "<<((BinarySample*)data[i])->getDataValue(j)<<" ";
    }
-	 cout<<"  | ";
+	 MIXMOD_COUT<<"  | ";
 	 if (knownPartition){
-	 cout<<oKnownPartition->getGroupNumber(i)+1;
+	 MIXMOD_COUT<<oKnownPartition->getGroupNumber(i)+1;
    }// 0 if unknown
-	 cout<<"  | ";
+	 MIXMOD_COUT<<"  | ";
 	 if (initPartition){
-	 cout<<oInitPartition->getGroupNumber(i)+1;
+	 MIXMOD_COUT<<oInitPartition->getGroupNumber(i)+1;
    }// 0 if unknown
-	 cout<<"  | ";
-	 cout<<weight[i]<<" ";
-	 cout<<endl;
+	 MIXMOD_COUT<<"  | ";
+	 MIXMOD_COUT<<weight[i]<<" ";
+	 MIXMOD_COUT<<endl;
    }
 
 	 for (i=0; i<_nbSample; i++){
-	 cout<<"correspondcenceOriginDataToReduceData["<<i<<"] : "<<correspondcenceOriginDataToReduceData[i]<<endl;
+	 MIXMOD_COUT<<"correspondcenceOriginDataToReduceData["<<i<<"] : "<<correspondcenceOriginDataToReduceData[i]<<endl;
    }*/
 	//////////////////////////////////////////////
 

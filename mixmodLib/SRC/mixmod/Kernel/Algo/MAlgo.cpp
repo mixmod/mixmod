@@ -64,7 +64,7 @@ void MAlgo::run(Model *&model)
 	model->setAlgoName(M);
 	model->Mstep(); // M Step
 	model->Estep(); // E step to update Tik
-	                // cout << "\nMaximization algorithm \n";
+	                // MIXMOD_COUT << "\nMaximization algorithm \n";
 }
 
 }

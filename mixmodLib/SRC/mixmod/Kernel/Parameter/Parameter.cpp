@@ -159,12 +159,12 @@ int64_t Parameter::generateRandomIndex(bool *tabIndividualCanBeUsedForInitRandom
 			idxSample++;
 			sumWeight += weight[idxSample];
 		}
-		// cout<<"index tire au hasard :"<<idxSample<<endl;
+		// MIXMOD_COUT<<"index tire au hasard :"<<idxSample<<endl;
 		IdxSampleCanBeUsed = tabIndividualCanBeUsedForInitRandom[idxSample];
 	}
 	// on indique que cet individu ne pourra pas etre tire au  hasard pour une autre classe
 	tabIndividualCanBeUsedForInitRandom[idxSample] = false;
-	// cout<<"choisi"<<endl;
+	// MIXMOD_COUT<<"choisi"<<endl;
 	return idxSample;
 }
 

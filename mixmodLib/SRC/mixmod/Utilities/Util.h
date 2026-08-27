@@ -46,6 +46,7 @@
 #include "mixmod/Utilities/exceptions/InputException.h"
 #include "mixmod/Utilities/exceptions/NumericException.h"
 #include "mixmod/Utilities/exceptions/OtherException.h"
+#include "mixmod/Utilities/OutputAdapter.h"
 
 // Need matrix output routines
 #include <cstring>

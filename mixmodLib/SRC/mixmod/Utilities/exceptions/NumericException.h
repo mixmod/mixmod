@@ -44,7 +44,7 @@ public:
 	Exception *clone() throw();
 	virtual const char *what() const throw();
 	virtual bool operator==(const Exception &) const throw();
-	virtual void run(std::ostream &flux = std::cout) const throw();
+	virtual void run(std::ostream &flux = MIXMOD_COUT) const throw();
 
 	virtual ~NumericException() throw() {}
 

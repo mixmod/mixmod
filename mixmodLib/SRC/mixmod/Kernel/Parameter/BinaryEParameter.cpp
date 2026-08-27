@@ -243,7 +243,7 @@ void BinaryEParameter::computeScatter()
      double * tabNbSampleInMajorModality, double ** tabNbSamplePerModality){
   double value = 0.0;
   for (int64_t j=0; j<_pbDimension; j++){
-    cout<<"tabNbSampleInMajorModality[j] : "<<tabNbSampleInMajorModality[j]<<endl;
+    MIXMOD_COUT<<"tabNbSampleInMajorModality[j] : "<<tabNbSampleInMajorModality[j]<<endl;
     value += tabNbSampleInMajorModality[j];
 }
   _scatter = 1-  (value / (totalWeight * _pbDimension));
@@ -305,12 +305,12 @@ void BinaryEParameter::editScatter(int64_t k)
 	for (j = 0; j < _pbDimension; j++) {
 		for (h = 1; h <= _tabNbModality[j]; h++) {
 			if (h == _tabCenter[k][j]) {
-				cout << "\t" << _scatter;
+				MIXMOD_COUT << "\t" << _scatter;
 			} else {
-				cout << "\t" << _scatter / (_tabNbModality[j] - 1);
+				MIXMOD_COUT << "\t" << _scatter / (_tabNbModality[j] - 1);
 			}
 		}
-		cout << endl;
+		MIXMOD_COUT << endl;
 	}
 }
 

@@ -184,9 +184,9 @@ GaussianData::GaussianData(int64_t nbSample, int64_t pbDimension, Data *original
 	_matrix = new Sample *[_nbSample];
 	for (int64_t i = 0; i < _nbSample; i++) {
 		_matrix[i] = origMatrix[block._tabWeightedIndividual[i].val];
-		// cout<<"ind : "<<block._tabWeightedIndividual[i].val;
+		// MIXMOD_COUT<<"ind : "<<block._tabWeightedIndividual[i].val;
 		_weight[i] = block._tabWeightedIndividual[i].weight;
-		// cout<<" - weight : "<<block._tabWeightedIndividual[i].weight<<endl;
+		// MIXMOD_COUT<<" - weight : "<<block._tabWeightedIndividual[i].weight<<endl;
 	}
 
 	_yStore = new double *[nbSample];
@@ -337,8 +337,8 @@ void GaussianData::output(std::ostream &fo)
 {
 
 	if (VERBOSE == 1) {
-		cout << "Sample size: " << _nbSample << endl;
-		cout << "  Dimension: " << _pbDimension << endl;
+		MIXMOD_COUT << "Sample size: " << _nbSample << endl;
+		MIXMOD_COUT << "  Dimension: " << _pbDimension << endl;
 	}
 
 	editTab(_yStore, _nbSample, _pbDimension, fo, " ", "");

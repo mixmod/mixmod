@@ -233,13 +233,13 @@ double GaussianSphericalParameter::getLogLikelihoodOne() const
 	// XEMSphericalMatrix * SigmaMoins1 = new XEMSphericalMatrix( _pbDimension);
 	Matrix *SigmaMoins1_p = NULL;
 	// SigmaMoins1->inverse(Sigma);// virtual
-	// cout<<"S"<<endl;
-	// Sigma->edit(cout,"");
+	// MIXMOD_COUT<<"S"<<endl;
+	// Sigma->edit(MIXMOD_COUT,"");
 	Sigma->inverse(SigmaMoins1_p); // actually SigmaMoins1 are created by inverse() with "New Matrix..."
 	std::unique_ptr<Matrix> SigmaMoins1(
 	    SigmaMoins1_p); // instead of the final delete (still ugly, althtough better than the final delete...)
-	// cout<<"S-1"<<endl;
-	// SigmaMoins1->edit(cout,"");
+	// MIXMOD_COUT<<"S-1"<<endl;
+	// SigmaMoins1->edit(MIXMOD_COUT,"");
 	NumericException error = NumericException(minDeterminantSigmaValueError);
 	double detSigma = Sigma->determinant(error); // virtual
 

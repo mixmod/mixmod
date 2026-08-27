@@ -162,7 +162,7 @@ void ClusteringMain::run(int seed, IoMode iomode, int verbose, int massiccc)
 				//-----------------
 
 				if (VERBOSE == 1)
-					std::cout << "Model name : " << ModelNameToString(modelType->getModelName()) << std::endl;
+					MIXMOD_COUT << "Model name : " << ModelNameToString(modelType->getModelName()) << std::endl;
 
 				Model *model = nullptr;
 				switch (_input->getDataType()) {

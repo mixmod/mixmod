@@ -30,9 +30,9 @@
 #ifndef XEM_EXCEPTION_H
 #define XEM_EXCEPTION_H
 
+#include "mixmod/Utilities/OutputAdapter.h"
 #include "mixmod/Utilities/exceptions/ErrorEnumerations.h"
 #include <exception>
-#include <iostream>
 #include <map>
 #include <string.h>
 #include <typeinfo>
@@ -62,7 +62,7 @@ public:
 	virtual bool operator!=(const Exception &other) const throw() { return !(*this == other); }
 	/**Interface for runner method. It will print the error and its content to the stream passed as
 	 * argument.*/
-	virtual void run(std::ostream &flux = std::cout) const throw();
+	virtual void run(std::ostream &flux = MIXMOD_COUT) const throw();
 
 	virtual ~Exception() throw() {}
 
