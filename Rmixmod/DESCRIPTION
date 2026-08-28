@@ -1,6 +1,6 @@
 Package: Rmixmod
-Version: 2.1.10
-Date: 2023-12-10
+Version: 2.1.12
+Date: 2026-08-26
 Title: Classification with Mixture Modelling
 Description: Interface of 'MIXMOD' software for supervised, unsupervised and
     semi-supervised classification with mixture modelling <doi: 10.18637/jss.v067.i06>.
