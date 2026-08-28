@@ -252,7 +252,9 @@ void GaussianEDDAParameter::updateTabInvSigmaAndDet()
 		NumericException error = NumericException(minDeterminantSigmaValueError);
 		detSigma = _tabSigma[k]->determinant(error);
 		_tabSigma[k]->inverse(_tabInvSigma[k]);
-		_tabInvSqrtDetSigma[k] = 1.0 / sqrt(detSigma);
+		// Use fabs as a safety net: SymmetricMatrix::determinant already returns fabs(det),
+		// but other matrix types may not guard against near-zero negative FP rounding.
+		_tabInvSqrtDetSigma[k] = 1.0 / sqrt(fabs(detSigma));
 	}
 }
 
