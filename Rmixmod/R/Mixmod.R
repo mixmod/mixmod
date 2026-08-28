@@ -306,7 +306,6 @@ setMethod(
       if (is.null(xmlIn)) {
         stop("data is missing !")
       } else {
-
         # xmlInput <- toString(xmlIn);
         # if(!file.exists(xmlInput)) {
         #  stop("xmlIn must be a file!")
@@ -442,229 +441,237 @@ setMethod(
   f = "plot",
   signature = c("Mixmod"),
   function(x, y, showOnly = NULL, withResult = NULL, hist_x_dim = 10000, ...) {
-    # for quantitative data
-    # if ( x@dataType == "quantitative" ||(x@dataType == "composite" && is.dataType(data.frame(x@data)[y]) == "quantitative" )){
-    # if ( x@dataType == "quantitative" ){
-    if (x@dataType != "composite" && !is.null(showOnly)) {
-      stop("showOnly argument is allowed only when data are composite")
-    }
-    if (!is.null(showOnly) && !(showOnly %in% c("quantitative", "qualitative"))) {
-      stop("only 'quantitative'and 'qualitative' values are allowed for showOnly")
-    }
-    if (x@dataType == "composite" && is.null(showOnly)) {
-      stop("showOnly argument (i.e. showOnly={'quantitative'|'qualitative'}) is mandatory when data are heterogeneous")
-    }
-    y2 <- NULL
-    if (!missing(y)) y2 <- y
-    if (is.null(withResult)) {
-      thisResult <- x@bestResult
-    } else if (is(withResult, "MixmodResults")) {
-      # if(!(withResult %in% x@results)) stop("unknown result");
-      thisResult <- withResult
-    } else if (withResult %in% seq_along(x@results)) {
-      thisResult <- x@results[[withResult]]
+    if (x@error) {
+      warning("All models have errors, nothing to plot")
     } else {
-      stop("unknown result.")
-    }
-    if (.is_quantitative_alike(x, y2, showOnly)) {
-      # create layout
-      if (x@nbVariable == 1) {
-        stop("data has only one variable. Try hist() function to get a 1D representation of x.")
-      } else if (!missing(y)) {
-        if (is.numeric(y)) {
-          if (max(y) > ncol(x@data)) {
-            stop("y indices mismatch the data frame dimension")
-          }
-        } else {
-          if (sum(y %in% colnames(x@data)) != length(y)) {
-            stop(cat("unknown variable: ", paste(y[which(!(y %in% colnames(x@data)))]), "\n"))
-          }
-        }
-        # get old par
-        op <- par(no.readonly = TRUE) # the whole list of settable par's.
-        # changing marging
-        par(mar = rep(2.5, 4))
-        # decreasing font size
-        par(cex = .75)
-        # create layout matrix
-        # par( mfrow = c(x@nbVariable, x@nbVariable) )
-        split.screen(c(length(y), length(y)))
-        # create histogram on diagonal
-        for (i in seq_along(y)) {
-          # par(mfg=c(i,i))
-          screen(i + ((i - 1) * length(y)))
-          histCluster(thisResult, x@data, variables = y[i], hist_x_dim = hist_x_dim, ...)
-        }
-        if (length(y) > 1) {
-          # create biplots
-          for (i in 2:length(y)) {
-            for (j in 1:(i - 1)) {
-              # par(mfg=c(i,j))
-              screen(j + ((i - 1) * length(y)))
-              plotCluster(thisResult, x@data, variable1 = y[j], variable2 = y[i], ...)
-            }
-          }
-        }
-        close.screen(all.screens = TRUE)
-        # restore plotting parameters
-        par(op)
-      } else { # y is missing => show all variables
-        # get old par
-        op <- par(no.readonly = TRUE) # the whole list of settable par's.
-        # changing marging
-        par(mar = rep(2.5, 4))
-        # decreasing font size
-        par(cex = .75)
-        # create layout matrix
-        nbVariable <- x@nbVariable
-        cols <- colnames(x@data)
-        if (x@dataType == "composite") {
-          factor <- thisResult@parameters@factor
-          data <- x@data[, which(factor == 0)]
-          nbVariable <- length(which(factor == 0))
-          cols <- cols[which(factor == 0)]
-        }
-        # par( mfrow = c(x@nbVariable, x@nbVariable) )
-        split.screen(c(nbVariable, nbVariable))
-        # create histogram on diagonal
-        for (i in 1:nbVariable) {
-          # par(mfg=c(i,i))
-          screen(i + ((i - 1) * nbVariable))
-          histCluster(thisResult, x@data, variables = cols[i], hist_x_dim = hist_x_dim, ...)
-        }
-        # create biplots
-        for (i in 2:nbVariable) {
-          for (j in 1:(i - 1)) {
-            # par(mfg=c(i,j))
-            screen(j + ((i - 1) * nbVariable))
-            plotCluster(thisResult, x@data, variable1 = cols[j], variable2 = cols[i], ...)
-          }
-        }
-        close.screen(all.screens = TRUE)
-        # restore plotting parameters
-        par(op)
+      if (x@dataType != "composite" && !is.null(showOnly)) {
+        stop("showOnly argument is allowed only when data are composite")
       }
-    }
-    # for qualitative data
-    else if (.is_qualitative_alike(x, y2, showOnly)) {
-      # create layout
-      nbVariable <- x@nbVariable
-      data <- x@data
-      if (x@dataType == "composite") {
-        factor <- thisResult@parameters@factor
-        data <- x@data[, which(factor != 0)]
-        nbVariable <- length(which(factor != 0))
+      if (!is.null(showOnly) && !(showOnly %in% c("quantitative", "qualitative"))) {
+        stop("only 'quantitative'and 'qualitative' values are allowed for showOnly")
       }
-      if (nbVariable == 1) {
-        stop("data has only one variable. Try barplot() function to get a 1D representation of x.")
+      if (x@dataType == "composite" && is.null(showOnly)) {
+        stop("showOnly argument (i.e. showOnly={'quantitative'|'qualitative'}) is mandatory when data are heterogeneous")
+      }
+      y2 <- NULL
+      if (!missing(y)) y2 <- y
+      if (is.null(withResult)) {
+        thisResult <- x@bestResult
+      } else if (is(withResult, "MixmodResults")) {
+        # if(!(withResult %in% x@results)) stop("unknown result");
+        thisResult <- withResult
+      } else if (withResult %in% seq_along(x@results)) {
+        thisResult <- x@results[[withResult]]
       } else {
-        # create layout matrix
-        par(mfrow = c(1, 1))
-        # get binary matrix from x
-        matX <- matrix2binary(as.data.frame(data))
-        # get number of observations
-        n <- dim(matX)[1]
-        # get number of variables
-        p <- ncol(data)
-        Dc <- drop((rep(1, n)) %*% matX)
-        Y <- t(t(matX) / (sqrt(p * Dc)))
-        Y.svd <- svd(Y)
-        individuals <- Y %*% Y.svd$v[, 2:3] / p
-        ## too slow
-        # 	if(exists("rmixmod_cex")&&(rmixmod_cex == "old"||rmixmod_cex == "both")){
-        #           # get unique points
-        #           unique.ind<-unique(individuals)
-        #           # get number of duplication for each individuals
-        #           point.size<-numeric(nrow(unique.ind))
-        #           for(i in 1:nrow(unique.ind) ){
-        #             for(j in 1:nrow(individuals)){
-        #               point.size[i]<-point.size[i]+sum(unique.ind[i,]==individuals[j,])
-        #             }
-        #             point.size[i]<-point.size[i]/2
-        #           }
-        # 	   old_vect = point.size
-        # 	}
-        # end too slow
-        ## a faster implementation
-        # if(!exists("rmixmod_cex")||rmixmod_cex == "new"||rmixmod_cex == "both"){
-        # Rounded with a threshold to be determined before detecting duplicates
-        # in order to identify close individuals
-        # NB: obviously, this is non an euclidean metric
-        # 	if(exists("rmixmod_cex_digits")){
-        # 	   if(rmixmod_cex_digits!=-1){
-        # 	      print(cat("round digits:",rmixmod_cex_digits))
-        # 	      individuals = round(individuals,digits=rmixmod_cex_digits)
-        # 	   }
-        # 	} else {
-        ind_threshold <- (max(individuals) - min(individuals)) / 10000
-        nb_digits <- floor(log10(ind_threshold))
-        if (nb_digits < 0) {
-          nb_digits <- abs(nb_digits)
-          print(cat("round digits :", nb_digits))
-          individuals <- round(individuals, digits = nb_digits)
-        }
-        # 	} #end else
-        # Exemple duplicated():
-        # > vec = c(1,4,5,6,5,7,5,8)
-        # 5 figure 3 fois dans vec: en 3, 5 et 7
-        # > duplicated(vec)
-        # [1] FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
-        # > which(duplicated(vec))
-        # [1] 5 7
-        dupl <- duplicated(individuals)
-        which_dupl <- which(dupl)
-        print(cat("duplicated individuals :", length(which_dupl)))
-        vect_res <- rep(1, nrow(individuals))
-        for (d in which_dupl) {
-          dupl_elt <- individuals[d, ]
-          # looking for the first occurrence of the duplicated element
-          for (i in seq_len(nrow(individuals))) {
-            if (individuals[i, 1] == dupl_elt[1] && individuals[i, 2] == dupl_elt[2]) {
-              # increments its weight in the result vector
-              vect_res[i] <- vect_res[i] + 1
-              break
-            }
-          }
-        }
-        # duplicates are deleted in the result vector
-        # and in individuals before setting unique.ind
-        if (length(which_dupl)) {
-          vect_res <- vect_res[-which_dupl]
-          unique.ind <- individuals[-which_dupl, ]
-        } else {
-          unique.ind <- individuals
-        }
-        # print(vect_res)
-        point.size <- vect_res
-        # } #end if(!exists("rmixmod_cex")||rmixmod_cex == "new"||rmixmod_cex == "both"){
-        ## end alternative solution
-        # 	if(exists("rmixmod_cex")&&(rmixmod_cex == "both")){
-        # 	print("oldvect--------------------")
-        # 	print(length(old_vect))
-        # 	print("newvect--------------------")
-        # 	print(length(vect_res))
-        # 	print("which(duplicated(individuals))")
-        # 	print(which(duplicated(individuals)))
-        # 	print("which_dupl")
-        # 	print(which_dupl)
-        # 	   #diff_vect = which(!(old_vect==vect_res))
-        # 	   #print(diff_vect)
-        # 	   #print(point.size[diff_vect])
-        #    } # end if(exists("rmixmod_cex")&&(rmixmod_cex == "both"))
-        # plotting the first 2 axes
-        plot(unique.ind[, 2] ~ unique.ind[, 1],
-          cex = point.size,
-          col = thisResult@partition[-which(duplicated(individuals))] + 1,
-          pch = thisResult@partition[-which(duplicated(individuals))], xlab = "Axis 1", ylab = "Axis 2",
-          main = "Multiple Correspondence Analysis", ...
-        )
+        stop("unknown result.")
       }
-    } else if (x@dataType == "composite") {
-      stop("showOnly argument (i.e. showOnly={'quantitative'|'qualitative'}) is mandatory when data are heterogeneous")
+
+      # plots
+      if (.is_quantitative_alike(x, y2, showOnly)) {
+        .plot_quantitative_alike(x, thisResult, y, hist_x_dim, ...)
+      } else if (.is_qualitative_alike(x, y2, showOnly)) {
+        .plot_qualitative_alike(x, thisResult, ...)
+      } else if (x@dataType == "composite") {
+        stop("showOnly argument (i.e. showOnly={'quantitative'|'qualitative'}) is mandatory when data are heterogeneous")
+      }
     }
     invisible()
   }
 )
+
+.plot_quantitative_alike <- function(x, thisResult, y, hist_x_dim, ...) {
+  # create layout
+  if (x@nbVariable == 1) {
+    stop("data has only one variable. Try hist() function to get a 1D representation of x.")
+  } else if (!missing(y)) {
+    if (is.numeric(y)) {
+      if (max(y) > ncol(x@data)) {
+        stop("y indices mismatch the data frame dimension")
+      }
+    } else {
+      if (sum(y %in% colnames(x@data)) != length(y)) {
+        stop(cat("unknown variable: ", paste(y[which(!(y %in% colnames(x@data)))]), "\n"))
+      }
+    }
+    # get old par
+    op <- par(no.readonly = TRUE) # the whole list of settable par's.
+    # changing marging
+    par(mar = rep(2.5, 4))
+    # decreasing font size
+    par(cex = .75)
+    # create layout matrix
+    # par( mfrow = c(x@nbVariable, x@nbVariable) )
+    split.screen(c(length(y), length(y)))
+    # create histogram on diagonal
+    for (i in seq_along(y)) {
+      # par(mfg=c(i,i))
+      screen(i + ((i - 1) * length(y)))
+      histCluster(thisResult, x@data, variables = y[i], hist_x_dim = hist_x_dim, ...)
+    }
+    if (length(y) > 1) {
+      # create biplots
+      for (i in 2:length(y)) {
+        for (j in 1:(i - 1)) {
+          # par(mfg=c(i,j))
+          screen(j + ((i - 1) * length(y)))
+          plotCluster(thisResult, x@data, variable1 = y[j], variable2 = y[i], ...)
+        }
+      }
+    }
+    close.screen(all.screens = TRUE)
+    # restore plotting parameters
+    par(op)
+  } else { # y is missing => show all variables
+    # get old par
+    op <- par(no.readonly = TRUE) # the whole list of settable par's.
+    # changing marging
+    par(mar = rep(2.5, 4))
+    # decreasing font size
+    par(cex = .75)
+    # create layout matrix
+    nbVariable <- x@nbVariable
+    cols <- colnames(x@data)
+    if (x@dataType == "composite") {
+      factor <- thisResult@parameters@factor
+      data <- x@data[, which(factor == 0)]
+      nbVariable <- length(which(factor == 0))
+      cols <- cols[which(factor == 0)]
+    }
+    # par( mfrow = c(x@nbVariable, x@nbVariable) )
+    split.screen(c(nbVariable, nbVariable))
+    # create histogram on diagonal
+    for (i in 1:nbVariable) {
+      # par(mfg=c(i,i))
+      screen(i + ((i - 1) * nbVariable))
+      histCluster(thisResult, x@data, variables = cols[i], hist_x_dim = hist_x_dim, ...)
+    }
+    # create biplots
+    for (i in 2:nbVariable) {
+      for (j in 1:(i - 1)) {
+        # par(mfg=c(i,j))
+        screen(j + ((i - 1) * nbVariable))
+        plotCluster(thisResult, x@data, variable1 = cols[j], variable2 = cols[i], ...)
+      }
+    }
+    close.screen(all.screens = TRUE)
+    # restore plotting parameters
+    par(op)
+  }
+}
+.plot_qualitative_alike <- function(x, thisResult, ...) {
+  # create layout
+  nbVariable <- x@nbVariable
+  data <- x@data
+  if (x@dataType == "composite") {
+    factor <- thisResult@parameters@factor
+    data <- x@data[, which(factor != 0)]
+    nbVariable <- length(which(factor != 0))
+  }
+  if (nbVariable == 1) {
+    stop("data has only one variable. Try barplot() function to get a 1D representation of x.")
+  } else {
+    # create layout matrix
+    par(mfrow = c(1, 1))
+    # get binary matrix from x
+    matX <- matrix2binary(as.data.frame(data))
+    # get number of observations
+    n <- dim(matX)[1]
+    # get number of variables
+    p <- ncol(data)
+    Dc <- drop((rep(1, n)) %*% matX)
+    Y <- t(t(matX) / (sqrt(p * Dc)))
+    Y.svd <- svd(Y)
+    individuals <- Y %*% Y.svd$v[, 2:3] / p
+    ## too slow
+    # 	if(exists("rmixmod_cex")&&(rmixmod_cex == "old"||rmixmod_cex == "both")){
+    #           # get unique points
+    #           unique.ind<-unique(individuals)
+    #           # get number of duplication for each individuals
+    #           point.size<-numeric(nrow(unique.ind))
+    #           for(i in 1:nrow(unique.ind) ){
+    #             for(j in 1:nrow(individuals)){
+    #               point.size[i]<-point.size[i]+sum(unique.ind[i,]==individuals[j,])
+    #             }
+    #             point.size[i]<-point.size[i]/2
+    #           }
+    # 	   old_vect = point.size
+    # 	}
+    # end too slow
+    ## a faster implementation
+    # if(!exists("rmixmod_cex")||rmixmod_cex == "new"||rmixmod_cex == "both"){
+    # Rounded with a threshold to be determined before detecting duplicates
+    # in order to identify close individuals
+    # NB: obviously, this is non an euclidean metric
+    # 	if(exists("rmixmod_cex_digits")){
+    # 	   if(rmixmod_cex_digits!=-1){
+    # 	      print(cat("round digits:",rmixmod_cex_digits))
+    # 	      individuals = round(individuals,digits=rmixmod_cex_digits)
+    # 	   }
+    # 	} else {
+    ind_threshold <- (max(individuals) - min(individuals)) / 10000
+    nb_digits <- floor(log10(ind_threshold))
+    if (nb_digits < 0) {
+      nb_digits <- abs(nb_digits)
+      print(cat("round digits :", nb_digits))
+      individuals <- round(individuals, digits = nb_digits)
+    }
+    # 	} #end else
+    # Exemple duplicated():
+    # > vec = c(1,4,5,6,5,7,5,8)
+    # 5 figure 3 fois dans vec: en 3, 5 et 7
+    # > duplicated(vec)
+    # [1] FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+    # > which(duplicated(vec))
+    # [1] 5 7
+    dupl <- duplicated(individuals)
+    which_dupl <- which(dupl)
+    print(cat("duplicated individuals :", length(which_dupl)))
+    vect_res <- rep(1, nrow(individuals))
+    for (d in which_dupl) {
+      dupl_elt <- individuals[d, ]
+      # looking for the first occurrence of the duplicated element
+      for (i in seq_len(nrow(individuals))) {
+        if (individuals[i, 1] == dupl_elt[1] && individuals[i, 2] == dupl_elt[2]) {
+          # increments its weight in the result vector
+          vect_res[i] <- vect_res[i] + 1
+          break
+        }
+      }
+    }
+    # duplicates are deleted in the result vector
+    # and in individuals before setting unique.ind
+    if (length(which_dupl)) {
+      vect_res <- vect_res[-which_dupl]
+      unique.ind <- individuals[-which_dupl, ]
+    } else {
+      unique.ind <- individuals
+    }
+    # print(vect_res)
+    point.size <- vect_res
+    # } #end if(!exists("rmixmod_cex")||rmixmod_cex == "new"||rmixmod_cex == "both"){
+    ## end alternative solution
+    # 	if(exists("rmixmod_cex")&&(rmixmod_cex == "both")){
+    # 	print("oldvect--------------------")
+    # 	print(length(old_vect))
+    # 	print("newvect--------------------")
+    # 	print(length(vect_res))
+    # 	print("which(duplicated(individuals))")
+    # 	print(which(duplicated(individuals)))
+    # 	print("which_dupl")
+    # 	print(which_dupl)
+    # 	   #diff_vect = which(!(old_vect==vect_res))
+    # 	   #print(diff_vect)
+    # 	   #print(point.size[diff_vect])
+    #    } # end if(exists("rmixmod_cex")&&(rmixmod_cex == "both"))
+    # plotting the first 2 axes
+    plot(unique.ind[, 2] ~ unique.ind[, 1],
+      cex = point.size,
+      col = thisResult@partition[-which(duplicated(individuals))] + 1,
+      pch = thisResult@partition[-which(duplicated(individuals))], xlab = "Axis 1", ylab = "Axis 2",
+      main = "Multiple Correspondence Analysis", ...
+    )
+  }
+}
 
 #' Histograms of a class [\code{\linkS4class{Mixmod}}]
 #'
@@ -695,7 +702,11 @@ setMethod(
   f = "hist",
   signature = c("Mixmod"),
   function(x, hist_x_dim = 10000, ...) {
-    histCluster(x@bestResult, x@data, hist_x_dim = hist_x_dim, ...)
+    if (x@error) {
+      warning("All models have errors, nothing to plot")
+    } else {
+      histCluster(x@bestResult, x@data, hist_x_dim = hist_x_dim, ...)
+    }
     invisible()
   }
 )
@@ -729,7 +740,11 @@ setMethod(
   f = "barplot",
   signature = c("Mixmod"),
   function(height, ...) {
-    barplotCluster(height@bestResult, height@data, ...)
+    if (height@error) {
+      warning("All models have errors, nothing to plot")
+    } else {
+      barplotCluster(height@bestResult, height@data, ...)
+    }
     invisible()
   }
 )

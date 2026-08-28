@@ -145,7 +145,7 @@ double SymmetricMatrix::compute_trace_W_C(Matrix *C)
 
 void SymmetricMatrix::inverse(Matrix *&Inv)
 {
-	// cout<<"Inv Symm :  "<<Inv<<endl;
+	// MIXMOD_COUT<<"Inv Symm :  "<<Inv<<endl;
 	if (Inv == NULL) {
 		Inv = new SymmetricMatrix(_s_pbDimension);
 	}
@@ -153,7 +153,7 @@ void SymmetricMatrix::inverse(Matrix *&Inv)
 	MATH::SymmetricMatrix *value_Inv = _value->Inverse(_store);
 
 	Inv->setSymmetricStore(value_Inv->Store());
-	// cout<<"Inv Symm :  "<<Inv<<endl;
+	// MIXMOD_COUT<<"Inv Symm :  "<<Inv<<endl;
 	delete value_Inv;
 }
 

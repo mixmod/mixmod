@@ -81,16 +81,16 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 	// NRtests must be made only with Eigen for full precision
 	double precision = 0.0;
 	if (XEMmathLib != 1) {
-		cout << "****************************************************************" << endl;
-		cout << "WARNING : NRtests must be launched with Eigen for full precision" << endl;
-		cout << "Build will fail on Continuous Integration Server because of Eigen Unit Tests" << endl;
-		cout << "Let XEMmathLib value to 1 in SelectLibrary.h before commiting anything" << endl;
-		cout << "You can still check other libraries results/performances with the following precision" << endl;
+		MIXMOD_COUT << "****************************************************************" << endl;
+		MIXMOD_COUT << "WARNING : NRtests must be launched with Eigen for full precision" << endl;
+		MIXMOD_COUT << "Build will fail on Continuous Integration Server because of Eigen Unit Tests" << endl;
+		MIXMOD_COUT << "Let XEMmathLib value to 1 in SelectLibrary.h before commiting anything" << endl;
+		MIXMOD_COUT << "You can still check other libraries results/performances with the following precision" << endl;
 		precision = 1.e-6; // Seems to be a good precision to check other libs
-		cout << "Precision = " << precision << endl;
-		cout << "****************************************************************" << endl;
+		MIXMOD_COUT << "Precision = " << precision << endl;
+		MIXMOD_COUT << "****************************************************************" << endl;
 	}
-	cout.precision(std::numeric_limits<double>::digits10 + 1);
+	MIXMOD_COUT.precision(std::numeric_limits<double>::digits10 + 1);
 	int64_t nbSample = _predictModelOutput[0]->getProbaDescription()->getProba()->getNbSample();
 
 	for (unsigned int k = 0; k < _predictModelOutput.size(); k++) {
@@ -99,7 +99,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 
 		if ((OutputThis->getStrategyRunError() == NOERROR && OutputOther->getStrategyRunError() != NOERROR) ||
 		    (OutputThis->getStrategyRunError() != NOERROR && OutputOther->getStrategyRunError() == NOERROR)) {
-			cout << "UNEQUAL: one model failed, the other one did not" << endl;
+			MIXMOD_COUT << "UNEQUAL: one model failed, the other one did not" << endl;
 			return false;
 		}
 
@@ -122,7 +122,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				clustersCorrespondence[labelsThis[i] - 1] = labelsOther[i] - 1;
 
 				if (labelsThis[i] != labelsOther[i])
-					cout << "WARNING: classes misalignment res" << k + 1 << endl;
+					MIXMOD_COUT << "WARNING: classes misalignment res" << k + 1 << endl;
 			}
 		}
 
@@ -130,7 +130,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 		// sanity check: if some cluster correspondence is unassigned, we have an issue...
 		for (int64_t i = 0; i < nbClusters; i++) {
 			if (clustersCorrespondence[i] < 0) {
-				cout << "ERROR: component " << (i + 1) << " is empty in res" << k + 1 << endl;
+				MIXMOD_COUT << "ERROR: component " << (i + 1) << " is empty in res" << k + 1 << endl;
 				return false;
 			}
 		}
@@ -142,7 +142,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 		// Checking labels
 		for (int64_t i = 0; i < nbSample; i++) {
 			if (clustersCorrespondence[labelsThis[i] - 1] != labelsOther[i] - 1) {
-				cout << "UNEQUAL: labels differ resLabel" << k + 1 << "   (at least) at row " << (i + 1) << endl;
+				MIXMOD_COUT << "UNEQUAL: labels differ resLabel" << k + 1 << "   (at least) at row " << (i + 1) << endl;
 				return false;
 			}
 		}
@@ -154,7 +154,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 		for (int64_t i = 0; i < nbSample; i++) {
 			for (int64_t j = 0; j < nbCluster; j++) {
 				if (fabs(probaThis[i][j] - probaOther[i][clustersCorrespondence[j]]) > precision) {
-					cout << "UNEQUAL: probabilities differ resProba" << k + 1 << "   (at least) at row " << (i + 1)
+					MIXMOD_COUT << "UNEQUAL: probabilities differ resProba" << k + 1 << "   (at least) at row " << (i + 1)
 					     << ", cluster " << (j + 1) << ": computed " << probaThis[i][j] << ", expected "
 					     << probaOther[i][clustersCorrespondence[j]] << endl;
 					return false;
@@ -173,7 +173,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				// Checking tabProportion
 				if (fabs((bParameterThis->getTabProportion())[j] -
 				         (bParameterOther->getTabProportion())[clustersCorrespondence[j]]) > precision) {
-					cout << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
+					MIXMOD_COUT << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
 					     << (bParameterThis->getTabProportion())[j] << ", expected "
 					     << (bParameterOther->getTabProportion())[clustersCorrespondence[j]] << endl;
 					return false;
@@ -182,7 +182,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t h = 0; h < pbDimension; h++) {
 					if (fabs((bParameterThis->getTabCenter())[j][h] -
 					         (bParameterOther->getTabCenter())[clustersCorrespondence[j]][h]) > precision) {
-						cout << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
+						MIXMOD_COUT << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
 						     << ": computed " << (bParameterThis->getTabCenter())[j][h] << ", expected "
 						     << (bParameterOther->getTabCenter())[clustersCorrespondence[j]][h] << endl;
 						return false;
@@ -197,7 +197,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 					int64_t tabNbModality = bParameterThis->getTabNbModality()[h];
 					for (int64_t m = 0; m < tabNbModality; m++) {
 						if (fabs(scatterThis[j][h][m] - scatterOther[clustersCorrespondence[j]][h][m]) > precision) {
-							cout << "UNEQUAL: Scatter differ resParam" << k + 1 << ", cluster " << (j + 1) << " Scatter["
+							MIXMOD_COUT << "UNEQUAL: Scatter differ resParam" << k + 1 << ", cluster " << (j + 1) << " Scatter["
 							     << h + 1 << "][" << m + 1 << "] "
 							     << ": computed " << scatterThis[j][h][m] << ", expected "
 							     << scatterOther[clustersCorrespondence[j]][h][m] << endl;
@@ -231,7 +231,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				// Checking tabProportion
 				if (fabs((gParameterThis->getTabProportion())[j] -
 				         (gParameterOther->getTabProportion())[clustersCorrespondence[j]]) > precision) {
-					cout << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
+					MIXMOD_COUT << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
 					     << (gParameterThis->getTabProportion())[j] << ", expected "
 					     << (gParameterOther->getTabProportion())[clustersCorrespondence[j]] << endl;
 					return false;
@@ -240,7 +240,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t h = 0; h < pbDimension; h++) {
 					if (fabs((gParameterThis->getTabMean())[j][h] -
 					         (gParameterOther->getTabMean())[clustersCorrespondence[j]][h]) > precision) {
-						cout << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
+						MIXMOD_COUT << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
 						     << ": computed " << (gParameterThis->getTabMean())[j][h] << ", expected "
 						     << (gParameterOther->getTabMean())[clustersCorrespondence[j]][h] << endl;
 						return false;
@@ -252,7 +252,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t l = 0; l < pbDimension; l++) {
 					for (int64_t m = 0; m < pbDimension; m++) {
 						if (fabs(storeThis[l][m] - storeOther[l][m]) > precision) {
-							cout << "UNEQUAL: Sigma differ resParam" << k + 1 << ", cluster " << (j + 1) << " Sigma[" << l + 1
+							MIXMOD_COUT << "UNEQUAL: Sigma differ resParam" << k + 1 << ", cluster " << (j + 1) << " Sigma[" << l + 1
 							     << "][" << m + 1 << "] "
 							     << ": computed " << storeThis[l][m] << ", expected " << storeOther[l][m] << endl;
 							return false;
@@ -283,7 +283,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				// Checking tabProportion
 				if (fabs((bParameterThis->getTabProportion())[j] -
 				         (bParameterOther->getTabProportion())[clustersCorrespondence[j]]) > precision) {
-					cout << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
+					MIXMOD_COUT << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
 					     << (bParameterThis->getTabProportion())[j] << ", expected "
 					     << (bParameterOther->getTabProportion())[clustersCorrespondence[j]] << endl;
 					return false;
@@ -292,7 +292,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t h = 0; h < pbDimension; h++) {
 					if (fabs((bParameterThis->getTabCenter())[j][h] -
 					         (bParameterOther->getTabCenter())[clustersCorrespondence[j]][h]) > precision) {
-						cout << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
+						MIXMOD_COUT << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
 						     << ": computed " << (bParameterThis->getTabCenter())[j][h] << ", expected "
 						     << (bParameterOther->getTabCenter())[clustersCorrespondence[j]][h] << endl;
 						return false;
@@ -307,7 +307,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 					int64_t tabNbModality = bParameterThis->getTabNbModality()[h];
 					for (int64_t m = 0; m < tabNbModality; m++) {
 						if (fabs(scatterThis[j][h][m] - scatterOther[clustersCorrespondence[j]][h][m]) > precision) {
-							cout << "UNEQUAL: Scatter differ resParam" << k + 1 << ", cluster " << (j + 1) << " Scatter["
+							MIXMOD_COUT << "UNEQUAL: Scatter differ resParam" << k + 1 << ", cluster " << (j + 1) << " Scatter["
 							     << h + 1 << "][" << m + 1 << "] "
 							     << ": computed " << scatterThis[j][h][m] << ", expected "
 							     << scatterOther[clustersCorrespondence[j]][h][m] << endl;
@@ -339,7 +339,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				// Checking tabProportion
 				if (fabs((gParameterThis->getTabProportion())[j] -
 				         (gParameterOther->getTabProportion())[clustersCorrespondence[j]]) > precision) {
-					cout << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
+					MIXMOD_COUT << "UNEQUAL: proportions differ resParam" << k + 1 << ", cluster " << (j + 1) << ": computed "
 					     << (gParameterThis->getTabProportion())[j] << ", expected "
 					     << (gParameterOther->getTabProportion())[clustersCorrespondence[j]] << endl;
 					return false;
@@ -348,7 +348,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t h = 0; h < pbDimension; h++) {
 					if (fabs((gParameterThis->getTabMean())[j][h] -
 					         (gParameterOther->getTabMean())[clustersCorrespondence[j]][h]) > precision) {
-						cout << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
+						MIXMOD_COUT << "UNEQUAL: means differ resParam" << k + 1 << ", cluster " << (j + 1) << " Variable " << (h + 1)
 						     << ": computed " << (gParameterThis->getTabMean())[j][h] << ", expected "
 						     << (gParameterOther->getTabMean())[clustersCorrespondence[j]][h] << endl;
 						return false;
@@ -360,7 +360,7 @@ bool PredictOutput::operator==(const PredictOutput &output) const
 				for (int64_t l = 0; l < pbDimension; l++) {
 					for (int64_t m = 0; m < pbDimension; m++) {
 						if (fabs(storeThis[l][m] - storeOther[l][m]) > precision) {
-							cout << "UNEQUAL: Sigma differ resParam" << k + 1 << ", cluster " << (j + 1) << " Sigma[" << l + 1
+							MIXMOD_COUT << "UNEQUAL: Sigma differ resParam" << k + 1 << ", cluster " << (j + 1) << " Sigma[" << l + 1
 							     << "][" << m + 1 << "] "
 							     << ": computed " << storeThis[l][m] << ", expected " << storeOther[l][m] << endl;
 							return false;

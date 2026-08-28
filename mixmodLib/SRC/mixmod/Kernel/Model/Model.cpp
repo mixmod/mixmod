@@ -416,7 +416,7 @@ int64_t Model::getLabelByMAPOrKnownPartition(int64_t i)
 
 		if (VERBOSE == 1)
 			// label couldn't be found
-			cout << "internalMixmodError in Model::getLabelByMAPOrKnownPartition, i=" << i << endl;
+			MIXMOD_COUT << "internalMixmodError in Model::getLabelByMAPOrKnownPartition, i=" << i << endl;
 
 		THROW(OtherException, internalMixmodError);
 	}
@@ -455,7 +455,7 @@ double Model::getLogLikelihood(bool fikMustBeComputed)
 			if (_tabSumF[i] > 0)
 				logLikelihood += log(_tabSumF[i]) * weight[i];
 		}
-		// cout<<"compute LL, with ind "<<i<<", LL = "<<logLikelihood<<endl;
+		// MIXMOD_COUT<<"compute LL, with ind "<<i<<", LL = "<<logLikelihood<<endl;
 		p_tabFik++;
 	}
 
@@ -867,7 +867,7 @@ void Model::FixKnownPartition(Partition *&knownPartition)
 -------------------------------------------*/
 void Model::initRANDOM(int64_t nbTry)
 {
-	// cout<<"init RANDOM, nbTryInInit="<<nbTry<<endl;
+	// MIXMOD_COUT<<"init RANDOM, nbTryInInit="<<nbTry<<endl;
 	_algoName = UNKNOWN_ALGO_NAME;
 	int64_t i, k;
 	double logLikelihood, bestLogLikelihood;
@@ -893,9 +893,9 @@ void Model::initRANDOM(int64_t nbTry)
 	bestLogLikelihood = logLikelihood;
 	bestParameter->recopy(_parameter);
 
-	/*cout<<"initRandom"<<endl<<"1er essai : "<<endl<<"Parameter : "<<endl;
+	/*MIXMOD_COUT<<"initRandom"<<endl<<"1er essai : "<<endl<<"Parameter : "<<endl;
 	_parameter->edit();
-	cout<<"LL : "<< bestLogLikelihood<<endl;*/
+	MIXMOD_COUT<<"LL : "<< bestLogLikelihood<<endl;*/
 
 	// Others RANDOM
 	for (i = 1; i < nbTry; i++) {
@@ -906,20 +906,20 @@ void Model::initRANDOM(int64_t nbTry)
 			bestLogLikelihood = logLikelihood;
 			bestParameter->recopy(_parameter);
 		}
-		/*cout<<endl<<"initRandom"<<endl<<i+1<<" eme essai : "<<endl<<"Parameter : "<<endl;
+		/*MIXMOD_COUT<<endl<<"initRandom"<<endl<<i+1<<" eme essai : "<<endl<<"Parameter : "<<endl;
 		  _parameter->edit();
-		  cout<<"LL : "<< logLikelihood<<endl;*/
+		  MIXMOD_COUT<<"LL : "<< logLikelihood<<endl;*/
 	}
 
 	// set best parameter
 	delete _parameter;
 	_parameter = bestParameter;
 	_parameter->setModel(this);
-	/*cout<<endl<<"initRandom"<<endl<<"meilleur essai : "<<endl<<"Parameter : "<<endl;
+	/*MIXMOD_COUT<<endl<<"initRandom"<<endl<<"meilleur essai : "<<endl<<"Parameter : "<<endl;
 	_parameter->edit();
-	cout<<"LL : "<< bestLogLikelihood<<endl;*/
+	MIXMOD_COUT<<"LL : "<< bestLogLikelihood<<endl;*/
 
-	// cout<<"fin de init RANDOM, nb d'essais effectues="<<i<<endl;
+	// MIXMOD_COUT<<"fin de init RANDOM, nb d'essais effectues="<<i<<endl;
 	delete[] tabIndividualCanBeUsedForInitRandom;
 	delete[] tabClusterToInitialize;
 }
@@ -1032,20 +1032,20 @@ void Model::initUSER_PARTITION(Partition *initPartition, int64_t nbTryInInit)
 
 		// 1rst random
 		//-------------
-		// cout<<"1rst random"<<endl;
+		// MIXMOD_COUT<<"1rst random"<<endl;
 		randomForInitRANDOMorUSER_PARTITION(tabIndividualCanBeUsedForInitRandom, tabNotInitializedCluster);
 		// Compute log-likelihood
 		logLikelihood = getLogLikelihood(true); // true : to compute fik
 		bestLogLikelihood = logLikelihood;
 		bestParameter->recopy(_parameter);
-		/*cout<<"initRandom"<<endl<<"1er essai : "<<endl<<"Parameter : "<<endl;
+		/*MIXMOD_COUT<<"initRandom"<<endl<<"1er essai : "<<endl<<"Parameter : "<<endl;
 		    _parameter->edit();
-		    cout<<"LL : "<< bestLogLikelihood<<endl;*/
+		    MIXMOD_COUT<<"LL : "<< bestLogLikelihood<<endl;*/
 
 		// Others RANDOM
 		//-------------
 		for (i = 1; i < nbTryInInit; i++) {
-			//		cout<<i+1<<" random"<<endl;
+			//		MIXMOD_COUT<<i+1<<" random"<<endl;
 			randomForInitRANDOMorUSER_PARTITION(tabIndividualCanBeUsedForInitRandom, tabNotInitializedCluster);
 			// Compute log-likelihood
 			logLikelihood = getLogLikelihood(true); // true : to compute fik
@@ -1053,18 +1053,18 @@ void Model::initUSER_PARTITION(Partition *initPartition, int64_t nbTryInInit)
 				bestLogLikelihood = logLikelihood;
 				bestParameter->recopy(_parameter);
 			}
-			/*cout<<endl<<"initRandom"<<endl<<i+1<<" eme essai : "<<endl<<"Parameter : "<<endl;
+			/*MIXMOD_COUT<<endl<<"initRandom"<<endl<<i+1<<" eme essai : "<<endl<<"Parameter : "<<endl;
 			    _parameter->edit();
-			    cout<<"LL : "<< logLikelihood<<endl;*/
+			    MIXMOD_COUT<<"LL : "<< logLikelihood<<endl;*/
 		}
 
 		// set best parameter
 		delete _parameter;
 		_parameter = bestParameter;
 		_parameter->setModel(this);
-		/*cout<<endl<<"initRandom"<<endl<<"meilleur essai : "<<endl<<"Parameter : "<<endl;
+		/*MIXMOD_COUT<<endl<<"initRandom"<<endl<<"meilleur essai : "<<endl<<"Parameter : "<<endl;
 		    _parameter->edit();
-		    cout<<"LL : "<< bestLogLikelihood<<endl;*/
+		    MIXMOD_COUT<<"LL : "<< bestLogLikelihood<<endl;*/
 
 		delete[] tabIndividualCanBeUsedForInitRandom;
 	}
@@ -1086,7 +1086,7 @@ void Model::initUSER_PARTITION(Partition *initPartition, int64_t nbTryInInit)
 -------------------------------------------------------*/
 /*
 void Model::initSMALL_EM(ClusteringStrategyInit * clusteringStrategyInit){
-//  cout<<"init SMALL_EM, nbTryInInit="<<strategyInit->getNbTry()
+//  MIXMOD_COUT<<"init SMALL_EM, nbTryInInit="<<strategyInit->getNbTry()
 //  <<", nbIteration = "<<strategyInit->getNbIteration()<<", epsilon = "<<strategyInit->getEpsilon()<<endl;
   _algoName = EM;
   double logLikelihood, bestLogLikelihood;
@@ -1099,11 +1099,11 @@ void Model::initSMALL_EM(ClusteringStrategyInit * clusteringStrategyInit){
       // one run of small EM
       _parameter->reset();
       oneRunOfSmallEM(clusteringStrategyInit, logLikelihood);
-//cout<<"sortie de oneRunOfSmallEM, LL = "<<logLikelihood<<endl;
+//MIXMOD_COUT<<"sortie de oneRunOfSmallEM, LL = "<<logLikelihood<<endl;
       if ((nbRunOfSmallEMOk == 1) || (logLikelihood > bestLogLikelihood)){
         bestLogLikelihood = logLikelihood;
         bestParameter->recopy(_parameter);
-//       cout<<"best LL dans SMALL_EM : " <<bestLogLikelihood<<endl;
+//       MIXMOD_COUT<<"best LL dans SMALL_EM : " <<bestLogLikelihood<<endl;
       }
     }
     catch (Exception&errorType){
@@ -1119,7 +1119,7 @@ void Model::initSMALL_EM(ClusteringStrategyInit * clusteringStrategyInit){
   delete _parameter;
   _parameter = bestParameter;
   _parameter->setModel(this);
-//  cout<<"fin de init SMALL_EM, nb d'essais effectues="<<i<<endl;
+//  MIXMOD_COUT<<"fin de init SMALL_EM, nb d'essais effectues="<<i<<endl;
 }
  */
 
@@ -1137,7 +1137,7 @@ void Model::oneRunOfSmallEM(ClusteringStrategyInit * clusteringStrategyInit, dou
   int64_t  nbIteration = 1;
   bool continueAgain = true;
   while (continueAgain){
-//    cout<<"while de oneRunOfSmallEM, nbIteration = "<<nbIteration<<endl;
+//    MIXMOD_COUT<<"while de oneRunOfSmallEM, nbIteration = "<<nbIteration<<endl;
          //(nbIteration < strategyInit->getNbIteration()) && (eps > strategyInit->getEpsilon())){
     lastLogLikelihood = logLikelihood;
     Estep();
@@ -1165,7 +1165,7 @@ clusteringStrategyInit->getNbIteration())); break; default : THROW(OtherExceptio
   if (clusteringStrategyInit->getStopName() == NBITERATION){ // logLikelihood is an output
     logLikelihood = getLogLikelihood(true);  // true : to compute fi
   }
-//cout<<"Fin de oneRunOfSmallEM, nb d'iterations effectuees = "<<nbIteration<<", logLikelihood = "<<logLikelihood<<endl;
+//MIXMOD_COUT<<"Fin de oneRunOfSmallEM, nb d'iterations effectuees = "<<nbIteration<<", logLikelihood = "<<logLikelihood<<endl;
 }
 
  */
@@ -1182,7 +1182,7 @@ clusteringStrategyInit->getNbIteration())); break; default : THROW(OtherExceptio
 ---------------------------------------------------*/
 /*
 void Model::initCEM_INIT(ClusteringStrategyInit * clusteringStrategyInit){
-  //cout<<"init CEM, nbTryInInit="<<strategyInit->getNbTry()<<endl;
+  //MIXMOD_COUT<<"init CEM, nbTryInInit="<<strategyInit->getNbTry()<<endl;
   _algoName = CEM;
   int64_t  i;
   double cLogLikelihood, oldLogLikelihood, bestCLogLikelihood;
@@ -1216,7 +1216,7 @@ void Model::initCEM_INIT(ClusteringStrategyInit * clusteringStrategyInit){
           }
         }
       }
-      //cout<<"dans init CEM, nb d'iterations effectuées : "<<nbIter<<endl;
+      //MIXMOD_COUT<<"dans init CEM, nb d'iterations effectuées : "<<nbIter<<endl;
     // Compute log-likelihood
       cLogLikelihood = getCompletedLogLikelihood();
     // Comparaison of log-likelihood between step p and p-1
@@ -1224,7 +1224,7 @@ void Model::initCEM_INIT(ClusteringStrategyInit * clusteringStrategyInit){
         bestCLogLikelihood = cLogLikelihood;
         bestParameter->recopy(_parameter);
       }
-      //cout<<"nbIter : "<<nbIter<<endl;
+      //MIXMOD_COUT<<"nbIter : "<<nbIter<<endl;
     }
     catch (Exception&errorType){
       nbRunOfCEMOk--;
@@ -1238,7 +1238,7 @@ void Model::initCEM_INIT(ClusteringStrategyInit * clusteringStrategyInit){
     THROW(InputException,CEM_INIT_error);
   }
 
-  //cout<<"fin de init CEM, nb d'essais effectues="<<i<<endl;
+  //MIXMOD_COUT<<"fin de init CEM, nb d'essais effectues="<<i<<endl;
   // set Best parameter
   delete _parameter;
   _parameter = bestParameter;
@@ -1258,7 +1258,7 @@ void Model::initCEM_INIT(ClusteringStrategyInit * clusteringStrategyInit){
 
 -------------------------------------------------------*//*
 void Model::initSEM_MAX(ClusteringStrategyInit * clusteringStrategyInit){
-  //cout<<"init SEM_MAX, nbTryInInit="<<strategyInit->getNbIteration()<<endl;
+  //MIXMOD_COUT<<"init SEM_MAX, nbTryInInit="<<strategyInit->getNbIteration()<<endl;
   _algoName = SEM;
   int64_t  j;
   double logLikelihood, bestLogLikelihood;
@@ -1292,7 +1292,7 @@ void Model::initSEM_MAX(ClusteringStrategyInit * clusteringStrategyInit){
     THROW(InputException,SEM_MAX_error);
   }
 
-  //cout<<"fin de init SEM_MAX, nb d'iterations effectuees="<<j<<" meilleure solution : "<<bestIndex<<endl;
+  //MIXMOD_COUT<<"fin de init SEM_MAX, nb d'iterations effectuees="<<j<<" meilleure solution : "<<bestIndex<<endl;
   // set best parameter
   delete _parameter;
   _parameter = bestParameter;
@@ -1538,9 +1538,9 @@ void Model::editFik()
 	int64_t i, k;
 	for (i = 0; i < _nbSample; i++) {
 		for (k = 0; k < _nbCluster; k++) {
-			cout << "\tfik[" << i << "][" << k << "]=" << _tabFik[i][k];
+			MIXMOD_COUT << "\tfik[" << i << "][" << k << "]=" << _tabFik[i][k];
 		}
-		cout << "\n";
+		MIXMOD_COUT << "\n";
 	}
 }
 
@@ -1552,9 +1552,9 @@ void Model::editTik()
 	int64_t i, k;
 	for (i = 0; i < _nbSample; i++) {
 		for (k = 0; k < _nbCluster; k++) {
-			cout << "\ttik[" << i << "][" << k << "]=" << _tabTik[i][k];
+			MIXMOD_COUT << "\ttik[" << i << "][" << k << "]=" << _tabTik[i][k];
 		}
-		cout << "\n";
+		MIXMOD_COUT << "\n";
 	}
 }
 
@@ -1566,9 +1566,9 @@ void Model::editCik()
 	int64_t i, k;
 	for (i = 0; i < _nbSample; i++) {
 		for (k = 0; k < _nbCluster; k++) {
-			cout << "\tcik[" << i << "][" << k << "]=" << _tabCik[i][k];
+			MIXMOD_COUT << "\tcik[" << i << "][" << k << "]=" << _tabCik[i][k];
 		}
-		cout << "\n";
+		MIXMOD_COUT << "\n";
 	}
 }
 
@@ -1579,7 +1579,7 @@ void Model::editNk()
 {
 	int64_t k;
 	for (k = 0; k < _nbCluster; k++) {
-		cout << "\tnk[" << k << "]=" << _tabNk[k] << "\n";
+		MIXMOD_COUT << "\tnk[" << k << "]=" << _tabNk[k] << "\n";
 	}
 }
 

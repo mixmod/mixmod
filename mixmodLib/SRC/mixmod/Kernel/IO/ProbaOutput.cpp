@@ -224,7 +224,7 @@ void ProbaOutput::editLabel()
 {
 	int64_t i;
 	for (i = 0; i < _nbSample; i++)
-		cout << _tabLabel[i] << endl;
+		MIXMOD_COUT << _tabLabel[i] << endl;
 }
 
 //--------------

@@ -59,7 +59,7 @@ NULL
 #'    }
 #'
 
-#' @param ... all arguments are transfered to the Strategy constructor. Valid arguments are:
+#' @param ... all arguments are transferred to the Strategy constructor. Valid arguments are:
 #'    \describe{
 #'   \item{algo:}{list of character string with the estimation algorithm.  Possible values: "EM", "SEM", "CEM", c("EM","SEM").
 #' Default value is "EM".}

@@ -109,7 +109,7 @@ void Input::cloneInitialisation(const std::vector<int64_t> &iNbCluster, const Da
 	else{
 	  _modelType.push_back(new ModelType(defaultBinaryModelName));
 	}*/
-	// cout<<_dataDescription.getDataType()<<endl;
+	// MIXMOD_COUT<<_dataDescription.getDataType()<<endl;
 	switch (_dataDescription.getDataType()) {
 	case QualitativeData:
 		_modelType.push_back(new ModelType(defaultBinaryModelName));

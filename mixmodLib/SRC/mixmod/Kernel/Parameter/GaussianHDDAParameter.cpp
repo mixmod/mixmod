@@ -370,17 +370,17 @@ double GaussianHDDAParameter::getPdf(int64_t iSample, int64_t kCluster) const
 // returns the density of all the data (tabFik)
 void GaussianHDDAParameter::getAllPdf(double **tabFik, double *tabProportion) const
 {
-	// cout<<"XEMGaussianHDDAParameter::getAllPdf"<<endl;
-	/*cout<<"_tabBk : "<<_tabBk[0]<<endl;
-	cout<<"_tabBk : "<<_tabBk[1]<<endl;*/
+	// MIXMOD_COUT<<"XEMGaussianHDDAParameter::getAllPdf"<<endl;
+	/*MIXMOD_COUT<<"_tabBk : "<<_tabBk[0]<<endl;
+	MIXMOD_COUT<<"_tabBk : "<<_tabBk[1]<<endl;*/
 	double **Cost = computeCost(_tabQk);
 	int64_t nbSample = _model->getNbSample();
 
 	for (int64_t i = 0; i < nbSample; i++) {
 		for (int64_t k = 0; k < _nbCluster; k++) {
 			tabFik[i][k] = exp(-0.5 * Cost[k][i]);
-			// cout<<" Cost[k][i] :  "<<Cost[k][i]<<endl;
-			// cout<<"tabFik[i][k] :  "<<tabFik[i][k]<<endl;
+			// MIXMOD_COUT<<" Cost[k][i] :  "<<Cost[k][i]<<endl;
+			// MIXMOD_COUT<<"tabFik[i][k] :  "<<tabFik[i][k]<<endl;
 		}
 	}
 
@@ -483,8 +483,8 @@ void GaussianHDDAParameter::input(std::ifstream &fi)
 		// Sub Dimension  //
 		fi >> _tabDk[k];
 		if (_tabAkj[k]) {
-			// cout<<_tabAkj[k][0]<<endl;
-			// cout<<"ok"<<endl;
+			// MIXMOD_COUT<<_tabAkj[k][0]<<endl;
+			// MIXMOD_COUT<<"ok"<<endl;
 			delete[] _tabAkj[k];
 			_tabAkj[k] = NULL;
 		}
@@ -722,7 +722,7 @@ void GaussianHDDAParameter::recopy(Parameter *otherParameter)
 //-------------------
 double GaussianHDDAParameter::getLogLikelihoodOne() const
 {
-	// cout<<"XEMGaussianHDDAParameter::getLogLikelihoodOne"<<endl;
+	// MIXMOD_COUT<<"XEMGaussianHDDAParameter::getLogLikelihoodOne"<<endl;
 	/* Compute log-likelihood for one cluster
 	   useful for NEC criterion */
 	/* Initialization */
@@ -945,21 +945,21 @@ void GaussianHDDAParameter::edit()
 {
 	int64_t k;
 	for (k = 0; k < _nbCluster; k++) {
-		cout << "\tcomponent : " << k << endl;
-		cout << "\t\tproportion : " << _tabProportion[k] << endl;
-		editTab(_tabMean + k, 1, _pbDimension, cout, " ", "\t\tmean : ");
-		cout << "\tSub dimension : " << _tabDk[k] << endl;
-		editTab(_tabAkj + k, 1, _tabDk[k], cout, " ", "\t\t\tParameters Akj : ");
-		cout << "\t\t\tParameter Bk : " << _tabBk[k] << endl;
-		cout << "\t\tOrientation : " << endl;
-		_tabQk[k]->edit(cout, "\t\t\t", " ", _tabDk[k]);
+		MIXMOD_COUT << "\tcomponent : " << k << endl;
+		MIXMOD_COUT << "\t\tproportion : " << _tabProportion[k] << endl;
+		editTab(_tabMean + k, 1, _pbDimension, MIXMOD_COUT, " ", "\t\tmean : ");
+		MIXMOD_COUT << "\tSub dimension : " << _tabDk[k] << endl;
+		editTab(_tabAkj + k, 1, _tabDk[k], MIXMOD_COUT, " ", "\t\t\tParameters Akj : ");
+		MIXMOD_COUT << "\t\t\tParameter Bk : " << _tabBk[k] << endl;
+		MIXMOD_COUT << "\t\tOrientation : " << endl;
+		_tabQk[k]->edit(MIXMOD_COUT, "\t\t\t", " ", _tabDk[k]);
 
-		cout << "\t\tWk : " << endl;
-		_tabWk[k]->edit(cout, "\t\t\t");
+		MIXMOD_COUT << "\t\tWk : " << endl;
+		_tabWk[k]->edit(MIXMOD_COUT, "\t\t\t");
 	}
 
-	cout << "\tW : " << endl;
-	_W->edit(cout, "\t\t");
+	MIXMOD_COUT << "\tW : " << endl;
+	_W->edit(MIXMOD_COUT, "\t\t");
 }
 
 /********/
@@ -1136,7 +1136,7 @@ void GaussianHDDAParameter::computeTabDk()
     nbFreeParameter = (_pbDimension+1.0-1.0/_nbCluster)
              + _tabDk[k]*(_pbDimension-(_tabDk[k]+1.0)/2.0)+_tabDk[k]+2.0;
     BIC_min[k] =  (-2*Lk_min[k] + nbFreeParameter * log(tabNk[k])) / (tabNk[k]);
-   // cout<<"d  :  "<<1<<"  BIC_min["<<k<<"] :  "<<BIC_min[k]<<endl;
+   // MIXMOD_COUT<<"d  :  "<<1<<"  BIC_min["<<k<<"] :  "<<BIC_min[k]<<endl;
     tabD_min[k] = _tabDk[k];
   }
 
@@ -1183,7 +1183,7 @@ for (int64_ti=2;i<_pbDimension;i++){
      nbFreeParameter = (_pbDimension+1.0-1.0/_nbCluster)
            + _tabDk[k]*(_pbDimension-(_tabDk[k]+1.0)/2.0)+_tabDk[k]+2.0;
      BIC[k] = (-2*Lk[k] + nbFreeParameter * log(tabNk[k])) / (tabNk[k]);
-     //cout<<"d  : "<<i<<"  BIC["<<k<<"] :  "<<BIC[k]<<endl;
+     //MIXMOD_COUT<<"d  : "<<i<<"  BIC["<<k<<"] :  "<<BIC[k]<<endl;
      if (BIC[k] < BIC_min[k]){
        tabD_min[k] = i;
        BIC_min[k] = BIC[k];
@@ -1346,11 +1346,11 @@ void GaussianHDDAParameter::computeAkjBkQk()
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = storeShapek[j] / tabNk[k];
 			sum_lambda += _tabAkj[k][j];
-			// cout<<"tabA :  "<<_tabAkj[k][j]<<endl;
+			// MIXMOD_COUT<<"tabA :  "<<_tabAkj[k][j]<<endl;
 		}
 		double trace = W_k->computeTrace();
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace / tabNk[k] - sum_lambda);
-		// cout<<"tabB :  "<<_tabBk[k]<<endl;
+		// MIXMOD_COUT<<"tabB :  "<<_tabBk[k]<<endl;
 	}
 }
 
@@ -1381,14 +1381,14 @@ void GaussianHDDAParameter::computeAkjBQk()
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = storeShapek[j] / tabNk[k];
 			sum_lambda += _tabAkj[k][j];
-			// cout<<"tabA :  "<<_tabA[k][j]<<endl;
+			// MIXMOD_COUT<<"tabA :  "<<_tabA[k][j]<<endl;
 		}
 		somme += tabNk[k] * sum_lambda;
 	}
 	somme = somme / _model->getNbSample();
 	for (int64_t k = 0; k < _nbCluster; k++) {
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace - somme);
-		// cout<<"tabB  :  "<<_tabB[k]<<endl;
+		// MIXMOD_COUT<<"tabB  :  "<<_tabB[k]<<endl;
 	}
 	delete tabShapeW;
 	delete tabQW;
@@ -1423,11 +1423,11 @@ void GaussianHDDAParameter::computeAjBkQk()
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = storeShape[j] / _model->getNbSample();
 			sum_lambda += storeShapek[j] / tabNk[k];
-			// cout<<"tabAij :  "<<_tabA[k][j]<<endl;
+			// MIXMOD_COUT<<"tabAij :  "<<_tabA[k][j]<<endl;
 		}
 		double trace = W_k->computeTrace() / tabNk[k];
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace - sum_lambda);
-		// cout<<"tabB :  "<<_tabB[k]<<endl;
+		// MIXMOD_COUT<<"tabB :  "<<_tabB[k]<<endl;
 	}
 	delete tabShapeW;
 	delete tabQW;
@@ -1461,14 +1461,14 @@ void GaussianHDDAParameter::computeAjBQk()
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = storeShape[j] / _model->getNbSample();
 			sum_lambda += storeShapek[j];
-			// cout<<"tabA :  "<<_tabA[k][j]<<endl;
+			// MIXMOD_COUT<<"tabA :  "<<_tabA[k][j]<<endl;
 		}
 		somme += sum_lambda;
 	}
 	somme = somme / _model->getNbSample();
 	for (int64_t k = 0; k < _nbCluster; k++) {
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace - somme);
-		// cout<<"tabB :  "<<_tabB[k]<<endl;
+		// MIXMOD_COUT<<"tabB :  "<<_tabB[k]<<endl;
 	}
 	delete tabShapeW;
 	delete tabQW;
@@ -1501,11 +1501,11 @@ void GaussianHDDAParameter::computeAkBkQk()
 		}
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = 1.0 / _tabDk[k] * sum_lambda;
-			// cout<<"tabA : "<<_tabA[k][j]<<endl;
+			// MIXMOD_COUT<<"tabA : "<<_tabA[k][j]<<endl;
 		}
 		double trace = W_k->computeTrace() / tabNk[k];
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace - sum_lambda);
-		// cout<<"tabB : "<<_tabB[k]<<endl;
+		// MIXMOD_COUT<<"tabB : "<<_tabB[k]<<endl;
 	}
 }
 
@@ -1539,14 +1539,14 @@ void GaussianHDDAParameter::computeAkBQk()
 		}
 		for (int64_t j = 0; j < _tabDk[k]; j++) {
 			_tabAkj[k][j] = 1.0 / _tabDk[k] * sum_lambda;
-			// cout<<"tabA :  "<<_tabA[k][j]<<endl;
+			// MIXMOD_COUT<<"tabA :  "<<_tabA[k][j]<<endl;
 		}
 		somme += tabNk[k] * sum_lambda;
 	}
 	somme = somme / _model->getNbSample();
 	for (int64_t k = 0; k < _nbCluster; k++) {
 		_tabBk[k] = 1.0 / (_pbDimension - _tabDk[k]) * (trace - somme);
-		// cout<<"tabB :  "<<_tabB[k]<<endl;
+		// MIXMOD_COUT<<"tabB :  "<<_tabB[k]<<endl;
 	}
 	delete tabShapeW;
 	delete tabQW;

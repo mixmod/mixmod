@@ -245,7 +245,7 @@ GaussianGeneralParameter::~GaussianGeneralParameter()
 	}
 
 	if (_tabSigma) {
-		// cout<<"destructeur gaussgene"<<endl;
+		// MIXMOD_COUT<<"destructeur gaussgene"<<endl;
 		for (k = 0; k < _nbCluster; k++) {
 			delete _tabSigma[k];
 			_tabSigma[k] = NULL;

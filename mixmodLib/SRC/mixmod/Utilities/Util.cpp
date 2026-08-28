@@ -915,7 +915,7 @@ ModelName getBinaryModelNamefromHeterogeneous(const ModelName HeterogeneousName)
 	return res;
 }
 // edit modelName (debug)
-void edit(const ModelName &modelName) { cout << ModelNameToString(modelName); }
+void edit(const ModelName &modelName) { MIXMOD_COUT << ModelNameToString(modelName); }
 
 bool isKeyword(std::string &name)
 {
@@ -999,7 +999,7 @@ CriterionName StringtoCriterionName(const std::string &str)
 }
 
 // edit CriterionName (debug)
-void edit(const CriterionName &criterionName) { cout << CriterionNameToString(criterionName); }
+void edit(const CriterionName &criterionName) { MIXMOD_COUT << CriterionNameToString(criterionName); }
 
 // AlgoNameToString
 std::string AlgoNameToString(const AlgoName &typeAlgo)
@@ -1089,7 +1089,7 @@ AlgoStopName StringToAlgoStopName(const std::string &str)
 }
 
 // edit typeAlgo (debug)
-void edit(const AlgoName &typeAlgo) { cout << AlgoNameToString(typeAlgo); }
+void edit(const AlgoName &typeAlgo) { MIXMOD_COUT << AlgoNameToString(typeAlgo); }
 
 // FormatNumericToString
 std::string FormatNumericFileToString(const FormatNumeric::FormatNumericFile &formatNumericFile)
@@ -1232,10 +1232,10 @@ StrategyInitName StringToStrategyInitName(const std::string &str)
 }
 
 // edit strategyInitName (debug)
-void edit(const StrategyInitName &strategyInitName) { cout << StrategyInitNameToString(strategyInitName); }
+void edit(const StrategyInitName &strategyInitName) { MIXMOD_COUT << StrategyInitNameToString(strategyInitName); }
 
 // edit algoStopName (debug)
-void edit(const AlgoStopName &algoStopName) { cout << AlgoStopNameToString(algoStopName); }
+void edit(const AlgoStopName &algoStopName) { MIXMOD_COUT << AlgoStopNameToString(algoStopName); }
 
 /// printAlgoType
 void printTypeAlgo(std::ostream &flux, const AlgoName &typeAlgo)
@@ -1605,12 +1605,12 @@ int64_t generateRandomIndex(bool *tabIndividualCanBeUsedForInitRandom, double *w
 			idxSample++;
 			sumWeight += weight[idxSample];
 		}
-		// cout<<"index tire au hasard :"<<idxSample<<endl;
+		// MIXMOD_COUT<<"index tire au hasard :"<<idxSample<<endl;
 		IdxSampleCanBeUsed = tabIndividualCanBeUsedForInitRandom[idxSample];
 	}
 	// on indique que cet individu ne pourra pas �tre tir� au  hasard pour une autre classe
 	tabIndividualCanBeUsedForInitRandom[idxSample] = false;
-	// cout<<"choisi"<<endl;
+	// MIXMOD_COUT<<"choisi"<<endl;
 	return idxSample;
 }
 

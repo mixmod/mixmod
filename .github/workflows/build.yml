@@ -9,10 +9,9 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - name: Install
-      run: |
-        sudo apt install -y cmake libeigen3-dev libxml++2.6-dev
+      run: sudo apt install -y cmake libeigen3-dev libxml++2.6-dev
     - name: Build
       run: |
         cmake -DCMAKE_INSTALL_PREFIX=~/.local -DCMAKE_CXX_FLAGS="-Wall -Wextra -Wno-unused-parameter -D_GLIBCXX_ASSERTIONS" -DMIXMOD_BUILD_EXAMPLES=ON -DMIXMOD_BUILD_IOSTREAM=ON -DMIXMOD_BUILD_CLI=ON .

@@ -37,6 +37,7 @@
 
 #include "mixmod/Kernel/IO/BinaryData.h"
 #include "mixmod/Kernel/IO/GaussianData.h"
+#include "mixmod/Utilities/OutputAdapter.h"
 // #include "mixmod/Clustering/ClusteringInput.h"
 #include "mixmod/Clustering/ClusteringMain.h"
 // #include "mixmod/Clustering/ClusteringOutput.h"
@@ -333,7 +334,7 @@ void ValidateSchema(const string &s, const IOStreamXMLFile &xmlFile, bool verbos
 		validator.validate(s);
 	} catch (xmlpp::validity_error &e) {
 		if (verbose)
-			std::cout << "file:" << s << ",schema:" << schemafile << "," << e.what() << std::endl;
+			MIXMOD_COUT << "file:" << s << ",schema:" << schemafile << "," << e.what() << std::endl;
 		throw IOStreamErrorType::badXML;
 	}
 }
@@ -972,10 +973,10 @@ void OStream_Clustering_FLAT(ClusteringMain *cMain)
 // Tools for floats
 double custom_stod(string s)
 {
-	// cout<<"custom_stod:"<<s<<":"<<endl;
+	// MIXMOD_COUT<<"custom_stod:"<<s<<":"<<endl;
 	// if (IOMODE != IoMode::BINARY || s.find('.')!=string::npos) {
 	if (IOMODE != IoMode::BINARY) {
-		// cout<<"custom_stod_HR:"<<s<<":"<<endl;
+		// MIXMOD_COUT<<"custom_stod_HR:"<<s<<":"<<endl;
 		return std::stod(s);
 	}
 	double result;
@@ -988,7 +989,7 @@ double custom_stod(string s)
 }
 double std_stod(string s)
 {
-	// cout<<"custom_stod:"<<s<<":"<<endl;
+	// MIXMOD_COUT<<"custom_stod:"<<s<<":"<<endl;
 	return std::stod(s);
 }
 string custom_dtos(double d)
@@ -1065,10 +1066,10 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 	// 		string contenu;
 	// 		getline(formatIstream, contenu);
 	//     if (!strstr(contenu.c_str(), "ASCII")){
-	//       cout<<"not ascii"<<endl;
+	//       MIXMOD_COUT<<"not ascii"<<endl;
 	//     }
 	//     else{
-	//       cout<<"ascii"<<endl;
+	//       MIXMOD_COUT<<"ascii"<<endl;
 	//     }
 	// 		formatIstream.close();
 	// 	}
@@ -1105,8 +1106,8 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 	}
 
 	//  int64_t columnUsedSize = columnUsed.size();
-	// cout<<"columnUsedSize="<<columnUsedSize<<endl;
-	// cout<<"cptTrue="<<cptTrue<<endl;
+	// MIXMOD_COUT<<"columnUsedSize="<<columnUsedSize<<endl;
+	// MIXMOD_COUT<<"cptTrue="<<cptTrue<<endl;
 
 	ofstream dataOstream((mixmodDataFileName).c_str(), ios::out);
 	//------------
@@ -1123,20 +1124,20 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 			int64_t cptOstream = 0;
 			// can we read columnUsedSize string ?
 			while (!dataIstream.eof() && cptOstream < cptTrue) {
-				// cout<<endl<<"Entree dans le while, cptIstream="<<cptIstream<<endl;
-				// cout<<"Entree dans le while, cptOstream="<<cptOstream<<endl;
+				// MIXMOD_COUT<<endl<<"Entree dans le while, cptIstream="<<cptIstream<<endl;
+				// MIXMOD_COUT<<"Entree dans le while, cptOstream="<<cptOstream<<endl;
 				dataIstream >> tmp;
-				// cout<<"lu :"<<tmp<<endl;
+				// MIXMOD_COUT<<"lu :"<<tmp<<endl;
 				if (columnUsed[cptIstream]) {
-					// cout<<"mis dans strings - size :"<<strings.size()<<endl;
+					// MIXMOD_COUT<<"mis dans strings - size :"<<strings.size()<<endl;
 					strings.push_back(tmp);
 					cptOstream++;
 				}
-				// else{cout<<"pas mis dans strings"<<endl;}
+				// else{MIXMOD_COUT<<"pas mis dans strings"<<endl;}
 				cptIstream++;
 				char c = dataIstream.peek();
 				if (c == '\r') {
-					// cout<<"rr, on avance"<<endl;
+					// MIXMOD_COUT<<"rr, on avance"<<endl;
 					c = dataIstream.get();
 				}
 			}
@@ -1145,7 +1146,7 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 			} else {
 				// on verifie la taille de strings
 				if (strings.size() == cptTrue) {
-					// cout<<"write in oStream"<<endl;
+					// MIXMOD_COUT<<"write in oStream"<<endl;
 					//  write in dataOstream
 					//  1rst : individualNameMustBeGenerated ?
 					if (individualNameMustBeGenerated) {
@@ -1155,11 +1156,11 @@ void createMixmodDataFileFromUserDataFile(string userDataFileName, string mixmod
 						dataOstream << strings[0] << "\t";
 						strings.erase(strings.begin());
 					}
-					// cout<<"apres avoir depil�, size:"<<strings.size()<<endl;
+					// MIXMOD_COUT<<"apres avoir depil�, size:"<<strings.size()<<endl;
 					nbSampleOut++;
 					dataOstream << "\n";
 				} else {
-					// cout<<"erreur size"<<endl;
+					// MIXMOD_COUT<<"erreur size"<<endl;
 					throw IOStreamErrorType::notEnoughValuesInDataFile;
 				}
 			}

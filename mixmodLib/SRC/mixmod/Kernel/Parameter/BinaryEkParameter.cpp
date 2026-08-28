@@ -316,12 +316,12 @@ void BinaryEkParameter::editScatter(int64_t k)
 	for (j = 0; j < _pbDimension; j++) {
 		for (h = 1; h <= _tabNbModality[j]; h++) {
 			if (h == _tabCenter[k][j]) {
-				cout << "\t" << _scatter[k];
+				MIXMOD_COUT << "\t" << _scatter[k];
 			} else {
-				cout << "\t" << _scatter[k] / (_tabNbModality[j] - 1);
+				MIXMOD_COUT << "\t" << _scatter[k] / (_tabNbModality[j] - 1);
 			}
 		}
-		cout << endl;
+		MIXMOD_COUT << endl;
 	}
 }
 

@@ -148,17 +148,22 @@ ellipse <- function(x, i, j) {
       parameters@variance[[k]][i, i], parameters@variance[[k]][j, i], parameters@variance[[k]][i, j],
       parameters@variance[[k]][j, j]
     ), nrow = 2)
-    eigVal <- eigen(A)$values
-    eigVec <- eigen(A)$vectors
-    eigScl <- eigVec %*% diag(sqrt(eigVal)) # scale eigenvectors to length = square-root
-    xMat <- rbind(ctr[1] + eigScl[1, ], ctr[1] - eigScl[1, ])
-    yMat <- rbind(ctr[2] + eigScl[2, ], ctr[2] - eigScl[2, ])
-    ellBase <- cbind(sqrt(eigVal[1]) * cos(angles), sqrt(eigVal[2]) * sin(angles)) # normal ellipse
-    ellRot <- eigVec %*% t(ellBase) # rotated ellipse
 
+    if (any(is.infinite(A)) || any(is.na(A))) {
+      warning("Covariance matrix is not valid for cluster ", k, ". Ellipse cannot be drawn.")
+      next
+    } else {
+      eigVal <- eigen(A)$values
+      eigVec <- eigen(A)$vectors
+      eigScl <- eigVec %*% diag(sqrt(eigVal)) # scale eigenvectors to length = square-root
+      xMat <- rbind(ctr[1] + eigScl[1, ], ctr[1] - eigScl[1, ])
+      yMat <- rbind(ctr[2] + eigScl[2, ], ctr[2] - eigScl[2, ])
+      ellBase <- cbind(sqrt(eigVal[1]) * cos(angles), sqrt(eigVal[2]) * sin(angles)) # normal ellipse
+      ellRot <- eigVec %*% t(ellBase) # rotated ellipse
+      lines((ellRot + ctr)[1, ], (ellRot + ctr)[2, ], asp = 1, type = "l", lwd = 2)
+      matlines(xMat, yMat, col = 1, lty = 2, lwd = 1)
+    }
 
-    lines((ellRot + ctr)[1, ], (ellRot + ctr)[2, ], asp = 1, type = "l", lwd = 2)
-    matlines(xMat, yMat, col = 1, lty = 2, lwd = 1)
     points(ctr[1], ctr[2], pch = 4, lwd = 3)
   }
 }

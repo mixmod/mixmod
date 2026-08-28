@@ -23,6 +23,7 @@ Previous repository: <https://gforge.inria.fr/projects/mixmod>
 
 ## Table of contents
 
+- [Table of contents](#table-of-contents)
 - [Folder structure](#folder-structure)
 - [C++ components](#c-components)
   - [Requirements](#requirements)
@@ -79,6 +80,7 @@ Compilation options:
 - `-DMIXMOD_BUILD_EXAMPLES`: `ON` or `OFF` (default)
 - `-DMIXMOD_INSTALL_EXAMPLES`: `ON` or `OFF` (default)
 - `-DMIXMOD_ENABLE_OPENMP`: `OFF` or `ON` (default). Enable OpenMP or not.
+- `-DRPACKAGE`: add it when compiling for the R package
 
 Generate makefile:
 

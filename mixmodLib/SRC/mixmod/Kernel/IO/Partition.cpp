@@ -250,10 +250,10 @@ bool Partition::operator==(Partition &otherPartition)
 	if (_nbSample != otherPartition._nbSample || _nbCluster != otherPartition._nbCluster) {
 
 		if (VERBOSE == 1) {
-			cout << _nbSample << endl;
-			cout << otherPartition._nbSample << endl;
-			cout << _nbCluster << endl;
-			cout << otherPartition._nbCluster << endl;
+			MIXMOD_COUT << _nbSample << endl;
+			MIXMOD_COUT << otherPartition._nbSample << endl;
+			MIXMOD_COUT << _nbCluster << endl;
+			MIXMOD_COUT << otherPartition._nbCluster << endl;
 		}
 
 		res = false;

@@ -381,7 +381,7 @@ void GaussianParameter::computeTabMeanInitUSER_PARTITION(int64_t &nbInitializedC
 	for (int64_t k = 0; k < _nbCluster; k++) {
 		if (tabWeightK[k] == 0) {
 			tabNotInitializedCluster[k] = true;
-			// cout<<"classe vide � l'initialisation"<<endl;
+			// MIXMOD_COUT<<"classe vide � l'initialisation"<<endl;
 		} else {
 			tabNotInitializedCluster[k] = false;
 			nbInitializedCluster++;
